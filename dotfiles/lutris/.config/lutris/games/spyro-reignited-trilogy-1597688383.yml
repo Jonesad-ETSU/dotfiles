@@ -1,0 +1,9 @@
+game:
+  appid: '996580'
+steam: {}
+system:
+  disable_compositor: true
+  gamemode: true
+  prime: true
+  pulse_latency: true
+  reset_pulse: true

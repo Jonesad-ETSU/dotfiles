@@ -1,0 +1,12 @@
+game:
+  args: ''
+  exe: /home/jonesad/.Emulation/Slippi.AppImage
+  working_dir: /home/jonesad/.Emulation/
+linux: {}
+system:
+  disable_compositor: true
+  prefix_command: ''
+  prime: true
+  pulse_latency: true
+  reset_pulse: true
+  terminal: false

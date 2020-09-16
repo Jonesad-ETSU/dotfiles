@@ -1,0 +1,25 @@
+######################
+#  Name: Austin Jones
+#  Date l.m.: 08.08.20
+######################
+set HOME=/home/jonesad/
+
+#Aliases#
+alias mkdir='mkdir -pv'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias c='clear'
+alias f='ranger'
+alias programs='pacman -Qe|grep -v "pacman -Qqeg base-devel base"'
+alias q='exit'
+alias cl='clear && l'
+alias :q='exit'
+alias znew='c && . $HOME/.zshrc'
+alias svim='sudo vim'
+alias dmenu='dmenu -c -l 10 -fn "DejaVu Sans:size=12"'
+alias myip='curl http://ipecho.net/plain; echo'
+alias ranger='ranger --choosedir=$HOME/.rangerdir;cd $(cat $HOME/.rangerdir)'
+alias chvol='pactl set-sink-volume @DEFAULT_SINK@'

@@ -1,0 +1,9 @@
+system:
+  aco: false
+  disable_compositor: true
+  gamemode: true
+  prime: true
+  pulse_latency: false
+  reset_pulse: false
+  xephyr_fullscreen: false
+zdoom: {}
