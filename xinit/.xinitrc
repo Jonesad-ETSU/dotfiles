@@ -49,7 +49,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 exec pulseaudio --start &
 exec xwallpaper --zoom $(cat $HOME/.wallpaper) &
-exec wal -i $(cat $HOME/.wallpaper) &
+#exec wal -R &
 exec dwmblocks &
 exec steam -silent &
 exec picom -b --config $HOME/.config/picom.conf &

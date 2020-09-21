@@ -28,10 +28,12 @@ set timeoutlen=500
 set formatoptions-=cro
 set clipboard=unnamedplus
 
-au! BufWritePost $MYVIMRC source %
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree.git'
 call vundle#end()
 filetype plugin indent on

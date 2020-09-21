@@ -18,6 +18,7 @@ stow wal
 stow wal_steam
 stow xinit
 stow zsh
+stow bento
 stow Wallpaper
 stow mednafen
 echo 'Done  :)'
