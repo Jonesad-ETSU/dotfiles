@@ -9,7 +9,6 @@ stow lutris
 stow nnn
 stow nvim
 stow picom
-stow pulseaudio
 stow ranger
 stow school
 stow scripts
