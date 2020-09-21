@@ -1,0 +1,23 @@
+######################
+#  Name: Austin Jones
+#  Date l.m.: 08.19.20
+######################
+set HOME=/home/jonesad/
+set BACKGROUND=$(xgetres a.background)
+set FOREGROUND=$(xgetres a.foreground)
+
+#Aliases#
+alias mkdir='mkdir -pv'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias c='clear'
+alias f='ranger'
+alias programs='pacman -Qe|grep -v "pacman -Qqeg base-devel base"'
+alias q='exit'
+alias cl='clear && l'
+alias svim='sudo vim'
+alias dmenu='dmenu -fn "DejaVu Sans:size=12" -nb $BACKGROUND -nf $FOREGROUND -sb $BACKGROUND -sf $(xgetres a.color14)' 
+alias ranger='ranger --choosedir=$HOME/.rangerdir;cd $(cat $HOME/.rangerdir)'
