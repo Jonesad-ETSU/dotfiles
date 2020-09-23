@@ -10,8 +10,11 @@ case $1 in
 	'Mail') exec firefox "outlook.office365.com" & ;;
 	'System-Monitor') exec alacritty -t 'SysMon' -e bashtop & ;;
 	'Drive-Analyzer') exec alacritty -t 'Disk Analyzer' -e ncdu & ;;
+	'Tools') $scriptFolder/launch-dmenu.sh tools/tools & ;;
 	'Settings') $scriptFolder/launch-dmenu.sh settings/settings & ;;
+  'Font-Viewer') exec gucharmap & ;;
 	'Power') $scriptFolder/launch-dmenu.sh power/shutdown-prompt & ;;
+	'Wallpaper') $scriptFolder/launch-dmenu.sh $(ls /home/jonesad/Wallpaper) & ;;
 	'Shutdown') shutdown now & ;;	
 	'Cancel') $scriptFolder/launch-dmenu.sh dmenu-gen & ;;
 	'Melee-Offline') /usr/share/applications/Melee-Offline.desktop & ;;

@@ -9,6 +9,7 @@ system:
   aco: true
   disable_compositor: true
   disable_runtime: true
+  dri_prime: true
   gamemode: true
   prefer_system_libs: true
   prime: true
