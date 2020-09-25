@@ -14,10 +14,10 @@ Usage:
 
 yay 
 ncdu
+ranger
 qemu
 intel-undervolt
 gimp
-nnn
 wine
 neovim
 scrot
@@ -39,11 +39,9 @@ mpv
 pamixer 
 xorg-xev
 ecm-tools
-putty
 gucharmap
 meh-git 
 cava 
 minecraft-launcher 
-pywal-git
 ttf-ms-fonts
 
