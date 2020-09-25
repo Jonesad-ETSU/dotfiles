@@ -6,6 +6,7 @@ set HOME=/home/jonesad/
 set BACKGROUND=$(xgetres a.background)
 set FOREGROUND=$(xgetres a.foreground)
 
+
 #Aliases#
 alias mkdir='mkdir -pv'
 alias l='ls -CF'

@@ -1,5 +1,4 @@
 /* See LICENSE file for copyright and license details. */
-#include "selfrestart.c"
 #include "tcl.c"
 #include <X11/XF86keysym.h>
 
@@ -86,30 +85,32 @@ static char *statuscmd[] = {"/bin/sh","-c",NULL,NULL};
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,	                XK_Return, spawn,          {.v = custdmenucmd } },
+	{ MODKEY,	                      XK_Return, spawn,          {.v = custdmenucmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_p,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_o,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
+	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.01} },
+	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.01} },
+	{ MODKEY|ShiftMask,             XK_space,  zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
-	{ MODKEY,			XK_e,	   spawn,	   {.v = filescmd} },
+	{ MODKEY,			                  XK_e,	     spawn,	         {.v = filescmd} },
 	{ MODKEY,                       XK_space,  cyclelayout,    {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	{ MODKEY,             		XK_f,      togglefullscr,  {0} },
+	{ MODKEY|ShiftMask,             XK_f,      togglefloating, {0} },
+	{ MODKEY,             		      XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY|ShiftMask,		XK_Home,	spawn,	   {.v = randomwallcmd}},
-	{ MODKEY,			XK_equal,	incrigaps,		{.i = +1}},
-	{ MODKEY,			XK_minus,	incrigaps,	{.i = -1}},
+	{ MODKEY|ShiftMask,		          XK_Home,	 spawn,      	   {.v = randomwallcmd} },
+	{ MODKEY,			                  XK_equal,	 incrgaps,		   {.i = +5}},
+	{ MODKEY,			                  XK_minus,	 incrgaps,	     {.i = -5}},
+  { MODKEY|ShiftMask,             XK_equal,  incrigaps,      {.i = +5}},
+  { MODKEY|ShiftMask,             XK_minus,  incrigaps,      {.i = -5}},
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -120,9 +121,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_Escape,      quit,      {0} },
-	{ MODKEY,			XK_F1,		spawn,	{.v = audiocmds[0]}},
-	{ 0,		 	XF86XK_AudioRaiseVolume,	spawn, {.v=audiocmds[1]}},
-	{ 0, 			XF86XK_AudioLowerVolume,	spawn, {.v = audiocmds[2]}}, 
+	{ MODKEY,			                  XK_F1,		      spawn,	   {.v = audiocmds[0]} },
+	{ 0,		 	                      XF86XK_AudioRaiseVolume,	 spawn,   {.v=audiocmds[1]} },
+	{ 0, 			                      XF86XK_AudioLowerVolume,	 spawn,   {.v = audiocmds[2]} }, 
 };
 
 /* button definitions */
