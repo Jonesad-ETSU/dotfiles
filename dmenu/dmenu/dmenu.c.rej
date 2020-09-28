@@ -1,11 +1,12 @@
 --- dmenu.c
 +++ dmenu.c
-@@ -732,6 +755,8 @@ main(int argc, char *argv[])
- 			topbar = 0;
- 		else if (!strcmp(argv[i], "-f"))   /* grabs keyboard before reading stdin */
- 			fast = 1;
-+		else if (!strcmp(argv[i], "-c"))   /* centers dmenu on screen */
-+			centered = 1;
- 		else if (!strcmp(argv[i], "-i")) { /* case-insensitive item matching */
- 			fstrncmp = strncasecmp;
- 			fstrstr = cistrstr;
+@@ -774,7 +890,8 @@ setup(void)
+ 	/* create menu window */
+ 	swa.override_redirect = True;
+ 	swa.background_pixel = scheme[SchemeNorm][ColBg].pixel;
+-	swa.event_mask = ExposureMask | KeyPressMask | VisibilityChangeMask;
++	swa.event_mask = ExposureMask | KeyPressMask | VisibilityChangeMask |
++	                 ButtonPressMask;
+ 	win = XCreateWindow(dpy, parentwin, x, y, mw, mh, 0,
+ 	                    CopyFromParent, CopyFromParent, CopyFromParent,
+ 	                    CWOverrideRedirect | CWBackPixel | CWEventMask, &swa);
