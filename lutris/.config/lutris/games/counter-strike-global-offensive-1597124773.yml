@@ -2,6 +2,6 @@ game:
   appid: '730'
 steam: {}
 system:
-  aco: true
+  aco: false
   gamemode: true
   prime: true

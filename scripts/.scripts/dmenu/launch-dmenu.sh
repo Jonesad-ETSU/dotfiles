@@ -7,7 +7,7 @@ scriptFolder="$HOME/.scripts"
 wallpaperFolder="$HOME/Wallpaper"
 
 _dmenu() {
-  dmenu -c -l 10 -fn "DejaVu Sans:size=16" -nb $background -nf $foreground -sb $background -sf $color14 -p  | cut -d ' ' -f 2
+  dmenu -c -l 10 -fn "DejaVu Sans:size=16" -nb $background -nf $foreground -sb $color14 -sf $background -p | cut -d ' ' -f 2
 }
 
 _start() {
@@ -25,6 +25,7 @@ _loop () {
   2)  #Games
     case $1 in
       'Cancel') _start /dmenu/dmenu-gen & ;;
+      'Steam') exec steam & ;;
       'Lutris') exec lutris & ;;
     esac ;;
   *)  #General
