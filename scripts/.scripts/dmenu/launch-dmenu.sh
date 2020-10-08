@@ -2,7 +2,6 @@
 background=$(xgetres a.background)
 foreground=$(xgetres a.foreground)
 color14=$(xgetres a.color14)
-HOME="/home/jonesad"
 scriptFolder="$HOME/.scripts"
 wallpaperFolder="$HOME/Wallpaper"
 
@@ -11,8 +10,8 @@ _dmenu() {
 }
 
 _start() {
-  [ -d $1 ] && (echo " dir:$1"; _loop $(echo "$(ls -1 $1)" | _dmenu | cut -d ' ' -f 2) $2) \
-    || (echo "!dir:$1"; _loop $(cat $scriptFolder/$1 | _dmenu | cut -d ' ' -f 2) $2)
+  [ -d $1 ] && (_loop $(echo "$(ls -1 $1)" | _dmenu | cut -d ' ' -f 2) $2) \
+    || (_loop $(cat $scriptFolder$1 | _dmenu | cut -d ' ' -f 2) $2)
 }
 
 _loop () {

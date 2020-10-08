@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 #include "tcl.c"
 #include <X11/XF86keysym.h>
-
+#define HOME "/home/jonesad"
 /* appearance */
 static unsigned int borderpx  = 1;        /* border pixel of windows */
 static unsigned int snap      = 32;       /* snap pixel */
@@ -41,8 +41,9 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     iscenter isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,	     1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,       0,		  -1 },
+	{ "Firefox",  NULL,       NULL,       0,	    0,       0,		  -1 },
 	{ "Steam",    NULL,	  NULL,	      0,	    1,	     1,		  -1 },
+	{ "Arandr",   NULL,	  NULL,	      0, 	    1,	     1,	          -1 },
 };
 
 /* layout(s) */
@@ -73,19 +74,20 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", normbgcolor, "-sf", selfgcolor,"-c","-l","10", NULL };
-static const char * custdmenucmd[] = {"/home/jonesad/.scripts/dmenu/launch-dmenu.sh","dmenu-gen",NULL};
+static const char * custdmenucmd[] = {HOME "/.scripts/dmenu/launch-dmenu.sh","dmenu-gen",NULL};
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *filescmd[] = {"alacritty","-t","Ranger","-e","ranger",NULL};
-static const char *randomwallcmd[] = {"/home/jonesad/.scripts/set-random-wallpaper.sh",NULL};
-static const char *audiocmds[][2] = {  {"/home/jonesad/.scripts/mute.sh",NULL},
-				       {"/home/jonesad/.scripts/raise-volume.sh",NULL },
-				       {"/home/jonesad/.scripts/lower-volume.sh",NULL } };
+static const char *randomwallcmd[] = {HOME "/.scripts/set-random-wallpaper.sh",NULL};
+static const char *audiocmds[][3] = {  {HOME "/.scripts/mute.sh",NULL},
+				       {HOME "/.scripts/raise-volume.sh",NULL },
+				       {HOME "/.scripts/lower-volume.sh",NULL } };
 static char *statuscmds[] = {"notify-send Mouse$BUTTON"};
 static char *statuscmd[] = {"/bin/sh","-c",NULL,NULL};
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                      XK_Return, spawn,          {.v = custdmenucmd } },
+	{ MODKEY|ShiftMask,		XK_Return,	spawn,		{.v = termcmd} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
