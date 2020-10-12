@@ -2,6 +2,7 @@
 #include "tcl.c"
 #include <X11/XF86keysym.h>
 #define HOME "/home/jonesad"
+#define WALL "/home/jonesad/Wallpaper"
 /* appearance */
 static unsigned int borderpx  = 1;        /* border pixel of windows */
 static unsigned int snap      = 32;       /* snap pixel */
@@ -16,7 +17,8 @@ static unsigned int gappov    = 10;       /* vert outer gap between windows and 
 static int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "DejaVu Sans:size=12","Material Icons:size=16" };
+static int user_bh            = 0;        /* 0 means auto calculate*/
+static const char *fonts[]          = { "DejaVu Sans:size=16","Material Icons:size=16" };
 static const char dmenufont[]       = "DejaVu Sans:size=12";
 static char normbgcolor[]       = "#222222";
 static char normbordercolor[]       = "#444444";
@@ -52,11 +54,11 @@ static int nmaster     = 1;    /* number of clients in master area */
 static int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "",      tile },    /* first entry is default */
-	{ "",      monocle },
-	{ "",      bstack },
-	{ "",      tcl },
-	{ "",	      NULL},
+	{ "",      tile },    /* first entry is default */
+	{ "",      monocle },
+	{ "",      bstack },
+	{ "",      tcl },
+	{ "",	      NULL},
 	{ NULL,	      NULL},
 };
 
@@ -86,7 +88,7 @@ static char *statuscmd[] = {"/bin/sh","-c",NULL,NULL};
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,	                      XK_Return, spawn,          {.v = custdmenucmd } },
+	{ MODKEY,	                XK_Return, spawn,          {.v = custdmenucmd } },
 	{ MODKEY|ShiftMask,		XK_Return,	spawn,		{.v = termcmd} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -163,6 +165,7 @@ ResourcePref resources[] = {
 	{"snap",	INTEGER,	&snap},
 	{"showbar",	INTEGER,	&showbar},
 	{"topbar",	INTEGER,	&topbar},
+  {"user_bh", INTEGER,  &user_bh},
 	{"nmaster",	INTEGER,	&nmaster},
 	{"resizehints",	INTEGER,	&resizehints},
 	{"mfacts",	FLOAT,		&mfact},

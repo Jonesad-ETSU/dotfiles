@@ -2013,7 +2013,7 @@ setup(void)
 	if (!drw_fontset_create(drw, fonts, LENGTH(fonts)))
 		die("no fonts could be loaded.");
 	lrpad = drw->fonts->h;
-	bh = drw->fonts->h + 2;
+	bh = user_bh ? user_bh : drw->fonts->h + 2;
 	updategeom();
 	/* init atoms */
 	utf8string = XInternAtom(dpy, "UTF8_STRING", False);
@@ -2170,9 +2170,18 @@ tagmon(const Arg *arg)
 void
 tile(Monitor *m)
 {
+  /* LEARNING PURPOSES
+   * oe/ie => Bool representing whether a specific type of gap is enabled
+   * i => counter
+   * n => number of clients in a view
+   * h => height of a client(?)
+   * mw => monitor width
+   * my => monitor height
+   * ty =>  
+   * r => */
 	unsigned int i, n, h, r, oe = enablegaps, ie = enablegaps, mw, my, ty;
 	Client *c;
-
+  
 	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
 	if (n == 0)
 		return;
@@ -2192,7 +2201,7 @@ tile(Monitor *m)
 			resize(c, m->wx + m->gappov*oe, m->wy + my, mw - (2*c->bw) - m->gappiv*ie, h - (2*c->bw), 0);
 			my += HEIGHT(c) + m->gappih*ie;
 		} else {
-			r = n - i;
+			r = n - i; //r => number of tiled clients - 
 			h = (m->wh - ty - m->gappoh*oe - m->gappih*ie * (r - 1)) / r;
 			resize(c, m->wx + mw + m->gappov*oe, m->wy + ty, m->ww - mw - (2*c->bw) - 2*m->gappov*oe, h - (2*c->bw), 0);
 			ty += HEIGHT(c) + m->gappih*ie;

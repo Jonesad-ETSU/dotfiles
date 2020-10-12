@@ -19,7 +19,7 @@ _loop () {
   1)  #Wallpapers
     case $1 in
       'Cancel') _start /dmenu/dmenu-gen & ;;
-      *) $scriptFolder/set-wallpaper.sh $wallpaperFolder/$1 && _start /dmenu/dmenu-gen;;
+      *) feh --bg-scale $wallpaperFolder/$1 && _start /dmenu/dmenu-gen;;
     esac ;;
   2)  #Games
     case $1 in
@@ -36,7 +36,7 @@ _loop () {
       'Record') exec alacritty -e echo "working on it" & ;;
       'Discord') exec discord & ;;
       'Files') exec alacritty -t Files -e ranger & ;;
-      'Mail') exec firefox "outlook.office365.com" & ;;
+      'Mail') exec firefox "http://outlook.office365.com" & ;;
       'System-Monitor') exec alacritty -t 'SysMon' -e bashtop & ;;
       'Drive-Analyzer') exec alacritty -t 'Disk Analyzer' -e ncdu & ;;
       'Tools') _start /dmenu/tools/tools & ;;
@@ -46,9 +46,10 @@ _loop () {
       'Font-Viewer') exec gucharmap & ;;
       'Power') _start /dmenu/power/shutdown-prompt & ;;
       'Theme') exec lxappearance & ;;
+      'Network') exec alacritty -e nmtui & ;;
       'Wallpaper') _start $wallpaperFolder 1 & ;;
       'Scripts-Folder') exec alacritty -t Scripts --working-directory $scriptFolder & ;;
-      'Shutdown') shutdown now & ;;	
+      'Shutdown') sudo halt & ;;	
       'Cancel') _start /dmenu/dmenu-gen & ;;
       'Lutris') exec lutris & ;;
     esac ;;
