@@ -6,7 +6,6 @@
 /* appearance */
 static unsigned int borderpx  = 1;        /* border pixel of windows */
 static unsigned int snap      = 32;       /* snap pixel */
-static int swallowfloating    = 0;
 static unsigned int systraypinning = 0;
 static unsigned int systrayspacing = 2;
 static unsigned int systraypinningfailfirst = 1;
@@ -19,8 +18,8 @@ static int smartgaps          = 1;        /* 1 means no outer gap when there is 
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static int user_bh            = 0;        /* 0 means auto calculate*/
-static const char *fonts[]          = { "DejaVu Sans:size=12","UbuntuMonoDerivativePowerline Nerd Font:size=22" };
-static const char dmenufont[]       = "DejaVu Sans:size=16";
+static const char *fonts[]          = { "DejaVu Sans:size=16","Material Icons:size=16" };
+static const char dmenufont[]       = "DejaVu Sans:size=12";
 static char normbgcolor[]       = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]       = "#bbbbbb";
@@ -42,11 +41,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags    center   floating term  noswallow monitor */
-	{ "Gimp",     NULL,       NULL,       0,      1,	     1,       0,    0,        -1 },
-	{ "Steam",    NULL,	      NULL,	      0,	    1,	     1,		    0,    0,        -1 },
-  { "URxvt",    NULL,       NULL,       0,      0,       0,       1,    0,        -1 },
-	{ "Arandr",   NULL,	      NULL,	      0, 	    1,	     1,	      0,    0,        -1 },
+	/* class      instance    title       tags mask     iscenter isfloating   monitor */
+	{ "Gimp",     NULL,       NULL,       0,            1,	     1,           -1 },
+	{ "Firefox",  NULL,       NULL,       0,	    0,       0,		  -1 },
+	{ "Steam",    NULL,	  NULL,	      0,	    1,	     1,		  -1 },
+	{ "Arandr",   NULL,	  NULL,	      0, 	    1,	     1,	          -1 },
 };
 
 /* layout(s) */
@@ -55,11 +54,11 @@ static int nmaster     = 1;    /* number of clients in master area */
 static int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "T",      tile },    /* first entry is default */
-	{ "M",      monocle },
-	{ "B",      bstack },
-	{ "3",      tcl },
-	{ "F",	      NULL},
+	{ "",      tile },    /* first entry is default */
+	{ "",      monocle },
+	{ "",      bstack },
+	{ "",      tcl },
+	{ "",	      NULL},
 	{ NULL,	      NULL},
 };
 
@@ -78,8 +77,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", normbgcolor, "-sf", selfgcolor,"-c","-l","10", NULL };
 static const char * custdmenucmd[] = {HOME "/.scripts/dmenu/launch-dmenu.sh","dmenu-gen",NULL};
-static const char *termcmd[]  = { "urxvtc", NULL };
-static const char *filescmd[] = {"urxvtc","-e","ranger",NULL};
+static const char *termcmd[]  = { "alacritty", NULL };
+static const char *filescmd[] = {"alacritty","-t","Ranger","-e","ranger",NULL};
 static const char *randomwallcmd[] = {HOME "/.scripts/set-random-wallpaper.sh",NULL};
 static const char *audiocmds[][3] = {  {HOME "/.scripts/mute.sh",NULL},
 				       {HOME "/.scripts/raise-volume.sh",NULL },
@@ -162,7 +161,6 @@ ResourcePref resources[] = {
 	{"background",	 STRING, &selbgcolor},
 	{"color14", STRING, &selbordercolor},	
 	{"color14",	STRING, &selfgcolor},
-  {"swallowfloating", INTEGER, &swallowfloating},
 	{"borderpx",	INTEGER,	&borderpx},
 	{"snap",	INTEGER,	&snap},
 	{"showbar",	INTEGER,	&showbar},
