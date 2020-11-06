@@ -4,15 +4,14 @@ foreground=$(xgetres a.foreground)
 color14=$(xgetres a.color14)
 scriptFolder="$HOME/.scripts"
 wallpaperFolder="$HOME/Wallpaper"
-
+ZIP=37604
 _dmenu() {
-  dmenu -c -l 10 -fn "UbuntuMonoDerivativePowerline Nerd Font:size=16" -nb $background -nf $foreground -sb $color14 -sf $background -p | cut -d ' ' -f 2
+  dmenu -c -l 10 -fn "UbuntuMonoDerivativePowerline Nerd Font:size=24" -nb $background -nf $foreground -sb $color14 -sf $background -p | cut -d ' ' -f 2
 }
 
-_start() {
-  echo $1
-  [ -d $1 ] && (_loop $(echo "$(ls -1 $1)" | _dmenu | cut -d ' ' -f 2) $2) \
-    || (_loop $(cat $scriptFolder/$1 | _dmenu | cut -d ' ' -f 2) $2)
+_start() { 
+  [ -d $1 ] && (_loop $(ls -1 $1 | _dmenu | cut -d ' ' -f 2 ) $2 ) \
+    || (_loop $(cat $scriptFolder/$1 | _dmenu | cut -d ' ' -f 2 ) $2 )
 }
 
 _loop () {
@@ -31,16 +30,20 @@ _loop () {
   3)  #Tools
     case $1 in
       'OnlyOffice') exec onlyoffice-desktopeditors & ;;
-      'System-Monitor') exec urxvtc -t 'SysMon' -e bashtop & ;;      
-      'Drive-Analyzer') exec urxvtc -t 'Disk Analyzer' -e ncdu & ;;
-      'Screenshot') exec scrot -d 1 & ;;
+      'System-Monitor') exec urxvtc -e bashtop & ;;      
+      'Drive-Analyzer') exec urxvtc -e ncdu & ;;
+      'Screenshot') exec  scrot "$(date +%c).png" -e 'mv "$f" ~/Screenshots/ ; notify-send -i ~/Screenshots/screenshot-icon.png "Screenshot Saved" "~/Screenshots/$(date +%c)" ' & ;;
+      'Virtual-Machines') exec virt-manager & ;;
       'Font-Viewer') exec gucharmap & ;;
       'Bandwhich') exec urxvtc -e bandwhich & ;;       
+      'Serial-Pi') exec urxvtc -e "minicom -D /dev/ttyUSB0 -b 115200 || echo 'No Serial Detected'; read" ;;
+      'Cancel') _start dmenu/general & ;;
     esac ;;
   4)  #Settings
     case $1 in 
       'Wallpaper') _start $wallpaperFolder 1 & ;;
       'Scripts-Folder') exec urxvtc -title Scripts --working-directory $scriptFolder & ;;
+      'Toggle-Blue-Filter') killall xflux && exit || xflux -z $ZIP & ;;
       'Network') exec urxvtc -e nmtui & ;;
       'Cancel') _start dmenu/general & ;;
     esac ;;

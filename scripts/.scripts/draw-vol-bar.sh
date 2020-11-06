@@ -1,14 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 #Draws volume bar eg: <vol> #########-----
-vol=$1
-remainder=$(( $2 - $1 ))
 volString=" ["
-for (( i=1;i<=$vol;i++ ))
+for (( i=1; i<=$1; i++ ))
 do
-	volString="${volString}#"
+	volString="${volString}$3"
 done
-for (( i=1;i<=$remainder;i++))
+for (( i=1; i<= ($2-$1); i++))
 do
-	volString="${volString}"
+	volString="${volString}--"
 done
 echo "$volString]"
