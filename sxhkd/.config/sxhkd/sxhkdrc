@@ -1,0 +1,17 @@
+super + Return
+  $HOME/.scripts/dmenu/launch-dmenu.sh
+  
+super + Home
+  $HOME/.scripts/set-random-wallpaper.sh
+
+XF86Audio{Raise,Lower}Volume
+  $HOME/.scripts/{raise-,lower-}volume.sh
+
+super + F1
+  $HOME/.scripts/mute.sh
+
+super + e
+  urxvtc -title Files -e ranger
+
+Print
+  scrot "$(date +%c).png" -e 'mv "$f" ~/Screenshots/ ; dunstify -t 1000 -i ~/Screenshots/screenshot-icon.png "Screenshot Saved" '
