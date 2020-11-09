@@ -47,10 +47,14 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  done
  unset f
 fi
-exec pulseaudio --start &
-exec xrandr --output HDMI-1-0 --mode 1920x1080 --rate 119.98 &
-exec xwallpaper --zoom $(cat $HOME/.wallpaper) &
-exec dwmblocks &
-exec steam -silent &
-exec picom -b --config $HOME/.config/picom.conf &
+
+$HOME/.fehbg &
+xbanish &
+sxhkd &
+urxvtd &
+xscreensaver -no-splash &
+tail -n 1 /tmp/xobpipe | xob &
+dwmblocks &
+steam -silent &
+picom -b --config $HOME/.config/picom.conf &
 exec dwm
