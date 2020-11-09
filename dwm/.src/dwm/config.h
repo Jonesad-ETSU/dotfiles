@@ -18,7 +18,7 @@ static int smartgaps          = 1;        /* 1 means no outer gap when there is 
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static int user_bh            = 0;        /* 0 means auto calculate*/
-static const char *fonts[]          = { "DejaVu Sans:size=16","UbuntuMonoDerivativePowerline Nerd Font:size=22" };
+static const char *fonts[]          = { "DejaVu Sans:size=16","Ubuntu Mono derivative Powerline:size=28" };
 static const char dmenufont[]       = "DejaVu Sans:size=16";
 static char normbgcolor[]       = "#222222";
 static char normbordercolor[]       = "#444444";
