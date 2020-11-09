@@ -57,6 +57,7 @@ _loop () {
   *)  #General
     case $1 in
       'Terminal') exec urxvtc -title Terminal & ;;
+      'Firefox') exec firefox & ;;
       'Chromium') exec chromium & ;;
       'Games') _start dmenu/games 2 & ;;
       'Vim') exec urxvtc -e vim & ;;

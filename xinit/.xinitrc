@@ -57,4 +57,4 @@ tail -n 1 /tmp/xobpipe | xob &
 dwmblocks &
 steam -silent &
 picom -b --config $HOME/.config/picom.conf &
-exec dwm
+exec dbus-run-session dwm
