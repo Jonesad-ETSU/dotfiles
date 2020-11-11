@@ -6,13 +6,6 @@ set HOME=/home/jonesad/
 set BACKGROUND=$(xgetres a.background)
 set FOREGROUND=$(xgetres a.foreground)
 
-xs () {
-    xpkg -a |
-        fzf -m --preview 'xq {1}' \
-            --preview-window=right:66%:wrap |
-        xargs -ro xi
-}
-
 #Aliases#
 alias mkdir='mkdir -pv'
 alias l='ls -CF'
@@ -29,3 +22,5 @@ alias svim='sudo vim'
 alias please='sudo'
 alias ranger='ranger --choosedir=$HOME/.rangerdir;cd $(cat $HOME/.rangerdir)'
 alias xz=". $HOME/.zprofile"
+alias xs="sudo $HOME/.scripts/fuzzypkg/fuzzypkg"
+alias upkg="sudo xbps-query -m > ~/dotfiles/pkglist"

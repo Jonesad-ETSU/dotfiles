@@ -48,13 +48,24 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-$HOME/.fehbg &
-xbanish &
-sxhkd &
-urxvtd &
-xscreensaver -no-splash &
-tail -n 1 /tmp/xobpipe | xob &
-dwmblocks &
-steam -silent &
-picom -b --config $HOME/.config/picom.conf &
-exec dbus-run-session dwm
+case $2 in
+dwm)
+	$HOME/.fehbg &
+	xbanish &
+	sxhkd &
+	urxvtd &
+	tail -f /tmp/xobpipe | xob -m 80 &
+	dwmblocks &
+	steam -silent &
+	picom -b --config $HOME/.config/picom.conf &
+	exec dbus-run-session dwm
+;;
+xfce4)
+	xbanish &
+	sxhkd &
+	urxvtd &
+	steam -silent &
+	exec dbus-run-session startxfce4
+;;
+esac
+

@@ -13,5 +13,8 @@ super + F1
 super + e
   urxvtc -title Files -e ranger
 
+super + Shift + escape
+  killall xinit
+
 Print
   scrot "$(date +%c).png" -e 'mv "$f" ~/Screenshots/ ; dunstify -t 1000 -i ~/Screenshots/screenshot-icon.png "Screenshot Saved" '

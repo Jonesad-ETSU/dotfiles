@@ -25,6 +25,7 @@ _loop () {
     case $1 in
       'Steam') exec steam & ;;
       'Lutris') exec lutris & ;;
+      'Melee (Offline)') exec dolphin-emu -e ~/Downloads/SSBM.iso -b & ;;
       'Cancel') _start dmenu/general & ;;
     esac ;;
   3)  #Tools

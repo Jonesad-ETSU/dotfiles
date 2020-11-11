@@ -2410,7 +2410,7 @@ tile(Monitor *m)
 		} else {
 			r = n - i; //r => number of tiled clients - 
 			h = (m->wh - ty - m->gappoh*oe - m->gappih*ie * (r - 1)) / r;
-			resize(c, m->wx + mw + m->gappov*oe, m->wy + ty, m->ww - mw - (2*c->bw) - 2*m->gappov*oe, h - (2*c->bw), 0);
+			resize(c, m->wx + mw + m->gappoh*oe, m->wy + ty, m->ww - mw - (2*c->bw) - 2*m->gappov*oe, h - (2*c->bw), 0);
 			ty += HEIGHT(c) + m->gappih*ie;
 		}
 }

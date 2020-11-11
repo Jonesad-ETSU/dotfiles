@@ -1,10 +1,11 @@
-option=$(dialog --clear --backtitle "Startx" --title "Desktop Enviornment" --stdout --menu "Choose one of the following: " 15 40 4 'a' 'awesome' 'd' 'dwm' 'f' 'fvwm' 'm' 'mate-session' 'o' 'openbox') 
+export EDITOR=vim
+export COMPOSITOR=picom
+export FILE_MANAGER="urxvtc -e ranger"
+option=$(dialog --clear --backtitle "Startx" --title "Desktop Enviornment" --stdout --menu "Choose one of the following: " 15 40 4 'd' 'dwm' 'f' 'fvwm' 'x' 'xfce4') 
 case $option in
-  'd') startx dwm ;;
-  'o') startx openbox ;;
-  'f') startx fvwm ;;
-  'm') startx mate-session ;;
-  'a') startx awesome ;;
+  'd') export WM=dwm && startx dwm;;
+  'f') export WM=fvwm && startx fvwm;;
+  'x') export WM=xfwm && startx startxfce4 ;;
 esac
 
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.src/Discord:$PATH"
