@@ -54,6 +54,7 @@ dwm)
 	xbanish &
 	sxhkd &
 	urxvtd &
+	dunst &
 	tail -f /tmp/xobpipe | xob -m 80 &
 	dwmblocks &
 	steam -silent &
@@ -65,7 +66,15 @@ xfce4)
 	sxhkd &
 	urxvtd &
 	steam -silent &
+	dunst &
+	tail -f /tmp/xobpipe | xob -m 80 &
 	exec dbus-run-session startxfce4
 ;;
+fvwm)
+	exec dbus-run-session fvwm3 
+;;
+*)
+	urxvtd &
+	exec dbus-run-session $2
 esac
 

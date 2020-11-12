@@ -59,11 +59,11 @@ _loop () {
     case $1 in
       'Terminal') exec urxvtc -title Terminal & ;;
       'Firefox') exec firefox & ;;
-      'Chromium') exec chromium & ;;
       'Games') _start dmenu/games 2 & ;;
+      'Spotify') spotify & ;;
       'Vim') exec urxvtc -e vim & ;;
       'Record') exec urxvtc -e echo "working on it" && read & ;;
-      'Discord') exec discord & ;;
+      'Discord') exec Discord & ;;
       'Files') exec urxvtc -title Files -e ranger & ;;
       'Mail') exec chromium "http://outlook.office365.com" & ;;
       'Tools') _start dmenu/tools 3 & ;;

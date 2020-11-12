@@ -17,4 +17,4 @@ super + Shift + escape
   killall xinit
 
 Print
-  scrot "$(date +%c).png" -e 'mv "$f" ~/Screenshots/ ; dunstify -t 1000 -i ~/Screenshots/screenshot-icon.png "Screenshot Saved" '
+  scrot "$(date +%c).png" -e 'mv "$f" ~/Pictures/Screenshots/ ; dunstify -t 1000 -i ~/Pictures/Screenshots/apple-camera.png "Screenshot Saved" '
