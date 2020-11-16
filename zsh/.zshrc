@@ -196,4 +196,4 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
     ;;
 esac
 
-[ $(echo $WM)=dwm ] && [ -d $HOME/.scripts/toys ] && $HOME/.scripts/toys/$(ls $HOME/.scripts/toys/ | shuf -n 1)
+pfetch

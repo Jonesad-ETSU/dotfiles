@@ -25,7 +25,7 @@ _loop () {
     case $1 in
       'Steam') exec steam & ;;
       'Lutris') exec lutris & ;;
-      'Melee (Offline)') exec dolphin-emu -e ~/Downloads/SSBM.iso -b & ;;
+      'Melee') _start dmenu/melee 6 & ;;
       'Cancel') _start dmenu/general & ;;
     esac ;;
   3)  #Tools
@@ -54,6 +54,12 @@ _loop () {
       'Shutdown') sudo halt & ;;
       'Kill-X') killall xinit &;;
       'Cancel') _start dmenu/general & ;;
+    esac ;;
+  6) #Melee
+    case $1 in
+       'Netplay') exec alacritty & ;;
+       'Offline') exec prime-run dolphin-emu -e ~/Downloads/SSBM.iso -b & ;;
+       'Cancel') _start dmenu/general & ;;
     esac ;;
   *)  #General
     case $1 in

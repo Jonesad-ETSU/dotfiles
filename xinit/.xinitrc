@@ -52,13 +52,13 @@ case $2 in
 dwm)
 	$HOME/.fehbg &
 	xbanish &
+	tail -f /tmp/xobpipe | xob -m 80 &
+	dwmblocks &
 	sxhkd &
 	urxvtd &
 	dunst &
-	tail -f /tmp/xobpipe | xob -m 80 &
-	dwmblocks &
+	picom &
 	steam -silent &
-	picom -b --config $HOME/.config/picom.conf &
 	exec dbus-run-session dwm
 ;;
 xfce4)
