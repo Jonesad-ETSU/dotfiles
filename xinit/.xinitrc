@@ -50,12 +50,12 @@ fi
 
 case $2 in
 dwm)
+	$HOME/.scripts/alacritty-w-config.py $HOME/.config/alacritty/alacritty.yaml
 	$HOME/.fehbg &
 	xbanish &
 	tail -f /tmp/xobpipe | xob -m 80 &
 	dwmblocks &
 	sxhkd &
-	urxvtd &
 	dunst &
 	picom &
 	steam -silent &
@@ -64,7 +64,6 @@ dwm)
 xfce4)
 	xbanish &
 	sxhkd &
-	urxvtd &
 	steam -silent &
 	dunst &
 	tail -f /tmp/xobpipe | xob -m 80 &
@@ -74,7 +73,6 @@ fvwm)
 	exec dbus-run-session fvwm3 
 ;;
 *)
-	urxvtd &
 	exec dbus-run-session $2
 esac
 

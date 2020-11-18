@@ -9,6 +9,10 @@ static const Block blocks[] = {
   {";","",0,0},
   {" ",	"free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,	0},
   {"   ", "df -h | awk '/nvme0n1p3/ { print $3\"/\"$2 }'", 30, 0},
+  {"   ", "whoami",0,0},
+  {"   ","curl ident.me",0,0},
+  {"","/home/jonesad/.scripts/parse-weather.sh",900,0},
+  //{"","weatherResults=weather 37604 && echo  && echo $()",0,0},
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.

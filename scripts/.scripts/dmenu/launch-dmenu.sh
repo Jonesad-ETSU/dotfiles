@@ -1,6 +1,10 @@
 #!/bin/sh
 background=$(xgetres a.background)
 foreground=$(xgetres a.foreground)
+terminal=$(xgetres a.terminal)
+[ $terminal = "urxvtc" ] && title="-title" || \
+[ $terminal = "alacritty" ] && title="--title" || \
+	title="-T"
 color14=$(xgetres a.color14)
 scriptFolder="$HOME/.scripts"
 wallpaperFolder="$HOME/Wallpaper"
@@ -31,21 +35,21 @@ _loop () {
   3)  #Tools
     case $1 in
       'OnlyOffice') exec onlyoffice-desktopeditors & ;;
-      'System-Monitor') exec urxvtc -e bashtop & ;;      
-      'Drive-Analyzer') exec urxvtc -e ncdu & ;;
+      'System-Monitor') exec $terminal -e bashtop & ;;      
+      'Drive-Analyzer') exec $terminal -e ncdu & ;;
       'Screenshot') exec  scrot "$(date +%c).png" -e 'mv "$f" ~/Screenshots/ ; notify-send -i ~/Screenshots/screenshot-icon.png "Screenshot Saved" "~/Screenshots/$(date +%c)" ' & ;;
       'Virtual-Machines') exec virt-manager & ;;
       'Font-Viewer') exec gucharmap & ;;
-      'Bandwhich') exec urxvtc -e bandwhich & ;;       
-      'Serial-Pi') exec urxvtc -e "minicom -D /dev/ttyUSB0 -b 115200 || echo 'No Serial Detected'; read" ;;
+      'Bandwhich') exec $terminal -e bandwhich & ;;       
+      'Serial-Pi') exec $terminal -e "minicom -D /dev/ttyUSB0 -b 115200 || echo 'No Serial Detected'; read" ;;
       'Cancel') _start dmenu/general & ;;
     esac ;;
   4)  #Settings
     case $1 in 
       'Wallpaper') _start $wallpaperFolder 1 & ;;
-      'Scripts-Folder') exec urxvtc -title Scripts --working-directory $scriptFolder & ;;
+      'Scripts-Folder') exec $terminal -title Scripts --working-directory $scriptFolder & ;;
       'Toggle-Blue-Filter') killall xflux && exit || xflux -z $ZIP & ;;
-      'Network') exec urxvtc -e nmtui & ;;
+      'Network') exec $terminal -e nmtui & ;;
       'Cancel') _start dmenu/general & ;;
     esac ;;
   5) #Power
@@ -63,14 +67,14 @@ _loop () {
     esac ;;
   *)  #General
     case $1 in
-      'Terminal') exec urxvtc -title Terminal & ;;
+      'Terminal') exec $terminal $title Terminal& ;;
       'Firefox') exec firefox & ;;
       'Games') _start dmenu/games 2 & ;;
       'Spotify') spotify & ;;
-      'Vim') exec urxvtc -e vim & ;;
-      'Record') exec urxvtc -e echo "working on it" && read & ;;
+      'Vim') exec $terminal -e vim & ;;
+      'Record') exec $terminal -e echo "working on it" && read & ;;
       'Discord') exec Discord & ;;
-      'Files') exec urxvtc -title Files -e ranger & ;;
+      'Files') exec $terminal $title Terminal -e ranger & ;;
       'Mail') exec chromium "http://outlook.office365.com" & ;;
       'Tools') _start dmenu/tools 3 & ;;
       'Settings') _start dmenu/settings 4 & ;;

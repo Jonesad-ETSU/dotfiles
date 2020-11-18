@@ -7,20 +7,20 @@ static unsigned int gappih    = 20;       /* horiz inner gap between windows */
 static unsigned int gappiv    = 10;       /* vert inner gap between windows */
 static unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
 static unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
-static int swallowfloating	    = 0;
+static int swallowfloating    = 0;
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static int user_bh		    = 0;
+static int user_bh	      = 0;
 static char buttonbar[]       = "<O>";
-static const char *fonts[]          = { "Ubuntu Nerd Font:size=22" };
-static const char dmenufont[]       = "monospace:size=10";
-static char normbgcolor[]       = "#222222";
-static char normbordercolor[]       = "#444444";
-static char normfgcolor[]       = "#bbbbbb";
-static char selfgcolor[]       = "#eeeeee";
-static char selbgcolor[]        = "#005577";
-static char selbordercolor[]        = "#005577";
+static const char *fonts[]    = { "Ubuntu Nerd Font:size=22" };
+static const char dmenufont[] = "monospace:size=22";
+static char normbgcolor[]     = "#222222";
+static char normbordercolor[] = "#444444";
+static char normfgcolor[]     = "#bbbbbb";
+static char selfgcolor[]      = "#eeeeee";
+static char selbgcolor[]      = "#005577";
+static char selbordercolor[]  = "#005577";
 static char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { normfgcolor,normbgcolor, normbordercolor },
@@ -39,6 +39,9 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            1,           0,		0,		-1 },
 	{ "Firefox",  NULL,       NULL,       0,       	    0,           0,		0,		-1 },
 	{ "URxvt",    NULL,       NULL,       0,       	    0,           1,		0,		-1 },
+	{ "Steam",    NULL,	  NULL,	      1 << 1,	    1,		 0,		0,		-1 },
+	{ "Lutris",   NULL,	  NULL,	      1 << 1,	    0,		 0,		0,		-1 },
+	{ "Dolphin-emu", NULL,	  NULL,	      1 << 1,	    0,		 0,		0,		-1 },
 	{ "alacritty",    NULL,       NULL,       0,       	    0,           1,		0,		-1 },
 };
 
@@ -82,10 +85,12 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static char *buttoncmd[] = {"/home/jonesad/.scripts/dmenu/launch-dmenu.sh",NULL};
+static char bcmd[] = "/home/jonesad/.scripts/dmenu/launch-dmenu.sh";
+static char *buttoncmd[] = { bcmd, NULL };
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static char terminal[] = "urxvtc";
+static char *termcmd[]  = { terminal, NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -145,7 +150,7 @@ static Button buttons[] = {
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
-	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
+	{ ClkClientWin,         MODKEY,         Button2,        killclient, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
@@ -163,7 +168,9 @@ ResourcePref resources[] = {
 	{ "color14",     STRING,  &selbordercolor },
 	{ "background",         STRING,  &selfgcolor },
 	{ "buttonbar",     	STRING,  &buttonbar },
+	{ "buttoncmd",		STRING,  &bcmd },
 	{ "borderpx",          	INTEGER, &borderpx },
+	{ "terminal",		STRING,	 &terminal},
 	{ "snap",          	INTEGER, &snap },
 	{ "showbar",          	INTEGER, &showbar },
 	{ "user_bh",          	INTEGER, &user_bh },
