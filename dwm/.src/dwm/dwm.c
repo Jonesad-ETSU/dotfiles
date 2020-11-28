@@ -62,7 +62,8 @@
 #define WIDTH(X)                ((X)->w + 2 * (X)->bw)
 #define HEIGHT(X)               ((X)->h + 2 * (X)->bw)
 #define TAGMASK                 ((1 << LENGTH(tags)) - 1)
-#define TEXTW(X)                (drw_fontset_getwidth(drw, (X)) + lrpad)
+#define TEXTW(X)                (drw_font_getwidth(drw, (X), False) + lrpad)
+#define TEXTWM(X)                (drw_font_getwidth(drw, (X), True) + lrpad)
 
 /* enums */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
@@ -189,6 +190,7 @@ static void clientmessage(XEvent *e);
 static void configure(Client *c);
 static void configurenotify(XEvent *e);
 static void configurerequest(XEvent *e);
+static void copyvalidchars(char *text, char *rawtext);
 static Monitor *createmon(void);
 static void cyclelayout(const Arg *arg);
 static void destroynotify(XEvent *e);
@@ -203,6 +205,7 @@ static void focus(Client *c);
 static void focusin(XEvent *e);
 static void focusmon(const Arg *arg);
 static void focusstack(const Arg *arg);
+static int getdwmblockspid();
 static int getrootptr(int *x, int *y);
 static long getstate(Window w);
 static int gettextprop(Window w, Atom atom, char *text, unsigned int size);
@@ -240,6 +243,7 @@ static void setup(void);
 static void seturgent(Client *c, int urg);
 static void showhide(Client *c);
 static void sigchld(int unused);
+static void sigdwmblocks(const Arg *arg);
 static void spawn(const Arg *arg);
 static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
@@ -280,6 +284,9 @@ static pid_t winpid(Window w);
 /* variables */
 static const char broken[] = "broken";
 static char stext[256];
+static char rawstext[256];
+static int dwmblockssig;
+pid_t dwmblockspid = 0;
 static char estext[256];
 static int screen;
 static int sw, sh;           /* X display screen geometry width, height */
@@ -538,6 +545,12 @@ buttonpress(XEvent *e)
 		x += TEXTW(buttonbar);
 		if(ev->x < x) {
 			click = ClkButton;
+		}
+	       	else if ((c = wintoclient(ev->window))) {
+				focus(c);
+				restack(selmon);
+				XAllowEvents(dpy, ReplayPointer, CurrentTime);
+				click = ClkClientWin;
 		} else {
 			for (c = m->clients; c; c = c->next)
 				occ |= c->tags == 255 ? 0 : c->tags;
@@ -551,21 +564,33 @@ buttonpress(XEvent *e)
 				arg.ui = 1 << i;
 			} else if (ev->x < x + blw)
 				click = ClkLtSymbol;
-			else if (ev->x > selmon->ww - TEXTW(stext))
+			else if (ev->x > (selmon->ww - TEXTWM(stext)) + lrpad) {
 				click = ClkStatusText;
-			else
+				char *text = stext;
+				int i = -1;
+				char ch;
+				dwmblockssig = 0;
+				while (text[++i]) {
+					if ((unsigned char)text[i] < ' '){
+						ch = text[i];
+						text[i] = '\0';
+						x += TEXTW(text) - lrpad;
+						text[i] = ch;
+						text += i+1;
+						i = -1;
+						if (x >= ev->x) break;
+						dwmblockssig = ch;
+					}
+				}
+			} else
 				click = ClkWinTitle;
-		}
-	} else if ((c = wintoclient(ev->window))) {
-		focus(c);
-		restack(selmon);
-		XAllowEvents(dpy, ReplayPointer, CurrentTime);
-		click = ClkClientWin;
-	}
+
 	for (i = 0; i < LENGTH(buttons); i++)
 		if (click == buttons[i].click && buttons[i].func && buttons[i].button == ev->button
 		&& CLEANMASK(buttons[i].mask) == CLEANMASK(ev->state))
 			buttons[i].func(click == ClkTagBar && buttons[i].arg.i == 0 ? &arg : &buttons[i].arg);
+		}
+	}
 }
 
 void
@@ -743,6 +768,19 @@ configurerequest(XEvent *e)
 	XSync(dpy, False);
 }
 
+void
+copyvalidchars(char *text, char *rawtext)
+{
+	int i = -1, j = 0;
+
+	while(rawtext[++i]) {
+		if ((unsigned char)rawtext[i] >= ' ') {
+			text[j++] = rawtext[i];
+		}
+	}
+	text[j] = '\0';
+}
+
 Monitor *
 createmon(void)
 {
@@ -851,8 +889,8 @@ void
 drawbar(Monitor *m)
 {
 	int x, w, sw = 0;
-	int boxs = drw->fonts->h / 9;
-	int boxw = drw->fonts->h / 6 + 2;
+	int boxs = drw->font->h / 9;
+	int boxw = drw->font->h / 6 + 2;
 	unsigned int i, occ = 0, urg = 0;
 	Client *c;
 
@@ -860,7 +898,7 @@ drawbar(Monitor *m)
 	if (m == selmon) { /* status is only drawn on selected monitor */
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		sw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
-		drw_text(drw, m->ww - sw, 0, sw, bh, 0, stext, 0);
+		drw_text(drw, m->ww - sw, 0, sw, bh, 0, stext, 0, False);
 	}
 
 	for (c = m->clients; c; c = c->next) {
@@ -869,15 +907,15 @@ drawbar(Monitor *m)
 			urg |= c->tags;
 	}
 	x = 0;
-	w = blw = TEXTW(buttonbar);
+	w = blw = TEXTWM(buttonbar);
 	drw_setscheme(drw, scheme[SchemeNorm]);
-	x = drw_text(drw, x, 0, w, bh, lrpad / 2, buttonbar, 0);
+	x = drw_text(drw, x, 0, w, bh, lrpad / 2, buttonbar, 0, True);
 	for (i = 0; i < LENGTH(tags); i++) {
 		if (!(occ & 1 << i || m->tagset[m->seltags] & 1 << i))
 			continue;
 		w = TEXTW(tags[i]);
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
-		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
+		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i, False);
 		/*if (occ & 1 << i)
 			drw_rect(drw, x + boxs, boxs, boxw, boxw,
 				m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
@@ -886,12 +924,12 @@ drawbar(Monitor *m)
 	}
 	w = blw = TEXTW(m->ltsymbol);
 	drw_setscheme(drw, scheme[SchemeNorm]);
-	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
+	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0, False);
 
 	if ((w = m->ww - sw - x) > bh) {
 		if (m->sel) {
 			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
-			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
+			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0, False);
 			if (m->sel->isfloating)
 				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
 		} else {
@@ -903,7 +941,7 @@ drawbar(Monitor *m)
 
 	if (m == selmon) { /* extra status is only drawn on selected monitor */
 		drw_setscheme(drw, scheme[SchemeNorm]);
-		drw_text(drw, 0, 0, mons->ww, bh, 0, estext, 0);
+		drw_text(drw, 0, 0, mons->ww, bh, 0, estext, 0, True);
 		drw_map(drw, m->extrabarwin, 0, 0, m->ww, bh);
 	}
 }
@@ -1035,6 +1073,18 @@ getatomprop(Client *c, Atom prop)
 		XFree(p);
 	}
 	return atom;
+}
+
+int
+getdwmblockspid()
+{
+	char buf[16];
+	FILE *fp = popen("pidof -s dwmblocks", "r");
+	fgets(buf, sizeof(buf), fp);
+	pid_t pid = strtoul(buf, NULL, 10);
+	pclose(fp);
+	dwmblockspid = pid;
+	return pid != 0 ? 0 : -1;
 }
 
 int
@@ -1731,10 +1781,10 @@ setup(void)
 	sh = DisplayHeight(dpy, screen);
 	root = RootWindow(dpy, screen);
 	drw = drw_create(dpy, screen, root, sw, sh);
-	if (!drw_fontset_create(drw, fonts, LENGTH(fonts)))
+	if (!drw_font_create(drw, font))
 		die("no fonts could be loaded.");
-	lrpad = drw->fonts->h;
-	bh = user_bh ? user_bh : drw->fonts->h + 2;
+	lrpad = drw->font->h;
+	bh = user_bh ? user_bh : drw->font->h + 2;
 	updategeom();
 	/* init atoms */
 	utf8string = XInternAtom(dpy, "UTF8_STRING", False);
@@ -1785,7 +1835,6 @@ setup(void)
 	focus(NULL);
 }
 
-
 void
 seturgent(Client *c, int urg)
 {
@@ -1823,6 +1872,23 @@ sigchld(int unused)
 	if (signal(SIGCHLD, sigchld) == SIG_ERR)
 		die("can't install SIGCHLD handler:");
 	while (0 < waitpid(-1, NULL, WNOHANG));
+}
+
+void
+sigdwmblocks(const Arg *arg)
+{
+	union sigval sv;
+	sv.sival_int = (dwmblockssig << 8) | arg->i;
+	if (!dwmblockspid)
+		if (getdwmblockspid() == -1)
+			return;
+
+	if (sigqueue(dwmblockspid, SIGUSR1, sv) == -1) {
+		if (errno == ESRCH) {
+			if (!getdwmblockspid())
+				sigqueue(dwmblockspid, SIGUSR1, sv);
+		}
+	}
 }
 
 void
@@ -2231,7 +2297,7 @@ void
 updatetitle(Client *c)
 {
 	if (!gettextprop(c->win, netatom[NetWMName], c->name, sizeof c->name))
-		gettextprop(c->win, XA_WM_NAME, c->name, sizeof c->name);
+		gettextprop(c->win, XA_WM_CLASS, c->name, sizeof c->name);
 	if (c->name[0] == '\0') /* hack to mark broken clients */
 		strcpy(c->name, broken);
 }

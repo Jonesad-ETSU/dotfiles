@@ -13,8 +13,9 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static int user_bh	      = 0;
 static char buttonbar[]       = "<O>";
-static const char *fonts[]    = { "Ubuntu Nerd Font:size=22" };
-static const char dmenufont[] = "monospace:size=22";
+static char font[]	      = "Ubuntu Nerd Font:size=22";
+//static char *fonts[]          = { font };
+static char dmenufont[]	      = "monospace:size=22";
 static char normbgcolor[]     = "#222222";
 static char normbordercolor[] = "#444444";
 static char normfgcolor[]     = "#bbbbbb";
@@ -91,6 +92,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static char terminal[] = "urxvtc";
 static char *termcmd[]  = { terminal, NULL };
+static char *statuscmds[] = { "alacritty", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -148,7 +150,9 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        cyclelayout,    {.i = +1} },
 	{ ClkLtSymbol,          0,              Button3,        cyclelayout,    {.i = -1} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button1,        sigdwmblocks,   {.i = 1} },
+	{ ClkStatusText,        0,              Button2,        sigdwmblocks,   {.i = 2} },
+	{ ClkStatusText,        0,              Button3,        sigdwmblocks,   {.i = 3} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        killclient, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
@@ -161,15 +165,17 @@ static Button buttons[] = {
 * Xresources preferences to load at startup
 */
 ResourcePref resources[] = {
-	{ "background",        STRING,  &normbgcolor }	,
-	{ "color14",    STRING,  &normbordercolor },
-	{ "foreground",        STRING,  &normfgcolor }	,
-	{ "color12",         STRING,  &selbgcolor },
-	{ "color14",     STRING,  &selbordercolor },
+	{ "background",        	STRING,  &normbgcolor }	,
+	{ "color14",    	STRING,  &normbordercolor },
+	{ "foreground",        	STRING,  &normfgcolor }	,
+	{ "color12",         	STRING,  &selbgcolor },
+	{ "color14",     	STRING,  &selbordercolor },
 	{ "background",         STRING,  &selfgcolor },
 	{ "buttonbar",     	STRING,  &buttonbar },
 	{ "buttoncmd",		STRING,  &bcmd },
 	{ "borderpx",          	INTEGER, &borderpx },
+	{ "font",		STRING,	 &font},
+	{ "dmenufont",		STRING,	 &dmenufont},
 	{ "terminal",		STRING,	 &terminal},
 	{ "snap",          	INTEGER, &snap },
 	{ "showbar",          	INTEGER, &showbar },

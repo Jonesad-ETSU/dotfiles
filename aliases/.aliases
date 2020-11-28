@@ -22,5 +22,6 @@ alias svim='sudo vim'
 alias please='sudo'
 alias ranger='ranger --choosedir=$HOME/.rangerdir;cd $(cat $HOME/.rangerdir)'
 alias xz=". $HOME/.zprofile"
+alias bat="echo Percentage: $(cat /sys/class/power_supply/BAT0/capacity);echo Status: $(cat /sys/class/power_supply/BAT0/status)"
 alias xs="sudo $HOME/.scripts/fuzzypkg/fuzzypkg"
 alias upkg="sudo xbps-query -m > ~/dotfiles/pkglist"

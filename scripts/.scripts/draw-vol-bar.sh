@@ -1,12 +1,12 @@
 #!/bin/bash
-#Draws volume bar eg: <vol> #########-----
-volString=" ["
+#Draws Pound Bar eg: <vol> #########-----
+String=" {"
 for (( i=1; i<=$1; i++ ))
 do
-	volString="${volString}$3"
+	String="${String}$3"
 done
 for (( i=1; i<= ($2-$1); i++))
 do
-	volString="${volString}--"
+	String="${String}--"
 done
-echo "$volString]"
+echo "$String}"

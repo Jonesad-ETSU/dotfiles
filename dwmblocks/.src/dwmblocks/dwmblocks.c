@@ -68,7 +68,7 @@ void getcmd(const Block *block, char *output)
   char *cmd = block->command;
   FILE *cmdf;
   if ( *button ) {
-    setenv ( "BUTTOM", button, 1 );
+    setenv ( "BUTTON", button, 1 );
     cmdf = popen(cmd,"r");
     *button = '\0';
     unsetenv("BUTTON");

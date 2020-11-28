@@ -67,6 +67,6 @@ if [ "$(id -u)" -eq 0 ]; then
   fi
 else
   echo -e "Run fuzzypkg as root to add or remove packages"
-  [ -n "${UNINSTALL[*]}" ] && echo "${PRIV}${UNINSTALL_CMD}"
-  [ -n "${INSTALL[*]}" ] && echo "${PRIV}${INSTALL_CMD}"
+  [ -n "${UNINSTALL[*]}" ] && ${PRIV}${UNINSTALL_CMD}
+  [ -n "${INSTALL[*]}" ] && ${PRIV}${INSTALL_CMD}
 fi

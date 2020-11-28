@@ -57,6 +57,7 @@ dwm)
 	dwmblocks &
 	sxhkd &
 	dunst &
+	mpd &
 	picom &
 	steam -silent &
 	exec dbus-run-session dwm
