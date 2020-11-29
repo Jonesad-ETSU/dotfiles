@@ -74,7 +74,7 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       0,       0,           -1 },
 	{ "Steam",      NULL,	  NULL,	      1 << 1,	1,	-1},
-	{ "Arandr",	NULL,	NULL<		0,	1,	-1},
+	{ "Arandr",	NULL,	NULL,		0,	1,	-1},
 };
 
 /* layout(s) */
