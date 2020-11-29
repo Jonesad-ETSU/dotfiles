@@ -5,7 +5,7 @@ super + Home
   $HOME/.scripts/set-random-wallpaper.sh
 
 XF86Audio{Raise,Lower}Volume
-  $HOME/.scripts/{raise-,lower-}volume.sh
+  $HOME/.scripts/vol{up,down}.sh
 
 super + F1
   $HOME/.scripts/mute.sh
