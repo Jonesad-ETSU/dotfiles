@@ -2,15 +2,16 @@
 background=$(xgetres a.background)
 foreground=$(xgetres a.foreground)
 terminal=$(xgetres a.terminal)
+font=$(xgetres dmenu.font)
 [ $terminal = "urxvtc" ] && title="-title" || \
 [ $terminal = "alacritty" ] && title="--title" || \
 	title="-T"
-color14=$(xgetres a.color14)
+color5=$(xgetres a.color5)
 scriptFolder="$HOME/.scripts"
 wallpaperFolder="$HOME/Wallpaper"
 ZIP=37604
 _dmenu() {
-  dmenu -c -l 11 -fn "UbuntuMonoDerivativePowerline Nerd Font:size=20" -nb $background -nf $foreground -sb $color14 -sf $background -p | cut -d ' ' -f 2
+  dmenu -c -l 11 -fn "$font" -nb $background -nf $foreground -sb $color5 -sf $background -p | cut -d ' ' -f 2
 }
 
 _start() { 

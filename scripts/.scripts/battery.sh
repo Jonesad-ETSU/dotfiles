@@ -2,6 +2,9 @@
 # FONT: Ubuntu Nerd Font
 
 battery=""
+
+[ "$(cat /sys/class/power_supply/BAT0/status)" != "Discharging" ] && battery="${battery} "
+
 pr=$(cat /sys/class/power_supply/BAT0/capacity)
 whole=0
 empty=0
@@ -38,7 +41,3 @@ for (( i=0; i<empty; i++ )); do
 done
 
 echo $battery
-#echo "Battery Testing"
-#echo "whole: $whole"
-#echo "cracked: $cracked"
-#echo "empty: $empty"

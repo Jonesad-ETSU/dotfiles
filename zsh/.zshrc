@@ -195,5 +195,6 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
   		ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
     ;;
 esac
-
-pfetch
+eval "$(starship init zsh)"
+~/.scripts/toys/$(/usr/bin/ls ~/.scripts/toys | shuf -n 1)
+#pfetch

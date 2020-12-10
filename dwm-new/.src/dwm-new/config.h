@@ -1,4 +1,6 @@
 /* See LICENSE file for copyright and license details. */
+#define baralpha 0xEA
+#define borderalpha OPAQUE
 
 /* appearance */
 static unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -19,6 +21,20 @@ static char normbordercolor[]       = "#444444";
 static char normfgcolor[]       = "#bbbbbb";
 static char statusfgcolor[]       = "#bbbbbb";
 static char statusbgcolor[]       = "#444444";
+static char batbgcolor[]       = "#444444";
+static char batfgcolor[]       = "#bbbbbb";
+static char memfgcolor[]       = "#bbbbbb";
+static char membgcolor[]       = "#444444";
+static char timefgcolor[]       = "#bbbbbb";
+static char timebgcolor[]       = "#444444";
+static char idbgcolor[]       = "#444444";
+static char idfgcolor[]       = "#bbbbbb";
+static char datebgcolor[]       = "#444444";
+static char datefgcolor[]       = "#bbbbbb";
+static char weatherbgcolor[]       = "#444444";
+static char weatherfgcolor[]       = "#bbbbbb";
+static char tempbgcolor[]       = "#444444";
+static char tempfgcolor[]       = "#bbbbbb";
 static char tagsselfgcolor[]       = "#bbbbbb";
 static char tagsselbgcolor[]       = "#444444";
 static char tagsnormfgcolor[]       = "#bbbbbb";
@@ -30,8 +46,6 @@ static char infonormbgcolor[]       = "#444444";
 static char selfgcolor[]       = "#eeeeee";
 static char selbordercolor[]        = "#005577";
 static char selbgcolor[]        = "#005577";
-static const unsigned int baralpha = 0xEA;
-static const unsigned int borderalpha = OPAQUE;
 static char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor},
@@ -41,6 +55,13 @@ static char *colors[][3]      = {
     	[SchemeTagsNorm]  = { tagsnormfgcolor, tagsnormbgcolor,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
     	[SchemeInfoSel]  = { infoselfgcolor, infoselbgcolor,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
     	[SchemeInfoNorm]  = { infonormfgcolor, infonormbgcolor,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
+	[SchemeBat] = { batfgcolor, batbgcolor, "#000000" }, 
+	[SchemeMem] = { memfgcolor, membgcolor, "#000000" },
+	[SchemeTime] = { timefgcolor, timebgcolor, "#000000" }, 
+	[SchemeDate] = { datefgcolor, datebgcolor, "#000000" },
+	[SchemeID] = { idfgcolor, idbgcolor, "#000000"  },
+	[SchemeWeather] = { weatherfgcolor, weatherbgcolor, "#000000"  },
+	[SchemeTemp] = { tempfgcolor, tempbgcolor, "#000000" },	
 };
 static unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -51,6 +72,14 @@ static unsigned int alphas[][3]      = {
 	[SchemeTagsNorm]  = { OPAQUE, baralpha, borderalpha },
 	[SchemeInfoSel]  = { OPAQUE, baralpha, borderalpha },
 	[SchemeInfoNorm]  = { OPAQUE, baralpha, borderalpha },
+	[SchemeBat]  = { OPAQUE, baralpha, borderalpha },
+	[SchemeMem]  = { OPAQUE, baralpha, borderalpha },
+	[SchemeTime]  = { OPAQUE, baralpha, borderalpha },
+	[SchemeDate]  = { OPAQUE, baralpha, borderalpha },
+	[SchemeID]  = { OPAQUE, baralpha, borderalpha },
+	[SchemeWeather]  = { OPAQUE, baralpha, borderalpha },
+	[SchemeTemp]  = { OPAQUE, baralpha, borderalpha },
+
 };
 
 /* tagging */
@@ -87,17 +116,17 @@ static int resizehints = 1;    /* 1 means respect size hints in tiled resizals *
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
+	{ "[T]",      tile },    /* first entry is default */
 	{ "[M]",      monocle },
 	//{ "[@]",      spiral },
-	{ "[\\]",     dwindle },
-	{ "H[]",      deck },
+	//{ "[\\]",     dwindle },
+	//{ "H[]",      deck },
 	{ "TTT",      bstack },
 	{ "===",      bstackhoriz },
-	{ "HHH",      grid },
+	//{ "HHH",      grid },
 	//{ "###",      nrowgrid },
 	{ "---",      horizgrid },
-	{ ":::",      gaplessgrid },
+	//{ ":::",      gaplessgrid },
 	{ "|M|",      centeredmaster },
 	{ ">M>",      centeredfloatingmaster },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
@@ -140,6 +169,20 @@ ResourcePref resources[] = {
 		{ "tagsnormbgcolor",         STRING,  &tagsnormbgcolor },
 		{ "infoselfgcolor",         STRING,  &infoselfgcolor },
 		{ "infoselbgcolor",         STRING,  &infoselbgcolor },
+		{ "batfgcolor",		STRING,		&batfgcolor },
+		{ "batbgcolor",		STRING,		&batbgcolor },
+		{ "memfgcolor",		STRING,		&memfgcolor },
+		{ "membgcolor",		STRING,		&membgcolor },
+		{ "timefgcolor",		STRING,		&timefgcolor },
+		{ "timebgcolor",		STRING,		&timebgcolor },
+		{ "idfgcolor",		STRING,		&idfgcolor },
+		{ "idbgcolor",		STRING,		&idbgcolor },
+		{ "datefgcolor",		STRING,		&datefgcolor },
+		{ "datebgcolor",		STRING,		&datebgcolor },
+		{ "weatherfgcolor",		STRING,		&weatherfgcolor },
+		{ "weatherbgcolor",		STRING,		&weatherbgcolor },
+		{ "tempfgcolor",		STRING,		&tempfgcolor },
+		{ "tempbgcolor",		STRING,		&tempbgcolor },
 		{ "infonormfgcolor",         STRING,  &infonormfgcolor },
 		{ "infonormbgcolor",         STRING,  &infonormbgcolor },
 		{ "font",         		STRING,  &font},
@@ -158,6 +201,7 @@ ResourcePref resources[] = {
 		{ "tag9",		STRING,  &tag9},
 		//{ "terminal",		STRING,  &terminal},
 		{ "borderpx",          	INTEGER, &borderpx },
+		{ "smarthaps",		INTEGER, &smartgaps },
 		{ "snap",          	INTEGER, &snap },
 		{ "showbar",          	INTEGER, &showbar },
 		{ "user_bh",		INTEGER, &user_bh},
