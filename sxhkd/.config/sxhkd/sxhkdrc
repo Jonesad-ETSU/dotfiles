@@ -10,6 +10,9 @@ XF86Audio{Raise,Lower}Volume
 super + F1
   $HOME/.scripts/mute.sh
 
+super + {F7,F8}
+   brightnessctl s {4%-,+4%}
+
 super + e
   urxvtc -title Files -e ranger
 

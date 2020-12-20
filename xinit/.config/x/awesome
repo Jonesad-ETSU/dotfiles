@@ -56,6 +56,6 @@ dwmblocks &
 sxhkd &
 dunst &
 mpd &
-picom &
+picom --experimental-backend &
 steam -silent &
 exec dbus-run-session awesome

@@ -17,13 +17,12 @@ export PATH="$HOME/.cargo/bin:$HOME/.src/Discord:$PATH"
 #   *) ;;
 #esac
 
-case $( echo "awesome\ndwm\nfvwm\ngnome\nsowm\nxfce" | fzf ) in
+case $( echo "awesome\ndwm\nfvwm\ngnome\nxfce" | fzf ) in
   'dwm') export WM=dwm && startx $HOME/.config/x/dwm ;;
   'fvwm') export WM=fvwm && startx $HOME/.config/x/fvwm ;;
   'gnome') export WM=gnome && startx $HOME/.config/x/gnome ;;
   'xfce') export WM=xfwm && startx $HOME/.config/x/xfce ;;
   'awesome') export WM=awesome && startx $HOME/.config/x/awesome ;;
-  'sowm') export WM=sowm && startx $HOME/.config/x/sowm ;;
    *) ;;
 esac 	
 
