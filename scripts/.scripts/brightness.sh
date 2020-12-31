@@ -1,2 +1,2 @@
 #!/bin/sh
-echo " $(( $(brightnessctl g)*100 / 24000 ))%"
+echo -n " $(( $(brightnessctl g)*100 / 24000 ))%"

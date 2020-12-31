@@ -89,25 +89,25 @@ reader() {
   /* Parses message and assigns value to correct string */
     if ( strncmp ( msg->text , "mem", 3 ) == 0 ) {
       memcpy ( memorystr, msg->text+3, strlen ( msg->text ) - 3 );
-      memorystr[ strlen (msg->text) ] = '\0';
+      //memorystr[ strlen (msg->text) ] = '\0';
     } else if ( strncmp ( msg->text, "time", 4 ) == 0) {
       memcpy ( timestr, msg->text+4, strlen ( msg->text ) - 4 );
-      timestr[ strlen (msg->text) ] = '\0';
+      //timestr[ strlen (msg->text) ] = '\0';
     } else if ( strncmp ( msg->text, "tags", 4 ) == 0 ) {
       memcpy ( tagstr, msg->text+4, strlen ( msg->text ) - 4 );
-      tagstr[ strlen (msg->text) ] = '\0';
+      //tagstr[ strlen (msg->text) ] = '\0';
     } else if ( strncmp ( msg->text, "home", 4 ) == 0 ) {
       memcpy ( homestr, msg->text+4, strlen ( msg->text ) - 4 );
-      homestr[ strlen (msg->text) ] = '\0';
+      //homestr[ strlen (msg->text) ] = '\0';
     } else if ( strncmp ( msg->text, "bat", 3 ) == 0 ) {
       memcpy ( batterystr, msg->text+3, strlen ( msg->text ) - 3 );
-      batterystr[ strlen (msg->text) ] = '\0';
+      //batterystr[ strlen (msg->text) ] = '\0';
     } else if ( strncmp ( msg->text, "bright", 6 ) == 0 ) {
       memcpy ( brightstr, msg->text+6, strlen ( msg->text ) - 6 );
-      brightstr[ strlen (msg->text) ] = '\0';
+      //brightstr[ strlen (msg->text) ] = '\0';
     } else if ( strncmp ( msg->text, "user", 4 ) == 0 ) {
       memcpy ( userstr, msg->text+4, strlen ( msg->text ) - 4 );
-      userstr[ strlen (msg->text) ] = '\0';
+      //userstr[ strlen (msg->text) ] = '\0';
     }
 
     printf ("\%{c}%s \%{r}%s"DELIM"%s"DELIM"%s"DELIM"%s"DELIM"%s\%{l}%s\n", batterystr, homestr, memorystr, brightstr, userstr, timestr, tagstr);
@@ -177,7 +177,7 @@ capture(char* cmd, char* cmdout) {
   }
 
  strcpy (cmdout, comout);
- cmdout [ strlen ( cmdout ) - 1 ] = 0x00;
+ cmdout [ strlen ( cmdout ) ] = 0x00;
  free   (comout);
  pclose (fd);
 }

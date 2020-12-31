@@ -37,4 +37,4 @@ for (( i=0; i<empty; i++ )); do
     battery="${battery} "
 done
 
-echo $battery
+echo -n $battery

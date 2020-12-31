@@ -25,6 +25,6 @@ draw () {
     [ $(( CURRENT_TAG + 1 )) -eq $i ] && add $(get $i) 1 \
                                   || add $(get $i) 0
   done
-  echo $BAR_STR
+  echo -n $BAR_STR
 }
 draw

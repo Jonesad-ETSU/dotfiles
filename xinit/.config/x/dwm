@@ -52,7 +52,7 @@ $SCRIPTS_FOLDER/alacritty-w-config.py $HOME/.config/alacritty/alacritty.yaml
 $HOME/.fehbg &
 xbanish &
 tail -f /tmp/xobpipe | xob -m 80 &
-$SCRIPTS_FOLDER/lemon/lemonbartop > $HOME/.lemontoplog &
+$SCRIPTS_FOLDER/lemon/lemonbartop &
 sxhkd &
 dunst &
 mpd &

@@ -1,2 +1,2 @@
 #!/bin/sh
-echo "愈 $(date '+%R')"
+echo -n "愈 $(date '+%R')"
