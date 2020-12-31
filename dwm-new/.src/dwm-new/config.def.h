@@ -203,7 +203,7 @@ ResourcePref resources[] = {
 		{ "tag9",		STRING,  &tag9},
 		//{ "terminal",		STRING,  &terminal},
 		{ "borderpx",          	INTEGER, &borderpx },
-		{ "smarthaps",		INTEGER, &smartgaps },
+		{ "smartgaps",		INTEGER, &smartgaps },
 		{ "snap",          	INTEGER, &snap },
 		{ "showbar",          	INTEGER, &showbar },
 		{ "user_bh",		INTEGER, &user_bh},

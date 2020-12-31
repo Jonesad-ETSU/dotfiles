@@ -1,7 +1,8 @@
 #define HOME "/home/jonesad"
-#define SCRIPTS HOME"/.scripts"
+#define LEMON HOME"/.scripts/lemon"
 #define FIFO HOME"/.lemonbar_top.fifo"
 #define BUFFER_SIZE 150
+#define DELIM "  "
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,7 +18,9 @@ char* home      ();
 char* user      ();
 char* clock     ();
 char* bat       ();
+char* tags      ();
 char* vol       ();
+char* power     ();
 int   capture   ( char*, char* );
 void  format    ( char*, char*, char* );
 void  module    ( char*, char*, char*, char* );
@@ -31,17 +34,19 @@ int
 main() { 
 
   message* receipt = malloc(sizeof(message));
-  char /**receipt = malloc(BUFFER_SIZE),*/
-       *memorystr = malloc(BUFFER_SIZE),
-       *batterystr = malloc(BUFFER_SIZE),
-       *homestr = malloc(BUFFER_SIZE),
-       *userstr = malloc(BUFFER_SIZE),
-       *clockstr = malloc(BUFFER_SIZE),
-       *brightstr = malloc(BUFFER_SIZE);
+  char *memorystr   = malloc(BUFFER_SIZE),
+       *batterystr  = malloc(BUFFER_SIZE),
+       *homestr     = malloc(BUFFER_SIZE),
+       *userstr     = malloc(BUFFER_SIZE),
+       *powerstr     = malloc(BUFFER_SIZE),
+       *clockstr    = malloc(BUFFER_SIZE),
+       *tagstr      = malloc(BUFFER_SIZE),
+       *brightstr   = malloc(BUFFER_SIZE);
 
   int fd;
   int dummypid,
       mempid,
+      tagpid,
       batpid,
       homepid,
       userpid,
@@ -52,15 +57,18 @@ main() {
   if ( access ( FIFO, F_OK  ) == 0 )
     remove ( FIFO );
   mkfifo ( FIFO, 0666 );
+  //fd = open( FIFO, O_CREAT|O_WRONLY);
+  //strcpy (receipt->text,power());
+  //write (fd, receipt, sizeof (message));
+  //close(fd);
 
   dummypid = fork();
   if ( dummypid == 0 ) {
     while (1) { 
-      fd = open( FIFO, O_WRONLY );
-      //receipt->text = mem();
+    fd = open( FIFO, O_CREAT|O_WRONLY );
       strcpy ( receipt->text, mem());
       write ( fd, receipt, sizeof ( message) );
-      sleep (1);
+      sleep (2);
     }
   } else if ( dummypid > 0 ) {
     mempid = dummypid;
@@ -69,11 +77,10 @@ main() {
   dummypid = fork();
   if ( dummypid == 0) {
     while (1) {
-      fd = open( FIFO, O_WRONLY );
-      //receipt->text = bat();
+    fd = open( FIFO, O_CREAT|O_WRONLY );
       strcpy ( receipt->text, bat());
       write ( fd, receipt, sizeof ( message ));
-      sleep (1);
+      sleep (60);
     }
   } else if ( dummypid > 0) {
     batpid = dummypid;
@@ -81,12 +88,22 @@ main() {
   
   dummypid = fork();
   if ( dummypid == 0) {
+    while (1) {
+    fd = open( FIFO, O_CREAT|O_WRONLY );
+      strcpy ( receipt->text, tags());
+      write ( fd, receipt, sizeof ( message ));
+    }
+  } else if ( dummypid > 0) {
+    tagpid = dummypid;
+  }
+  
+  dummypid = fork();
+  if ( dummypid == 0) {
     while (1) { 
-      fd = open( FIFO, O_WRONLY );
-      //receipt->text = home();
+    fd = open( FIFO, O_CREAT|O_WRONLY );
       strcpy (receipt->text, home());
       write ( fd, receipt, sizeof ( message ));
-      sleep (1);
+      sleep (360);
     }
   } else if ( dummypid > 0) {
     homepid = dummypid;
@@ -95,11 +112,10 @@ main() {
   dummypid = fork();
   if ( dummypid == 0) {
     while (1) { 
-      fd = open( FIFO, O_WRONLY );
-      //receipt->text = brightness();
+    fd = open( FIFO, O_CREAT|O_WRONLY );
       strcpy (receipt->text, brightness());
       write ( fd, receipt, sizeof ( message));
-      sleep (1);
+      sleep (30);
     }
   } else if ( dummypid > 0) {
     brightpid = dummypid;
@@ -108,11 +124,10 @@ main() {
   dummypid = fork();
   if ( dummypid == 0) {
     while (1) {
-      fd = open( FIFO, O_WRONLY );
-      //receipt->text = user();
+    fd = open( FIFO, O_CREAT|O_WRONLY );
       strcpy (receipt->text, user());
       write ( fd, receipt, sizeof ( message ));
-      sleep (1);
+      sleep (10000);
     }
   } else if ( dummypid > 0) {
     userpid = dummypid;
@@ -122,10 +137,9 @@ main() {
   if ( dummypid == 0) {
     while (1) { 
       fd = open( FIFO, O_CREAT|O_WRONLY );
-      //receipt->text = clock();
       strcpy (receipt->text,clock());
       write ( fd, receipt, sizeof ( message) );
-      sleep (1);
+      sleep (30);
     }
   } else if ( dummypid > 0) {
     clockpid = dummypid;
@@ -137,11 +151,15 @@ main() {
   fd = open ( FIFO, O_RDONLY );
   
   while ( ( bytesread = read (fd, msg, sizeof (message))) > 0) {
-    /* Parses message and assigns value to correct string */
+  /* Parses message and assigns value to correct string */
     if ( strncmp ( msg->text , "mem", 3 ) == 0 ) {
        memcpy ( memorystr, msg->text+3, strlen ( msg->text ) - 3 );
+    } else if ( strncmp ( msg->text , "pow", 3 ) == 0 ) {
+       memcpy ( powerstr, msg->text+3, strlen ( msg->text ) - 3 );
     } else if ( strncmp ( msg->text, "clock", 5 ) == 0) {
        memcpy ( clockstr, msg->text+5, strlen ( msg->text ) - 5 );
+    } else if ( strncmp ( msg->text, "tags", 4 ) == 0 ) {
+       memcpy ( tagstr, msg->text+4, strlen ( msg->text ) - 4 );
     } else if ( strncmp ( msg->text, "home", 4 ) == 0 ) {
        memcpy ( homestr, msg->text+4, strlen ( msg->text ) - 4 );
     } else if ( strncmp ( msg->text, "bat", 3 ) == 0 ) {
@@ -151,12 +169,12 @@ main() {
     } else if ( strncmp ( msg->text, "user", 4 ) == 0 ) {
        memcpy ( userstr, msg->text+4, strlen ( msg->text ) - 4 );
     }
-    printf ("\%{c}\%{T2}%s %s \%{T1}\%{r}%s %s %s %s\n", clockstr, batterystr, homestr, memorystr, brightstr, userstr);
+    printf ("\%{c}%s \%{r}%s"DELIM"%s"DELIM"%s"DELIM"%s"DELIM"%s"DELIM"%s\%{l}%s\n", batterystr, homestr, memorystr, brightstr, userstr, clockstr, powerstr, tagstr);
     fflush(stdout);
   }
-  
   close (fd);
 
+  kill (tagpid,SIGTERM);
   kill (mempid,SIGTERM);
   kill (clockpid,SIGTERM);
   kill (homepid,SIGTERM);
@@ -169,49 +187,63 @@ main() {
 char*
 vol() {
   char *out;
-  module (SCRIPTS "/volbar.sh", "%{A:pavucontrol &:} ", " %{A}", out);
+  module (LEMON "/lemon-volbar.sh", "vol", "", out);
+  return out;
+}
+
+char*
+power() {
+  char *out;
+  module (LEMON "/lemon-power.sh", "pow", "", out);
+  return out;
+}
+
+char*
+tags() {
+  char *out;
+  module (LEMON "/lemon-ewmh.sh", "tags", "", out);
   return out;
 }
 
 char*
 mem() {
   char *out;
-  module (SCRIPTS "/mem.sh", "mem%{A:$TERM -e gotop &:} ", " %{A}", out);
+  module (LEMON "/lemon-mem.sh", "mem", "", out);
   return out;
 }
 
 char*
 home() {
   char *out;
-  module (SCRIPTS "/home.sh", "home%{A:$TERM -e ncdu &:} "," %{A}", out);
+  module (LEMON "/lemon-home.sh", "home", "", out);
   return out;
 }
 
 char*
 user() {
   char *out;
-  module (SCRIPTS "/id.sh", "user%{A:$TERM &:} "," %{A}", out);
+  module (LEMON "/lemon-id.sh", "user", "", out);
   return out;
 }
 
 char*
 clock() {
   char *out;
-  module (SCRIPTS "/time.sh", "clock%{A:yad --calendar --mouse  &:} "," %{A}", out);
+  module (LEMON "/lemon-time.sh", "clock", "", out);
   return out;
 }
 
 char*
 bat() {
   char *out;
-  module (SCRIPTS "/battery.sh", "bat%{A:dunstify Battery $(cat /sys/class/power_supply/BAT0/capacity) &:} "," %{A}", out);
+  module (LEMON "/lemon-battery.sh", "bat", "", out);
   return out;
 }
 
 char*
 brightness() {
   char *out;
-  module (SCRIPTS "/brightness.sh", "bright%{A:"SCRIPTS"/yad-bright.sh:} "," %{A}", out);
+  module (LEMON "/lemon-brightness.sh", "bright", "", out);
   return out;
 }
 

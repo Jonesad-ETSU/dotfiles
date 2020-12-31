@@ -1,2 +1,2 @@
 #!/bin/sh
-echo " $(date '+%R')"
+echo "愈 $(date '+%R')"

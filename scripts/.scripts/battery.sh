@@ -2,9 +2,6 @@
 # FONT: Ubuntu Nerd Font
 
 battery=""
-
-[ "$(cat /sys/class/power_supply/BAT0/status)" != "Discharging" ] && battery="${battery} "
-
 pr=$(cat /sys/class/power_supply/BAT0/capacity)
 whole=0
 empty=0
@@ -28,7 +25,7 @@ do
 	fi
 done	
 
-let "empty=$MAX_HEARTS-counter"
+let "empty=5-counter"
 
 for (( i=0; i<whole; i++ )); do
     battery="${battery} "
