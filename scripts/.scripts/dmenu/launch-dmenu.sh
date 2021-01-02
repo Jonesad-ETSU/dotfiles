@@ -6,13 +6,16 @@ font=$(xgetres dmenu.font)
 color5=$(xgetres a.color5)
 
 wallpaperFolder="$HOME/Wallpaper"
-_dmenu() {
-  dmenu -c -l 11 -fn "$font" -nb $background -nf $foreground -sb $color5 -sf $background -p | cut -d ' ' -f 2
+_menu() {
+  [ $DMENU -eq 1  ] && \
+    dmenu -c -l 11 -fn "$font" -nb $background -nf $foreground -sb $color5 -sf $background -p | cut -d ' ' -f 2 \
+                    || \
+    rofi -i -lines 11 -matching fuzzy -dmenu -p ' ' -font "Ubuntu Nerd Font 22" | cut -d ' ' -f 2 
 }
 
 _start() { 
-  [ -d $1 ] && (_loop $(ls -1 $1 | _dmenu | cut -d ' ' -f 2 ) $2 ) \
-    || (_loop $(cat $SCRIPTS_FOLDER/$1 | _dmenu | cut -d ' ' -f 2 ) $2 )
+  [ -d $1 ] && (_loop $(ls -1 $1 | _menu | cut -d ' ' -f 2 ) $2 ) \
+    || (_loop $(cat $SCRIPTS_FOLDER/$1 | _menu | cut -d ' ' -f 2 ) $2 )
 }
 
 _loop () {

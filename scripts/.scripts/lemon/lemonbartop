@@ -5,7 +5,14 @@ bar () {
   lemonbar -d -g $dimensions -u 2 -f "Ubuntu Nerd Font:size=16" \
    -f "Ubuntu Nerd Font:size=20" -f "Ubuntu Nerd Font:size=18" \
    -F "$(xgetres a.foreground)" -B "$(xgetres a.background)" \
-   -U $(xgetres a.color1)
+   -U $(xgetres a.foreground) -a 20
 }
 
-$SCRIPTS_FOLDER/lemon/lemontopc | tee $HOME/.lemonlog | bar | bash ; exit
+#WIP - trying to prevent _NET_DESKTOP_NAMES:notfound bar
+xprop -root _NET_DESKTOP_NAMES > /dev/null 2>/dev/null
+while [ $? -eq 1 ]; do
+  sleep 1
+  xprop -root > /dev/null 2>/dev/null
+done
+
+$SCRIPTS_FOLDER/lemon/lemontopc | tee $HOME/.lemlog | bar | bash ; exit

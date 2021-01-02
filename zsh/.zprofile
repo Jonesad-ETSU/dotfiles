@@ -4,10 +4,11 @@ export TERMINAL="alacritty"
 export XDG_SESSION_TYPE=x11
 export FILE_MANAGER="$TERMINAL -e ranger"
 export SCRIPTS_FOLDER="$HOME/.scripts"
+export DMENU=0
 export ZIP=37604
 export MAX_HEARTS=5
 export QT_QPA_PLATFORMTHEME=gtk2
-export PATH="$HOME/.cargo/bin:$HOME/.src/Discord:$SCRIPTS_FOLDER:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.src/Discord:$SCRIPTS_FOLDER:$SCRIPTS_FOLDER/lemon:$SCRIPTS_FOLDER/dmenu:$PATH"
 
 #option=$(dialog --clear --backtitle "Startx" --title "Desktop Enviornment" --stdout --menu "Choose one of the following: " 15 40 4 'd' 'DWM' 'f' 'FVWM' 'g' 'GNOME' 'x' 'XFCE') 
 #case $option in

@@ -20,4 +20,4 @@ i3lock -e -i $USER_DIR/.lockscreen.png \
   --ringcolor=$(/usr/local/bin/xgetres a.color1) \
   --linecolor="#00000000" \
   --wrongtext="Incorrect Password" \
-  && sudo zzz
+  && [ $1 -eq 1 ] && sudo zzz

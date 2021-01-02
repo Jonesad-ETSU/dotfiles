@@ -10,9 +10,8 @@ static unsigned int gappoh    = 10;       /* horiz outer gap between windows and
 static unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
+static int user_bh            = 32;
 static int topbar             = 1;        /* 0 means bottom bar */
-static int usealtbar          = 0;
-static char *altbarcmd        = "$SCRIPTS_FOLDER/lemon/lemonbartop";
 static char *fonts[]          = { "monospace:size=10" };
 static char dmenufont[]       = "monospace:size=10";
 static char normbgcolor[]     = "#222222";
@@ -29,7 +28,16 @@ static char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static char tag1[] = "";
+static char tag2[] = "";
+static char tag3[] = "";
+static char tag4[] = "";
+static char tag5[] = "";
+static char tag6[] = "";
+static char tag7[] = "";
+static char tag8[] = "";
+static char tag9[] = "";
+static char *tags[] = { tag1,tag2,tag3,tag4,tag5,tag6,tag7,tag8,tag9 };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -37,10 +45,14 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "Alacritty",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	{ "Gimp",       NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "Firefox",    NULL,     NULL,           0,         0,          0,           1,        -1 },
+  { "Steam",      NULL,     NULL,           1 << 1,    1,         0,            0,        -1 },
+  { "Alacritty",  NULL,     NULL,           0,         0,          1,           0,        -1 },
+  { "Arandr",     NULL,     NULL,           0,         1,         0,            0,        -1 },
+  { "Yad",        NULL,     NULL,           0,         1,         0,            1,        -1 },
+  { "Zenity",     NULL,     NULL,           0,         1,         0,            1,        -1 },
+	{ NULL,         NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
@@ -85,12 +97,21 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 
 /*
  * Xresources preferences to load at startup
  */
 ResourcePref resources[] = {
+    { "tag1",               STRING,  &tag1},
+    { "tag2",               STRING,  &tag2},
+    { "tag3",               STRING,  &tag3},
+    { "tag4",               STRING,  &tag4},
+    { "tag5",               STRING,  &tag5},
+    { "tag6",               STRING,  &tag6},
+    { "tag7",               STRING,  &tag7},
+    { "tag8",               STRING,  &tag8},
+    { "tag9",               STRING,  &tag9},
 		{ "normbgcolor",        STRING,  &normbgcolor },
 		{ "normbordercolor",    STRING,  &normbordercolor },
 		{ "normfgcolor",        STRING,  &normfgcolor },
@@ -98,12 +119,14 @@ ResourcePref resources[] = {
 		{ "selbordercolor",     STRING,  &selbordercolor },
 		{ "selfgcolor",         STRING,  &selfgcolor },
 		{ "borderpx",          	INTEGER, &borderpx },
-		{ "snap",          		INTEGER, &snap },
+    { "user_bh",            INTEGER, &user_bh },
+    { "swallowfloating",    INTEGER, &swallowfloating },
+		{ "snap",          		  INTEGER, &snap },
 		{ "showbar",          	INTEGER, &showbar },
-		{ "topbar",          	INTEGER, &topbar },
+		{ "topbar",          	  INTEGER, &topbar },
 		{ "nmaster",          	INTEGER, &nmaster },
 		{ "resizehints",       	INTEGER, &resizehints },
-		{ "mfact",      	 	FLOAT,   &mfact },
+		{ "mfact",      	 	    FLOAT,   &mfact },
 };
 
 static Key keys[] = {
@@ -112,6 +135,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,      shiftview,      {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_j,      shiftview,      {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
@@ -140,10 +165,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
 	{ MODKEY|ShiftMask,	        	  XK_space,  cyclelayout,    {.i = -1 } },
-	{ MODKEY,                       XK_space, cyclelayout,    {.i = +1 } },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_f,  togglefloating, {0} },
-	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
+	{ MODKEY,                       XK_space,  cyclelayout,    {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_f,      togglefloating, {0} },
+	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
@@ -179,3 +203,74 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
 
+void
+setlayoutex(const Arg *arg)
+{
+	setlayout(&((Arg) { .v = &layouts[arg->i] }));
+}
+
+void
+viewex(const Arg *arg)
+{
+	view(&((Arg) { .ui = 1 << arg->ui }));
+}
+
+void
+viewall(const Arg *arg)
+{
+	view(&((Arg){.ui = ~0}));
+}
+
+void
+toggleviewex(const Arg *arg)
+{
+	toggleview(&((Arg) { .ui = 1 << arg->ui }));
+}
+
+void
+tagex(const Arg *arg)
+{
+	tag(&((Arg) { .ui = 1 << arg->ui }));
+}
+
+void
+toggletagex(const Arg *arg)
+{
+	toggletag(&((Arg) { .ui = 1 << arg->ui }));
+}
+
+void
+tagall(const Arg *arg)
+{
+	tag(&((Arg){.ui = ~0}));
+}
+
+/* signal definitions */
+/* signum must be greater than 0 */
+/* trigger signals using `xsetroot -name "fsignal:<signame> [<type> <value>]"` */
+static Signal signals[] = {
+	/* signum           function */
+	{ "focusstack",     focusstack },
+	{ "setmfact",       setmfact },
+	{ "shiftview",      shiftview },
+	{ "togglebar",      togglebar },
+	{ "incnmaster",     incnmaster },
+	{ "togglefloating", togglefloating },
+	{ "focusmon",       focusmon },
+	{ "tagmon",         tagmon },
+	{ "zoom",           zoom },
+	{ "view",           view },
+	{ "viewall",        viewall },
+	{ "viewex",         viewex },
+	{ "toggleview",     view },
+	{ "toggleviewex",   toggleviewex },
+	{ "tag",            tag },
+	{ "tagall",         tagall },
+	{ "tagex",          tagex },
+	{ "toggletag",      tag },
+	{ "toggletagex",    toggletagex },
+	{ "killclient",     killclient },
+	{ "quit",           quit },
+	{ "setlayout",      setlayout },
+	{ "setlayoutex",    setlayoutex },
+};

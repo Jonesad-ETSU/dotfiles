@@ -1,8 +1,18 @@
-#define HOME "/home/jonesad"
-#define LEMON HOME"/.scripts/lemon"
-#define FIFO HOME"/.lemonbar_top.fifo"
+/************************************
+Author:   Jonesad@etsu.edu
+Date l.m: 1/2/21
+Purpose:  Runs scripts asynchronously, printing output to a pipe and piping into lemonbar.
+*************************************/
+
+#define HOME        "/home/jonesad"
+#define LEMON       HOME"/.scripts/lemon"
+#define FIFO        HOME"/.lemonbar_top.fifo"
+#define NUM_MODS    7 
 #define BUFFER_SIZE 450
-#define DELIM "  "
+#define DELIM       "  "
+#define LEFT        -1
+#define CENTER      0
+#define RIGHT       1
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -14,117 +24,130 @@
 
 typedef struct message {
   char text[BUFFER_SIZE];
+  int order, align;
 } message;
 
 typedef struct module {
   char cmd[BUFFER_SIZE];
-  char id[10];
+  char align, order;
   char pre[BUFFER_SIZE];
   char post[BUFFER_SIZE];
   int timer;
-  int signum;
 } module;
 
-void  reader  (   );
-void  send    ( char*, int );
-void  exec    ( module );
-void  format  ( char*, char*, char*, char*, char* );
-int   capture ( char*, char* );
+void  reader      (   );
+void  send        ( char*, int, int, int );
+void  setup       ( module );
+void  exec        ( module, char*, int );
+void  format      ( char*, char*, char*, char* );
+int   capture     ( char*, char* );
 
+int LEFT_COUNTER = 0,
+    CENTER_COUNTER = 0,
+    RIGHT_COUNTER = 0;
+
+//Need to remove dependence on NUM_MODS.
+struct module modules[NUM_MODS] = {
+  /*  COMMAND                       ALIGN    ORDER  PRE     POST    TIMER   */
+  //{ "echo -n Hello, World!",      RIGHT,   6,     "%{A:firefox:}",     "%{A}",     460    },
+    { LEMON"/lemon-battery.sh",     CENTER,  1,     "",     "",     60    },
+    { LEMON"/lemon-time.sh",        RIGHT,   5,     "",     "",     30    },
+    { LEMON"/lemon-id.sh",          RIGHT,   4,     "",     "",     360   },
+    { LEMON"/lemon-brightness.sh",  RIGHT,   3,     "",     "",     30    },
+    { LEMON"/lemon-home.sh",        RIGHT,   2,     "",     "",     120   },
+    { LEMON"/lemon-mem.sh",         RIGHT,   1,     "",     "",     2     },
+    { LEMON"/lemon-ewmh.sh",        LEFT,    1,     "",     "",     0     },
+};
 
 int
 main() {
-  int modnum = 1;  
-  struct module battery = 
-    { LEMON"/lemon-battery.sh", "bat", "", "", 60, modnum++ };
-  struct module time = 
-    { LEMON"/lemon-time.sh", "time", "", "", 30, modnum++ };
-  struct module user = 
-    { LEMON"/lemon-id.sh", "user", "", "", 360, modnum++ };
-  struct module brightness = 
-    { LEMON"/lemon-brightness.sh", "bright", "", "", 30, modnum++};
-  struct module home = 
-    { LEMON"/lemon-home.sh", "home", "", "", 120, modnum++ };
-  struct module mem = 
-    { LEMON"/lemon-mem.sh", "mem", "", "", 2, modnum++ };
-  struct module tags = 
-    { LEMON"/lemon-ewmh.sh", "tags", "", "", 0, modnum++ };
-  struct module vol = 
-    { LEMON"/lemon-volbar.sh", "vol", "", "", 2, modnum };
-  
 
   /* Makes named pipe  */
   if ( access ( FIFO, F_OK  ) == 0 )
     remove ( FIFO );
   mkfifo ( FIFO, 0666 );
 
-  exec(battery);
-  exec(time);
-  exec(user);
-  exec(brightness);
-  exec(home);
-  exec(mem);
-  exec(tags);
-  //exec(vol);
+  /* Instantiates each module  */
+  int alignment = -2;
+  module* end = modules + sizeof ( modules ) / sizeof( modules [0] );
+  for ( module* ptr = modules; ptr < end; ptr++ ) {
+   
+    setup ( *ptr );
 
+    alignment = ptr->align; 
+    ( alignment == CENTER ) ? CENTER_COUNTER++ :
+      ( alignment == LEFT ) ? LEFT_COUNTER++ : RIGHT_COUNTER ++ ;
+  }
+  /* Reads order pipe and prints to screen  */
   reader();
 }
 
 void
 reader() {
+  message *msg        = malloc ( sizeof(message) );
+  char    *centerstr  = malloc ( sizeof(BUFFER_SIZE)*CENTER_COUNTER),
+          *leftstr    = malloc ( sizeof(BUFFER_SIZE)*LEFT_COUNTER),
+          *rightstr   = malloc ( sizeof(BUFFER_SIZE)*RIGHT_COUNTER);
 
-  message* msg        = malloc(sizeof(message));
-  char  *memorystr    = malloc(BUFFER_SIZE),
-        *batterystr   = malloc(BUFFER_SIZE),
-        *homestr      = malloc(BUFFER_SIZE),
-        *userstr      = malloc(BUFFER_SIZE),
-        *timestr      = malloc(BUFFER_SIZE),
-        *tagstr       = malloc(BUFFER_SIZE),
-        *brightstr    = malloc(BUFFER_SIZE);
+  char  *center [CENTER_COUNTER],  
+        *left   [BUFFER_SIZE],
+        *right  [RIGHT_COUNTER];
+
+  for ( int i = 0; i < CENTER_COUNTER; i++)
+    center[i] = malloc(BUFFER_SIZE*10);
+  for ( int i = 0; i < LEFT_COUNTER; i++)
+    left[i] = malloc(BUFFER_SIZE*10);
+  for ( int i = 0; i < RIGHT_COUNTER; i++)
+    right[i] = malloc(BUFFER_SIZE*10);
 
   int bytesread = -1 ,
-      fd        = open ( FIFO, O_RDONLY );
-
+      fd  = open ( FIFO, O_RDONLY );
+  
   while ( ( bytesread = read (fd, msg, sizeof (message))) > 0) {
-  /* Parses message and assigns value to correct string */
-    if ( strncmp ( msg->text , "mem", 3 ) == 0 ) {
-      memcpy ( memorystr, msg->text+3, strlen ( msg->text ) - 3 );
-      //memorystr[ strlen (msg->text) ] = '\0';
-    } else if ( strncmp ( msg->text, "time", 4 ) == 0) {
-      memcpy ( timestr, msg->text+4, strlen ( msg->text ) - 4 );
-      //timestr[ strlen (msg->text) ] = '\0';
-    } else if ( strncmp ( msg->text, "tags", 4 ) == 0 ) {
-      memcpy ( tagstr, msg->text+4, strlen ( msg->text ) - 4 );
-      //tagstr[ strlen (msg->text) ] = '\0';
-    } else if ( strncmp ( msg->text, "home", 4 ) == 0 ) {
-      memcpy ( homestr, msg->text+4, strlen ( msg->text ) - 4 );
-      //homestr[ strlen (msg->text) ] = '\0';
-    } else if ( strncmp ( msg->text, "bat", 3 ) == 0 ) {
-      memcpy ( batterystr, msg->text+3, strlen ( msg->text ) - 3 );
-      //batterystr[ strlen (msg->text) ] = '\0';
-    } else if ( strncmp ( msg->text, "bright", 6 ) == 0 ) {
-      memcpy ( brightstr, msg->text+6, strlen ( msg->text ) - 6 );
-      //brightstr[ strlen (msg->text) ] = '\0';
-    } else if ( strncmp ( msg->text, "user", 4 ) == 0 ) {
-      memcpy ( userstr, msg->text+4, strlen ( msg->text ) - 4 );
-      //userstr[ strlen (msg->text) ] = '\0';
+    /* Parse Alignment and Order */
+    if ( msg->align == LEFT ) {
+      strcpy ( left [ msg->order ], msg->text );  
+    } else if ( msg->align == CENTER ) {
+      strcpy ( center [ msg->order ], msg->text );
+    } else if (msg->align == RIGHT ) {
+      strcpy ( right [ msg->order ], msg->text ); 
     }
+    
+    /* Iterates through and prints bar (Building string may be faster- future testing needed)  */
+    printf ( "\%{l}" );
+    for ( int i = 0; i < LEFT_COUNTER - 1; i++ ) 
+      printf ( "%s" DELIM, left [ i ] );
+    printf ( "%s" DELIM, left [ LEFT_COUNTER - 1 ] );
+    
+    printf ( "\%{c}" );
+    for ( int i = 0; i < CENTER_COUNTER - 1; i++ )
+      printf ( "%s" DELIM, center [ i ] );
+    printf( "%s", center [ CENTER_COUNTER - 1] );
+    
+    printf ( "\%{r}" );
+    for ( int i = 0; i < RIGHT_COUNTER - 1; i++ ) 
+      printf ( "%s" DELIM, right [ i ] );
+    printf ( "%s", right [ RIGHT_COUNTER - 1 ] );
+    printf ( "\n" );
 
-    printf ("\%{c}%s \%{r}%s"DELIM"%s"DELIM"%s"DELIM"%s"DELIM"%s\%{l}%s\n", batterystr, homestr, memorystr, brightstr, userstr, timestr, tagstr);
-    fflush(stdout);
+    fflush ( stdout );
   }
 }
 
+
 void
-send ( char* msg, int out ) {
-  message* receipt = malloc(sizeof(message));
+send ( char* msg, int order, int align, int out ) {
+  message* receipt  = malloc(sizeof(message));
+  receipt->order    = order-1;
+  receipt->align    = align;
   strcpy  ( receipt->text, msg );
+
   write   ( out, receipt, sizeof(message));
   free    ( receipt);
 }
 
 void
-exec ( module m ) {
+setup ( module m ) {
 
   char tmp[BUFFER_SIZE];
   
@@ -137,19 +160,20 @@ exec ( module m ) {
   else if ( dummypid == 0 ) {
     int fd = open ( FIFO, O_WRONLY );
     do {
-      capture ( m.cmd, tmp );
-      format  ( tmp, m.id, m.pre, m.post, tmp );
-      send    ( tmp , fd);    
-      
-      if (m.timer == -1) {
-        break;
-      }
-
+      exec  ( m, tmp, fd ); 
+      if (m.timer == -1) { break; }  //DOES NOT WORK YET
       sleep   ( m.timer );
     } while (1);
   } else {
      
   }
+}
+
+void
+exec ( module m, char* tmp, int fd) {
+  capture ( m.cmd, tmp );
+  format  ( tmp, m.pre, m.post, tmp );
+  send    ( tmp, m.order, m.align, fd);    
 }
 
 int
@@ -183,10 +207,9 @@ capture(char* cmd, char* cmdout) {
 }
   
 void
-format(char* script, char* id, char* pre, char* post, char* out) {
-  char tmp[BUFFER_SIZE];
-  strcpy ( tmp, id );
-  strcat ( tmp, pre );
+format(char* script, char* pre, char* post, char* out) {
+  char tmp [ BUFFER_SIZE ];
+  strcpy ( tmp, pre );
   strcat ( tmp, script );
   strcat ( tmp, post );
   strcpy ( out, tmp );
