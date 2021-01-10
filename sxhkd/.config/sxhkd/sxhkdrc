@@ -13,11 +13,17 @@ super + F1
 super + {F7,F8}
    brightnessctl s {4%-,+4%}
 
+super + {1-9}
+  dwmc view {0-8} && pkill -46 lemontopc
+
 super + e
   urxvtc -title Files -e ranger
 
 super + Shift + escape
   killall xinit
+
+super + Tab
+  rofi -show window
 
 Print
   scrot "$(date +%c).png" -e 'mv "$f" ~/Pictures/Screenshots/ ; dunstify -t 1000 -i ~/.scripts/icons/camera.png "Screenshot Saved" '

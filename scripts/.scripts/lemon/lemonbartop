@@ -2,8 +2,8 @@
 
 dimensions="1920x32+0+0"
 bar () { 
-  lemonbar -d -g $dimensions -u 2 -f "Ubuntu Nerd Font:size=16" \
-   -f "Ubuntu Nerd Font:size=20" -f "Ubuntu Nerd Font:size=18" \
+  lemonbar -d -g $dimensions -u 2 -f "$(xgetres lemon.font1)" -o $(xgetres lemon.font1.offset) \
+   -f "$(xgetres lemon.font2)" -o $(xgetres lemon.font2.offset) -f "$(xgetres lemon.font3)" -o $(xgetres lemon.font3.offset) \
    -F "$(xgetres a.foreground)" -B "$(xgetres a.background)" \
    -U $(xgetres a.foreground) -a 20
 }

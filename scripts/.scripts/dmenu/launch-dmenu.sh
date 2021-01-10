@@ -30,6 +30,7 @@ _loop () {
       'Steam') exec steam & ;;
       'Lutris') exec lutris & ;;
       'Melee') _start dmenu/melee 6 & ;;
+      'Slay-The-Spire') exec prime-run ~/.steam/steam/steamapps/common/SlayTheSpire/SlayTheSpire & ;;
       'Minecraft') exec prime-run MultiMC & ;;
       'Cancel') _start dmenu/general & ;;
     esac ;;
@@ -57,21 +58,24 @@ _loop () {
   5) #Power
     case $1 in
       'Logout') killall xinit & ;;
+      'Lock') $SCRIPTS_FOLDER/locker.sh & ;;
+      'Hibernate') sudo ZZZ & ;;
+      'Sleep') sudo zzz & ;;
       'Shutdown') sudo halt & ;;
       'Kill-X') killall xinit &;;
       'Cancel') _start dmenu/general & ;;
     esac ;;
   6) #Melee
     case $1 in
-       'Netplay') exec prime-run ~/Downloads/Slippi_Online-x86_64.AppImage -e ~/Downloads/SSBM.iso -b & ;;
-       'Offline') exec prime-run dolphin-emu -e ~/Downloads/SSBM.iso -b & ;;
-       'Cancel') _start dmenu/general & ;;
+      'Netplay') exec prime-run ~/Downloads/Slippi_Online-x86_64.AppImage -e ~/Downloads/SSBM.iso -b & ;;
+      'Offline') exec prime-run dolphin-emu -e ~/Downloads/SSBM.iso -b & ;;
+      'Cancel') _start dmenu/general & ;;
     esac ;;
   7) #Music
   case $1 in
 	  'Player') exec $terminal -e ncmpcpp & ;;
 	  'Spotify') exec spotify & ;;
-       	  'Cancel') _start dmenu/general & ;;
+    'Cancel') _start dmenu/general & ;;
   esac ;;
   *)  #General
     case $1 in
@@ -83,7 +87,7 @@ _loop () {
       'Record') exec $terminal -e echo "working on it" && read & ;;
       'Discord') exec Discord & ;;
       'Files') exec $terminal -e ranger & ;;
-      'Mail') exec chromium "http://outlook.office365.com" & ;;
+      'Mail') exec firefox "http://outlook.office365.com" & ;;
       'Tools') _start dmenu/tools 3 & ;;
       'Settings') _start dmenu/settings 4 & ;;
       'Power') _start dmenu/shutdown-prompt 5 & ;;

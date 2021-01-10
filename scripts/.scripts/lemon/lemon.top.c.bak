@@ -1,6 +1,6 @@
 /************************************
 Author:   Jonesad@etsu.edu
-Date l.m: 1/9/21
+Date l.m: 1/2/21
 Purpose:  Runs scripts asynchronously, printing output to a pipe and piping into lemonbar.
 *************************************/
 
@@ -52,19 +52,18 @@ int   capture     ( char*, char* );
 int catchfd[2];
 int LEFT_COUNTER = 0,
     CENTER_COUNTER = 0,
-    RIGHT_COUNTER = 0,
-    MAIN_PID = -1;
+    RIGHT_COUNTER = 0;
 
 //Need to remove dependence on NUM_MODS.
 struct module modules[NUM_MODS] = {
   /*  COMMAND                       ALIGN    ORDER  PRE     POST    TIMER   */
-    { "echo -n  2>/dev/null",      RIGHT,   5,     "%{A:"LEMON"/yad-power.sh &:}",     "%{A}",     -1  },
-    { LEMON"/lemon-battery.sh",     CENTER,  1,     "",     "",     30    },
+    { "echo -n  2>/dev/null",      RIGHT,   5,     "%{A:"LEMON"/yad-power.sh:}",     "%{A}",     -1  },
+    { LEMON"/lemon-battery.sh",     CENTER,  1,     "",     "",     60    },
     { LEMON"/lemon-time.sh",        RIGHT,   4,     "",     "",     30    },
-    { LEMON"/lemon-brightness.sh",  RIGHT,   3,     "",     "",     10    },
+    { LEMON"/lemon-brightness.sh",  RIGHT,   3,     "",     "",     30    },
     { LEMON"/lemon-home.sh",        RIGHT,   2,     "",     "",     120   },
     { LEMON"/lemon-mem.sh",         RIGHT,   1,     "",     "",     2     },
-    { LEMON"/lemon-ewmh.sh",        LEFT,    1,     "",     "",     -1    },
+    { LEMON"/lemon-ewmh.sh",        LEFT,    1,     "",     "",     -1     },
 };
 
 int
@@ -79,13 +78,6 @@ main ( int argc, char** argv ) {
    * violating POSIX standards */
   pipe ( catchfd );
 
-  /* Makes Children ignore signals*/
-  struct sigaction ign;
-  ign.sa_handler = SIG_IGN;
-  sigemptyset ( &ign.sa_mask );
-  for ( int i = 0; i < NUM_MODS; i++)
-    sigaction ( 40 + i, &ign, NULL ); 
-  
   /* Instantiates each module  */
   int alignment = -2;
   module* end = modules + sizeof ( modules ) / sizeof( modules [0] );
@@ -99,7 +91,6 @@ main ( int argc, char** argv ) {
   }
 
   /* Makes passing 40 + index in modules array through kill update the module */
-  MAIN_PID = getpid();
   struct sigaction act;
   act.sa_handler = catcher;
   sigemptyset ( &act.sa_mask );
@@ -111,7 +102,7 @@ main ( int argc, char** argv ) {
   if ( dummypid == 0 )
     handler ( );
   else if ( dummypid > 0 )
-     reader ( ); 
+     reader(); 
 }
 
 void
@@ -127,9 +118,6 @@ handler (  ) {
 
 void
 catcher ( int signum ) {
-  if ( getpid() != MAIN_PID )
-    return;
-  
   module* m = malloc ( sizeof (module));
   strcpy ( m->cmd, modules [ signum - SIGS_START].cmd );
   strcpy ( m->pre, modules [ signum - SIGS_START].pre );
@@ -137,6 +125,7 @@ catcher ( int signum ) {
   m->align = modules [ signum -SIGS_START].align;
   m->order = modules [ signum -SIGS_START].order;
   m->timer = modules [ signum -SIGS_START].timer;
+
   write ( catchfd [1], m, sizeof (module) );
 }
 
