@@ -1,8 +1,0 @@
-linux: {}
-system:
-  disable_compositor: true
-  gamemode: true
-  prime: true
-  pulse_latency: true
-  reset_pulse: true
-  xephyr_fullscreen: false

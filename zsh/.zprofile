@@ -4,11 +4,7 @@ export TERMINAL="alacritty"
 export XDG_SESSION_TYPE=x11
 export FILE_MANAGER="$TERMINAL -e ranger"
 export SCRIPTS_FOLDER="$HOME/.scripts"
-export DMENU=0
-export BAT_FULL=''
-export BAT_HALF=''
-export BAT_EMPTY=''
-export NUM_BAT_SYMBOLS=5
+export DMENU=1
 export QT_QPA_PLATFORMTHEME=gtk2
 export PATH="$HOME/.cargo/bin:$HOME/.src/Discord:$SCRIPTS_FOLDER:$SCRIPTS_FOLDER/lemon:$SCRIPTS_FOLDER/dmenu:$PATH"
 

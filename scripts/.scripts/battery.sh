@@ -1,10 +1,10 @@
 #!/bin/bash
 # FONT: Ubuntu Nerd Font
 
-MAX=$(xgetres lemon.bat.num)
-BAT_FULL=$(xgetres lemon.bat.full)
-BAT_HALF=$(xgetres lemon.bat.half)
-BAT_EMPTY=$(xgetres lemon.bat.empty)
+MAX=$(xgetres bat.num)
+BAT_FULL=$(xgetres bat.full)
+BAT_HALF=$(xgetres bat.half)
+BAT_EMPTY=$(xgetres bat.empty)
 PR_FULL=$(( 100 / $MAX ))
 PR_HALF=$(( $PR_FULL / 2))
 battery=""

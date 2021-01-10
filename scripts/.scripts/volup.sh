@@ -1,7 +1,12 @@
 #!/bin/bash
-#If volume below 80, increase by 1%.
+#If volume below $MAX, increase by $STEP%.
+
 volOld=$(pamixer --get-volume)
-[ $volOld -lt 80 ] && pactl set-sink-volume @DEFAULT_SINK@ +1%
-#kill -n 45 $(pidof dwmblocks)
-#kill SIGHUP $(pidof lemonbar)
-echo $(( $volOld + 1 < 80 ? $volOld + 1 : 80 )) >> /tmp/xobpipe
+max=$(xgetres audio.max)
+step=$(xgetres audio.step)
+pipe=$(xgetres audio.pipe)
+
+[ $volOld -lt $max ] && \
+	pactl set-sink-volume @DEFAULT_SINK@ +$step%
+
+echo $(( $volOld + $step < $max ? $volOld + $step : $max )) >> $pipe

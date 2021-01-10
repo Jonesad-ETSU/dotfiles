@@ -1,5 +1,5 @@
 super + Return
-  $HOME/.scripts/dmenu/launch-dmenu.sh
+  $HOME/.scripts/menu/launch-menu.sh
   
 super + Home
   $HOME/.scripts/set-random-wallpaper.sh
