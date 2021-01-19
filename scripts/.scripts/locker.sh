@@ -1,6 +1,6 @@
 #!/bin/bash
 USER_DIR="/home/jonesad" #Needed so root uses same picture
-scrot -o -f "$USER_DIR/.lockscreen.png"
+sleep 1 && scrot -o -f "$USER_DIR/.lockscreen.png"
 
 convert $USER_DIR/.lockscreen.png -blur 5x4 -font 'Ubuntu-Nerd-Font-Complete' \
   -pointsize 48 -fill $(/usr/local/bin/xgetres a.color1) -gravity center \
@@ -20,4 +20,4 @@ i3lock -e -i $USER_DIR/.lockscreen.png \
   --ringcolor=$(/usr/local/bin/xgetres a.color1) \
   --linecolor="#00000000" \
   --wrongtext="Incorrect Password" \
-  && [ $1 -eq 1 ] && sudo zzz
+  && [ $# -eq 1 ] && $1

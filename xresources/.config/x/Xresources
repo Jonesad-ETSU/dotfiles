@@ -1,0 +1,121 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Author: Jonesad@etsu.edu !
+! L.M:	  01/10/21	   !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+#define term alacritty
+#define mnu rofi
+#define bh 32
+
+! Swap variables in the below include statement to change colorscheme
+#define gruvboxdark "/home/jonesad/.config/x/color/gruvbox-dark"
+#define gruvboxlight "/home/jonesad/.config/x/color/gruvbox-light"
+#define base16classic "/home/jonesad/.config/x/color/base16-classic"
+#define dkegsubtle "/home/jonesad/.config/x/color/dkeg-subtle"
+#define sexybright "/home/jonesad/.config/x/color/sexy-mostly-bright"
+
+#include dkegsubtle
+
+! dwm
+dwm.tag1:		
+dwm.tag2:		
+dwm.tag3:		
+dwm.tag4:		
+dwm.tag5:			
+!dwm.tag6:		
+!dwm.tag7:		
+!dwm.tag8:		
+!dwm.tag9:		
+dwm.normbgcolor: 	bg
+dwm.normbordercolor: 	bg
+dwm.normfgcolor:	fg
+dwm.selbgcolor:		bg
+dwm.selbordercolor:	fg
+dwm.selfgcolor:		fg
+dwm.borderpx:		3
+dwm.gappih:		10
+dwm.gappiv:		10
+dwm.gappoh:		40
+dwm.gappov:		140
+dwm.user_bh:		bh
+dwm.swallowfloating:	1
+dwm.snap:		1
+dwm.showbar:		1
+dwm.topbar:		1
+dwm.nmaster:		1
+dwm.resizehints:	0
+dwm.mfact:		.55
+
+! dmenu
+dmenu.font:	xft:Ubuntu Nerd Font Complete:size=22
+
+! dunst
+dunst.bat.le20:			You Bastard
+dunst.bat.le20.charge:		Thank God
+dunst.bat.gt20:			Plug me up
+dunst.bat.gt20.charge:		You almost made me angry
+dunst.bat.gt40:			You should plug me up
+dunst.bat.gt40.charge:		I was getting a little worried there
+dunst.bat.gt60:			Nice :)	
+dunst.bat.gt60.charge:		Nice :)	
+dunst.bat.gt80:			Doing great	
+dunst.bat.gt80.charge:		Redbull gives you wings	
+dunst.bat.eq100:		Redbull gives you wings	
+dunst.bat.eq100.charge:		Thank you for charging me :)	
+dunst.bat.title.normal:		Hmmm...	
+dunst.bat.title.concerned:	Yo...
+dunst.bar.title.scared:		HELP
+
+! lemonbar
+lemon.length:	1920
+lemon.width:	bh
+lemon.xoffset:	+0
+lemon.yoffset:	+0
+lemon.font1: Terminus:size=12
+lemon.font2: Ubuntu Nerd Font:size=18
+lemon.font3: Ubuntu Nerd Font:size=22
+lemon.font1.offset: -6
+lemon.font2.offset: -2
+lemon.font3.offset: 0
+bat.discharge.color: red
+bat.charge.color: green
+bat.num:	5
+bat.full:		
+bat.half:	
+bat.empty:	
+mem.symbol:		
+home.symbol:		
+wifi.symbol:		
+eth.symbol:		
+kernel.symbol:		
+brightness.symbol: 	
+time.symbol:		愈
+power.symbol:		
+launcher.symbol:	
+
+! audio
+audio.pipe:	/tmp/xobpipe
+audio.max:	80
+audio.step:	2
+
+! Linking
+*foreground:	fg
+*background:	bg
+*color0:	black	
+*color1:	darkred
+*color2:	darkgreen
+*color3:	darkyellow
+*color4:	darkblue
+*color5:	darkmagenta
+*color6:	darkcyan
+*color7:	lightgray
+*color8:	darkgray
+*color9:	red
+*color10:	green
+*color11:	yellow
+*color12:	blue
+*color13:	magenta
+*color14:	cyan
+*color15:	white
+*terminal:	term
+*menu:		mnu

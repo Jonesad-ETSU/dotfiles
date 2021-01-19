@@ -11,19 +11,25 @@ super + F1
   $HOME/.scripts/mute.sh
 
 super + {F7,F8}
-   brightnessctl s {4%-,+4%}
+   brightnessctl s {4%-,+4%} && pkill -44 lemontopc
 
-super + {1-9}
-  dwmc view {0-8} && pkill -46 lemontopc
+super + {1-5}
+  xsetroot -name "fsignal:view ui {0-4}" && pkill -47 lemontopc
+
+super + shift + {j,k}
+  xsetroot -name "fsignal:shiftview ui {-1,1}" && pkill -47 lemontopc
 
 super + e
-  urxvtc -title Files -e ranger
+  $TERMINAL -e ranger
 
-super + Shift + escape
+super + shift + Escape
   killall xinit
 
+super + R
+  killall $WM
+
 super + Tab
-  rofi -show window
+  rofi -show window -config /usr/share/rofi/themes/gruvbox-dark.rasi
 
 Print
-  scrot "$(date +%c).png" -e 'mv "$f" ~/Pictures/Screenshots/ ; dunstify -t 1000 -i ~/.scripts/icons/camera.png "Screenshot Saved" '
+  $SCRIPTS_FOLDER/lemon/dunst-timer.sh "Taking a Screenshot" "$SCRIPTS_FOLDER/icons/camera.png" && scrot "$(date +%c).png" -e 'mv "$f" ~/Pictures/Screenshots/ ; dunstify -t 1500 -i "~/.scripts/icons/camera.png" "Screenshot Saved"'

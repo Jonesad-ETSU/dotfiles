@@ -2,6 +2,7 @@ export EDITOR=vim
 export COMPOSITOR=picom
 export TERMINAL="alacritty"
 export XDG_SESSION_TYPE=x11
+export LIBGL_DRI3_DISABLE=1
 export FILE_MANAGER="$TERMINAL -e ranger"
 export SCRIPTS_FOLDER="$HOME/.scripts"
 export DMENU=1
@@ -17,12 +18,11 @@ export PATH="$HOME/.cargo/bin:$HOME/.src/Discord:$SCRIPTS_FOLDER:$SCRIPTS_FOLDER
 #   *) ;;
 #esac
 
-case $( echo "awesome\ndwm\nfvwm\ngnome\nxfce" | fzf ) in
+case $( echo "dwm\nfrankenwm\nfvwm\nsowm" | fzf ) in
   'dwm') export WM=dwm && startx $HOME/.config/x/dwm ;;
   'fvwm') export WM=fvwm && startx $HOME/.config/x/fvwm ;;
-  'gnome') export WM=gnome && startx $HOME/.config/x/gnome ;;
-  'xfce') export WM=xfwm && startx $HOME/.config/x/xfce ;;
-  'awesome') export WM=awesome && startx $HOME/.config/x/awesome ;;
+  'sowm') export WM=sowm && startx $HOME/.config/x/sowm ;;
+  'frankenwm') export WM=frankenwm && startx $HOME/.config/x/frankenwm ;;
    *) ;;
 esac 	
 

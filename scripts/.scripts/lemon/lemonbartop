@@ -1,11 +1,11 @@
 #!/bin/sh
 
-dimensions="1920x32+0+0"
+dimensions="$(xgetres lemon.length)x$(xgetres lemon.width)$(xgetres lemon.xoffset)$(xgetres lemon.yoffset)"
 bar () { 
   lemonbar -d -g $dimensions -u 2 -f "$(xgetres lemon.font1)" -o $(xgetres lemon.font1.offset) \
    -f "$(xgetres lemon.font2)" -o $(xgetres lemon.font2.offset) -f "$(xgetres lemon.font3)" -o $(xgetres lemon.font3.offset) \
-   -F "$(xgetres a.foreground)" -B "$(xgetres a.background)" \
-   -U $(xgetres a.foreground) -a 20
+   -F "$(xgetres foreground)" -B "$(xgetres background)" \
+   -U $(xgetres foreground) -a 20
 }
 
 #WIP - trying to prevent _NET_DESKTOP_NAMES:notfound bar
@@ -15,4 +15,6 @@ while [ $? -eq 1 ]; do
   xprop -root > /dev/null 2>/dev/null
 done
 
+#For some reason, need to send signal for initial display
+(sleep 1 && pkill -41 lemontopc) &
 $SCRIPTS_FOLDER/lemon/lemontopc | tee $HOME/.lemlog | bar | bash ; exit

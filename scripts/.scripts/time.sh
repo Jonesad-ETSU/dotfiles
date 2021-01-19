@@ -1,2 +1,2 @@
 #!/bin/sh
-echo -n "愈 $(date '+%R')"
+echo -n "$(xgetres time.symbol) $(date '+%R')"

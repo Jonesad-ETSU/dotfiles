@@ -33,11 +33,7 @@ static char tag2[] = "";
 static char tag3[] = "";
 static char tag4[] = "";
 static char tag5[] = "";
-static char tag6[] = "";
-static char tag7[] = "";
-static char tag8[] = "";
-static char tag9[] = "";
-static char *tags[] = { tag1,tag2,tag3,tag4,tag5,tag6,tag7,tag8,tag9 };
+static char *tags[] = { tag1,tag2,tag3,tag4,tag5 };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -67,17 +63,8 @@ static int resizehints = 1;    /* 1 means respect size hints in tiled resizals *
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
-  { "[@]",      spiral },
-  { "[\\]",     dwindle },
-  { "H[]",      deck },
-  { "TTT",      bstack },
-  { "===",      bstackhoriz },
-  { "HHH",      grid },
-  { "###",      nrowgrid },
-  { "---",      horizgrid },
-  { ":::",      gaplessgrid },
-  { "|M|",      centeredmaster },
-  { ">M>",      centeredfloatingmaster },
+  	{ "HHH",      grid },
+  	{ "|M|",      centeredmaster },
 	{ "[M]",      monocle },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
@@ -106,10 +93,10 @@ ResourcePref resources[] = {
     { "tag3",               STRING,  &tag3},
     { "tag4",               STRING,  &tag4},
     { "tag5",               STRING,  &tag5},
-    { "tag6",               STRING,  &tag6},
-    { "tag7",               STRING,  &tag7},
-    { "tag8",               STRING,  &tag8},
-    { "tag9",               STRING,  &tag9},
+    //{ "tag6",               STRING,  &tag6},
+    //{ "tag7",               STRING,  &tag7},
+    //{ "tag8",               STRING,  &tag8},
+    //{ "tag9",               STRING,  &tag9},
 		{ "normbgcolor",        STRING,  &normbgcolor },
 		{ "normbordercolor",    STRING,  &normbordercolor },
 		{ "normfgcolor",        STRING,  &normfgcolor },
@@ -181,11 +168,11 @@ static Key keys[] = {
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
 	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_Escape,      quit,           {0} },
+	//TAGKEYS(                        XK_6,                      5)
+	//TAGKEYS(                        XK_7,                      6)
+	//TAGKEYS(                        XK_8,                      7)
+	//TAGKEYS(                        XK_9,                      8)
+	//{ MODKEY|ShiftMask,             XK_Escape,      quit,           {0} },
 };
 
 /* button definitions */

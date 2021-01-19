@@ -1,16 +1,16 @@
-/************************************
-Author:   Jonesad@etsu.edu
-Date l.m: 1/9/21
-Purpose:  Runs scripts asynchronously, printing output to a pipe and piping into lemonbar.
-*************************************/
+/***************************************************\
+* Author:   Jonesad@etsu.edu			    *
+* Date l.m: 1/16/21				    *
+* Purpose:  Pipes output of scripts into lemonbar.  *   		
+\****************************************************/
 
 #define HOME          "/home/jonesad"
 #define LEMON         HOME"/.scripts/lemon"
 #define FIFO          HOME"/.lemonbar_top.fifo"
 #define SIDE_BUFFER   10
-#define NUM_MODS      7 
-#define BUFFER_SIZE   450
-#define DELIM         "  "
+#define NUM_MODS      9
+#define BUFFER_SIZE   300
+#define DELIM         " | "
 #define LEFT_DELIM    DELIM
 #define LEFT          -1
 #define CENTER_DELIM  DELIM  
@@ -34,10 +34,12 @@ typedef struct message {
 
 typedef struct module {
   char cmd[BUFFER_SIZE];
-  int align, order;
+  int align;
+  int order;
   char pre[BUFFER_SIZE];
   char post[BUFFER_SIZE];
   int timer;
+  int signal;
 } module;
 
 void  reader      (   );
@@ -48,6 +50,7 @@ void  setup       ( module );
 void  exec        ( module, char*, int );
 void  format      ( char*, char*, char*, char* );
 int   capture     ( char*, char* );
+int   ascii	  ( char* );
 
 int catchfd[2];
 int LEFT_COUNTER = 0,
@@ -57,14 +60,18 @@ int LEFT_COUNTER = 0,
 
 //Need to remove dependence on NUM_MODS.
 struct module modules[NUM_MODS] = {
-  /*  COMMAND                       ALIGN    ORDER  PRE     POST    TIMER   */
-    { "echo -n  2>/dev/null",      RIGHT,   5,     "%{A:"LEMON"/yad-power.sh &:}",     "%{A}",     -1  },
-    { LEMON"/lemon-battery.sh",     CENTER,  1,     "",     "",     30    },
-    { LEMON"/lemon-time.sh",        RIGHT,   4,     "",     "",     30    },
-    { LEMON"/lemon-brightness.sh",  RIGHT,   3,     "",     "",     10    },
-    { LEMON"/lemon-home.sh",        RIGHT,   2,     "",     "",     120   },
-    { LEMON"/lemon-mem.sh",         RIGHT,   1,     "",     "",     2     },
-    { LEMON"/lemon-ewmh.sh",        LEFT,    1,     "",     "",     -1    },
+  /*  COMMAND                       ALIGN    ORDER  PRE     POST    TIMER	SIGNAL   */
+    { LEMON"/lemon-power.sh",      RIGHT,   5,     "",     "",     -1,	1  },
+    { LEMON"/lemon-battery.sh",     CENTER,  1,     "",     "",     30,	2    },
+    { LEMON"/lemon-time.sh",        RIGHT,   4,     "",     "",     30,	3    },
+    { LEMON"/lemon-brightness.sh",  RIGHT,   3,     "",     "",     10,	4    },
+//    { LEMON"/lemon-cpu.sh",         RIGHT,   3,     "",     "",     3, 5   },
+//    { LEMON"/lemon-mem.sh",         RIGHT,   2,     "",     "",     4,	6     },
+    { LEMON"/lemon-ewmh.sh",        LEFT,    2,     "",     "",     -1,	7    },
+    { LEMON"/lemon-launcher.sh",	    LEFT,    1,	    "",	    "",	    -1,	8    },
+    { LEMON"/lemon-mpd.sh",	LEFT,		3,	"",	"",	-1,	9	},
+    { LEMON"/lemon-connected.sh",	RIGHT,	2,	"",	"",	-1,	10 },
+    { LEMON"/lemon-kernel.sh",	RIGHT,		1,	"",	"",	-1,	11 },
 };
 
 int
@@ -84,7 +91,7 @@ main ( int argc, char** argv ) {
   ign.sa_handler = SIG_IGN;
   sigemptyset ( &ign.sa_mask );
   for ( int i = 0; i < NUM_MODS; i++)
-    sigaction ( 40 + i, &ign, NULL ); 
+    sigaction ( SIGS_START + modules [i].signal, &ign, NULL ); 
   
   /* Instantiates each module  */
   int alignment = -2;
@@ -98,15 +105,15 @@ main ( int argc, char** argv ) {
       ( alignment == LEFT ) ? LEFT_COUNTER++ : RIGHT_COUNTER ++ ;
   }
 
-  /* Makes passing 40 + index in modules array through kill update the module */
+  /* Makes passing 40 + m.signal in modules array through kill update the module */
   MAIN_PID = getpid();
   struct sigaction act;
   act.sa_handler = catcher;
   sigemptyset ( &act.sa_mask );
   act.sa_flags = SA_RESTART;
-  for ( int i = 0; i < NUM_MODS; i++)
-    sigaction ( 40 + i, &act, NULL ); 
-
+  for ( int i = 0; i < NUM_MODS; i++) {
+	sigaction ( SIGS_START + modules[i].signal, &act, NULL ); 
+  }
   int dummypid = fork ( );
   if ( dummypid == 0 )
     handler ( );
@@ -121,7 +128,7 @@ handler (  ) {
   char tmp [BUFFER_SIZE];
   int fd = open ( FIFO, O_WRONLY );
   while ( ( bytesread = read (catchfd [0], m, sizeof(module) ) ) > 0 ) {
-    exec ( *m, tmp, fd) ; 
+    exec ( *m, tmp, fd); 
   }
 }
 
@@ -130,33 +137,29 @@ catcher ( int signum ) {
   if ( getpid() != MAIN_PID )
     return;
   
-  module* m = malloc ( sizeof (module));
-  strcpy ( m->cmd, modules [ signum - SIGS_START].cmd );
-  strcpy ( m->pre, modules [ signum - SIGS_START].pre );
-  strcpy ( m->post, modules [ signum - SIGS_START].post );
-  m->align = modules [ signum -SIGS_START].align;
-  m->order = modules [ signum -SIGS_START].order;
-  m->timer = modules [ signum -SIGS_START].timer;
-  write ( catchfd [1], m, sizeof (module) );
+  module *last = modules + sizeof(modules)/sizeof(modules[0]);
+  for ( module *ptr = modules; ptr < last; ptr++ ) {
+  	if ( SIGS_START + ptr->signal == signum ) {
+  		write ( catchfd [1], ptr, sizeof (module) );
+		break;
+	}
+  }
 }
 
 void
 reader (  ) {
-  message *msg        = malloc ( sizeof(message) );
-  char    *centerstr  = malloc ( sizeof(BUFFER_SIZE)*CENTER_COUNTER ),
-          *leftstr    = malloc ( sizeof(BUFFER_SIZE)*LEFT_COUNTER ),
-          *rightstr   = malloc ( sizeof(BUFFER_SIZE)*RIGHT_COUNTER );
 
+  message *msg  = malloc ( sizeof (message) );
   char  *center [CENTER_COUNTER],  
         *left   [BUFFER_SIZE],
         *right  [RIGHT_COUNTER];
 
   for ( int i = 0; i < CENTER_COUNTER; i++ )
-    center [ i ] = malloc ( BUFFER_SIZE*10 );
+    center [ i ] = malloc ( BUFFER_SIZE );
   for ( int i = 0; i < LEFT_COUNTER; i++ )
-    left [ i ] = malloc ( BUFFER_SIZE*10 );
+    left [ i ] = malloc ( BUFFER_SIZE );
   for ( int i = 0; i < RIGHT_COUNTER; i++ )
-    right [ i ] = malloc ( BUFFER_SIZE*10 );
+    right [ i ] = malloc ( BUFFER_SIZE );
 
   int bytesread = -1 ,
       fd  = open ( FIFO, O_RDONLY );
@@ -164,29 +167,31 @@ reader (  ) {
   while ( ( bytesread = read (fd, msg, sizeof (message))) > 0) {
     /* Parse Alignment and Order */
     if ( msg->align == LEFT ) 
-      strcpy ( left [ msg->order ], msg->text );  
+    strncpy ( left [ msg->order ], msg->text, BUFFER_SIZE );  
     else if ( msg->align == CENTER ) 
-      strcpy ( center [ msg->order ], msg->text );
+      strncpy ( center [ msg->order ], msg->text, BUFFER_SIZE );
     else if (msg->align == RIGHT ) 
-      strcpy ( right [ msg->order ], msg->text ); 
+      strncpy ( right [ msg->order ], msg->text, BUFFER_SIZE ); 
     
-    
-    /* Iterates through and prints bar (Building string may be faster- future testing needed)  */
+    //Printing Solution, definitely mostly works
     printf ( "\%{l}\%{O%d}", SIDE_BUFFER );
-    for ( int i = 0; i < LEFT_COUNTER-1; i++ ) 
-      printf ( "%s" LEFT_DELIM, left [ i ] );
-    printf ( "%s", left [ LEFT_COUNTER-1 ] );
+    for ( int i = 0; i < LEFT_COUNTER-1; i++ ) {
+    	printf ( "%s"LEFT_DELIM, left [i]); 
+    }
+    printf ("%s",left [LEFT_COUNTER-1] );
     
-    printf ( "\%{c}" );
-    for ( int i = 0; i < CENTER_COUNTER-1; i++ )
-      printf ( "%s" CENTER_DELIM, center [ i ] );
-    printf( "%s", center [ CENTER_COUNTER-1] );
-    
+    printf ( "\%{c}" ); 
+    for ( int i = 0; i < CENTER_COUNTER-1; i++ ) {
+    	printf ( "%s"CENTER_DELIM, center [i] ); 
+    }
+    printf ( "%s",center [CENTER_COUNTER-1] );
+
     printf ( "\%{r}" );
-    for ( int i = 0; i < RIGHT_COUNTER-1; i++ ) 
-      printf ( "%s" RIGHT_DELIM, right [ i ] );
-    printf ( "%s\%{O%d}\n", right [ RIGHT_COUNTER-1 ], SIDE_BUFFER );
-   
+    for ( int i = 0; i < RIGHT_COUNTER-1; i++ ) {
+    	printf ( "%s"RIGHT_DELIM, right [i] );
+    }
+    printf ( "%s", right [RIGHT_COUNTER-1] );
+    printf ( "\%{O%d}", SIDE_BUFFER );
     fflush ( stdout );
   }
 }
@@ -195,9 +200,10 @@ reader (  ) {
 void
 send ( char* msg, int order, int align, int out ) {
   message* receipt  = malloc ( sizeof ( message ) );
-  receipt->order    = order-1;
+  receipt->order    = order-1;	//Remove -1 if you wish to start with order 0.
   receipt->align    = align;
-  strcpy  ( receipt->text, msg );
+  strcpy  ( receipt->text, msg ); 
+  //printf("Receipt->text: %sReceipt->order: %d Receipt->align: %d",receipt->text, receipt->order-1, receipt->align);fflush(stdout);
 
   write   ( out, receipt, sizeof ( message ) );
   free    ( receipt );
@@ -229,7 +235,9 @@ setup ( module m ) {
 void
 exec ( module m, char* tmp, int fd ) {
   capture ( m.cmd, tmp );
+  //printf("Capture Returned: %s",tmp);fflush(stdout);
   format  ( tmp, m.pre, m.post, tmp );
+  //printf("Format returned: %s",tmp);fflush(stdout);
   send    ( tmp, m.order, m.align, fd);    
 }
 
@@ -257,6 +265,7 @@ capture(char* cmd, char* cmdout) {
    comlen += chread;
   }
 
+ //printf("COMOUT: %s",comout);fflush(stdout);
  strcpy ( cmdout, comout );
  cmdout [ strlen ( cmdout ) ] = 0x00;
  free   ( comout );
@@ -270,4 +279,12 @@ format(char* script, char* pre, char* post, char* out) {
   strcat ( tmp, script );
   strcat ( tmp, post );
   strcpy ( out, tmp );
+}
+
+int
+ascii ( char*  str ) {
+	int count = 0;
+	for ( int i =0; i < strlen (str); i++)
+		count = count * 100 + (int)str[i];
+	return count;	
 }

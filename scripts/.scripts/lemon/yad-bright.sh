@@ -7,8 +7,8 @@ brightnessctl s "$(yad --scale \
   --enforce-step \
   --skip-taskbar \
   --close-on-unfocus \
-  --title "Transparent" )%" 2>/dev/null
-pkill -43 lemontopc 
+  --title "Transparent" )%" >/dev/null 2>/dev/null && \
+pkill -44 lemontopc 
 
 
 #/usr/bin/kill --signal USR1 $(pidof lemonbar.sh)

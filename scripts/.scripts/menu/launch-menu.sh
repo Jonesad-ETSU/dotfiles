@@ -11,7 +11,7 @@ _menu() {
   [ $menu = "dmenu"  ] && \
     dmenu -c -l 11 -fn "$font" -nb $background -nf $foreground -sb $color5 -sf $background -p | cut -d ' ' -f 2 \
                     || \
-    rofi -i -lines 11 -matching fuzzy -dmenu -p ' ' -font "Ubuntu Nerd Font 22" | cut -d ' ' -f 2 
+    rofi -i -lines 11 -matching fuzzy -dmenu -p ' ' -font "Ubuntu Nerd Font 22" -config /usr/share/rofi/themes/gruvbox-dark.rasi | cut -d ' ' -f 2 
 }
 
 _start() { 
@@ -41,7 +41,7 @@ _loop () {
       'Install-Packages') exec $terminal -e $SCRIPTS_FOLDER/fuzzypkg/fuzzypkg & ;;
       'System-Monitor') exec $terminal -e bashtop & ;;      
       'Drive-Analyzer') exec $terminal -e ncdu & ;;
-      'Screenshot') exec  scrot "$(date +%c).png" -e 'mv "$f" ~/Screenshots/ ; notify-send -i ~/.scripts/icons/camera.png "Screenshot Saved"' & ;;
+      'Screenshot') exec  scrot "$(date +%c).png" -e 'mv "$f" ~/Pictures/Screenshots/ ; notify-send -i ~/.scripts/icons/camera.png "Screenshot Saved"' & ;;
       'Virtual-Machines') exec virt-manager & ;;
       'Font-Viewer') exec gucharmap & ;;
       'Bandwhich') exec $terminal -e bandwhich & ;;       
@@ -53,6 +53,7 @@ _loop () {
       'Wallpaper') _start $wallpaperFolder 1 & ;;
       'Scripts-Folder') exec $terminal --working-directory $SCRIPTS_FOLDER & ;;
       'Toggle-Blue-Filter') killall xflux && exit || xflux -z $ZIP & ;;
+      'Theme') exec lxappearance & ;;
       'Network') exec $terminal -e nmtui & ;;
       'Cancel') _start menu/general & ;;
     esac ;;
@@ -64,6 +65,7 @@ _loop () {
       'Sleep') sudo zzz & ;;
       'Shutdown') sudo halt & ;;
       'Kill-X') killall xinit &;;
+      'Reboot') sudo reboot ;;
       'Cancel') _start menu/general & ;;
     esac ;;
   6) #Melee
@@ -76,7 +78,7 @@ _loop () {
   case $1 in
 	  'Player') exec $terminal -e ncmpcpp & ;;
 	  'Spotify') exec spotify & ;;
-    'Cancel') _start menu/general & ;;
+    	  'Cancel') _start menu/general & ;;
   esac ;;
   *)  #General
     case $1 in
