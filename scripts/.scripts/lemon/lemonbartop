@@ -2,7 +2,7 @@
 
 dimensions="$(xgetres lemon.length)x$(xgetres lemon.width)$(xgetres lemon.xoffset)$(xgetres lemon.yoffset)"
 bar () { 
-  lemonbar -d -g $dimensions -u 2 -f "$(xgetres lemon.font1)" -o $(xgetres lemon.font1.offset) \
+  lemonbar -d -b -g $dimensions -u 2 -f "$(xgetres lemon.font1)" -o $(xgetres lemon.font1.offset) \
    -f "$(xgetres lemon.font2)" -o $(xgetres lemon.font2.offset) -f "$(xgetres lemon.font3)" -o $(xgetres lemon.font3.offset) \
    -F "$(xgetres foreground)" -B "$(xgetres background)" \
    -U $(xgetres foreground) -a 20

@@ -1,14 +1,17 @@
 super + Return
-  $HOME/.scripts/menu/launch-menu.sh
+  $SCRIPTS_FOLDER/menu/launch-menu.sh
   
 super + Home
-  $HOME/.scripts/set-random-wallpaper.sh
+  $SCRIPTS_FOLDER/set-random-wallpaper.sh
+
+super + shift + Home
+  $SCRIPTS_FOLDER/change-colors.sh
 
 XF86Audio{Raise,Lower}Volume
-  $HOME/.scripts/vol{up,down}.sh
+  $SCRIPTS_FOLDER/vol{up,down}.sh
 
 super + F1
-  $HOME/.scripts/mute.sh
+  $SCRIPTS_FOLDER/mute.sh
 
 super + {F7,F8}
    brightnessctl s {4%-,+4%} && pkill -44 lemontopc

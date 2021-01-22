@@ -7,14 +7,8 @@
 #define mnu rofi
 #define bh 32
 
-! Swap variables in the below include statement to change colorscheme
-#define gruvboxdark "/home/jonesad/.config/x/color/gruvbox-dark"
-#define gruvboxlight "/home/jonesad/.config/x/color/gruvbox-light"
-#define base16classic "/home/jonesad/.config/x/color/base16-classic"
-#define dkegsubtle "/home/jonesad/.config/x/color/dkeg-subtle"
-#define sexybright "/home/jonesad/.config/x/color/sexy-mostly-bright"
-
-#include dkegsubtle
+! Change Current file ( recommended: cp not mv ) and reload to change theme
+#include "/home/jonesad/.config/x/color/current"
 
 ! dwm
 dwm.tag1:		
@@ -32,16 +26,16 @@ dwm.normfgcolor:	fg
 dwm.selbgcolor:		bg
 dwm.selbordercolor:	fg
 dwm.selfgcolor:		fg
-dwm.borderpx:		3
-dwm.gappih:		10
-dwm.gappiv:		10
-dwm.gappoh:		40
-dwm.gappov:		140
+dwm.borderpx:		4
+dwm.gappih:		5
+dwm.gappiv:		5
+dwm.gappoh:		80
+dwm.gappov:		180
 dwm.user_bh:		bh
 dwm.swallowfloating:	1
 dwm.snap:		1
 dwm.showbar:		1
-dwm.topbar:		1
+dwm.topbar:		0
 dwm.nmaster:		1
 dwm.resizehints:	0
 dwm.mfact:		.55

@@ -15,7 +15,7 @@ do
 	$SCRIPTS_FOLDER/alacritty-w-xresources.py $HOME/.config/alacritty/alacritty.yml &
 	$HOME/.fehbg &
 	$SCRIPTS_FOLDER/xob.sh &
-	(sleep .25 && $SCRIPTS_FOLDER/lemon/lemonbartop) &
+	(sleep .25 && $SCRIPTS_FOLDER/lemon/start-bar.sh) &
 	xbanish &
 	sxhkd &
 	dunst &

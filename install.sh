@@ -74,10 +74,11 @@ sudo cp ~/dotfiles/acpi/handler.sh /etc/acpi/handler.sh
 [ ! -d $HOME/.src/void-pkg ] && git clone https://github.com/void-linux/void-packages.git $HOME/.src/void-pkg &&  echo XBPS_ALLOW_RESTRICTED=yes >> $HOME/.src/void-pkg/etc/conf
 
 cd $HOME/.src/void-pkg && ./xbps-src binary-bootstrap 
-[ $discord = 'y' ] && ./xbps-src pkg discord && xi discord
+[ $discord = 'y' ] && \
+	sudo xbps-install -Sy libatomic libcxx && ./xbps-src pkg discord && xi discord
 [ $spotify = 'y' ] && ./xbps-src pkg spotify && xi spotify
 
-#Gamecube Adapter Recogntion
+#Gamecube Adapter Recognition
 [ $gcn = 'y' ] && \
 	sudo rm -f /etc/udev/rules.d/51-gcadapter.rules && sudo /usr/bin/mkdir -p /etc/udev/rules.d/ && sudo touch /etc/udev/rules.d/51-gcadapter.rules && echo 'SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="057e", ATTRS{idProduct}=="0337", MODE="0666"' | sudo tee /etc/udev/rules.d/51-gcadapter.rules > /dev/null && sudo udevadm control --reload-rules
 

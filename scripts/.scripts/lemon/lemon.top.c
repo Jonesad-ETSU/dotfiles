@@ -9,7 +9,7 @@
 #define FIFO          HOME"/.lemonbar_top.fifo"
 #define SIDE_BUFFER   10
 #define NUM_MODS      9
-#define BUFFER_SIZE   300
+#define BUFFER_SIZE   450
 #define DELIM         " | "
 #define LEFT_DELIM    DELIM
 #define LEFT          -1
@@ -150,9 +150,9 @@ void
 reader (  ) {
 
   message *msg  = malloc ( sizeof (message) );
-  char  *center [CENTER_COUNTER],  
+  char  *center [BUFFER_SIZE],  
         *left   [BUFFER_SIZE],
-        *right  [RIGHT_COUNTER];
+        *right  [BUFFER_SIZE];
 
   for ( int i = 0; i < CENTER_COUNTER; i++ )
     center [ i ] = malloc ( BUFFER_SIZE );
@@ -203,7 +203,6 @@ send ( char* msg, int order, int align, int out ) {
   receipt->order    = order-1;	//Remove -1 if you wish to start with order 0.
   receipt->align    = align;
   strcpy  ( receipt->text, msg ); 
-  //printf("Receipt->text: %sReceipt->order: %d Receipt->align: %d",receipt->text, receipt->order-1, receipt->align);fflush(stdout);
 
   write   ( out, receipt, sizeof ( message ) );
   free    ( receipt );
@@ -235,16 +234,14 @@ setup ( module m ) {
 void
 exec ( module m, char* tmp, int fd ) {
   capture ( m.cmd, tmp );
-  //printf("Capture Returned: %s",tmp);fflush(stdout);
   format  ( tmp, m.pre, m.post, tmp );
-  //printf("Format returned: %s",tmp);fflush(stdout);
   send    ( tmp, m.order, m.align, fd);    
 }
 
 int
 capture(char* cmd, char* cmdout) {
  FILE *fd;
- fd = popen(cmd, "r");
+ fd = popen(cmd, "re");
  if (!fd) return -1;
 
  char   buffer [ 256 ];
