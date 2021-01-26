@@ -11,7 +11,7 @@ _menu() {
   [ $menu = "dmenu"  ] && \
     dmenu -c -l 11 -fn "$font" -nb $background -nf $foreground -sb $color5 -sf $background -p | cut -d ' ' -f 2 \
                     || \
-    rofi -i -lines 11 -matching fuzzy -dmenu -p ' ' -font "Ubuntu Nerd Font 22" -config /usr/share/rofi/themes/gruvbox-dark.rasi | cut -d ' ' -f 2 
+    rofi -i -lines 11 -matching fuzzy -dmenu -p ' ' -font "Ubuntu Nerd Font 22" -config /usr/share/rofi/themes/paper.rasi | cut -d ' ' -f 2 
 }
 
 _start() { 

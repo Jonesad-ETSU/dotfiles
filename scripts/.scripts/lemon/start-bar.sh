@@ -1,3 +1,5 @@
 #!/bin/sh
-pkill lemonbar lemontopc lemonbartop 2>/dev/null
-exec $SCRIPTS_FOLDER/lemon/lemonbartop
+pkill lemonbar ; \
+pkill lemontopc ; \
+pkill lemonbartop ; \
+$SCRIPTS_FOLDER/lemon/lemonbartop

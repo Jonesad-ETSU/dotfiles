@@ -4,6 +4,7 @@
 * Purpose:  Pipes output of scripts into lemonbar.  *   		
 \****************************************************/
 
+#define DEBUG	      1
 #define HOME          "/home/jonesad"
 #define LEMON         HOME"/.scripts/lemon"
 #define FIFO          HOME"/.lemonbar_top.fifo"
@@ -15,7 +16,7 @@
 #define LEFT          -1
 #define CENTER_DELIM  DELIM  
 #define CENTER        0
-#define RIGHT_DELIM   DELIM
+#define RIGHT_DELIM   " || "
 #define RIGHT         1
 #define SIGS_START    40
 
@@ -50,7 +51,6 @@ void  setup       ( module );
 void  exec        ( module, char*, int );
 void  format      ( char*, char*, char*, char* );
 int   capture     ( char*, char* );
-int   ascii	  ( char* );
 
 int catchfd[2];
 int LEFT_COUNTER = 0,
@@ -123,19 +123,19 @@ main ( int argc, char** argv ) {
 
 void
 handler (  ) {
-  module* m = malloc ( sizeof ( module ) );
-  int bytesread = -1;
+  module m;
   char tmp [BUFFER_SIZE];
   int fd = open ( FIFO, O_WRONLY );
-  while ( ( bytesread = read (catchfd [0], m, sizeof(module) ) ) > 0 ) {
-    exec ( *m, tmp, fd); 
-  }
+  while ( read ( catchfd [0], &m, sizeof(module) ) > 0 )
+    exec ( m, tmp, fd); 
+    sleep (1);
 }
 
 void
 catcher ( int signum ) {
   if ( getpid() != MAIN_PID )
     return;
+  if ( !DEBUG ) printf( "\n* SIGNAL RECEIVED: *%d\n", signum ); fflush (stdout);
   
   module *last = modules + sizeof(modules)/sizeof(modules[0]);
   for ( module *ptr = modules; ptr < last; ptr++ ) {
@@ -149,10 +149,13 @@ catcher ( int signum ) {
 void
 reader (  ) {
 
-  message *msg  = malloc ( sizeof (message) );
-  char  *center [BUFFER_SIZE],  
-        *left   [BUFFER_SIZE],
-        *right  [BUFFER_SIZE];
+  message *msg      = malloc ( sizeof (message) );
+  int 	  strsize   = ( BUFFER_SIZE * (CENTER_COUNTER+LEFT_COUNTER+RIGHT_COUNTER) );
+  int     used;
+  char    *str      = malloc ( strsize );
+  char    *center [CENTER_COUNTER],  
+          *left   [LEFT_COUNTER],
+          *right  [RIGHT_COUNTER];
 
   for ( int i = 0; i < CENTER_COUNTER; i++ )
     center [ i ] = malloc ( BUFFER_SIZE );
@@ -173,39 +176,47 @@ reader (  ) {
     else if (msg->align == RIGHT ) 
       strncpy ( right [ msg->order ], msg->text, BUFFER_SIZE ); 
     
-    //Printing Solution, definitely mostly works
-    printf ( "\%{l}\%{O%d}", SIDE_BUFFER );
-    for ( int i = 0; i < LEFT_COUNTER-1; i++ ) {
-    	printf ( "%s"LEFT_DELIM, left [i]); 
+    if ( !DEBUG ) { //IF DEBUGGING 
+    for ( int i = 0; i < LEFT_COUNTER; i++ ) {
+    	printf ( "LEFT[%d]:\t%s\n",i, left [i]); 
     }
-    printf ("%s",left [LEFT_COUNTER-1] );
-    
-    printf ( "\%{c}" ); 
-    for ( int i = 0; i < CENTER_COUNTER-1; i++ ) {
-    	printf ( "%s"CENTER_DELIM, center [i] ); 
-    }
-    printf ( "%s",center [CENTER_COUNTER-1] );
 
-    printf ( "\%{r}" );
-    for ( int i = 0; i < RIGHT_COUNTER-1; i++ ) {
-    	printf ( "%s"RIGHT_DELIM, right [i] );
+    for ( int i = 0; i < CENTER_COUNTER; i++ ) {
+    	printf ( "CENTER[%d]:\t%s\n",i, center [i]); 
     }
-    printf ( "%s", right [RIGHT_COUNTER-1] );
-    printf ( "\%{O%d}", SIDE_BUFFER );
+
+    for ( int i = 0; i < RIGHT_COUNTER; i++ ) {
+    	printf ( "RIGHT[%d]:\t%s\n",i, right [i]); 
+    }
     fflush ( stdout );
+    }
+    else {
+	used = 0;
+	used += snprintf ( str+used, strsize-used, "%%{l}%%{O%d}", SIDE_BUFFER );
+	for ( int i = 0; i < LEFT_COUNTER-1; i++ ) 
+	  used += snprintf ( str+used, strsize-used, "%s"LEFT_DELIM, left [i] ); 
+	used += snprintf ( str+used, strsize-used, "%s%%{c}", left [LEFT_COUNTER-1] ); 
+
+	for ( int i = 0; i < CENTER_COUNTER-1; i++ )
+	  used += snprintf ( str+used, strsize-used, "%s"CENTER_DELIM, center [i] ); 
+	used += snprintf ( str+used, strsize-used, "%s%%{r}", center [CENTER_COUNTER-1] ); 
+
+	for ( int i = 0; i < RIGHT_COUNTER-1; i++ )
+	  used += snprintf ( str+used, strsize-used, "%s"RIGHT_DELIM, right [i] ); 
+	used += snprintf ( str+used, strsize-used, "%s%%{O%d}\n", right [RIGHT_COUNTER-1], SIDE_BUFFER ); 
+
+	printf ( str );
+	fflush ( stdout ); 
+  }
   }
 }
 
 
 void
 send ( char* msg, int order, int align, int out ) {
-  message* receipt  = malloc ( sizeof ( message ) );
-  receipt->order    = order-1;	//Remove -1 if you wish to start with order 0.
-  receipt->align    = align;
-  strcpy  ( receipt->text, msg ); 
-
-  write   ( out, receipt, sizeof ( message ) );
-  free    ( receipt );
+  message receipt = { "", order-1, align };
+  strcpy  ( receipt.text, msg);  
+  write   ( out, &receipt, sizeof ( message ) );
 }
 
 void
@@ -234,10 +245,12 @@ setup ( module m ) {
 void
 exec ( module m, char* tmp, int fd ) {
   capture ( m.cmd, tmp );
-  format  ( tmp, m.pre, m.post, tmp );
+  format  ( tmp, m.pre, m.post, tmp ); 
+  //printf ("FORMAT:%s\n",tmp); fflush ( stdout ); 
   send    ( tmp, m.order, m.align, fd);    
 }
 
+/* FROM ROSETTACODE- doesn't work well*/
 int
 capture(char* cmd, char* cmdout) {
  FILE *fd;
@@ -250,7 +263,7 @@ capture(char* cmd, char* cmdout) {
  /* String to store entire command contents in */
  size_t comalloc = 256;
  size_t comlen   = 0;
- char  *comout   = malloc ( comalloc );
+ char  *comout   = (char*) calloc ( comalloc, sizeof (char) );
  
  /* Use fread so binary data is dealt with correctly */
  while ((chread = fread ( buffer, 1, sizeof ( buffer ), fd) ) != 0) {
@@ -262,7 +275,7 @@ capture(char* cmd, char* cmdout) {
    comlen += chread;
   }
 
- //printf("COMOUT: %s",comout);fflush(stdout);
+ fflush ( fd );
  strcpy ( cmdout, comout );
  cmdout [ strlen ( cmdout ) ] = 0x00;
  free   ( comout );
@@ -276,12 +289,4 @@ format(char* script, char* pre, char* post, char* out) {
   strcat ( tmp, script );
   strcat ( tmp, post );
   strcpy ( out, tmp );
-}
-
-int
-ascii ( char*  str ) {
-	int count = 0;
-	for ( int i =0; i < strlen (str); i++)
-		count = count * 100 + (int)str[i];
-	return count;	
 }

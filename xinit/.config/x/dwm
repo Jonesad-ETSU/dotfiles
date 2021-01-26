@@ -13,13 +13,14 @@ do
 	[ -f "$usermodmap" ] && xmodmap "$usermodmap"
 
 	$SCRIPTS_FOLDER/alacritty-w-xresources.py $HOME/.config/alacritty/alacritty.yml &
-	$HOME/.fehbg &
 	$SCRIPTS_FOLDER/xob.sh &
-	(sleep .25 && $SCRIPTS_FOLDER/lemon/start-bar.sh) &
+	$HOME/.fehbg &
+	$SCRIPTS_FOLDER/lemon/start-bar.sh &
 	xbanish &
 	sxhkd &
 	dunst &
 	mpd &
 	picom --experimental-backends &
+	(sleep 1 && paplay $(xgetres sound.startup)) &
 	dbus-run-session dwm
 done

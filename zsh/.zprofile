@@ -9,6 +9,8 @@ export DMENU=1
 export QT_QPA_PLATFORMTHEME=gtk2
 export PATH="$HOME/.cargo/bin:$HOME/.src/Discord:$SCRIPTS_FOLDER:$SCRIPTS_FOLDER/lemon:$SCRIPTS_FOLDER/dmenu:$PATH"
 
+paplay $HOME/Sounds/startup.wav &
+
 #option=$(dialog --clear --backtitle "Startx" --title "Desktop Enviornment" --stdout --menu "Choose one of the following: " 15 40 4 'd' 'DWM' 'f' 'FVWM' 'g' 'GNOME' 'x' 'XFCE') 
 #case $option in
 #  'd') export WM=dwm && startx $HOME/.config/x/dwm ;;

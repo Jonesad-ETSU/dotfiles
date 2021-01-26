@@ -1,34 +1,40 @@
 #!/bin/sh
-echo -n "\nAre you using Intel CPU [y/n]?"
+echo -n "\nAre you using Intel CPU [y/n]? "
 read intel
 
-echo -n "\nAre you using Nvidia [y/n]?"
+echo -n "\nAre you using Nvidia [y/n]? "
 read nvidia
 
-echo -n "\nDo you want Gaming stuff [y/n]?"
+echo -n "\nDo you want Gaming stuff [y/n]? "
 read games
 
 [ $games = 'y' ] && echo -n "\nDo you want Gamecube Controller Support [y/n]?" && read gcn 
 
-echo -n "\nSpotify [y/n]?"
+echo -n "\nSpotify [y/n]? "
 read spotify
 
-echo -n "\nDiscord [y/n]?"
+echo -n "\nDiscord [y/n]? "
 read discord
 
-echo -n "\nLibreOffice [y/n]?"
+echo -n "\nLibreOffice [y/n]? "
 read libre
+
+echo -n "\nGimp? [y/n]? "
+read gimp
 
 sudo xbps-install -Syu
 sudo xbps-install -Sy void-repo-multilib void-repo-nonfree void-repo-multilib-nonfree
-sudo xbps-install -Sy stow vim xorg git feh alacritty xterm ytop fzf bandwhich xtools scrot rofi libX11-devel libXft-devel libXinerama-devel lemonbar-xft zsh zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search lm_sensors gucharmap fd lxappearance pulseaudio pavucontrol dunst firefox lsd mpd ncdu ncmpcpp mpv patch i3lock-color udiskie runit-swap yad zathura pkg-config lvm2 arandr cpufrequtils alsa-utils alsa-firmware bluez-alsa cava brightnessctl ranger picom xob sxhkd xbanish ImageMagick NetworkManager breeze-obsidian-cursor-theme pamixer ueberzug procs openntpd 
+sudo xbps-install -Sy stow vim xorg git feh alacritty xterm ytop fzf bandwhich xtools scrot rofi libX11-devel libXft-devel libXinerama-devel lemonbar-xft zsh zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search lm_sensors gucharmap fd lxappearance pulseaudio pavucontrol dunst firefox lsd mpd ncdu ncmpcpp mpv patch i3lock-color udiskie runit-swap yad zathura pkg-config lvm2 arandr cpufrequtils alsa-utils alsa-firmware bluez-alsa cava brightnessctl ranger picom xob sxhkd xbanish ImageMagick NetworkManager breeze-obsidian-cursor-theme pamixer ueberzug procs openntpd xdg-utils xdg-user-dirs nerd-fonts-ttf 
 
-[ $games = 'y' ] && \
-	sudo xbps-install -Sy steam mesa-dri-32bit nvidia nvidia-libs32-bit lutris vulkan-loader-32bit vulkan-loader nvidia-opencl 
+[ $games = 'y' ] && sudo xbps-install -Sy steam mesa-dri-32bit lutris vulkan-loader-32bit vulkan-loader nvidia-opencl
+       
+[ $nvidia = 'y' ] && sudo xbps-install -Sy nvidia nvidia-libs32-bit nvidia-opencl 
 
 [ $libre = 'y'] && sudo xbps-install -Sy libreoffice
 
 [ $intel = 'y' ] && sudo xbps-install -Sy intel-ucode
+
+[ $gimp = 'y' ] && sudo xbps-install -Sy gimp
 
 
 #Enable Services
