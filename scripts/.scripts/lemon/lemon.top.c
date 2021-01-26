@@ -1,24 +1,14 @@
 /***************************************************\
 * Author:   Jonesad@etsu.edu			    *
-* Date l.m: 1/16/21				    *
+* Date l.m: 1/26/21				    *
 * Purpose:  Pipes output of scripts into lemonbar.  *   		
 \****************************************************/
 
 #define DEBUG	      1
-#define HOME          "/home/jonesad"
-#define LEMON         HOME"/.scripts/lemon"
-#define FIFO          HOME"/.lemonbar_top.fifo"
-#define SIDE_BUFFER   10
-#define NUM_MODS      9
 #define BUFFER_SIZE   450
-#define DELIM         " | "
-#define LEFT_DELIM    DELIM
 #define LEFT          -1
-#define CENTER_DELIM  DELIM  
 #define CENTER        0
-#define RIGHT_DELIM   " || "
 #define RIGHT         1
-#define SIGS_START    40
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,52 +17,13 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <unistd.h>
-
-typedef struct message {
-  char text[BUFFER_SIZE];
-  int order, align;
-} message;
-
-typedef struct module {
-  char cmd[BUFFER_SIZE];
-  int align;
-  int order;
-  char pre[BUFFER_SIZE];
-  char post[BUFFER_SIZE];
-  int timer;
-  int signal;
-} module;
-
-void  reader      (   );
-void  handler     (   );
-void  catcher     ( int );
-void  send        ( char*, int, int, int );
-void  setup       ( module );
-void  exec        ( module, char*, int );
-void  format      ( char*, char*, char*, char* );
-int   capture     ( char*, char* );
+#include "config.h"
 
 int catchfd[2];
 int LEFT_COUNTER = 0,
     CENTER_COUNTER = 0,
     RIGHT_COUNTER = 0,
     MAIN_PID = -1;
-
-//Need to remove dependence on NUM_MODS.
-struct module modules[NUM_MODS] = {
-  /*  COMMAND                       ALIGN    ORDER  PRE     POST    TIMER	SIGNAL   */
-    { LEMON"/lemon-power.sh",      RIGHT,   5,     "",     "",     -1,	1  },
-    { LEMON"/lemon-battery.sh",     CENTER,  1,     "",     "",     30,	2    },
-    { LEMON"/lemon-time.sh",        RIGHT,   4,     "",     "",     30,	3    },
-    { LEMON"/lemon-brightness.sh",  RIGHT,   3,     "",     "",     10,	4    },
-//    { LEMON"/lemon-cpu.sh",         RIGHT,   3,     "",     "",     3, 5   },
-//    { LEMON"/lemon-mem.sh",         RIGHT,   2,     "",     "",     4,	6     },
-    { LEMON"/lemon-ewmh.sh",        LEFT,    2,     "",     "",     -1,	7    },
-    { LEMON"/lemon-launcher.sh",	    LEFT,    1,	    "",	    "",	    -1,	8    },
-    { LEMON"/lemon-mpd.sh",	LEFT,		3,	"",	"",	-1,	9	},
-    { LEMON"/lemon-connected.sh",	RIGHT,	2,	"",	"",	-1,	10 },
-    { LEMON"/lemon-kernel.sh",	RIGHT,		1,	"",	"",	-1,	11 },
-};
 
 int
 main ( int argc, char** argv ) {
@@ -277,7 +228,7 @@ capture(char* cmd, char* cmdout) {
 
  fflush ( fd );
  strcpy ( cmdout, comout );
- cmdout [ strlen ( cmdout ) ] = 0x00;
+ //cmdout [ strlen ( cmdout ) ] = 0x00;
  free   ( comout );
  pclose ( fd );
 }
