@@ -1,5 +1,11 @@
 #!/bin/bash
 # FONT: Ubuntu Nerd Font
+pr=$(cat /sys/class/power_supply/BAT0/capacity)
+
+if [ $(xgetres lemon.textonly) != "0" ]; then
+  printf "%d" $pr
+  exit
+fi
 
 MAX=$(xgetres bat.num)
 BAT_FULL=$(xgetres bat.full)
@@ -9,7 +15,6 @@ PR_FULL=$(( 100 / $MAX ))
 PR_HALF=$(( $PR_FULL / 2))
 battery=""
 
-pr=$(cat /sys/class/power_supply/BAT0/capacity)
 whole=0
 empty=0
 cracked=0
@@ -44,4 +49,4 @@ for (( i=0; i<empty; i++ )); do
     battery="${battery} $BAT_EMPTY"
 done
 
-echo -n $battery
+printf "%s" "$battery"

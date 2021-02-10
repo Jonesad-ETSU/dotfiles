@@ -1,15 +1,22 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! Author: Jonesad@etsu.edu !
 ! L.M:	  01/10/21	   !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #define term alacritty
-#define mnu rofi
-#define bh  32
-#define top 1
+#define mnu  rofi
+#define bh   32
+#define top  1
 
-! Change Current file ( recommended: cp not mv ) and merge to change theme
+! Change Current file ( recommended: cp not mv ) and reload to change theme
 #include "/home/jonesad/.config/x/color/current"
+
+!generic tags
+tag1:		
+tag2:		
+tag3:		
+tag4:		
+tag5:			
 
 ! dwm
 dwm.tag1:		
@@ -22,12 +29,12 @@ dwm.normbordercolor: 	bg
 dwm.normfgcolor:	fg
 dwm.selbgcolor:		bg
 dwm.selbordercolor:	fg
-dwm.selfgcolor:		bg
-dwm.borderpx:		4
-dwm.gappih:		5
-dwm.gappiv:		5
-dwm.gappoh:		20
-dwm.gappov:		180
+dwm.selfgcolor:		fg
+dwm.borderpx:		3
+dwm.gappih:		20
+dwm.gappiv:		25
+dwm.gappoh:		50
+dwm.gappov:		200
 dwm.user_bh:		bh
 dwm.swallowfloating:	1
 dwm.snap:		1
@@ -37,19 +44,15 @@ dwm.nmaster:		1
 dwm.resizehints:	0
 dwm.mfact:		.55
 
-!sound
-!files to be played at various points with paplay
-sound.startup: /home/jonesad/Sounds/startup.wav
-sound.charging: /home/jonesad/Sounds/charging.wav
-sound.damage: /home/jonesad/Sounds/damage.wav
-sound.gamer: /home/jonesad/Sounds/gamer.wav 
-sound.mute: /home/jonesad/Sounds/mute.wav
+! dmenu
+dmenu.font:	xft:Ubuntu Nerd Font Complete:size=22
 
-
+!rofi
+rofi.theme:	android_notification
 
 ! dunst
-dunst.bat.le20:			You Bastard
-dunst.bat.le20.charge:		Thank God
+dunst.bat.le20:			I need an Adult
+dunst.bat.le20.charge:		I am an Adult
 dunst.bat.gt20:			Plug me up
 dunst.bat.gt20.charge:		You almost made me angry
 dunst.bat.gt40:			You should plug me up
@@ -62,19 +65,24 @@ dunst.bat.eq100:		Redbull gives you wings
 dunst.bat.eq100.charge:		Thank you for charging me :)	
 dunst.bat.title.normal:		Hmmm...	
 dunst.bat.title.concerned:	Yo...
-dunst.bar.title.scared:		HELP
+dunst.bar.title.scared:		Please...
 
 ! lemonbar
-lemon.topbar:	top
+lemon.foreground:	fg	
+lemon.background:	bg
 lemon.length:	1920
 lemon.width:	bh
 lemon.xoffset:	+0
 lemon.yoffset:	+0
-lemon.font1: Terminus:size=16
+lemon.floating: 0
+lemon.topbar:	top
+lemon.textonly: 0
+lemon.opacity:	FF
+lemon.font1: Terminus:size=12
 lemon.font2: Ubuntu Nerd Font:size=18
 lemon.font3: Ubuntu Nerd Font:size=22
 lemon.font1.offset: -6
-lemon.font2.offset: -4
+lemon.font2.offset: -2
 lemon.font3.offset: 0
 bat.discharge.color: red
 bat.charge.color: green
@@ -83,19 +91,30 @@ bat.full:	
 bat.half:	
 bat.empty:	
 mem.symbol:		
+mem.text:		MEM
 home.symbol:		
+home.text:		HOME
 wifi.symbol:		
+wifi.text:		WLO
 eth.symbol:		
+eth.text:		NET
 kernel.symbol:		
+kernel.text:		KER
 brightness.symbol: 	
+brightness.text:	BRI
 time.symbol:		愈
-power.symbol:		
+time.text:		TIME
+power.symbol:			
+power.text:		POW
 launcher.symbol:	
+launcher.text:		LAUNCH
+mpd.symbol:		
+mpd.text:		MUSIC
 
 ! audio
 audio.pipe:	/tmp/xobpipe
 audio.max:	80
-audio.step:	2
+audio.step:	5
 
 ! Linking
 *foreground:	fg

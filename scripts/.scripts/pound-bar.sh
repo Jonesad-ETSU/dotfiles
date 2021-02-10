@@ -9,4 +9,4 @@ for (( i=1; i<= ($2-$1); i++))
 do
 	String="${String}--"
 done
-echo "$String}"
+printf "%s" "$String}"

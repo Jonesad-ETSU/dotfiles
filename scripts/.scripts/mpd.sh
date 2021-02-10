@@ -1,3 +1,3 @@
 #!/bin/sh
 #Should print part of song title
-echo -n " WIP"
+printf "%s" "$(mpc | head -n 1 | grep -v volume)"

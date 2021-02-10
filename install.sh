@@ -1,30 +1,36 @@
 #!/bin/sh
-echo -n "\nAre you using Intel CPU [y/n]? "
+echo -n "\nAre you using Intel CPU [y/n]?\t"
 read intel
 
-echo -n "\nAre you using Nvidia [y/n]? "
+echo -n "\nAre you using Nvidia [y/n]?\t"
 read nvidia
 
-echo -n "\nDo you want Gaming stuff [y/n]? "
+echo -n "\nDo you want the Jonaburg picom branch [y/n]?\t"
+read jona
+
+echo -n "\nDo you want Gaming stuff [y/n]?\t"
 read games
 
-[ $games = 'y' ] && echo -n "\nDo you want Gamecube Controller Support [y/n]?" && read gcn 
+[ $games = 'y' ] && echo -n "\nDo you want Gamecube Controller Support [y/n]?\t" && read gcn 
 
-echo -n "\nSpotify [y/n]? "
+echo -n "\nSpotify [y/n]?\t"
 read spotify
 
-echo -n "\nDiscord [y/n]? "
+echo -n "\nDiscord [y/n]?\t"
 read discord
 
-echo -n "\nLibreOffice [y/n]? "
+echo -n "\nLibreOffice [y/n]?\t"
 read libre
 
-echo -n "\nGimp? [y/n]? "
+echo -n "\nGimp? [y/n]?\t"
 read gimp
+
+echo -n "\nrEFInd? [y/n]?\t"
+read refind
 
 sudo xbps-install -Syu
 sudo xbps-install -Sy void-repo-multilib void-repo-nonfree void-repo-multilib-nonfree
-sudo xbps-install -Sy stow vim xorg git feh alacritty xterm ytop fzf bandwhich xtools scrot rofi libX11-devel libXft-devel libXinerama-devel lemonbar-xft zsh zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search lm_sensors gucharmap fd lxappearance pulseaudio pavucontrol dunst firefox lsd mpd ncdu ncmpcpp mpv patch i3lock-color udiskie runit-swap yad zathura pkg-config lvm2 arandr cpufrequtils alsa-utils alsa-firmware bluez-alsa cava brightnessctl ranger picom xob sxhkd xbanish ImageMagick NetworkManager breeze-obsidian-cursor-theme pamixer ueberzug procs openntpd xdg-utils xdg-user-dirs nerd-fonts-ttf 
+sudo xbps-install -Sy stow vim xorg git feh alacritty xterm ytop fzf bandwhich xtools scrot rofi libX11-devel libXft-devel libXinerama-devel lemonbar-xft zsh zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search lm_sensors gucharmap fd lxappearance pulseaudio pavucontrol dunst firefox lsd mpd ncdu ncmpcpp mpv patch i3lock-color udiskie runit-swap yad zathura pkg-config lvm2 arandr cpufrequtils alsa-utils alsa-firmware bluez-alsa cava brightnessctl ranger picom xob sxhkd xbanish ImageMagick NetworkManager breeze-obsidian-cursor-theme pamixer ueberzug procs openntpd xdg-utils xdg-user-dirs lsw atk-devel pango-devel 
 
 [ $games = 'y' ] && sudo xbps-install -Sy steam mesa-dri-32bit lutris vulkan-loader-32bit vulkan-loader nvidia-opencl
        
@@ -53,7 +59,7 @@ sudo ln -s /etc/sv/openntpd /var/service/
 
 #Downlad my dotfiles and symlink them to right place in $HOME
 cd ~ && git clone https://github.com/Jonesad-ETSU/dotfiles.git 
-cd ~/dotfiles && stow xgetres sxhkd dmenu dwm-ewmh scripts xob picom Wallpaper xinit ranger dunst xresources zsh aliases gruvbox-dark-gtk dracula-gtk 
+cd ~/dotfiles && stow xgetres fuzzypkg sxhkd dmenu dwm-ewmh scripts xob picom Wallpaper xinit ranger dunst xresources zsh aliases gruvbox-dark-gtk dracula-gtk nordic-gtk 
 
 #Installing xgetres, dwm, and dmenu from source
 cd ~/.src/xgetres/ && make && sudo make install
@@ -88,3 +94,14 @@ cd $HOME/.src/void-pkg && ./xbps-src binary-bootstrap
 [ $gcn = 'y' ] && \
 	sudo rm -f /etc/udev/rules.d/51-gcadapter.rules && sudo /usr/bin/mkdir -p /etc/udev/rules.d/ && sudo touch /etc/udev/rules.d/51-gcadapter.rules && echo 'SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="057e", ATTRS{idProduct}=="0337", MODE="0666"' | sudo tee /etc/udev/rules.d/51-gcadapter.rules > /dev/null && sudo udevadm control --reload-rules
 
+#Jonaburg
+[ $jona = 'y' ] && \
+cd && \
+git clone https://github.com/jonaburg/picom && \
+cd picom && \
+meson --buildtype=release . build && \
+ninja -C build 
+#sudo ninja -C build install
+
+#rEFInd
+[ $refind = 'y' ] && sudo xbps-install -Sy refind

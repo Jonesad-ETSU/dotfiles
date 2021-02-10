@@ -11,14 +11,14 @@ NORM_PRE=""
 NORM_POST=" "
 
 get () {
-  echo $TAGS | cut -d ',' -f $1 | xargs
+  printf "%s" "$TAGS" | cut -d ',' -f $1 | xargs
 }
 
 add () {
   [ $2 -eq 1 ] && \
     BAR_STR="${BAR_STR}${SEL_PRE}$1${SEL_POST}" \
       || \
-      BAR_STR="${BAR_STR}${NORM_PRE}%{A:$SCRIPTS_FOLDER/tag-switch.sh $(( $3 - 1 )) &:}$1%{A}${NORM_POST}"
+    BAR_STR="${BAR_STR}${NORM_PRE}%{A:$SCRIPTS_FOLDER/tag-switch.sh $(( $3 - 1 )) &:}$1%{A}${NORM_POST}"
 }
 
 draw () {
@@ -28,6 +28,6 @@ while [ $i -le $NUM_TAGS  ]; do
                                       || add $(get $i) 0 $i
     let i++
   done
-  echo -n "$BAR_STR%{F-}%{T-}"
+  printf "%s"  "$BAR_STR%{F-}%{T-}"
 }
 draw

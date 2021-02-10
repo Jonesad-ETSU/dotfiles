@@ -100,13 +100,14 @@ catcher ( int signum ) {
 void
 reader (  ) {
 
-  message *msg      = malloc ( sizeof (message) );
-  int 	  strsize   = ( BUFFER_SIZE * (CENTER_COUNTER+LEFT_COUNTER+RIGHT_COUNTER) );
   int     used;
-  char    *str      = malloc ( strsize );
   char    *center [CENTER_COUNTER],  
           *left   [LEFT_COUNTER],
           *right  [RIGHT_COUNTER];
+
+  message *msg      = malloc ( sizeof (message) );
+  int 	  strsize   = BUFFER_SIZE * (CENTER_COUNTER+LEFT_COUNTER+RIGHT_COUNTER);
+  char    *str      = malloc ( strsize );
 
   for ( int i = 0; i < CENTER_COUNTER; i++ )
     center [ i ] = malloc ( BUFFER_SIZE );
@@ -127,19 +128,17 @@ reader (  ) {
     else if (msg->align == RIGHT ) 
       strncpy ( right [ msg->order ], msg->text, BUFFER_SIZE ); 
     
-    if ( !DEBUG ) { //IF DEBUGGING 
-    for ( int i = 0; i < LEFT_COUNTER; i++ ) {
-    	printf ( "LEFT[%d]:\t%s\n",i, left [i]); 
-    }
+    if ( !DEBUG ) { 
+    	for ( int i = 0; i < LEFT_COUNTER; i++ )
+    		printf ( "LEFT[%d]:\t%s\n",i, left [i]); 
 
-    for ( int i = 0; i < CENTER_COUNTER; i++ ) {
-    	printf ( "CENTER[%d]:\t%s\n",i, center [i]); 
-    }
+    	for ( int i = 0; i < CENTER_COUNTER; i++ )
+    		printf ( "CENTER[%d]:\t%s\n",i, center [i]); 
 
-    for ( int i = 0; i < RIGHT_COUNTER; i++ ) {
-    	printf ( "RIGHT[%d]:\t%s\n",i, right [i]); 
-    }
-    fflush ( stdout );
+    	for ( int i = 0; i < RIGHT_COUNTER; i++ )
+    		printf ( "RIGHT[%d]:\t%s\n",i, right [i]); 
+
+    	fflush ( stdout );
     }
     else {
 	used = 0;
@@ -158,7 +157,7 @@ reader (  ) {
 
 	printf ( str );
 	fflush ( stdout ); 
-  }
+    }
   }
 }
 
@@ -166,7 +165,7 @@ reader (  ) {
 void
 send ( char* msg, int order, int align, int out ) {
   message receipt = { "", order-1, align };
-  strcpy  ( receipt.text, msg);  
+  strcpy  ( receipt.text, msg );  
   write   ( out, &receipt, sizeof ( message ) );
 }
 
@@ -189,7 +188,7 @@ setup ( module m ) {
         sleep ( m.timer );
       } 
   } else {
-     
+    //Probably should add PID to global array so we can kill them all on  
   }
 }
 
@@ -197,11 +196,10 @@ void
 exec ( module m, char* tmp, int fd ) {
   capture ( m.cmd, tmp );
   format  ( tmp, m.pre, m.post, tmp ); 
-  //printf ("FORMAT:%s\n",tmp); fflush ( stdout ); 
   send    ( tmp, m.order, m.align, fd);    
 }
 
-/* FROM ROSETTACODE- doesn't work well*/
+/* FROM ROSETTACODE- modified*/
 int
 capture(char* cmd, char* cmdout) {
  FILE *fd;
@@ -228,7 +226,6 @@ capture(char* cmd, char* cmdout) {
 
  fflush ( fd );
  strcpy ( cmdout, comout );
- //cmdout [ strlen ( cmdout ) ] = 0x00;
  free   ( comout );
  pclose ( fd );
 }

@@ -12,6 +12,7 @@ do
 	[ -f "$userresources" ] && xrdb -merge "$userresources"
 	[ -f "$usermodmap" ] && xmodmap "$usermodmap"
 
+	$SCRIPTS_FOLDER/env.sh 
 	$SCRIPTS_FOLDER/alacritty-w-xresources.py $HOME/.config/alacritty/alacritty.yml &
 	$SCRIPTS_FOLDER/xob.sh &
 	$HOME/.fehbg &
@@ -21,6 +22,6 @@ do
 	dunst &
 	mpd &
 	picom --experimental-backends &
-	(sleep 1 && paplay $(xgetres sound.startup)) &
+	(sleep 1 && paplay $HOME/Sounds/startup.wav) &
 	dbus-run-session dwm
 done

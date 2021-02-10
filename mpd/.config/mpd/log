@@ -1,0 +1,284 @@
+Feb 04 18:33 : config: option 'device' on line 13 was not recognized
+Feb 04 18:33 : update: added /Keisei Gyakuten-Reverse Situation.mp3
+Feb 04 18:33 : update: added /Challengers.mp3
+Feb 04 18:33 : update: added /10 - Power of Scale.mp3
+Feb 04 18:37 : config: option 'device' on line 14 was not recognized
+Feb 04 18:47 : player: played "Challengers.mp3"
+Feb 04 18:49 : player: played "10 - Power of Scale.mp3"
+Feb 04 19:03 : player: played "Keisei Gyakuten-Reverse Situation.mp3"
+Feb 04 21:10 : player: played "Keisei Gyakuten-Reverse Situation.mp3"
+Feb 04 21:10 : exception: Not playing
+Feb 04 21:13 : player: played "10 - Power of Scale.mp3"
+Feb 04 21:16 : player: played "Challengers.mp3"
+Feb 04 21:19 : player: played "10 - Power of Scale.mp3"
+Feb 04 21:21 : player: played "10 - Power of Scale.mp3"
+Feb 04 21:33 : player: played "10 - Power of Scale.mp3"
+Feb 05 00:50 : exception: Failed to pause "pulse audio" (pulse): failed to connect the stream: Connection terminated
+Feb 05 00:53 : avahi: Client Disconnected, will reconnect shortly
+Feb 05 00:53 : avahi: Could not reconnect: Daemon not running
+Feb 05 00:53 : player: played "Keisei Gyakuten-Reverse Situation.mp3"
+Feb 06 00:04 : config: option 'device' on line 14 was not recognized
+Feb 06 00:21 : player: played "Keisei Gyakuten-Reverse Situation.mp3"
+Feb 06 00:46 : player: played "Challengers.mp3"
+Feb 06 00:48 : player: played "10 - Power of Scale.mp3"
+Feb 06 00:53 : player: played "10 - Power of Scale.mp3"
+Feb 06 01:08 : player: played "Keisei Gyakuten-Reverse Situation.mp3"
+Feb 06 01:08 : avahi: Client Disconnected, will reconnect shortly
+Feb 06 01:08 : avahi: Could not reconnect: Daemon not running
+Feb 06 13:25 : config: option 'device' on line 14 was not recognized
+Feb 06 13:25 : update: added /In Flames - The Jester Race.mp3
+Feb 06 13:25 : update: added /Zelda - Ocarina of Time - Gerudo Valley.mp3
+Feb 06 13:25 : update: added /The Offspring - You re Gonna Go Far, Kid.mp3
+Feb 06 13:25 : update: added /2Pac Ft. Dr. Dre Calfornia Love.mp3
+Feb 06 13:25 : update: added /Post Malone - Circles.mp3
+Feb 06 13:25 : update: added /Sunset Boulevard- Emblem3 ..mp3
+Feb 06 13:25 : update: added /Wagon Wheel- Darius Rucker .mp3
+Feb 06 13:39 : update: added /I Prevail - Gasoline.mp3
+Feb 06 13:39 : update: added /Gasoline.mp3
+Feb 06 13:39 : update: added /Machine Gun Kelly - Bloody Valentine [Official Video].mp3
+Feb 06 13:39 : update: added /Chris Brown & Young Thug - Go Crazy.mp3
+Feb 06 13:39 : update: added /Yung Bleu - You re Mines Still ft. Drake.mp3
+Feb 06 13:39 : update: added /Pop Smoke - What You Know Bout Love.mp3
+Feb 06 13:39 : update: added /All Time Low Monsters (feat. Demi Lovato and blackbear).mp3
+Feb 06 13:40 : update: removing I Prevail - Gasoline.mp3
+Feb 06 14:06 : update: added /TWO DOOR CINEMA CLUB WHAT YOU KNOW.mp3
+Feb 06 14:06 : update: added /Bring Me The Horizon - Obey with YUNGBLUD (Official Video).mp3
+Feb 06 14:06 : update: added /Be lakor - Abeyance (HD).mp3
+Feb 06 14:06 : update: added /Opeth - Blackwater Park (Audio).mp3
+Feb 06 14:06 : update: added /Post Malone - rockstar ft. 21 Savage.mp3
+Feb 06 14:06 : update: added /Post Malone - Rockstar ft. 21 Savage.mp3
+Feb 06 14:09 : player: played "All Time Low Monsters (feat. Demi Lovato and blackbear).mp3"
+Feb 06 14:32 : player: played "10 - Power of Scale.mp3"
+Feb 06 14:36 : player: played "Zelda - Ocarina of Time - Gerudo Valley.mp3"
+Feb 06 14:41 : player: played "Wagon Wheel- Darius Rucker .mp3"
+Feb 06 14:45 : player: played "Machine Gun Kelly - Bloody Valentine [Official Video].mp3"
+Feb 06 14:54 : player: played "Machine Gun Kelly - Bloody Valentine [Official Video].mp3"
+Feb 06 14:59 : player: played "Post Malone - Circles.mp3"
+Feb 06 15:03 : player: played "The Offspring - You re Gonna Go Far, Kid.mp3"
+Feb 06 16:24 : avahi: Client Disconnected, will reconnect shortly
+Feb 06 16:24 : avahi: Could not reconnect: Daemon not running
+Feb 06 19:27 : config: option 'device' on line 14 was not recognized
+Feb 06 19:29 : player: played "10 - Power of Scale.mp3"
+Feb 06 19:33 : player: played "Post Malone - Circles.mp3"
+Feb 06 20:00 : player: played "Gasoline.mp3"
+Feb 06 20:03 : player: played "Chris Brown & Young Thug - Go Crazy.mp3"
+Feb 06 20:07 : player: played "Post Malone - rockstar ft. 21 Savage.mp3"
+Feb 06 20:10 : player: played "TWO DOOR CINEMA CLUB WHAT YOU KNOW.mp3"
+Feb 06 20:14 : player: played "Yung Bleu - You re Mines Still ft. Drake.mp3"
+Feb 06 20:17 : player: played "Pop Smoke - What You Know Bout Love.mp3"
+Feb 06 20:29 : player: played "Opeth - Blackwater Park (Audio).mp3"
+Feb 06 20:33 : player: played "Bring Me The Horizon - Obey with YUNGBLUD (Official Video).mp3"
+Feb 06 20:33 : exception: Failed to open audio output
+Feb 06 20:48 : avahi: Client Disconnected, will reconnect shortly
+Feb 06 20:48 : avahi: Could not reconnect: Daemon not running
+Feb 06 20:48 : player: played "Gasoline.mp3"
+Feb 07 10:39 : config: option 'device' on line 14 was not recognized
+Feb 07 10:39 : update: added /Pokemon Diamond Pearl Platinum - Battle Champion Cynthia Music (HQ).mp3
+Feb 07 10:39 : update: added /Pokemon Fire Red and Leaf Green - Gym Leader Battle.mp3
+Feb 07 10:39 : update: added /Spyro 2 - Skelos Badlands.mp3
+Feb 07 10:39 : update: added /Spyro 3 - Cloud Spires.mp3
+Feb 07 10:39 : update: added /Undertale OST - Bergentrückung (Intro) + ASGORE Extended.mp3
+Feb 07 10:39 : update: added /AJR - BANG (Official Video).mp3
+Feb 07 10:39 : update: added /F-Zero - Mute City.mp3
+Feb 07 10:39 : update: added /Spyro the Dragon - Dark Hollow.mp3
+Feb 07 10:39 : update: added /Undertale OST - Battle Against A True Hero Extended.mp3
+Feb 07 10:39 : update: added /Ed Sheeran - Galway Girl [Official Music Video].mp3
+Feb 07 10:39 : update: added /Spyro 2 - Zephyr.mp3
+Feb 07 10:39 : update: added /Spyro 3 - Fireworks Factory.mp3
+Feb 07 10:39 : update: added /Super Smash Bros Brawl - Corneria.mp3
+Feb 07 10:39 : update: added /Blake Shelton - God s Country (Official Music Video).mp3
+Feb 07 10:39 : update: added /Spyro 3 - Midday Garden.mp3
+Feb 07 10:39 : update: added /Spyro 2 - Hurricos.mp3
+Feb 07 10:39 : update: added /Spyro 2 - Aquaria Towers.mp3
+Feb 07 10:42 : player: played "Bring Me The Horizon - Obey with YUNGBLUD (Official Video).mp3"
+Feb 07 10:46 : player: played "Spyro 2 - Hurricos.mp3"
+Feb 07 10:49 : player: played "Spyro 2 - Aquaria Towers.mp3"
+Feb 07 10:53 : player: played "Post Malone - Rockstar ft. 21 Savage.mp3"
+Feb 07 10:54 : player: played "Spyro 2 - Zephyr.mp3"
+Feb 07 10:57 : exception: No such directory
+Feb 07 11:03 : player: played "Wagon Wheel- Darius Rucker .mp3"
+Feb 07 11:06 : player: played "Machine Gun Kelly - Bloody Valentine [Official Video].mp3"
+Feb 07 11:10 : player: played "Pop Smoke - What You Know Bout Love.mp3"
+Feb 07 11:14 : player: played "Bring Me The Horizon - Obey with YUNGBLUD (Official Video).mp3"
+Feb 07 11:27 : player: played "Bring Me The Horizon - Obey with YUNGBLUD (Official Video).mp3"
+Feb 07 11:39 : player: played "Super Smash Bros Brawl - Corneria.mp3"
+Feb 07 11:43 : player: played "Spyro 3 - Midday Garden.mp3"
+Feb 07 11:45 : avahi: Client Disconnected, will reconnect shortly
+Feb 07 11:45 : avahi: Could not reconnect: Daemon not running
+Feb 07 11:45 : player: played "2Pac Ft. Dr. Dre Calfornia Love.mp3"
+Feb 07 17:19 : config: option 'device' on line 14 was not recognized
+Feb 07 17:22 : avahi: Client Disconnected, will reconnect shortly
+Feb 07 17:22 : avahi: Could not reconnect: Daemon not running
+Feb 07 17:22 : player: played "2Pac Ft. Dr. Dre Calfornia Love.mp3"
+Feb 07 17:23 : config: option 'device' on line 14 was not recognized
+Feb 07 17:24 : player: played "2Pac Ft. Dr. Dre Calfornia Love.mp3"
+Feb 07 17:39 : avahi: Client Disconnected, will reconnect shortly
+Feb 07 17:39 : avahi: Could not reconnect: Daemon not running
+Feb 07 17:39 : player: played "In Flames - The Jester Race.mp3"
+Feb 07 17:39 : config: option 'device' on line 14 was not recognized
+Feb 07 17:42 : avahi: Client Disconnected, will reconnect shortly
+Feb 07 17:42 : avahi: Could not reconnect: Daemon not running
+Feb 07 17:42 : player: played "In Flames - The Jester Race.mp3"
+Feb 07 17:43 : config: option 'device' on line 14 was not recognized
+Feb 07 17:54 : player: played "Post Malone - Circles.mp3"
+Feb 07 18:10 : player: played "Sunset Boulevard- Emblem3 ..mp3"
+Feb 07 18:13 : player: played "Machine Gun Kelly - Bloody Valentine [Official Video].mp3"
+Feb 07 18:16 : player: played "Chris Brown & Young Thug - Go Crazy.mp3"
+Feb 07 18:20 : player: played "Post Malone - rockstar ft. 21 Savage.mp3"
+Feb 07 18:24 : player: played "TWO DOOR CINEMA CLUB WHAT YOU KNOW.mp3"
+Feb 07 18:36 : player: played "Yung Bleu - You re Mines Still ft. Drake.mp3"
+Feb 07 18:39 : player: played "Pop Smoke - What You Know Bout Love.mp3"
+Feb 07 18:51 : player: played "Opeth - Blackwater Park (Audio).mp3"
+Feb 07 18:55 : player: played "Bring Me The Horizon - Obey with YUNGBLUD (Official Video).mp3"
+Feb 07 19:03 : player: played "Be lakor - Abeyance (HD).mp3"
+Feb 07 19:06 : player: played "All Time Low Monsters (feat. Demi Lovato and blackbear).mp3"
+Feb 07 19:09 : player: played "The Offspring - You re Gonna Go Far, Kid.mp3"
+Feb 07 19:12 : player: played "Spyro 2 - Hurricos.mp3"
+Feb 07 19:15 : player: played "Spyro 2 - Aquaria Towers.mp3"
+Feb 07 19:18 : player: played "Post Malone - Rockstar ft. 21 Savage.mp3"
+Feb 07 19:22 : player: played "Spyro 2 - Zephyr.mp3"
+Feb 07 19:25 : player: played "Spyro 2 - Skelos Badlands.mp3"
+Feb 07 19:28 : player: played "Spyro 3 - Cloud Spires.mp3"
+Feb 07 19:32 : player: played "Spyro 3 - Fireworks Factory.mp3"
+Feb 07 19:49 : player: played "Super Smash Bros Brawl - Corneria.mp3"
+Feb 07 19:50 : player: played "F-Zero - Mute City.mp3"
+Feb 07 19:54 : player: played "Pokemon Fire Red and Leaf Green - Gym Leader Battle.mp3"
+Feb 07 19:56 : player: played "Spyro 3 - Midday Garden.mp3"
+Feb 07 22:06 : player: played "Yung Bleu - You re Mines Still ft. Drake.mp3"
+Feb 07 22:08 : player: played "Pop Smoke - What You Know Bout Love.mp3"
+Feb 07 22:20 : player: played "Opeth - Blackwater Park (Audio).mp3"
+Feb 07 22:24 : player: played "Bring Me The Horizon - Obey with YUNGBLUD (Official Video).mp3"
+Feb 07 22:32 : player: played "Be lakor - Abeyance (HD).mp3"
+Feb 07 22:35 : player: played "All Time Low Monsters (feat. Demi Lovato and blackbear).mp3"
+Feb 07 22:38 : player: played "The Offspring - You re Gonna Go Far, Kid.mp3"
+Feb 07 22:41 : player: played "Spyro 2 - Hurricos.mp3"
+Feb 07 22:44 : player: played "Spyro 2 - Aquaria Towers.mp3"
+Feb 07 22:48 : player: played "Post Malone - Rockstar ft. 21 Savage.mp3"
+Feb 07 22:52 : player: played "Spyro 2 - Zephyr.mp3"
+Feb 07 22:54 : player: played "Spyro 2 - Skelos Badlands.mp3"
+Feb 07 22:57 : player: played "Spyro 3 - Cloud Spires.mp3"
+Feb 07 23:02 : player: played "Spyro 3 - Fireworks Factory.mp3"
+Feb 07 23:17 : player: played "Undertale OST - Battle Against A True Hero Extended.mp3"
+Feb 07 23:33 : player: played "Undertale OST - Bergentrückung (Intro) + ASGORE Extended.mp3"
+Feb 07 23:36 : player: played "Super Smash Bros Brawl - Corneria.mp3"
+Feb 07 23:37 : player: played "F-Zero - Mute City.mp3"
+Feb 07 23:41 : player: played "Pokemon Fire Red and Leaf Green - Gym Leader Battle.mp3"
+Feb 07 23:44 : player: played "Spyro 3 - Midday Garden.mp3"
+Feb 07 23:58 : player: played "Bring Me The Horizon - Obey with YUNGBLUD (Official Video).mp3"
+Feb 08 00:01 : player: played "Super Smash Bros Brawl - Corneria.mp3"
+Feb 08 00:03 : player: played "10 - Power of Scale.mp3"
+Feb 08 00:06 : player: played "Gasoline.mp3"
+Feb 08 00:09 : player: played "TWO DOOR CINEMA CLUB WHAT YOU KNOW.mp3"
+Feb 08 00:11 : player: played "Spyro 2 - Skelos Badlands.mp3"
+Feb 08 00:14 : player: played "All Time Low Monsters (feat. Demi Lovato and blackbear).mp3"
+Feb 08 00:30 : player: played "Undertale OST - Battle Against A True Hero Extended.mp3"
+Feb 08 00:34 : player: played "Post Malone - rockstar ft. 21 Savage.mp3"
+Feb 08 00:37 : player: played "Pokemon Fire Red and Leaf Green - Gym Leader Battle.mp3"
+Feb 08 00:40 : player: played "Spyro 3 - Cloud Spires.mp3"
+Feb 08 00:43 : player: played "Pop Smoke - What You Know Bout Love.mp3"
+Feb 08 00:46 : player: played "Sunset Boulevard- Emblem3 ..mp3"
+Feb 08 00:50 : player: played "Machine Gun Kelly - Bloody Valentine [Official Video].mp3"
+Feb 08 00:53 : player: played "The Offspring - You re Gonna Go Far, Kid.mp3"
+Feb 08 00:57 : player: played "Yung Bleu - You re Mines Still ft. Drake.mp3"
+Feb 08 01:01 : player: played "Spyro 3 - Fireworks Factory.mp3"
+Feb 08 01:04 : player: played "Chris Brown & Young Thug - Go Crazy.mp3"
+Feb 08 01:05 : avahi: Client Disconnected, will reconnect shortly
+Feb 08 01:05 : avahi: Could not reconnect: An unexpected D-Bus error occurred
+Feb 08 01:05 : exception: Failed to play on "pulse audio" (pulse): disconnected
+Feb 08 01:05 : player: played "Spyro 2 - Hurricos.mp3"
+Feb 08 13:00 : config: option 'device' on line 14 was not recognized
+Feb 08 13:03 : player: played "Spyro 2 - Hurricos.mp3"
+Feb 08 13:05 : player: played "Gasoline.mp3"
+Feb 08 13:08 : player: played "Challengers.mp3"
+Feb 08 13:12 : player: played "Spyro 2 - Zephyr.mp3"
+Feb 08 13:15 : player: played "All Time Low Monsters (feat. Demi Lovato and blackbear).mp3"
+Feb 08 13:17 : player: played "Spyro 2 - Skelos Badlands.mp3"
+Feb 08 13:20 : player: played "TWO DOOR CINEMA CLUB WHAT YOU KNOW.mp3"
+Feb 08 15:35 : player: played "Pop Smoke - What You Know Bout Love.mp3"
+Feb 08 15:39 : player: played "Bring Me The Horizon - Obey with YUNGBLUD (Official Video).mp3"
+Feb 08 15:42 : player: played "Chris Brown & Young Thug - Go Crazy.mp3"
+Feb 08 15:47 : player: played "Post Malone - Circles.mp3"
+Feb 08 15:54 : player: played "Wagon Wheel- Darius Rucker .mp3"
+Feb 08 15:58 : update: removing 10 - Power of Scale.mp3
+Feb 08 15:58 : update: removing Post Malone - Rockstar ft. 21 Savage.mp3
+Feb 08 16:02 : player: played "Ed Sheeran - Galway Girl [Official Music Video].mp3"
+Feb 08 16:42 : avahi: Client Disconnected, will reconnect shortly
+Feb 08 16:42 : avahi: Could not reconnect: Daemon not running
+Feb 08 16:42 : player: played "2Pac Ft. Dr. Dre Calfornia Love.mp3"
+Feb 08 20:28 : config: option 'device' on line 14 was not recognized
+Feb 08 22:53 : player: played "Bring Me The Horizon - Obey with YUNGBLUD (Official Video).mp3"
+Feb 08 22:55 : player: played "Spyro 2 - Aquaria Towers.mp3"
+Feb 08 22:59 : player: played "Post Malone - Circles.mp3"
+Feb 08 23:02 : player: played "AJR - BANG (Official Video).mp3"
+Feb 08 23:06 : player: played "Spyro the Dragon - Dark Hollow.mp3"
+Feb 08 23:10 : player: played "Yung Bleu - You re Mines Still ft. Drake.mp3"
+Feb 08 23:13 : player: played "All Time Low Monsters (feat. Demi Lovato and blackbear).mp3"
+Feb 08 23:18 : player: played "Wagon Wheel- Darius Rucker .mp3"
+Feb 09 00:18 : player: played "AJR - BANG (Official Video).mp3"
+Feb 09 00:21 : player: played "TWO DOOR CINEMA CLUB WHAT YOU KNOW.mp3"
+Feb 09 00:26 : player: played "Spyro 3 - Fireworks Factory.mp3"
+Feb 09 00:29 : player: played "Chris Brown & Young Thug - Go Crazy.mp3"
+Feb 09 00:31 : player: played "Super Smash Bros Brawl - Corneria.mp3"
+Feb 09 00:34 : player: played "Spyro 3 - Midday Garden.mp3"
+Feb 09 00:50 : player: played "Undertale OST - Battle Against A True Hero Extended.mp3"
+Feb 09 01:05 : avahi: Client Disconnected, will reconnect shortly
+Feb 09 01:05 : avahi: Could not reconnect: Daemon not running
+Feb 09 01:05 : player: played "Keisei Gyakuten-Reverse Situation.mp3"
+Feb 09 10:07 : config: option 'device' on line 14 was not recognized
+Feb 09 10:19 : player: played "2Pac Ft. Dr. Dre Calfornia Love.mp3"
+Feb 09 10:23 : player: played "Pokemon Fire Red and Leaf Green - Gym Leader Battle.mp3"
+Feb 09 10:26 : player: played "Spyro 3 - Midday Garden.mp3"
+Feb 09 10:33 : player: played "Super Smash Bros Brawl - Corneria.mp3"
+Feb 09 10:36 : player: played "All Time Low Monsters (feat. Demi Lovato and blackbear).mp3"
+Feb 09 10:41 : player: played "Wagon Wheel- Darius Rucker .mp3"
+Feb 09 10:43 : player: played "Spyro 2 - Skelos Badlands.mp3"
+Feb 09 10:47 : player: played "Post Malone - rockstar ft. 21 Savage.mp3"
+Feb 09 10:50 : player: played "Gasoline.mp3"
+Feb 09 10:59 : player: played "AJR - BANG (Official Video).mp3"
+Feb 09 11:03 : player: played "Yung Bleu - You re Mines Still ft. Drake.mp3"
+Feb 09 11:08 : player: played "Spyro 3 - Fireworks Factory.mp3"
+Feb 09 11:19 : player: played "Challengers.mp3"
+Feb 09 11:24 : player: played "In Flames - The Jester Race.mp3"
+Feb 09 11:26 : avahi: Client Disconnected, will reconnect shortly
+Feb 09 11:26 : avahi: Could not reconnect: Daemon not running
+Feb 09 11:26 : exception: Failed to play on "pulse audio" (pulse): disconnected
+Feb 09 11:26 : player: played "Spyro 2 - Hurricos.mp3"
+Feb 09 15:08 : config: option 'device' on line 14 was not recognized
+Feb 09 15:09 : player: played "Spyro 2 - Hurricos.mp3"
+Feb 09 15:35 : player: played "Wagon Wheel- Darius Rucker .mp3"
+Feb 09 15:48 : player: played "Chris Brown & Young Thug - Go Crazy.mp3"
+Feb 09 15:53 : player: played "In Flames - The Jester Race.mp3"
+Feb 09 16:10 : player: played "Pop Smoke - What You Know Bout Love.mp3"
+Feb 09 16:13 : player: played "Yung Bleu - You re Mines Still ft. Drake.mp3"
+Feb 09 16:17 : player: played "Spyro 2 - Zephyr.mp3"
+Feb 09 16:21 : player: played "2Pac Ft. Dr. Dre Calfornia Love.mp3"
+Feb 09 16:26 : player: played "Spyro the Dragon - Dark Hollow.mp3"
+Feb 09 16:38 : player: played "Opeth - Blackwater Park (Audio).mp3"
+Feb 09 16:45 : player: played "Ed Sheeran - Galway Girl [Official Music Video].mp3"
+Feb 09 16:48 : player: played "F-Zero - Mute City.mp3"
+Feb 09 16:50 : player: played "Zelda - Ocarina of Time - Gerudo Valley.mp3"
+Feb 09 16:53 : player: played "Pokemon Fire Red and Leaf Green - Gym Leader Battle.mp3"
+Feb 09 17:09 : player: played "Undertale OST - Battle Against A True Hero Extended.mp3"
+Feb 09 17:11 : player: played "F-Zero - Mute City.mp3"
+Feb 09 17:15 : player: played "Bring Me The Horizon - Obey with YUNGBLUD (Official Video).mp3"
+Feb 09 17:18 : player: played "Chris Brown & Young Thug - Go Crazy.mp3"
+Feb 09 17:21 : player: played "Sunset Boulevard- Emblem3 ..mp3"
+Feb 09 17:24 : player: played "Spyro 2 - Aquaria Towers.mp3"
+Feb 09 17:27 : player: played "All Time Low Monsters (feat. Demi Lovato and blackbear).mp3"
+Feb 09 17:35 : player: played "Be lakor - Abeyance (HD).mp3"
+Feb 09 17:39 : player: played "2Pac Ft. Dr. Dre Calfornia Love.mp3"
+Feb 09 17:43 : player: played "Machine Gun Kelly - Bloody Valentine [Official Video].mp3"
+Feb 09 17:46 : player: played "Spyro 2 - Hurricos.mp3"
+Feb 09 17:51 : player: played "In Flames - The Jester Race.mp3"
+Feb 09 17:54 : player: played "The Offspring - You re Gonna Go Far, Kid.mp3"
+Feb 09 17:57 : player: played "Ed Sheeran - Galway Girl [Official Music Video].mp3"
+Feb 09 18:01 : player: played "Post Malone - Circles.mp3"
+Feb 09 18:03 : player: played "Pop Smoke - What You Know Bout Love.mp3"
+Feb 09 18:07 : player: played "Spyro 2 - Zephyr.mp3"
+Feb 09 18:12 : player: played "Gasoline.mp3"
+Feb 09 18:15 : player: played "Yung Bleu - You re Mines Still ft. Drake.mp3"
+Feb 09 18:19 : player: played "TWO DOOR CINEMA CLUB WHAT YOU KNOW.mp3"
+Feb 09 18:23 : player: played "Spyro 3 - Fireworks Factory.mp3"
+Feb 09 18:26 : player: played "Spyro 3 - Midday Garden.mp3"
+Feb 09 18:29 : player: played "Super Smash Bros Brawl - Corneria.mp3"
+Feb 09 19:33 : player: played "Spyro the Dragon - Dark Hollow.mp3"

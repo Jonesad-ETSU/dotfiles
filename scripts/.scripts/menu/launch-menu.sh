@@ -11,7 +11,7 @@ _menu() {
   [ $menu = "dmenu"  ] && \
     dmenu -c -l 11 -fn "$font" -nb $background -nf $foreground -sb $color5 -sf $background -p | cut -d ' ' -f 2 \
                     || \
-    rofi -i -lines 11 -matching fuzzy -dmenu -p ' ' -font "Ubuntu Nerd Font 22" -config /usr/share/rofi/themes/gruvbox-dark-hard.rasi | cut -d ' ' -f 2 
+		    rofi -i -lines 11 -matching fuzzy -dmenu -p ' ' -font "Ubuntu Nerd Font 22" -config /usr/share/rofi/themes/$(xgetres rofi.theme).rasi | cut -d ' ' -f 2 
 }
 
 _start() { 
@@ -37,7 +37,7 @@ _loop () {
     esac ;;
   3)  #Tools
     case $1 in
-      'OnlyOffice') exec onlyoffice-desktopeditors & ;;
+      'LibreOffice') exec libreoffice & ;;
       'Install-Packages') exec $terminal -e $SCRIPTS_FOLDER/fuzzypkg/fuzzypkg & ;;
       'System-Monitor') exec $terminal -e bashtop & ;;      
       'Drive-Analyzer') exec $terminal -e ncdu & ;;

@@ -10,20 +10,19 @@
 #define FIFO HOME"/.lemonbar_top.fifo"
 
 /* This variable controls the amount of spaces on each side of the bar. */
-#define SIDE_BUFFER 10
+#define SIDE_BUFFER 0
 
 /* This HAS to be changed when you add or delete modules  */
 #define NUM_MODS 9
 
 /* Modify these to modify the delimeters between modules in each section */
-#define DELIM " | "
-#define LEFT_DELIM DELIM
+#define DELIM "  "
+#define LEFT_DELIM " "
 #define CENTER_DELIM DELIM
 #define RIGHT_DELIM DELIM
 
 /* Modify this to change the base for signals */
 #define SIGS_START 40
-
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -56,7 +55,7 @@ struct module modules[NUM_MODS] = {
 	//  { LEMON"/lemon-mem.sh",         RIGHT,   2,    "",     "",     4,	6     },
 	    { LEMON"/lemon-ewmh.sh",        LEFT,    2,     "",     "",     -1,	7    },
 	    { LEMON"/lemon-launcher.sh",	    LEFT,      1,	    "",	    "",	    -1,	8    },
-	    { LEMON"/lemon-mpd.sh",	LEFT,		3,	"",	"",	-1,	9	},
+	    { LEMON"/lemon-mpd.sh",	LEFT,		3,	"",	"",	1,	9	},
 	    { LEMON"/lemon-connected.sh",	RIGHT,	2,	"",	"",	-1,	10 },
 	    { LEMON"/lemon-kernel.sh",	RIGHT,		1,	"",	"",	-1,	11 },
 };

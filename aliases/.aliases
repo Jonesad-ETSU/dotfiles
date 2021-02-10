@@ -20,7 +20,8 @@ alias cd..='cd ..'
 alias q='exit'
 alias cl='clear && ls'
 alias svim='sudo vim'
-alias please='sudo'
+alias sudo='doas'
+alias please='doas'
 alias ranger='ranger --choosedir=$HOME/.rangerdir;cd $(cat $HOME/.rangerdir)'
 alias xz=". $HOME/.zprofile"
 alias bat="echo Percentage: $(cat /sys/class/power_supply/BAT0/capacity);echo Status: $(cat /sys/class/power_supply/BAT0/status)"
