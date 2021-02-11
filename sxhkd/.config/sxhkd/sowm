@@ -1,0 +1,56 @@
+super + Return
+  $SCRIPTS_FOLDER/menu/launch-menu.sh
+  
+super + Home
+  $SCRIPTS_FOLDER/set-random-wallpaper.sh
+
+super + shift + Home
+  $SCRIPTS_FOLDER/change-colors.sh
+
+XF86Audio{Raise,Lower}Volume
+  $SCRIPTS_FOLDER/vol{up,down}.sh
+
+super + F1
+  $SCRIPTS_FOLDER/mute.sh
+
+super + {F7,F8}
+   brightnessctl s {4%-,+4%} && pkill -44 lemontopc
+
+super + {1-5}
+  dwmc view {0-4} && pkill -47 lemontopc
+
+super + shift + {1-5}
+  dwmc tagex {0-4} && pkill -47 lemontopc
+
+super + shift + {j,k}
+  xsetroot -name "fsignal:shiftview ui {-1,1}" && pkill -47 lemontopc
+
+super + {j,k}
+  dwmc focusstack {-1,1}
+
+super + e
+  $TERMINAL -e ranger
+
+super + shift + Escape
+  killall xinit
+
+super + R
+  killall $WM
+
+super + F
+  dwmc zoom
+
+super + Tab
+  skippy-xd && pkill -47 lemontopc
+
+Print
+  $SCRIPTS_FOLDER/lemon/dunst-timer.sh "Taking a Screenshot" "$SCRIPTS_FOLDER/icons/camera.png" && scrot "$(date +%c).png" -e 'mv "$f" ~/Pictures/Screenshots/ ; dunstify -t 1500 -i "~/.scripts/icons/camera.png" "Screenshot Saved"'
+
+F3
+	mpc toggle
+
+F4
+	mpc next
+
+F2	
+	mpc prev

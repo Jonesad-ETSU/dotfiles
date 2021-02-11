@@ -4,7 +4,7 @@
 * Purpose:  Pipes output of scripts into lemonbar.  *   		
 \****************************************************/
 
-#define DEBUG	      1
+#define DEBUG	      0
 #define BUFFER_SIZE   450
 #define LEFT          -1
 #define CENTER        0
@@ -17,7 +17,14 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <unistd.h>
-#include "config.h"
+
+#if defined ( SECONDARY ) 
+  #include "config_secondary.h"
+#elif defined ( MAIN ) 
+  #include "config.h"
+#elif defined ( ONE )
+  #include "config.onebar.h"
+#endif
 
 int catchfd[2];
 int LEFT_COUNTER = 0,
@@ -86,8 +93,9 @@ void
 catcher ( int signum ) {
   if ( getpid() != MAIN_PID )
     return;
-  if ( !DEBUG ) printf( "\n* SIGNAL RECEIVED: *%d\n", signum ); fflush (stdout);
-  
+#if DEBUG == 1
+  printf( "\n* SIGNAL RECEIVED: *%d\n", signum ); fflush (stdout);
+#endif  
   module *last = modules + sizeof(modules)/sizeof(modules[0]);
   for ( module *ptr = modules; ptr < last; ptr++ ) {
   	if ( SIGS_START + ptr->signal == signum ) {
@@ -128,7 +136,7 @@ reader (  ) {
     else if (msg->align == RIGHT ) 
       strncpy ( right [ msg->order ], msg->text, BUFFER_SIZE ); 
     
-    if ( !DEBUG ) { 
+#if DEBUG == 1 
     	for ( int i = 0; i < LEFT_COUNTER; i++ )
     		printf ( "LEFT[%d]:\t%s\n",i, left [i]); 
 
@@ -139,8 +147,7 @@ reader (  ) {
     		printf ( "RIGHT[%d]:\t%s\n",i, right [i]); 
 
     	fflush ( stdout );
-    }
-    else {
+#else
 	used = 0;
 	used += snprintf ( str+used, strsize-used, "%%{l}%%{O%d}", SIDE_BUFFER );
 	for ( int i = 0; i < LEFT_COUNTER-1; i++ ) 
@@ -157,7 +164,7 @@ reader (  ) {
 
 	printf ( str );
 	fflush ( stdout ); 
-    }
+#endif
   }
 }
 

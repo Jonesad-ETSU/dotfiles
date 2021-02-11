@@ -70,6 +70,7 @@ dunst.bar.title.scared:		Please...
 ! lemonbar
 lemon.foreground:	fg	
 lemon.background:	bg
+lemon.edgecolor:	magenta
 lemon.length:	1920
 lemon.width:	bh
 lemon.xoffset:	+0
@@ -94,6 +95,8 @@ mem.symbol:		
 mem.text:		MEM
 home.symbol:		
 home.text:		HOME
+root.symbol:			
+root.text:		ROOT
 wifi.symbol:		
 wifi.text:		WLO
 eth.symbol:		
@@ -110,6 +113,16 @@ launcher.symbol:	
 launcher.text:		LAUNCH
 mpd.symbol:		
 mpd.text:		MUSIC
+mpd.play.symbol:	
+mpd.play.text:		PLAY
+mpd.pause.symbol:		
+mpd.pause.text:		PAUSE
+mpd.next.symbol:	
+mpd.next.text:		NEXT
+mpd.prev.symbol:		
+mpd.prev.text:		PREV
+temp.symbol:		
+temp.text:		TEMP
 
 ! audio
 audio.pipe:	/tmp/xobpipe

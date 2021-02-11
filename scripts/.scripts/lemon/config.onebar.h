@@ -13,7 +13,7 @@
 #define SIDE_BUFFER 0
 
 /* This HAS to be changed when you add or delete modules  */
-#define NUM_MODS 8
+#define NUM_MODS 9
 
 /* Modify these to modify the delimeters between modules in each section */
 #define DELIM "  "
@@ -51,10 +51,13 @@ struct module modules[NUM_MODS] = {
 	    { LEMON"/lemon-battery.sh",     CENTER,  1,     "",     "",     30,	2    },
 	    { LEMON"/lemon-time.sh",        RIGHT,   4,     "",     "",     30,	3    },
             { LEMON"/lemon-brightness.sh",  RIGHT,   3,     "",     "",     10,	4    },
+	//  { LEMON"/lemon-cpu.sh",         RIGHT,   3,  "",     "",     3, 5   },
+	//  { LEMON"/lemon-mem.sh",         RIGHT,   2,    "",     "",     4,	6     },
 	    { LEMON"/lemon-ewmh.sh",        LEFT,    2,     "",     "",     -1,	7    },
-	    { LEMON"/lemon-edge.sh "LEMON"/lemon-launcher.sh",	    LEFT,      1,	    "",	    "",	    -1,	8    },
-	    { LEMON"/lemon-kernel.sh",	RIGHT,	1,	"",	"",	-1,	9 },
+	    { LEMON"/lemon-launcher.sh",	    LEFT,      1,	    "",	    "",	    -1,	8    },
+	    { LEMON"/lemon-mpd.sh",	LEFT,		3,	"",	"",	1,	9	},
 	    { LEMON"/lemon-connected.sh",	RIGHT,	2,	"",	"",	-1,	10 },
+	    { LEMON"/lemon-kernel.sh",	RIGHT,		1,	"",	"",	-1,	11 },
 };
 
 /* Method Declaration - ignore me*/

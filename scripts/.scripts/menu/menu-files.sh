@@ -1,4 +1,5 @@
 #!/bin/sh
 contents=$(cat $SCRIPTS_FOLDER/menu/$1)
 
-[ ${contents:0:0} = 'd' ] && 
+[ ${contents:0:0} = 'd' ] && ls ${contents:2} 
+

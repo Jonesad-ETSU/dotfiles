@@ -13,7 +13,7 @@
 #define SIDE_BUFFER 0
 
 /* This HAS to be changed when you add or delete modules  */
-#define NUM_MODS 8
+#define NUM_MODS 7
 
 /* Modify these to modify the delimeters between modules in each section */
 #define DELIM "  "
@@ -22,7 +22,7 @@
 #define RIGHT_DELIM DELIM
 
 /* Modify this to change the base for signals */
-#define SIGS_START 40
+#define SIGS_START 60
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -47,14 +47,13 @@ typedef struct module {
 struct module modules[NUM_MODS] = {
 	  /*  COMMAND                       ALIGN    ORDER  P
 	   *  RE     POST    TIMER	SIGNAL   */
-	    { LEMON"/lemon-power.sh",      RIGHT,   5,     "",     "",     -1,	1  },
-	    { LEMON"/lemon-battery.sh",     CENTER,  1,     "",     "",     30,	2    },
-	    { LEMON"/lemon-time.sh",        RIGHT,   4,     "",     "",     30,	3    },
-            { LEMON"/lemon-brightness.sh",  RIGHT,   3,     "",     "",     10,	4    },
-	    { LEMON"/lemon-ewmh.sh",        LEFT,    2,     "",     "",     -1,	7    },
-	    { LEMON"/lemon-edge.sh "LEMON"/lemon-launcher.sh",	    LEFT,      1,	    "",	    "",	    -1,	8    },
-	    { LEMON"/lemon-kernel.sh",	RIGHT,	1,	"",	"",	-1,	9 },
-	    { LEMON"/lemon-connected.sh",	RIGHT,	2,	"",	"",	-1,	10 },
+	    { LEMON"/lemon-temp.sh",         RIGHT,   1,  "",     "",     3, 5   },
+	    { LEMON"/lemon-mem.sh",         RIGHT,   2,    "",     "",     2,	6     },
+	    { LEMON"/lemon-home.sh",        RIGHT,   3,    "",     "",     2,	6     },
+	    { LEMON"/lemon-root.sh",        RIGHT,   4,    "",     "",     2,	6     },
+	    { LEMON"/lemon-weather.sh",     RIGHT,   5,    "",     "",     2,	6     },
+	    { LEMON"/lemon-mpd.sh",	CENTER,		1,	"",	"",	1,	9	},
+	    { LEMON"/lemon-tasks.sh",	LEFT,		1,	"",	"",30,	10	},
 };
 
 /* Method Declaration - ignore me*/

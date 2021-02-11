@@ -1,0 +1,33 @@
+#!/bin/sh
+
+dimensions="$(xgetres lemon.length)x$(xgetres lemon.width)$(xgetres lemon.xoffset)$(xgetres lemon.yoffset)"
+
+[ $(pgrep picom) ] && \
+	background="#$(xgetres lemon.opacity)$(xgetres lemon.background|cut -d '#' -f 2)" \
+	|| \
+	background="$(xgetres lemon.background)"
+
+[ -n "$(xgetres lemon.topbar)" ] && \
+	[ $(xgetres lemon.topbar) -eq 1 ] && bottom="-b"	
+
+[ -n "$(xgetres lemon.floating)" ] && \
+	[ $(xgetres lemon.floating ) -eq 1 ] \
+		&& name="lemonbar_floating" \
+		|| name="lemonbar_noshadow"	
+
+bar () { 
+	lemonbar -d $bottom -g $dimensions -u 2 -f "$(xgetres lemon.font1)" -o $(xgetres lemon.font1.offset) \
+	  -f "$(xgetres lemon.font2)" -o $(xgetres lemon.font2.offset) -f "$(xgetres lemon.font3)" -o $(xgetres lemon.font3.offset) \
+	  -F "$(xgetres lemon.foreground)" -B "$background" \
+	  -U $(xgetres foreground) -a 30 -n $name
+}
+
+#WIP - trying to prevent _NET_DESKTOP_NAMES:notfound bar
+xprop -root _NET_DESKTOP_NAMES > /dev/null 2>/dev/null
+while [ $? -eq 1 ]; do
+  sleep 1
+  xprop -root > /dev/null 2>/dev/null
+done
+
+#For some reason, need to send signal for initial display
+$SCRIPTS_FOLDER/lemon/lemonbottomc | bar | bash ; exit
