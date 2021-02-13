@@ -8,7 +8,7 @@ export SCRIPTS_FOLDER="$HOME/.scripts"
 export DMENU=1
 export COLORS=nord
 export QT_QPA_PLATFORMTHEME=gtk2
-export PATH="$HOME/.cargo/bin:$HOME/.src/Discord:$SCRIPTS_FOLDER:$SCRIPTS_FOLDER/lemon:$SCRIPTS_FOLDER/dmenu:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.src/Discord:$SCRIPTS_FOLDER:$SCRIPTS_FOLDER/lemon:$SCRIPTS_FOLDER/dmenu:$HOME/.local/bin:$PATH"
 
 #paplay $HOME/Sounds/startup.wav &
 WM_FOLDER="$HOME/.config/x"
