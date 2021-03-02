@@ -30,7 +30,7 @@ read refind
 
 sudo xbps-install -Syu
 sudo xbps-install -Sy void-repo-multilib void-repo-nonfree void-repo-multilib-nonfree
-sudo xbps-install -Sy stow vim xorg git feh alacritty xterm ytop fzf bandwhich xtools scrot rofi libX11-devel libXft-devel libXinerama-devel zsh zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search lm_sensors gucharmap fd lxappearance pulseaudio pavucontrol dunst firefox lsd mpd ncdu ncmpcpp mpv patch i3lock-color udiskie runit-swap yad zathura pkg-config lvm2 arandr cpufrequtils alsa-utils alsa-firmware bluez-alsa cava brightnessctl ranger picom xob sxhkd xbanish ImageMagick NetworkManager breeze-obsidian-cursor-theme pamixer ueberzug procs openntpd xdg-utils xdg-user-dirs lsw atk-devel pango-devel jq
+sudo xbps-install -Sy stow vim xorg git feh alacritty xterm ytop fzf bandwhich xtools scrot rofi libX11-devel libXft-devel libXinerama-devel zsh zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search lm_sensors gucharmap fd lxappearance pulseaudio pavucontrol dunst firefox lsd mpd ncdu ncmpcpp mpv patch i3lock-color udiskie runit-swap yad zathura pkg-config lvm2 arandr cpufrequtils alsa-utils alsa-firmware bluez-alsa cava brightnessctl ranger picom xob sxhkd xbanish ImageMagick NetworkManager breeze-obsidian-cursor-theme pamixer ueberzug procs openntpd xdg-utils xdg-user-dirs atk-devel pango-devel jq lightdm mpc plank 
 
 [ $games = 'y' ] && sudo xbps-install -Sy steam mesa-dri-32bit lutris vulkan-loader-32bit vulkan-loader nvidia-opencl
        
@@ -60,7 +60,7 @@ sudo ln -s /etc/sv/lightdm /var/service/
 
 #Downlad my dotfiles and symlink them to right place in $HOME
 cd ~ && git clone https://github.com/Jonesad-ETSU/dotfiles.git 
-cd ~/dotfiles && stow xgetres fuzzypkg sxhkd Music dmenu dwm-ewmh scripts xob picom Wallpaper xinit ranger dunst bspwm scientifica lemonbar xresources zsh aliases gruvbox-dark-gtk dracula-gtk nordic-gtk alacritty 
+cd ~/dotfiles && stow xgetres gtk-3.0 fuzzypkg sxhkd Music dmenu scripts xob picom Wallpaper xinit ranger dunst bspwm scientifica lemonbar xresources zsh aliases gruvbox-dark-gtk dracula-gtk nordic-gtk alacritty 
 
 #Installing xgetres, dwm, and dmenu from source
 cd ~/.src/xgetres/ && make && sudo make install
