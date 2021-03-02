@@ -11,6 +11,7 @@ MAX=$(xgetres bat.num)
 BAT_FULL=$(xgetres bat.full)
 BAT_HALF=$(xgetres bat.half)
 BAT_EMPTY=$(xgetres bat.empty)
+USE_HALVES=$(xgetres bat.halves)
 PR_FULL=$(( 100 / $MAX ))
 PR_HALF=$(( $PR_FULL / 2))
 battery=""
@@ -24,17 +25,17 @@ let counter=0
 for (( ; pr > 0; counter++ ))
 do
   if [ $pr -ge $PR_FULL ]; then
-		let "pr-=$PR_FULL" 
-		let "whole+=1"
-		continue
+	let "pr-=$PR_FULL" 
+	let "whole+=1"
+	continue
   elif [ $pr -ge $PR_HALF ]; then
-		pr=0
-		let "whole+=1"
-		continue 	
-	elif [ $pr -ge 1 ]; then
-		pr=0 
-    cracked=1
-	fi
+	pr=0
+	let "whole+=1"
+	continue 	
+  elif [ $pr -ge 1 ]; then
+  	pr=0 
+  	[ $USE_HALVES -eq 1 ] && cracked=1
+  fi
 done	
 
 let "empty=$MAX-counter"

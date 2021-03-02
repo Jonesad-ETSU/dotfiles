@@ -3,15 +3,17 @@ menu=$(xgetres menu)
 background=$(xgetres background)
 foreground=$(xgetres foreground)
 terminal=$(xgetres terminal)
-font=$(xgetres dmenu.font)
+dmenu_font=$(xgetres dmenu.font)
+rofi_font="xft:$(xgetres rofi.font)"
+rofi_theme=$(xgetres rofi.theme)
 color5=$(xgetres color5)
 
 wallpaperFolder="$HOME/Wallpaper"
 _menu() {
   [ $menu = "dmenu"  ] && \
-    dmenu -c -l 11 -fn "$font" -nb $background -nf $foreground -sb $color5 -sf $background -p | cut -d ' ' -f 2 \
+    dmenu -c -l 11 -fn "$dmenu_font" -nb $background -nf $foreground -sb $color5 -sf $background -p | cut -d ' ' -f 2 \
                     || \
-		    rofi -i -lines 11 -matching fuzzy -dmenu -p ' ' -font "Ubuntu Nerd Font 22" -config /usr/share/rofi/themes/$(xgetres rofi.theme).rasi | cut -d ' ' -f 2 
+		    rofi -i  -lines 11 -matching fuzzy -dmenu -p ' ' -font "U $${rofi_font} 22" /us-config r/share/rofi/themes/$rofi_theme.rasi | cut -d ' ' -f 2 
 }
 
 _start() { 

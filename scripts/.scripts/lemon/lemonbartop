@@ -11,14 +11,14 @@ dimensions="$(xgetres lemon.length)x$(xgetres lemon.width)$(xgetres lemon.xoffse
 	[ $(xgetres lemon.topbar) -eq 0 ] && bottom="-b"	
 
 [ -n "$(xgetres lemon.floating)" ] && \
-	[ $(xgetres lemon.floating ) -eq 1 ] \
-		&& name="lemonbar_floating" \
-		|| name="lemonbar_noshadow"	
+	[ $(xgetres lemon.floating ) -eq 1 ] && \
+		border="-R `xgetres lemon.bordercolor` -r `xgetres lemon.borderpx`"	
 
 bar () { 
 	lemonbar -d $bottom -g $dimensions -u 2 -f "$(xgetres lemon.font1)" -o $(xgetres lemon.font1.offset) \
 	  -f "$(xgetres lemon.font2)" -o $(xgetres lemon.font2.offset) -f "$(xgetres lemon.font3)" -o $(xgetres lemon.font3.offset) \
 	  -F "$(xgetres lemon.foreground)" -B "$background" \
+	  $border \
 	  -U $(xgetres foreground) -a 30 -n $name
 }
 

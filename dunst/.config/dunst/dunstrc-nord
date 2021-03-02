@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "450x20-5+40"
+    geometry = "450x20+750+45"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -61,7 +61,7 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 0
+    frame_width = 3
 
     # Defines color of the frame around the notification window.
     frame_color = "#aaaaaa"
@@ -86,7 +86,7 @@
 
     ### Text ###
 
-    font = Terminus 16
+    font = scientifica 16
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -222,7 +222,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0
+    corner_radius = 5
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -294,6 +294,7 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#81A1C1"
     foreground = "#D8DEE9"
+    frame_color= "#D8DEE9"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
@@ -301,6 +302,7 @@
 [urgency_normal]
     background = "#4C566A"
     foreground = "#D8DEE9"
+    frame_color= "#D8DEE9"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon

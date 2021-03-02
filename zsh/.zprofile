@@ -6,7 +6,6 @@ export LIBGL_DRI3_DISABLE=1
 export FILE_MANAGER="$TERMINAL -e ranger"
 export SCRIPTS_FOLDER="$HOME/.scripts"
 export DMENU=1
-export COLORS=nord
 export QT_QPA_PLATFORMTHEME=gtk2
 export PATH="$HOME/.cargo/bin:$HOME/.src/Discord:$SCRIPTS_FOLDER:$SCRIPTS_FOLDER/lemon:$SCRIPTS_FOLDER/dmenu:$HOME/.local/bin:$PATH"
 

@@ -7,7 +7,7 @@
 /* Modify these to change default file locations */
 #define HOME "/home/jonesad"
 #define LEMON HOME"/.scripts/lemon"
-#define FIFO HOME"/.lemonbar_top.fifo"
+#define FIFO HOME"/.lemonbar_bottom.fifo"
 
 /* This variable controls the amount of spaces on each side of the bar. */
 #define SIDE_BUFFER 0
@@ -45,15 +45,14 @@ typedef struct module {
 
 /* MODIFY THIS TO ADD MODULES. MAKE SURE TO INCREMENT NUM_MODS */
 struct module modules[NUM_MODS] = {
-	  /*  COMMAND                       ALIGN    ORDER  P
-	   *  RE     POST    TIMER	SIGNAL   */
-	    { LEMON"/lemon-temp.sh",         RIGHT,   1,  "",     "",     3, 5   },
-	    { LEMON"/lemon-mem.sh",         RIGHT,   2,    "",     "",     2,	6     },
-	    { LEMON"/lemon-home.sh",        RIGHT,   3,    "",     "",     2,	6     },
-	    { LEMON"/lemon-root.sh",        RIGHT,   4,    "",     "",     2,	6     },
-	    { LEMON"/lemon-weather.sh",     RIGHT,   5,    "",     "",     2,	6     },
-	    { LEMON"/lemon-mpd.sh",	CENTER,		1,	"",	"",	1,	9	},
-	    { LEMON"/lemon-tasks.sh",	LEFT,		1,	"",	"",30,	10	},
+	  /*  COMMAND                       ALIGN    ORDER  PRE     POST    TIMER	SIGNAL   */
+	    { LEMON"/lemon-temp.sh",        RIGHT,   1,    "",     "",     3,	5  },
+	    { LEMON"/lemon-mem.sh",         RIGHT,   2,    "",     "",     2,	6  },
+	    { LEMON"/lemon-home.sh",        RIGHT,   3,    "",     "",     120,	6  },
+	    { LEMON"/lemon-root.sh",        RIGHT,   4,    "",     "",     120,	6  },
+	    { LEMON"/lemon-weather.sh",     RIGHT,   5,    "",     "",     900,	6  },
+	    { LEMON"/lemon-mpd.sh",	    CENTER,  1,	   "",	   "",	   1,	9  },
+	    { LEMON"/lemon-tasks.sh",	    LEFT,    1,	   "",	   "",     30,	10 },
 };
 
 /* Method Declaration - ignore me*/

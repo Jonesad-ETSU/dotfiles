@@ -30,7 +30,7 @@ read refind
 
 sudo xbps-install -Syu
 sudo xbps-install -Sy void-repo-multilib void-repo-nonfree void-repo-multilib-nonfree
-sudo xbps-install -Sy stow vim xorg git feh alacritty xterm ytop fzf bandwhich xtools scrot rofi libX11-devel libXft-devel libXinerama-devel lemonbar-xft zsh zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search lm_sensors gucharmap fd lxappearance pulseaudio pavucontrol dunst firefox lsd mpd ncdu ncmpcpp mpv patch i3lock-color udiskie runit-swap yad zathura pkg-config lvm2 arandr cpufrequtils alsa-utils alsa-firmware bluez-alsa cava brightnessctl ranger picom xob sxhkd xbanish ImageMagick NetworkManager breeze-obsidian-cursor-theme pamixer ueberzug procs openntpd xdg-utils xdg-user-dirs lsw atk-devel pango-devel 
+sudo xbps-install -Sy stow vim xorg git feh alacritty xterm ytop fzf bandwhich xtools scrot rofi libX11-devel libXft-devel libXinerama-devel zsh zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search lm_sensors gucharmap fd lxappearance pulseaudio pavucontrol dunst firefox lsd mpd ncdu ncmpcpp mpv patch i3lock-color udiskie runit-swap yad zathura pkg-config lvm2 arandr cpufrequtils alsa-utils alsa-firmware bluez-alsa cava brightnessctl ranger picom xob sxhkd xbanish ImageMagick NetworkManager breeze-obsidian-cursor-theme pamixer ueberzug procs openntpd xdg-utils xdg-user-dirs lsw atk-devel pango-devel jq
 
 [ $games = 'y' ] && sudo xbps-install -Sy steam mesa-dri-32bit lutris vulkan-loader-32bit vulkan-loader nvidia-opencl
        
@@ -44,27 +44,29 @@ sudo xbps-install -Sy stow vim xorg git feh alacritty xterm ytop fzf bandwhich x
 
 
 #Enable Services
-sudo ln -s /etc/sv/NetworkManager /var/service
-sudo ln -s /etc/sv/dbus /var/service
-sudo ln -s /etc/sv/mpd /var/service
-sudo ln -s /etc/sv/alsa /var/service
-sudo ln -s /etc/sv/bluez-alsa /var/service
-sudo ln -s /etc/sv/fancontrol /var/service
-sudo ln -s /etc/sv/iptables /var/service
-sudo ln -s /etc/sv/ip6tables /var/service
-sudo ln -s /etc/sv/wpa_supplicant /var/service
-sudo ln -s /etc/sv/runit-swap /var/service
-sudo ln -s /etc/sv/polkitd /var/service
+sudo ln -s /etc/sv/NetworkManager /var/service/
+sudo ln -s /etc/sv/dbus /var/service/
+sudo ln -s /etc/sv/mpd /var/service/
+sudo ln -s /etc/sv/alsa /var/service/
+sudo ln -s /etc/sv/bluez-alsa /var/service/
+sudo ln -s /etc/sv/fancontrol /var/service/
+sudo ln -s /etc/sv/iptables /var/service/
+sudo ln -s /etc/sv/ip6tables /var/service/
+sudo ln -s /etc/sv/wpa_supplicant /var/service/
+sudo ln -s /etc/sv/runit-swap /var/service/
+sudo ln -s /etc/sv/polkitd /var/service/
 sudo ln -s /etc/sv/openntpd /var/service/
+sudo ln -s /etc/sv/lightdm /var/service/
 
 #Downlad my dotfiles and symlink them to right place in $HOME
 cd ~ && git clone https://github.com/Jonesad-ETSU/dotfiles.git 
-cd ~/dotfiles && stow xgetres fuzzypkg sxhkd dmenu dwm-ewmh scripts xob picom Wallpaper xinit ranger dunst xresources zsh aliases gruvbox-dark-gtk dracula-gtk nordic-gtk 
+cd ~/dotfiles && stow xgetres fuzzypkg sxhkd Music dmenu dwm-ewmh scripts xob picom Wallpaper xinit ranger dunst bspwm scientifica lemonbar xresources zsh aliases gruvbox-dark-gtk dracula-gtk nordic-gtk alacritty 
 
 #Installing xgetres, dwm, and dmenu from source
 cd ~/.src/xgetres/ && make && sudo make install
 cd ~/.src/dwm-ewmh && make clean && sudo make install
 cd ~/.src/dmenu/ && make clean && sudo make install
+cd ~/.src/lemonbar-duck/ && make clean && sudo make install
 
 #Setup TTY
 sudo cp ~/dotfiles/xorg.conf.d/issue /etc/
@@ -105,3 +107,5 @@ ninja -C build
 
 #rEFInd
 [ $refind = 'y' ] && sudo xbps-install -Sy refind
+
+echo "You likely will need to disable elogind's power handling so acpi can do its thing..."

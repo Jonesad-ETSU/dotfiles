@@ -5,3 +5,4 @@ pipe=$(xgetres audio.pipe)
 
 pactl set-sink-volume @DEFAULT_SINK@ -$step%
 echo $(pamixer --get-volume) >> $pipe
+pkill -51 lemontopc

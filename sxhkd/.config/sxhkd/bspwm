@@ -2,7 +2,7 @@
 #
 # bspwm hotkeys
 #
-super + Return
+super + {Return,space}
   $SCRIPTS_FOLDER/menu/launch-menu.sh
 
 super + Home
@@ -20,7 +20,6 @@ super + F1
 super + {F7,F8}
    brightnessctl s {4%-,+4%} && pkill -44 lemontopc
 
-
 # Close window
 alt + F4
 	bspc node --close
@@ -29,9 +28,12 @@ alt + F4
 ctrl + q
 	bspc node --close
 
+super + shift + q
+	bspc node --close
+
 # Navigate layouts
-super + {_,shift + }space
-	bspc desktop --layout {next,prev}
+super + shift + space
+	bspc desktop --layout next
 
 # Rotate desktop
 super + {_,shift + }r
@@ -130,6 +132,9 @@ super + alt + shift + {h,j,k,l}
 super + shift + {1-9,0}
 	bspc node --to-desktop ^{1-9,10} --focus
 
+super + shift + Return
+	$TERMINAL
+
 # Move window to left/right desktop
 super + shift + {Left,Right}
 	bspc node --to-desktop {prev,next} --focus
@@ -140,7 +145,7 @@ ctrl + alt + shift + {Left,Right}
 
 # Focus selected desktop
 super + {1-9,0}
-	bspc desktop --focus ^{1-9,10}
+	bspc desktop --focus ^{1-9,10} ; pkill -47 lemontopc
 
 # Focus left/right occupied desktop
 super + {Left,Right}
@@ -148,6 +153,9 @@ super + {Left,Right}
 
 # Focus left/right occupied desktop
 ctrl + alt + {Left,Right}
+	bspc desktop --focus {prev,next}.occupied
+
+super + shift + {j,k}
 	bspc desktop --focus {prev,next}.occupied
 
 # Increase/decrease window gap on focused desktop
@@ -174,8 +182,20 @@ alt + @button{1-3}
 F12
 	xdotool search --onlyvisible --classname scratchpad windowunmap \
 	|| ( xdotool search --classname scratchpad windowmap; xdotool search --classname scratchpad windowraise; ) \
-	|| ( $TERMINAL -name scratchpad -geometry 220x20+400+0; xdotool search --classname scratchpad windowraise; )
+	|| ( alacritty -name scratchpad -geometry 220x20+400+0; xdotool search --classname scratchpad windowraise; )
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+Print
+  $SCRIPTS_FOLDER/lemon/dunst-picture.sh && scrot "$(date +%c).png" -e 'mv "$f" ~/Pictures/Screenshots/ '
+
+F3
+	mpc toggle
+
+F4
+	mpc next
+
+F2	
+	mpc prev

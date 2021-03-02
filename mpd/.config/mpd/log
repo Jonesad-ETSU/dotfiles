@@ -887,3 +887,682 @@ Feb 13 14:50 : player: played "Only Human.mp3"
 Feb 13 15:30 : player: played "Circles.mp3"
 Feb 13 15:35 : player: played "Starboy.mp3"
 Feb 13 16:14 : player: played "Gourmet Race.mp3"
+Feb 14 00:06 : player: played "Aquaria Towers.mp3"
+Feb 14 01:28 : player: played "Killing In The Name.mp3"
+Feb 14 02:05 : avahi: Client Disconnected, will reconnect shortly
+Feb 14 02:05 : avahi: Could not reconnect: Daemon not running
+Feb 14 02:05 : player: played "You're Gonna Go Far, Kid.mp3"
+Feb 14 03:09 : config: option 'device' on line 14 was not recognized
+Feb 14 04:00 : avahi: Client Disconnected, will reconnect shortly
+Feb 14 04:00 : avahi: Could not reconnect: Daemon not running
+Feb 14 04:00 : player: played "You're Gonna Go Far, Kid.mp3"
+Feb 14 10:10 : config: option 'device' on line 14 was not recognized
+Feb 14 11:25 : player: played "Monsters.mp3"
+Feb 14 11:28 : avahi: Client Disconnected, will reconnect shortly
+Feb 14 11:28 : avahi: Could not reconnect: Daemon not running
+Feb 14 11:28 : player: played "Battle Against A True Hero.mp3"
+Feb 14 11:49 : config: option 'device' on line 14 was not recognized
+Feb 14 12:13 : avahi: Client Disconnected, will reconnect shortly
+Feb 14 12:13 : avahi: Could not reconnect: Daemon not running
+Feb 14 12:13 : exception: Failed to play on "pulse audio" (pulse): disconnected
+Feb 14 12:13 : player: played "Battle Against A True Hero.mp3"
+Feb 14 16:54 : config: option 'device' on line 14 was not recognized
+Feb 14 17:00 : player: played "Battle Against A True Hero.mp3"
+Feb 14 19:41 : avahi: Client Disconnected, will reconnect shortly
+Feb 14 19:41 : avahi: Could not reconnect: Daemon not running
+Feb 14 19:41 : player: played "Sadness and Hate.mp3"
+Feb 14 20:43 : config: option 'device' on line 14 was not recognized
+Feb 15 01:00 : avahi: Client Disconnected, will reconnect shortly
+Feb 15 01:00 : avahi: Could not reconnect: Daemon not running
+Feb 15 01:00 : player: played "Sadness and Hate.mp3"
+Feb 15 13:35 : config: option 'device' on line 14 was not recognized
+Feb 15 13:57 : player: played "Emblem3 ..mp3"
+Feb 15 14:10 : player: played "Obey.mp3"
+Feb 15 14:13 : avahi: Client Disconnected, will reconnect shortly
+Feb 15 14:13 : avahi: Could not reconnect: Daemon not running
+Feb 15 14:13 : player: played "The Jester Race.mp3"
+Feb 15 14:14 : config: option 'device' on line 14 was not recognized
+Feb 15 14:27 : player: played "Damage.mp3"
+Feb 15 14:33 : player: played "Monsters.mp3"
+Feb 15 15:35 : player: played "Wagon Wheel.mp3"
+Feb 15 17:47 : player: played "Bloody Valentine.mp3"
+Feb 15 20:34 : player: played "Corneria.mp3"
+Feb 15 23:20 : avahi: Client Disconnected, will reconnect shortly
+Feb 15 23:20 : avahi: Could not reconnect: Daemon not running
+Feb 15 23:20 : player: played "Aquaria Towers.mp3"
+Feb 16 03:38 : config: option 'device' on line 14 was not recognized
+Feb 16 11:06 : avahi: Client Disconnected, will reconnect shortly
+Feb 16 11:06 : avahi: Could not reconnect: Daemon not running
+Feb 16 11:06 : player: played "Gasoline.mp3"
+Feb 16 11:06 : config: option 'device' on line 14 was not recognized
+Feb 16 11:09 : player: played "Gasoline.mp3"
+Feb 16 11:40 : player: played "Who's Gonna Stop Me.mp3"
+Feb 16 11:42 : avahi: Client Disconnected, will reconnect shortly
+Feb 16 11:42 : avahi: Could not reconnect: Daemon not running
+Feb 16 11:42 : player: played "Gym Leader Battle.mp3"
+Feb 16 11:42 : config: option 'device' on line 14 was not recognized
+Feb 16 11:45 : avahi: Client Disconnected, will reconnect shortly
+Feb 16 11:45 : avahi: Could not reconnect: Daemon not running
+Feb 16 11:45 : player: played "Gym Leader Battle.mp3"
+Feb 16 11:46 : config: option 'device' on line 14 was not recognized
+Feb 16 11:48 : avahi: Client Disconnected, will reconnect shortly
+Feb 16 11:48 : avahi: Could not reconnect: Daemon not running
+Feb 16 11:48 : player: played "Gym Leader Battle.mp3"
+Feb 16 11:49 : config: option 'device' on line 14 was not recognized
+Feb 16 11:54 : avahi: Client Disconnected, will reconnect shortly
+Feb 16 11:54 : avahi: Could not reconnect: Daemon not running
+Feb 16 11:54 : player: played "Gym Leader Battle.mp3"
+Feb 16 11:54 : config: option 'device' on line 14 was not recognized
+Feb 16 12:00 : avahi: Client Disconnected, will reconnect shortly
+Feb 16 12:00 : avahi: Could not reconnect: Daemon not running
+Feb 16 12:00 : player: played "Gym Leader Battle.mp3"
+Feb 16 12:00 : config: option 'device' on line 14 was not recognized
+Feb 16 12:01 : player: played "Gym Leader Battle.mp3"
+Feb 16 12:06 : player: played "Obey.mp3"
+Feb 16 12:28 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 16 12:28 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 16 12:28 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 16 12:28 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 16 12:51 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 16 12:52 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 16 12:52 : player: played "Go Crazy.mp3"
+Feb 16 12:52 : config: option 'device' on line 14 was not recognized
+Feb 16 12:52 : exception: Failed to open "pulse audio" (pulse); failed to connect: Connection refused
+Feb 16 12:52 : exception: Failed to open "pulse audio" (pulse); failed to connect: Connection refused
+Feb 16 12:55 : player: played "Go Crazy.mp3"
+Feb 16 13:27 : exception: Failed to open "pulse audio" (pulse); failed to connect: Connection refused
+Feb 16 13:35 : player: played "Abeyance.mp3"
+Feb 16 18:08 : avahi: Client Disconnected, will reconnect shortly
+Feb 16 18:08 : avahi: Could not reconnect: Daemon not running
+Feb 16 18:08 : player: played "Bloody Valentine.mp3"
+Feb 16 22:55 : config: option 'device' on line 14 was not recognized
+Feb 16 23:26 : player: played "Gerudo Valley.mp3"
+Feb 17 00:13 : avahi: Client Disconnected, will reconnect shortly
+Feb 17 00:13 : avahi: Could not reconnect: Daemon not running
+Feb 17 00:13 : player: played "Voice of the Soul.mp3"
+Feb 17 00:15 : config: option 'device' on line 14 was not recognized
+Feb 17 00:22 : avahi: Client Disconnected, will reconnect shortly
+Feb 17 00:22 : avahi: Could not reconnect: Daemon not running
+Feb 17 00:22 : player: played "Voice of the Soul.mp3"
+Feb 17 20:30 : config: option 'device' on line 14 was not recognized
+Feb 17 20:34 : player: played "You're Gonna Go Far, Kid.mp3"
+Feb 17 20:53 : player: played "Dark Hollow.mp3"
+Feb 17 22:08 : player: played "Damage.mp3"
+Feb 17 22:12 : player: played "What You Know Bout Love.mp3"
+Feb 17 22:23 : player: played "Only Human.mp3"
+Feb 17 22:28 : player: played "Gasoline.mp3"
+Feb 17 23:41 : player: played "Hurricos.mp3"
+Feb 18 00:17 : player: played "Blackwater Park.mp3"
+Feb 18 00:17 : config: option 'device' on line 14 was not recognized
+Feb 18 00:21 : player: played "Who's Gonna Stop Me.mp3"
+Feb 18 00:23 : avahi: Client Disconnected, will reconnect shortly
+Feb 18 00:23 : avahi: Could not reconnect: Daemon not running
+Feb 18 00:23 : player: played "Gym Leader Battle.mp3"
+Feb 18 09:27 : config: option 'device' on line 14 was not recognized
+Feb 18 09:32 : avahi: Client Disconnected, will reconnect shortly
+Feb 18 09:32 : avahi: Could not reconnect: Daemon not running
+Feb 18 09:32 : player: played "Gym Leader Battle.mp3"
+Feb 18 09:35 : config: option 'device' on line 14 was not recognized
+Feb 18 09:40 : avahi: Client Disconnected, will reconnect shortly
+Feb 18 09:40 : avahi: Could not reconnect: Daemon not running
+Feb 18 09:40 : player: played "Gym Leader Battle.mp3"
+Feb 18 09:41 : config: option 'device' on line 14 was not recognized
+Feb 18 10:03 : avahi: Client Disconnected, will reconnect shortly
+Feb 18 10:03 : avahi: Could not reconnect: Daemon not running
+Feb 18 10:03 : player: played "Gym Leader Battle.mp3"
+Feb 18 10:04 : config: option 'device' on line 14 was not recognized
+Feb 18 10:46 : avahi: Client Disconnected, will reconnect shortly
+Feb 18 10:46 : avahi: Could not reconnect: Daemon not running
+Feb 18 10:46 : player: played "Gym Leader Battle.mp3"
+Feb 18 11:02 : config: option 'device' on line 14 was not recognized
+Feb 18 11:02 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 18 11:02 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 18 11:05 : player: played "Monsters.mp3"
+Feb 18 11:12 : avahi: Client Disconnected, will reconnect shortly
+Feb 18 11:12 : avahi: Could not reconnect: Daemon not running
+Feb 18 11:12 : player: played "Go Crazy.mp3"
+Feb 18 11:14 : config: option 'device' on line 14 was not recognized
+Feb 18 11:15 : avahi: Client Disconnected, will reconnect shortly
+Feb 18 11:15 : avahi: Could not reconnect: Daemon not running
+Feb 18 11:15 : player: played "Go Crazy.mp3"
+Feb 18 11:17 : config: option 'device' on line 14 was not recognized
+Feb 18 11:28 : avahi: Client Disconnected, will reconnect shortly
+Feb 18 11:28 : avahi: Could not reconnect: Daemon not running
+Feb 18 11:28 : player: played "Go Crazy.mp3"
+Feb 18 11:30 : config: option 'device' on line 14 was not recognized
+Feb 18 11:36 : player: played "Go Crazy.mp3"
+Feb 18 11:56 : player: played "You're Mines Still.mp3"
+Feb 18 12:09 : player: played "Gerudo Valley.mp3"
+Feb 18 12:11 : player: played "Blackwater Park.mp3"
+Feb 18 12:11 : config: option 'device' on line 14 was not recognized
+Feb 18 12:15 : player: played "Zephyr.mp3"
+Feb 18 12:37 : update: added /Gnarls Barkley - Crazy (Official Video).mp3
+Feb 18 12:37 : update: added /Meek Mill - Otherside of America [Official Audio].mp3
+Feb 18 12:37 : update: added /Elvis Presley - Jailhouse Rock (Music Video).mp3
+Feb 18 12:37 : update: added /Morgan Wallen - Warning (The Dangerous Sessions).mp3
+Feb 18 12:51 : player: played "Love.mp3"
+Feb 18 13:35 : avahi: Client Disconnected, will reconnect shortly
+Feb 18 13:35 : avahi: Could not reconnect: Daemon not running
+Feb 18 13:35 : player: played "Wagon Wheel.mp3"
+Feb 18 22:49 : config: option 'device' on line 14 was not recognized
+Feb 19 02:42 : avahi: Client Disconnected, will reconnect shortly
+Feb 19 02:42 : avahi: Could not reconnect: Daemon not running
+Feb 19 02:42 : player: played "Wagon Wheel.mp3"
+Feb 19 20:28 : config: option 'device' on line 14 was not recognized
+Feb 19 22:22 : avahi: Client Disconnected, will reconnect shortly
+Feb 19 22:22 : avahi: Could not reconnect: Daemon not running
+Feb 19 22:22 : player: played "Wagon Wheel.mp3"
+Feb 19 22:24 : config: option 'device' on line 14 was not recognized
+Feb 19 22:30 : avahi: Client Disconnected, will reconnect shortly
+Feb 19 22:30 : avahi: Could not reconnect: Daemon not running
+Feb 19 22:30 : player: played "Wagon Wheel.mp3"
+Feb 19 22:30 : config: option 'device' on line 14 was not recognized
+Feb 19 22:32 : avahi: Client Disconnected, will reconnect shortly
+Feb 19 22:32 : avahi: Could not reconnect: Daemon not running
+Feb 19 22:32 : player: played "Wagon Wheel.mp3"
+Feb 19 22:33 : config: option 'device' on line 14 was not recognized
+Feb 19 22:50 : avahi: Client Disconnected, will reconnect shortly
+Feb 19 22:50 : avahi: Could not reconnect: Daemon not running
+Feb 19 22:50 : player: played "Wagon Wheel.mp3"
+Feb 19 22:50 : config: option 'device' on line 14 was not recognized
+Feb 19 22:53 : avahi: Client Disconnected, will reconnect shortly
+Feb 19 22:53 : avahi: Could not reconnect: Daemon not running
+Feb 19 22:53 : player: played "Wagon Wheel.mp3"
+Feb 19 22:55 : config: option 'device' on line 14 was not recognized
+Feb 19 22:56 : avahi: Client Disconnected, will reconnect shortly
+Feb 19 22:56 : avahi: Could not reconnect: Daemon not running
+Feb 19 22:56 : player: played "Wagon Wheel.mp3"
+Feb 20 13:51 : config: option 'device' on line 14 was not recognized
+Feb 20 14:02 : player: played "Morgan Wallen - Warning (The Dangerous Sessions).mp3"
+Feb 20 14:09 : player: played "Damage.mp3"
+Feb 20 17:56 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Feb 20 19:00 : player: played "Starboy.mp3"
+Feb 20 20:11 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 20 20:11 : player: played "Battle Champion Cynthia Music.mp3"
+Feb 21 01:01 : player: played "What You Know Bout Love.mp3"
+Feb 21 02:37 : avahi: Client Disconnected, will reconnect shortly
+Feb 21 02:37 : avahi: Could not reconnect: Daemon not running
+Feb 21 02:37 : player: played "Obey.mp3"
+Feb 21 08:33 : config: option 'device' on line 14 was not recognized
+Feb 21 17:53 : avahi: Client Disconnected, will reconnect shortly
+Feb 21 17:53 : avahi: Could not reconnect: Daemon not running
+Feb 21 17:53 : player: played "Obey.mp3"
+Feb 21 19:46 : config: option 'device' on line 14 was not recognized
+Feb 21 21:03 : avahi: Client Disconnected, will reconnect shortly
+Feb 21 21:03 : avahi: Could not reconnect: Daemon not running
+Feb 21 21:03 : player: played "Obey.mp3"
+Feb 21 21:04 : config: option 'device' on line 14 was not recognized
+Feb 21 21:13 : player: played "Obey.mp3"
+Feb 21 21:27 : avahi: Client Disconnected, will reconnect shortly
+Feb 21 21:27 : avahi: Could not reconnect: Daemon not running
+Feb 21 21:27 : player: played "Hurricos.mp3"
+Feb 21 21:28 : config: option 'device' on line 14 was not recognized
+Feb 22 00:45 : avahi: Client Disconnected, will reconnect shortly
+Feb 22 00:45 : avahi: Could not reconnect: Daemon not running
+Feb 22 00:45 : player: played "Hurricos.mp3"
+Feb 22 14:54 : config: option 'device' on line 14 was not recognized
+Feb 22 15:08 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 22 15:12 : player: played "You're Mines Still.mp3"
+Feb 22 16:42 : player: played "Meek Mill - Otherside of America [Official Audio].mp3"
+Feb 22 17:31 : player: played "Love.mp3"
+Feb 22 17:45 : player: played "Damage.mp3"
+Feb 22 18:34 : player: played "You're Gonna Go Far, Kid.mp3"
+Feb 22 22:14 : player: played "Obey.mp3"
+Feb 22 23:38 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 22 23:38 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 22 23:38 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 22 23:38 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 22 23:38 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Feb 22 23:38 : config: option 'device' on line 14 was not recognized
+Feb 23 00:00 : player: played "Bergentruckung.mp3"
+Feb 23 00:57 : player: played "Animals .mp3"
+Feb 23 02:25 : avahi: Client Disconnected, will reconnect shortly
+Feb 23 02:25 : avahi: Could not reconnect: Daemon not running
+Feb 23 02:25 : player: played "Emblem3 ..mp3"
+Feb 23 10:39 : config: option 'device' on line 14 was not recognized
+Feb 23 10:44 : player: played "Emblem3 ..mp3"
+Feb 23 10:45 : player: played "Gerudo Valley.mp3"
+Feb 23 10:45 : config: option 'device' on line 14 was not recognized
+Feb 23 10:49 : player: played "Obey.mp3"
+Feb 23 10:50 : player: played "Aquaria Towers.mp3"
+Feb 23 10:50 : config: option 'device' on line 14 was not recognized
+Feb 23 10:54 : player: played "Only Human.mp3"
+Feb 23 12:01 : player: played "Zephyr.mp3"
+Feb 23 12:01 : player: played "Sadness and Hate.mp3"
+Feb 23 15:01 : config: option 'device' on line 14 was not recognized
+Feb 23 15:38 : avahi: Client Disconnected, will reconnect shortly
+Feb 23 15:38 : avahi: Could not reconnect: Daemon not running
+Feb 23 15:38 : exception: Failed to play on "pulse audio" (pulse): disconnected
+Feb 23 15:38 : player: played "Fireworks Factory.mp3"
+Feb 23 22:23 : config: option 'device' on line 14 was not recognized
+Feb 23 22:27 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Feb 23 22:47 : player: played "You're Gonna Go Far, Kid.mp3"
+Feb 23 23:52 : player: played "Gnarls Barkley - Crazy (Official Video).mp3"
+Feb 23 23:54 : player: played "Mute City.mp3"
+Feb 23 23:58 : player: played "What You Know Bout Love.mp3"
+Feb 23 23:58 : config: option 'device' on line 14 was not recognized
+Feb 24 00:06 : avahi: Client Disconnected, will reconnect shortly
+Feb 24 00:06 : avahi: Could not reconnect: Daemon not running
+Feb 24 00:06 : exception: Failed to play on "pulse audio" (pulse): disconnected
+Feb 24 00:06 : player: played "Bloody Valentine.mp3"
+Feb 24 17:58 : config: option 'device' on line 14 was not recognized
+Feb 24 17:59 : player: played "Bloody Valentine.mp3"
+Feb 24 18:00 : avahi: Client Disconnected, will reconnect shortly
+Feb 24 18:00 : avahi: Could not reconnect: Daemon not running
+Feb 24 18:00 : player: played "Gerudo Valley.mp3"
+Feb 24 18:01 : config: option 'device' on line 14 was not recognized
+Feb 24 18:03 : player: played "Gerudo Valley.mp3"
+Feb 24 18:03 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Feb 24 18:04 : config: option 'device' on line 14 was not recognized
+Feb 24 18:06 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Feb 24 18:09 : player: played "What You Know Bout Love.mp3"
+Feb 24 18:13 : player: played "Circles.mp3"
+Feb 24 18:15 : player: played "Corneria.mp3"
+Feb 24 18:18 : player: played "Gasoline.mp3"
+Feb 24 18:56 : avahi: Client Disconnected, will reconnect shortly
+Feb 24 18:56 : avahi: Could not reconnect: Daemon not running
+Feb 24 18:56 : player: played "Bergentruckung.mp3"
+Feb 24 18:58 : config: option 'device' on line 14 was not recognized
+Feb 24 18:59 : avahi: Client Disconnected, will reconnect shortly
+Feb 24 18:59 : avahi: Could not reconnect: Daemon not running
+Feb 24 18:59 : exception: Failed to play on "pulse audio" (pulse): disconnected
+Feb 24 18:59 : player: played "Bergentruckung.mp3"
+Feb 24 19:11 : config: option 'device' on line 14 was not recognized
+Feb 24 19:13 : avahi: Client Disconnected, will reconnect shortly
+Feb 24 19:13 : avahi: Could not reconnect: Daemon not running
+Feb 24 19:13 : exception: Failed to play on "pulse audio" (pulse): disconnected
+Feb 24 19:13 : player: played "Bergentruckung.mp3"
+Feb 24 19:13 : config: option 'device' on line 14 was not recognized
+Feb 24 19:19 : player: played "Bergentruckung.mp3"
+Feb 24 19:23 : player: played "Church Bells.mp3"
+Feb 24 19:27 : player: played "Fireworks Factory.mp3"
+Feb 24 20:03 : player: played "Animals .mp3"
+Feb 24 20:06 : player: played "Zephyr.mp3"
+Feb 24 20:09 : player: played "Skelos Badlands.mp3"
+Feb 24 20:12 : player: played "Monsters.mp3"
+Feb 24 20:16 : player: played "Damage.mp3"
+Feb 24 20:19 : player: played "Galway Girl.mp3"
+Feb 24 20:22 : player: played "Aquaria Towers.mp3"
+Feb 24 20:27 : player: played "Wagon Wheel.mp3"
+Feb 24 20:30 : player: played "What You Know.mp3"
+Feb 24 20:34 : player: played "Voice of the Soul.mp3"
+Feb 24 20:37 : player: played "Gym Leader Battle.mp3"
+Feb 24 20:41 : player: played "rockstar ft. 21 Savage.mp3"
+Feb 24 20:44 : player: played "BANG.mp3"
+Feb 24 20:46 : player: played "Gourmet Race.mp3"
+Feb 24 20:54 : player: played "Abeyance.mp3"
+Feb 24 21:03 : avahi: Client Disconnected, will reconnect shortly
+Feb 24 21:03 : avahi: Could not reconnect: Daemon not running
+Feb 24 21:03 : player: played "Dark Hollow.mp3"
+Feb 24 21:03 : exception: Failed to play on "pulse audio" (pulse): disconnected
+Feb 24 21:23 : config: option 'device' on line 14 was not recognized
+Feb 24 21:25 : player: played "Dark Hollow.mp3"
+Feb 24 21:28 : player: played "Starboy.mp3"
+Feb 24 21:31 : player: played "Go Crazy.mp3"
+Feb 24 21:34 : player: played "Midday Garden.mp3"
+Feb 24 22:12 : avahi: Client Disconnected, will reconnect shortly
+Feb 24 22:12 : avahi: Could not reconnect: Daemon not running
+Feb 24 22:12 : player: played "Sadness and Hate.mp3"
+Feb 24 22:52 : config: option 'device' on line 14 was not recognized
+Feb 24 22:58 : player: played "You're Mines Still.mp3"
+Feb 24 23:02 : player: played "Suicide Machine.mp3"
+Feb 24 23:08 : player: played "Emblem3 ..mp3"
+Feb 24 23:12 : player: played "Meek Mill - Otherside of America [Official Audio].mp3"
+Feb 24 23:16 : player: played "Better Together.mp3"
+Feb 24 23:21 : player: played "Vivir Mi Vida.mp3"
+Feb 24 23:28 : player: played "Circles.mp3"
+Feb 24 23:31 : player: played "God s Country.mp3"
+Feb 24 23:47 : player: played "Bergentruckung.mp3"
+Feb 24 23:52 : player: played "Wagon Wheel.mp3"
+Feb 24 23:56 : player: played "Damage.mp3"
+Feb 25 00:00 : player: played "What You Know.mp3"
+Feb 25 00:04 : player: played "rockstar ft. 21 Savage.mp3"
+Feb 25 00:11 : avahi: Client Disconnected, will reconnect shortly
+Feb 25 00:11 : avahi: Could not reconnect: Daemon not running
+Feb 25 00:11 : player: played "The Great Escape.mp3"
+Feb 25 08:47 : config: option 'device' on line 14 was not recognized
+Feb 25 08:50 : player: played "The Great Escape.mp3"
+Feb 25 08:53 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Feb 25 08:56 : player: played "Only Human.mp3"
+Feb 25 08:59 : player: played "BANG.mp3"
+Feb 25 09:01 : player: played "Gerudo Valley.mp3"
+Feb 25 09:06 : player: played "Corneria.mp3"
+Feb 25 09:09 : player: played "Morgan Wallen - Warning (The Dangerous Sessions).mp3"
+Feb 25 09:13 : player: played "You're Mines Still.mp3"
+Feb 25 09:16 : player: played "Church Bells.mp3"
+Feb 25 09:19 : player: played "Hurricos.mp3"
+Feb 25 09:23 : player: played "Obey.mp3"
+Feb 25 09:27 : player: played "Dark Hollow.mp3"
+Feb 25 09:32 : player: played "Animals .mp3"
+Feb 25 09:37 : player: played "Killing In The Name.mp3"
+Feb 25 09:40 : player: played "Go Crazy.mp3"
+Feb 25 09:43 : player: played "The Philosopher.mp3"
+Feb 25 09:48 : player: played "The Jester Race.mp3"
+Feb 25 09:52 : player: played "Starboy.mp3"
+Feb 25 09:53 : avahi: Client Disconnected, will reconnect shortly
+Feb 25 09:53 : avahi: Could not reconnect: Daemon not running
+Feb 25 09:53 : exception: Failed to play on "pulse audio" (pulse): disconnected
+Feb 25 09:53 : player: played "Bloody Valentine.mp3"
+Feb 25 10:55 : config: option 'device' on line 14 was not recognized
+Feb 25 10:58 : player: played "Bloody Valentine.mp3"
+Feb 25 11:01 : player: played "Cloud Spires.mp3"
+Feb 25 11:04 : player: played "Skelos Badlands.mp3"
+Feb 25 11:18 : player: played "Reverse Situation.mp3"
+Feb 25 11:21 : player: played "Challengers.mp3"
+Feb 25 11:23 : player: played "Mute City.mp3"
+Feb 25 11:26 : player: played "Aquaria Towers.mp3"
+Feb 25 11:29 : player: played "Emblem3 ..mp3"
+Feb 25 11:32 : player: played "Gnarls Barkley - Crazy (Official Video).mp3"
+Feb 25 11:36 : player: played "Monsters.mp3"
+Feb 25 11:39 : player: played "Midday Garden.mp3"
+Feb 25 11:56 : player: played "The Philosopher.mp3"
+Feb 25 12:00 : player: played "rockstar ft. 21 Savage.mp3"
+Feb 25 12:11 : player: played "Gym Leader Battle.mp3"
+Feb 25 12:15 : player: played "Voice of the Soul.mp3"
+Feb 25 12:49 : player: played "Circles.mp3"
+Feb 25 12:55 : player: played "You're Mines Still.mp3"
+Feb 25 13:00 : player: played "Wagon Wheel.mp3"
+Feb 25 13:05 : player: played "The Jester Race.mp3"
+Feb 25 13:07 : player: played "Skelos Badlands.mp3"
+Feb 25 13:10 : player: played "Aquaria Towers.mp3"
+Feb 25 13:14 : player: played "Emblem3 ..mp3"
+Feb 25 13:24 : player: played "Who's Gonna Stop Me.mp3"
+Feb 25 13:44 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 25 13:44 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 25 13:47 : player: played "Corneria.mp3"
+Feb 25 13:47 : player: played "Corneria.mp3"
+Feb 25 13:47 : config: option 'device' on line 14 was not recognized
+Feb 25 13:54 : player: played "Starboy.mp3"
+Feb 25 13:57 : player: played "Gnarls Barkley - Crazy (Official Video).mp3"
+Feb 25 14:00 : player: played "Zephyr.mp3"
+Feb 25 14:04 : player: played "Church Bells.mp3"
+Feb 25 14:08 : player: played "Bloody Valentine.mp3"
+Feb 25 14:11 : player: played "Better Together.mp3"
+Feb 25 14:16 : player: played "Fireworks Factory.mp3"
+Feb 25 14:19 : player: played "God s Country.mp3"
+Feb 25 14:22 : player: played "You're Gonna Go Far, Kid.mp3"
+Feb 25 14:38 : player: played "Bergentruckung.mp3"
+Feb 25 14:40 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Feb 25 14:48 : player: played "Abeyance.mp3"
+Feb 25 14:52 : player: played "Only Human.mp3"
+Feb 25 15:06 : player: played "Reverse Situation.mp3"
+Feb 25 15:09 : player: played "Gourmet Race.mp3"
+Feb 25 15:12 : player: played "Battle Champion Cynthia Music.mp3"
+Feb 25 15:14 : player: played "Gasoline.mp3"
+Feb 25 15:51 : exception: Failed to pause "pulse audio" (pulse): failed to connect the stream: Connection terminated
+Feb 25 15:54 : avahi: Client Disconnected, will reconnect shortly
+Feb 25 15:54 : avahi: Could not reconnect: Daemon not running
+Feb 25 15:54 : player: played "Animals .mp3"
+Feb 25 15:55 : config: option 'device' on line 14 was not recognized
+Feb 25 17:16 : avahi: Client Disconnected, will reconnect shortly
+Feb 25 17:16 : avahi: Could not reconnect: Daemon not running
+Feb 25 17:16 : player: played "Animals .mp3"
+Feb 25 23:08 : config: option 'device' on line 14 was not recognized
+Feb 26 18:54 : config: option 'device' on line 14 was not recognized
+Feb 26 19:06 : player: played "Animals .mp3"
+Feb 26 19:09 : player: played "Morgan Wallen - Warning (The Dangerous Sessions).mp3"
+Feb 26 19:11 : player: played "Corneria.mp3"
+Feb 26 19:15 : player: played "Pump It.mp3"
+Feb 26 19:18 : player: played "Galway Girl.mp3"
+Feb 26 19:25 : player: played "Monsters.mp3"
+Feb 26 19:29 : player: played "Hurricos.mp3"
+Feb 26 19:30 : player: played "Mute City.mp3"
+Feb 26 20:13 : player: played "Challengers.mp3"
+Feb 26 20:35 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 26 20:39 : player: played "What You Know Bout Love.mp3"
+Feb 26 20:44 : player: played "Suicide Machine.mp3"
+Feb 26 21:11 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 26 21:13 : player: played "Gasoline.mp3"
+Feb 26 21:13 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 26 21:28 : player: played "Bergentruckung.mp3"
+Feb 26 23:06 : avahi: Client Disconnected, will reconnect shortly
+Feb 26 23:06 : avahi: Could not reconnect: Daemon not running
+Feb 26 23:06 : player: played "Monsters.mp3"
+Feb 26 23:20 : config: option 'device' on line 14 was not recognized
+Feb 27 00:02 : player: played "Monsters.mp3"
+Feb 27 00:42 : avahi: Client Disconnected, will reconnect shortly
+Feb 27 00:42 : avahi: Could not reconnect: Daemon not running
+Feb 27 00:42 : player: played "rockstar ft. 21 Savage.mp3"
+Feb 27 07:05 : config: option 'device' on line 14 was not recognized
+Feb 27 16:36 : config: option 'device' on line 14 was not recognized
+Feb 27 16:45 : player: played "Gym Leader Battle.mp3"
+Feb 27 16:59 : player: played "Blackwater Park.mp3"
+Feb 27 19:35 : player: played "Mute City.mp3"
+Feb 27 19:38 : player: played "Obey.mp3"
+Feb 27 20:11 : exception: Failed to play on "pulse audio" (pulse): suspended
+Feb 27 20:11 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 27 20:11 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 27 20:11 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 27 20:11 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 27 20:11 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 27 20:11 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 27 20:11 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 27 20:11 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 27 20:11 : exception: Failed to set mixer for 'pulse audio': disconnected
+Feb 27 20:15 : player: played "Suicide Machine.mp3"
+Feb 27 20:18 : player: played "Battle Champion Cynthia Music.mp3"
+Feb 27 20:21 : player: played "Hurricos.mp3"
+Feb 27 20:23 : player: played "Gerudo Valley.mp3"
+Feb 27 20:30 : player: played "Love.mp3"
+Feb 27 20:32 : avahi: Client Disconnected, will reconnect shortly
+Feb 27 20:32 : avahi: Could not reconnect: Daemon not running
+Feb 27 20:32 : exception: Failed to play on "pulse audio" (pulse): disconnected
+Feb 27 20:32 : player: played "Cloud Spires.mp3"
+Feb 27 20:33 : config: option 'device' on line 14 was not recognized
+Feb 27 20:34 : player: played "Cloud Spires.mp3"
+Feb 27 20:38 : player: played "rockstar ft. 21 Savage.mp3"
+Feb 27 20:42 : player: played "Meek Mill - Otherside of America [Official Audio].mp3"
+Feb 27 20:50 : player: played "Animals .mp3"
+Feb 27 20:52 : player: played "Morgan Wallen - Warning (The Dangerous Sessions).mp3"
+Feb 27 20:57 : player: played "The Jester Race.mp3"
+Feb 27 21:00 : player: played "Skelos Badlands.mp3"
+Feb 28 00:54 : avahi: Client Disconnected, will reconnect shortly
+Feb 28 00:54 : avahi: Could not reconnect: Daemon not running
+Feb 28 00:54 : player: played "Circles.mp3"
+Feb 28 07:56 : config: option 'device' on line 14 was not recognized
+Feb 28 08:02 : player: played "Circles.mp3"
+Feb 28 08:41 : player: played "Who's Gonna Stop Me.mp3"
+Feb 28 08:45 : player: played "Obey.mp3"
+Feb 28 08:46 : player: played "Mute City.mp3"
+Feb 28 08:50 : player: played "Midday Garden.mp3"
+Feb 28 08:53 : player: played "Meek Mill - Otherside of America [Official Audio].mp3"
+Feb 28 08:56 : player: played "Go Crazy.mp3"
+Feb 28 08:59 : player: played "Morgan Wallen - Warning (The Dangerous Sessions).mp3"
+Feb 28 09:01 : player: played "Skelos Badlands.mp3"
+Feb 28 09:06 : player: played "The Jester Race.mp3"
+Feb 28 10:08 : player: played "Battle Champion Cynthia Music.mp3"
+Feb 28 10:12 : player: played "You're Mines Still.mp3"
+Feb 28 10:43 : player: played "Gerudo Valley.mp3"
+Feb 28 10:46 : player: played "Gourmet Race.mp3"
+Feb 28 10:49 : player: played "Cloud Spires.mp3"
+Feb 28 10:50 : avahi: Client Disconnected, will reconnect shortly
+Feb 28 10:50 : avahi: Could not reconnect: Daemon not running
+Feb 28 10:50 : exception: Failed to play on "pulse audio" (pulse): disconnected
+Feb 28 10:50 : player: played "Gasoline.mp3"
+Feb 28 10:51 : config: option 'device' on line 14 was not recognized
+Feb 28 10:53 : player: played "Gasoline.mp3"
+Feb 28 10:56 : player: played "Church Bells.mp3"
+Feb 28 11:00 : player: played "Circles.mp3"
+Feb 28 11:03 : player: played "Corneria.mp3"
+Feb 28 11:06 : player: played "What You Know.mp3"
+Feb 28 11:10 : player: played "Love.mp3"
+Feb 28 11:21 : player: played "Animals .mp3"
+Feb 28 11:25 : player: played "Suicide Machine.mp3"
+Feb 28 11:28 : player: played "Gym Leader Battle.mp3"
+Feb 28 11:32 : player: played "Voice of the Soul.mp3"
+Feb 28 11:47 : avahi: Client Disconnected, will reconnect shortly
+Feb 28 11:47 : avahi: Could not reconnect: Daemon not running
+Feb 28 11:47 : exception: Failed to play on "pulse audio" (pulse): disconnected
+Feb 28 11:47 : player: played "Monsters.mp3"
+Feb 28 17:26 : config: option 'device' on line 14 was not recognized
+Feb 28 17:28 : player: played "Monsters.mp3"
+Feb 28 17:32 : player: played "rockstar ft. 21 Savage.mp3"
+Feb 28 17:43 : player: played "Bergentruckung.mp3"
+Feb 28 17:43 : exception: Not playing
+Feb 28 17:47 : player: played "The Great Escape.mp3"
+Feb 28 17:50 : player: played "Obey.mp3"
+Feb 28 17:54 : player: played "Gym Leader Battle.mp3"
+Feb 28 17:58 : player: played "Animals .mp3"
+Feb 28 18:00 : player: played "Mute City.mp3"
+Feb 28 18:04 : player: played "Love.mp3"
+Feb 28 18:07 : player: played "Church Bells.mp3"
+Feb 28 19:36 : avahi: Client Disconnected, will reconnect shortly
+Feb 28 19:36 : avahi: Could not reconnect: Daemon not running
+Feb 28 19:36 : player: played "Monsters.mp3"
+Feb 28 19:38 : config: option 'device' on line 14 was not recognized
+Feb 28 19:57 : player: played "BANG.mp3"
+Feb 28 20:01 : player: played "Pump It.mp3"
+Feb 28 20:04 : player: played "Challengers.mp3"
+Feb 28 20:06 : player: played "What You Know Bout Love.mp3"
+Feb 28 20:10 : player: played "God s Country.mp3"
+Feb 28 23:53 : player: played "Damage.mp3"
+Feb 28 23:59 : player: played "Only Human.mp3"
+Mar 01 00:05 : player: played "Meek Mill - Otherside of America [Official Audio].mp3"
+Mar 01 00:26 : player: played "Bloody Valentine.mp3"
+Mar 01 00:30 : player: played "Obey.mp3"
+Mar 01 00:32 : player: played "Gourmet Race.mp3"
+Mar 01 00:57 : player: played "Better Together.mp3"
+Mar 01 01:01 : player: played "Damage.mp3"
+Mar 01 01:05 : player: played "Only Human.mp3"
+Mar 01 01:19 : exception: Failed to play on "pulse audio" (pulse): suspended
+Mar 01 01:19 : exception: Failed to play on "pulse audio" (pulse): suspended
+Mar 01 01:19 : exception: Failed to play on "pulse audio" (pulse): suspended
+Mar 01 01:26 : player: played "Animals .mp3"
+Mar 01 01:29 : player: played "Battle Champion Cynthia Music.mp3"
+Mar 01 01:33 : player: played "rockstar ft. 21 Savage.mp3"
+Mar 01 01:38 : exception: Failed to play on "pulse audio" (pulse): suspended
+Mar 01 01:42 : player: played "rockstar ft. 21 Savage.mp3"
+Mar 01 01:44 : player: played "Morgan Wallen - Warning (The Dangerous Sessions).mp3"
+Mar 01 01:52 : player: played "Animals .mp3"
+Mar 01 01:59 : avahi: Client Disconnected, will reconnect shortly
+Mar 01 01:59 : avahi: Could not reconnect: Daemon not running
+Mar 01 12:58 : config: option 'device' on line 14 was not recognized
+Mar 01 13:04 : avahi: Client Disconnected, will reconnect shortly
+Mar 01 13:04 : avahi: Could not reconnect: Daemon not running
+Mar 01 13:05 : config: option 'device' on line 14 was not recognized
+Mar 01 13:16 : avahi: Client Disconnected, will reconnect shortly
+Mar 01 13:16 : avahi: Could not reconnect: Daemon not running
+Mar 01 13:19 : config: option 'device' on line 14 was not recognized
+Mar 01 13:22 : player: played "What You Know Bout Love.mp3"
+Mar 01 15:16 : avahi: Client Disconnected, will reconnect shortly
+Mar 01 15:16 : avahi: Could not reconnect: Daemon not running
+Mar 01 15:17 : config: option 'device' on line 14 was not recognized
+Mar 01 15:48 : avahi: Client Disconnected, will reconnect shortly
+Mar 01 15:48 : avahi: Could not reconnect: Daemon not running
+Mar 01 15:49 : config: option 'device' on line 14 was not recognized
+Mar 01 16:12 : avahi: Client Disconnected, will reconnect shortly
+Mar 01 16:12 : avahi: Could not reconnect: Daemon not running
+Mar 01 16:13 : config: option 'device' on line 14 was not recognized
+Mar 01 16:14 : avahi: Client Disconnected, will reconnect shortly
+Mar 01 16:14 : avahi: Could not reconnect: Daemon not running
+Mar 01 16:15 : config: option 'device' on line 14 was not recognized
+Mar 01 16:26 : avahi: Client Disconnected, will reconnect shortly
+Mar 01 16:26 : avahi: Could not reconnect: Daemon not running
+Mar 01 16:26 : config: option 'device' on line 14 was not recognized
+Mar 01 18:29 : avahi: Client Disconnected, will reconnect shortly
+Mar 01 18:29 : avahi: Could not reconnect: Daemon not running
+Mar 01 18:30 : config: option 'device' on line 14 was not recognized
+Mar 01 18:34 : player: played "What You Know Bout Love.mp3"
+Mar 01 18:37 : player: played "Gym Leader Battle.mp3"
+Mar 01 18:39 : avahi: Client Disconnected, will reconnect shortly
+Mar 01 18:39 : avahi: Could not reconnect: Daemon not running
+Mar 01 18:40 : exception: Failed to play on "pulse audio" (pulse): disconnected
+Mar 01 18:40 : player: played "Midday Garden.mp3"
+Mar 01 18:40 : config: option 'device' on line 14 was not recognized
+Mar 01 18:41 : player: played "Midday Garden.mp3"
+Mar 01 18:51 : avahi: Client Disconnected, will reconnect shortly
+Mar 01 18:51 : avahi: Could not reconnect: Daemon not running
+Mar 01 18:53 : config: option 'device' on line 14 was not recognized
+Mar 01 18:54 : avahi: Client Disconnected, will reconnect shortly
+Mar 01 18:54 : avahi: Could not reconnect: Daemon not running
+Mar 01 18:55 : config: option 'device' on line 14 was not recognized
+Mar 01 18:56 : avahi: Client Disconnected, will reconnect shortly
+Mar 01 18:56 : avahi: Could not reconnect: Daemon not running
+Mar 01 18:56 : config: option 'device' on line 14 was not recognized
+Mar 01 18:57 : avahi: Client Disconnected, will reconnect shortly
+Mar 01 18:57 : avahi: Could not reconnect: Daemon not running
+Mar 01 18:58 : config: option 'device' on line 14 was not recognized
+Mar 01 19:00 : avahi: Client Disconnected, will reconnect shortly
+Mar 01 19:00 : avahi: Could not reconnect: Daemon not running
+Mar 01 19:01 : config: option 'device' on line 14 was not recognized
+Mar 01 19:15 : update: removing Animals .mp3
+Mar 01 19:15 : update: removing Monsters.mp3
+Mar 01 19:15 : update: removing BANG.mp3
+Mar 01 19:15 : update: removing Love.mp3
+Mar 01 19:15 : update: removing Mute City.mp3
+Mar 01 19:15 : update: removing Gym Leader Battle.mp3
+Mar 01 19:15 : update: removing What You Know Bout Love.mp3
+Mar 01 19:15 : update: removing Midday Garden.mp3
+Mar 01 19:15 : update: removing Galway Girl.mp3
+Mar 01 19:15 : update: removing The Philosopher.mp3
+Mar 01 19:15 : update: removing Dark Hollow.mp3
+Mar 01 19:15 : update: removing Go Crazy.mp3
+Mar 01 19:15 : update: removing Church Bells.mp3
+Mar 01 19:15 : update: removing Obey.mp3
+Mar 01 19:15 : update: removing The Great Escape.mp3
+Mar 01 19:15 : update: removing God s Country.mp3
+Mar 01 19:15 : update: removing Pump It.mp3
+Mar 01 19:15 : update: removing Abeyance.mp3
+Mar 01 19:15 : update: removing The Jester Race.mp3
+Mar 01 19:15 : update: removing Damage.mp3
+Mar 01 19:15 : update: removing Gourmet Race.mp3
+Mar 01 19:15 : update: removing Gnarls Barkley - Crazy (Official Video).mp3
+Mar 01 19:15 : update: removing Gasoline.mp3
+Mar 01 19:15 : update: removing Elvis Presley - Jailhouse Rock (Music Video).mp3
+Mar 01 19:15 : update: removing Better Together.mp3
+Mar 01 19:15 : update: removing Only Human.mp3
+Mar 01 19:15 : update: removing Vivir Mi Vida.mp3
+Mar 01 19:15 : update: removing Bloody Valentine.mp3
+Mar 01 19:15 : update: removing Meek Mill - Otherside of America [Official Audio].mp3
+Mar 01 19:15 : update: removing Morgan Wallen - Warning (The Dangerous Sessions).mp3
+Mar 01 19:15 : update: removing Reverse Situation.mp3
+Mar 01 19:15 : update: removing Blackwater Park.mp3
+Mar 01 19:15 : update: removing Battle Champion Cynthia Music.mp3
+Mar 01 19:15 : update: removing Who's Gonna Stop Me.mp3
+Mar 01 19:15 : update: removing Circles.mp3
+Mar 01 19:15 : update: removing rockstar ft. 21 Savage.mp3
+Mar 01 19:15 : update: removing Killing In The Name.mp3
+Mar 01 19:15 : update: removing Aquaria Towers.mp3
+Mar 01 19:15 : update: removing Hurricos.mp3
+Mar 01 19:15 : update: removing Skelos Badlands.mp3
+Mar 01 19:15 : update: removing Zephyr.mp3
+Mar 01 19:15 : update: removing Cloud Spires.mp3
+Mar 01 19:15 : update: removing Suicide Machine.mp3
+Mar 01 19:15 : update: removing Fireworks Factory.mp3
+Mar 01 19:15 : update: removing What You Know.mp3
+Mar 01 19:15 : update: removing Emblem3 ..mp3
+Mar 01 19:15 : update: removing You're Gonna Go Far, Kid.mp3
+Mar 01 19:15 : update: removing Starboy.mp3
+Mar 01 19:15 : update: removing Battle Against A True Hero.mp3
+Mar 01 19:15 : update: removing Bergentruckung.mp3
+Mar 01 19:15 : update: removing Corneria.mp3
+Mar 01 19:15 : update: removing Gerudo Valley.mp3
+Mar 01 19:15 : update: removing Voice of the Soul.mp3
+Mar 01 19:15 : update: removing Wagon Wheel.mp3
+Mar 01 19:15 : update: removing Sadness and Hate.mp3
+Mar 01 19:15 : update: removing You're Mines Still.mp3
+Mar 01 19:15 : update: removing Challengers.mp3

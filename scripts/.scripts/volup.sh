@@ -10,3 +10,4 @@ pipe=$(xgetres audio.pipe)
 	pactl set-sink-volume @DEFAULT_SINK@ +$step%
 
 echo $(( $volOld + $step < $max ? $volOld + $step : $max )) >> $pipe
+pkill -51 lemontopc

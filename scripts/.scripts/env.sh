@@ -1,10 +1,13 @@
 #!/bin/sh
 
 linker () {
-	[ -L $1/$2 ] && unlink $1/$2
-	ln -s $1/$3 $1/$2
+	[ -L $1/$2 ] && sudo unlink $1/$2
+	sudo ln -s $1/$3 $1/$2
 }
 
 linker ~/.config/sxhkd sxhkdrc $WM
-linker ~/.config/dunst dunstrc dunstrc-$COLORS
-linker ~/.config/xob styles.cfg $COLORS.cfg
+linker ~/.config/dunst dunstrc $(xgetres theme.name)
+linker ~/.config/xob styles.cfg $(xgetres theme.name)
+
+sed '2d' ~/.config/gtk-3.0/settings.ini > ~/.config/gtk-3.0/settings.ini
+#echo "gtk-theme-name:$(xgetres gtk.theme)" >> ~/.config/gtk-3.0/settings.ini

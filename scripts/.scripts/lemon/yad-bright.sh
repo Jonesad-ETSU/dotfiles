@@ -6,6 +6,7 @@ brightnessctl s "$(yad --scale \
   --step=5 \
   --enforce-step \
   --skip-taskbar \
+  --fixed \
   --close-on-unfocus \
   --title "Transparent" )%" >/dev/null 2>/dev/null && \
 pkill -44 lemontopc 

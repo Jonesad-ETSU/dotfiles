@@ -18,8 +18,9 @@ colors:
     white: '#E5E9F0'
     yellow: '#EBCB8B'
   primary:
-    background: '#2E3440'
+    background: '#3B4252'
     foreground: '#D8DEE9'
 font:
   normal:
-    size: 8
+    family: scientifica
+  size: 10

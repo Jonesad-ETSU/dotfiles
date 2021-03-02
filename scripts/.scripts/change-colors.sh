@@ -13,6 +13,7 @@ conf_link ( ) {
 
 conf_link $HOME/.config/x/color current 
 
+killall -r "lemon*"
 killall $WM
 sleep 1
 cd -

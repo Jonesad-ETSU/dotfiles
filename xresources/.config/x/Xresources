@@ -10,20 +10,22 @@
 
 ! Change Current file ( recommended: cp not mv ) and reload to change theme
 #include "/home/jonesad/.config/x/color/current"
+theme:		name
+gtk.theme:	gtktheme
 
 !generic tags
-tag1:		
-tag2:		
-tag3:		
-tag4:		
-tag5:			
+tag1:		1	
+tag2:		2
+tag3:		3
+tag4:		4
+tag5:		5
 
 ! dwm
-dwm.tag1:		
-dwm.tag2:		
-dwm.tag3:		
-dwm.tag4:		
-dwm.tag5:			
+dwm.tag1:		GEN
+dwm.tag2:		GAMES
+dwm.tag3:		DEV
+dwm.tag4:		MUSIC
+dwm.tag5:		RECORD
 dwm.normbgcolor: 	bg
 dwm.normbordercolor: 	bg
 dwm.normfgcolor:	fg
@@ -48,7 +50,8 @@ dwm.mfact:		.55
 dmenu.font:	xft:Ubuntu Nerd Font Complete:size=22
 
 !rofi
-rofi.theme:	android_notification
+rofi.theme:	rofitheme
+rofi.font:	scientifica
 
 ! dunst
 dunst.bat.le20:			I need an Adult
@@ -70,26 +73,29 @@ dunst.bar.title.scared:		Please...
 ! lemonbar
 lemon.foreground:	fg	
 lemon.background:	bg
-lemon.edgecolor:	magenta
-lemon.length:	1920
-lemon.width:	bh
-lemon.xoffset:	+0
-lemon.yoffset:	+0
-lemon.floating: 0
-lemon.topbar:	top
-lemon.textonly: 0
-lemon.opacity:	FF
-lemon.font1: Terminus:size=12
-lemon.font2: Ubuntu Nerd Font:size=18
-lemon.font3: Ubuntu Nerd Font:size=22
-lemon.font1.offset: -6
-lemon.font2.offset: -2
-lemon.font3.offset: 0
+lemon.length:		1920
+lemon.width:		bh
+lemon.xoffset:		+0
+lemon.yoffset:		+0
+lemon.floating: 	0
+lemon.borderpx:		2
+lemon.bordercolor:      lightgray				
+lemon.borderfg:		bg
+lemon.topbar:		top
+lemon.textonly: 	0
+lemon.opacity:		BB
+lemon.font1: 		scientifica:size=12
+lemon.font2: 		Ubuntu Nerd Font:size=18
+lemon.font3: 		Ubuntu Nerd Font:size=22
+lemon.font1.offset:	-8
+lemon.font2.offset: 	-2
+lemon.font3.offset: 	0
 bat.discharge.color: red
 bat.charge.color: green
 bat.num:	5
 bat.full:		
 bat.half:	
+bat.halves:	0
 bat.empty:	
 mem.symbol:		
 mem.text:		MEM
@@ -113,6 +119,8 @@ launcher.symbol:	
 launcher.text:		LAUNCH
 mpd.symbol:		
 mpd.text:		MUSIC
+volume.symbol:		 	
+volume.text:		VOL
 mpd.play.symbol:	
 mpd.play.text:		PLAY
 mpd.pause.symbol:		
@@ -123,10 +131,16 @@ mpd.prev.symbol:	
 mpd.prev.text:		PREV
 temp.symbol:		
 temp.text:		TEMP
+floating.symbol:	
+floating.text:		FLOATING
+tiled.symbol:		
+tiled.text:		TILED
+monocle.symbol:		
+monocle.text:		MONOCLE
 
 ! audio
 audio.pipe:	/tmp/xobpipe
-audio.max:	80
+audio.max:	100
 audio.step:	5
 
 ! Linking
