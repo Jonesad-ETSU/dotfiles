@@ -1,2 +1,2 @@
-#!/bin/sh
-printf "%s" "%{F$(xgetres a.color10)}%{A:$TERMINAL -e ytop &:}$($SCRIPTS_FOLDER/mem.sh)%{A}%{F-}"
+#!/bin/bash
+printf "%s" "%{F$($SCRIPTS_FOLDER/conf.sh color10)}%{A:$TERMINAL -e ytop &:}$($SCRIPTS_FOLDER/mem.sh)%{A}%{F-}"

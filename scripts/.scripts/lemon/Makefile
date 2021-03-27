@@ -1,13 +1,14 @@
 all:
-	gcc lemon.top.c -o lemontopc -DMAIN
-	gcc lemon.top.c -o lemonbottomc -DSECONDARY
+	gcc lemon.bro.c -o lemonmainc -DMAIN
+	gcc lemon.bro.c -o lemonsecondaryc -DSECONDARY
 	rm -rf ./mainonly
 main:
-	gcc lemon.top.c -o lemontopc -DMAIN
+	gcc lemon.bro.c -o lemonmainc -DMAIN
 	rm -rf ./mainonly
 secondary:
-	gcc lemon.top.c -o lemonbottomc -DSECONDARY
+	gcc lemon.bro.c -o lemonsecondaryc -DSECONDARY
 	rm -rf ./mainonly
 one:
-	gcc lemon.top.c -o lemontopc  -DONE
+	gcc lemon.bro.c -o lemonmainc  -DONE
 	touch ./mainonly
+	rm -rf ./lemonsecondaryc

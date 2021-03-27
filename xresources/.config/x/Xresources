@@ -20,38 +20,12 @@ tag3:		3
 tag4:		4
 tag5:		5
 
-! dwm
-dwm.tag1:		GEN
-dwm.tag2:		GAMES
-dwm.tag3:		DEV
-dwm.tag4:		MUSIC
-dwm.tag5:		RECORD
-dwm.normbgcolor: 	bg
-dwm.normbordercolor: 	bg
-dwm.normfgcolor:	fg
-dwm.selbgcolor:		bg
-dwm.selbordercolor:	fg
-dwm.selfgcolor:		fg
-dwm.borderpx:		3
-dwm.gappih:		20
-dwm.gappiv:		25
-dwm.gappoh:		50
-dwm.gappov:		200
-dwm.user_bh:		bh
-dwm.swallowfloating:	1
-dwm.snap:		1
-dwm.showbar:		1
-dwm.topbar:		top
-dwm.nmaster:		1
-dwm.resizehints:	0
-dwm.mfact:		.55
-
 ! dmenu
 dmenu.font:	xft:Ubuntu Nerd Font Complete:size=22
 
 !rofi
 rofi.theme:	rofitheme
-rofi.font:	scientifica
+rofi.font:	rofifont
 
 ! dunst
 dunst.bat.le20:			I need an Adult
@@ -79,23 +53,23 @@ lemon.xoffset:		+0
 lemon.yoffset:		+0
 lemon.floating: 	0
 lemon.borderpx:		2
-lemon.bordercolor:      lightgray				
+lemon.bordercolor:      cyan				
 lemon.borderfg:		bg
 lemon.topbar:		top
 lemon.textonly: 	0
-lemon.opacity:		BB
-lemon.font1: 		scientifica:size=12
+lemon.opacity:		FF
+lemon.font1: 		scientifica:size=16
 lemon.font2: 		Ubuntu Nerd Font:size=18
 lemon.font3: 		Ubuntu Nerd Font:size=22
-lemon.font1.offset:	-8
+lemon.font1.offset:	-4
 lemon.font2.offset: 	-2
 lemon.font3.offset: 	0
 bat.discharge.color: red
-bat.charge.color: green
+bat.charge.color: red
 bat.num:	5
 bat.full:		
 bat.half:	
-bat.halves:	0
+bat.halves:	1
 bat.empty:	
 mem.symbol:		
 mem.text:		MEM
@@ -111,11 +85,11 @@ kernel.symbol:		
 kernel.text:		KER
 brightness.symbol: 	
 brightness.text:	BRI
-time.symbol:		愈
+time.symbol:		
 time.text:		TIME
 power.symbol:			
 power.text:		POW
-launcher.symbol:	
+launcher.symbol:	
 launcher.text:		LAUNCH
 mpd.symbol:		
 mpd.text:		MUSIC

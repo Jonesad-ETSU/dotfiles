@@ -1,19 +1,28 @@
-#!/bin/sh
-menu=$(xgetres menu)
-background=$(xgetres background)
-foreground=$(xgetres foreground)
-terminal=$(xgetres terminal)
-dmenu_font=$(xgetres dmenu.font)
-rofi_font="xft:$(xgetres rofi.font)"
-rofi_theme=$(xgetres rofi.theme)
-color5=$(xgetres color5)
+#!/bin/bash
+
+
+conf() {
+	yq .$1 ~/conf.yml | sed 's/"//g'
+}
+
+menu=$(conf menutype)
+if [ $menu = "dmenu" ];then
+	background=$(conf bg)
+	foreground=$(conf fg)
+	terminal=$(conf term)
+	dmenu_font=$(conf lemon.iconfont)
+	color5=$(conf color5)
+elif [ $menu = "rofi" ];then
+	rofi_font="xft:$(conf lemon.iconfont)"
+	rofi_theme=$(conf menu.theme)
+fi
 
 wallpaperFolder="$HOME/Wallpaper"
 _menu() {
-  [ $menu = "dmenu"  ] && \
-    dmenu -c -l 11 -fn "$dmenu_font" -nb $background -nf $foreground -sb $color5 -sf $background -p | cut -d ' ' -f 2 \
+  [ $menu = "dmenu" ] && \
+	dmenu -c -l 11 -fn "$dmenu_font" -nb $background -nf $foreground -sb $color5 -sf $background -p | cut -d ' ' -f 2 \
                     || \
-		    rofi -i  -lines 11 -matching fuzzy -dmenu -p ' ' -font "U $${rofi_font} 22" /us-config r/share/rofi/themes/$rofi_theme.rasi | cut -d ' ' -f 2 
+	rofi -i  -lines 11 -matching fuzzy -dmenu -p ' ' -font "U $${rofi_font} 22" /us-config r/share/rofi/themes/$rofi_theme.rasi | cut -d ' ' -f 2 
 }
 
 _start() { 
@@ -65,9 +74,9 @@ _loop () {
       'Lock') $SCRIPTS_FOLDER/locker.sh & ;;
       'Hibernate') sudo ZZZ & ;;
       'Sleep') sudo zzz & ;;
-      'Shutdown') sudo halt & ;;
+      'Shutdown') systemctl poweroff & ;;
       'Kill-X') killall xinit &;;
-      'Reboot') sudo reboot ;;
+      'Reboot') systemctl reboot ;;
       'Cancel') _start menu/general & ;;
     esac ;;
   6) #Melee
@@ -90,7 +99,7 @@ _loop () {
       'Music') _start menu/music 7 & ;;
       'Vim') exec $terminal -e vim & ;;
       'Record') exec $terminal -e echo "working on it" && read & ;;
-      'Discord') exec Discord & ;;
+      'Discord') exec discord & ;;
       'Files') exec $terminal -e ranger & ;;
       'Mail') exec firefox "http://outlook.office365.com" & ;;
       'Tools') _start menu/tools 3 & ;;

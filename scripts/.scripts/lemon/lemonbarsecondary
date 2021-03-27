@@ -1,0 +1,38 @@
+#!/bin/bash
+name="SecondaryBar"
+conf () {
+	yq .$1 ~/conf.yml | sed 's/"//g'
+}
+
+dimensions="$(conf lemon.length)x$(conf lemon.width)$(conf lemon.xoffset)$(conf lemon.yoffset)"
+
+[ $(pgrep picom) ] && \
+	background="#$(conf lemon.opacity)$(conf lemon.bg|cut -d '#' -f 2)" \
+	|| \
+	background="$(conf lemon.bg)"
+
+[ -n "$(conf lemon.top)" ] && \
+	[ $(conf lemon.top) -eq 1 ] && bottom="-b"	
+
+[ -n "$(conf lemon.floating)" ] && \
+	[ $(conf lemon.floating ) -eq 1 ] && \
+		border="-R `conf lemon.bordercolor` -r `conf lemon.borderpx`"	
+
+bar () { 
+	lemonbar -d $bottom -g $dimensions -u 2 -f "$(conf lemon.textfont.family):size=$(conf lemon.textfont.size)" -o $(conf lemon.textfont.offset) \
+		-f "$(conf lemon.smalliconfont.family):size=$(conf lemon.smalliconfont.size)" -o $(conf lemon.smalliconfont.offset) -f "$(conf lemon.iconfont.family):size=$(conf lemon.iconfont.size)" -o $(conf lemon.iconfont.offset) \
+	  -F "$(conf lemon.fg)" -B "$background" \
+	  $border \
+	  -U $(conf fg) -a 30 -n $name
+}
+
+#WIP - trying to prevent _NET_DESKTOP_NAMES:notfound bar
+xprop -root _NET_DESKTOP_NAMES > /dev/null 2>/dev/null
+while [ $? -eq 1 ]; do
+  sleep 1
+  xprop -root > /dev/null 2>/dev/null
+done
+
+#For some reason, need to send signal for initial display
+(sleep 1 && pkill -41 lemonsecondaryc) &
+$SCRIPTS_FOLDER/lemon/lemonsecondaryc | bar | bash ; exit

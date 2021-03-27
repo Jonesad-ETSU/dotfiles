@@ -1,2 +1,2 @@
 #!/bin/sh
-printf "%s" "$(nmcli -t -f active,ssid dev wifi | grep '^yes' | head -n 1 | cut -d ':' -f 2)"
+printf "%s" "$(iwctl known-networks list | head -n 5 | tail -n 1 | cut -d ' ' -f 3)"

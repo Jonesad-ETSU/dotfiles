@@ -292,7 +292,7 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#81A1C1"
+    background = "#4C566A"
     foreground = "#D8DEE9"
     frame_color= "#D8DEE9"
     timeout = 10

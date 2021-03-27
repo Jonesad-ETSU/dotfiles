@@ -1,0 +1,188 @@
+######################
+# Configuration File #
+######################
+
+#########################
+# Defaults for Scripts  #
+#########################
+term: alacritty
+menutype: rofi
+
+##################################
+# Color Scheme                   #
+# superseded by                  #
+#  $HOME/.config/color/x/current #
+##################################
+gtk: &gtk Nordic
+name: &name nord
+rofi: &rofi android_notification
+black: &black '#3B4252'
+white: &white '#ECEFF4' 
+blue: &blue '#81A1C1'
+darkblue: &darkblue '#81A1C1'
+red: &red '#BF616A'
+darkred: &darkred '#BF616A' 
+green: &green '#A3BE8C'
+darkgreen: &darkgreen '#A3BE8C'
+yellow: &yellow '#EBCB8B'
+darkyellow: &darkyellow '#EBCB8B'
+magenta: &magenta '#B48EAD'
+darkmagenta: &darkmagenta '#B48EAD'
+cyan: &cyan '#8FBCBB'
+darkcyan: &darkcyan '#88C0D0'
+lightgray: &lightgray '#E5E9F0'
+darkgray: &darkgray '#4C566A'
+fg: &fg '#ECEFF4'
+bg: &bg '#3B4252'
+color0: *black
+color1: *darkred
+color2: *darkgreen
+color3: *darkyellow
+color4: *darkblue
+color5: *darkmagenta
+color6: *darkcyan
+color7: *lightgray
+color8: *darkgray
+color9: *red
+color10: *green
+color11: *yellow
+color12: *blue
+color13: *magenta
+color14: *cyan
+color15: *white
+
+###########################
+# Window Manager Settings #
+###########################
+wm:
+  fg: *fg  
+  bg: *bg
+  active: *lightgray
+  inactive: *bg
+  urgent: *red
+  tags: ['1', '2', '3', '4', '5']  
+
+####################
+# Taskbar Settings #
+####################
+lemon:
+  fg: *fg
+  bg: *bg 
+  top: 1
+  width: 32
+  length: 1920
+  borderpx: 2
+  borderfg: *bg
+  bordercolor: *lightgray
+  xoffset: '+0'
+  yoffset: '+0'
+  opacity: 'FF'
+
+  textfont:
+    family: scientifica
+    size: 16
+    offset: -4
+  smalliconfont:
+    family: Ubuntu Nerd Font
+    size: 18
+    offset: -2
+  iconfont:
+    family: Ubuntu Nerd Font
+    size: 22
+    offset: 0
+
+  textonly: 0
+  floating: 0
+
+  bat:
+    icon:
+      empty: ⚪
+      full: ♥
+      half: ⚫
+    num: 5
+    halves: 1
+    color:
+      charge: *green
+      discharge: *red
+  mem:
+    icon: 
+    text: MEM
+  root:
+    icon: 
+    text: ROOT
+  home:
+    icon: 
+    text: HOME
+  wifi:
+    icon: 
+    text: WIFI
+  eth:
+    icon: 
+    text: ETH
+  kernel:
+    icon: 
+    text: KERN
+  brightness:
+    icon: 
+    text: BRI
+  time:
+    icon: 愈
+    text: TIME
+  power:
+    icon: 
+    text: POW
+  launcher:
+    icon: 
+    text: RUN
+  mpd:
+    icon: 
+    text: MUSIC
+    play:
+      icon: 
+      text: PLAY
+    pause:
+      icon:  
+      text: PAUSE
+    next:
+      icon: 
+      text: NEXT
+    prev:
+      icon: 
+      text: PREV
+  volume:
+    icon: 
+    text: VOL
+  temp:
+    icon: 
+    text: TEMP
+  layout:
+    tiled:
+      icon: 
+      text: TALL
+    floating:
+      icon: 
+      text: FLOAT
+    monocle:
+      icon: 
+      text: MONOCLE
+        
+#################
+# Menu Settings #
+# Rofi/Dmenu    #
+#################
+menu:
+  theme: android_notification
+  font:
+    family: scientifica
+    size: 22
+  
+############################
+# Audio Manipulation Rules #
+############################
+audio:
+  pipe: /tmp/xobpipe
+  limited: 1
+  max: 100
+  step: 5
+
+

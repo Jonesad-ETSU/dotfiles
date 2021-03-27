@@ -1,7 +1,7 @@
 /***************************************************\
-* Author:   Jonesad@etsu.edu			    *
-*  Date l.m: 1/26/21				    *
-*  Purpose:  Pipes output of scripts into lemonbar. *   		
+ * Author:   Jonesad@etsu.edu			    *
+ * Date l.m: 1/26/21				    *
+ * Purpose:  Pipes output of scripts into lemonbar. *   		
 \***************************************************/
 
 /* Modify these to change default file locations */
@@ -29,30 +29,30 @@
 #include <string.h>
 
 typedef struct message {
-  char text[BUFFER_SIZE];
-  int order, align;
+	  char text[BUFFER_SIZE];
+	  int order, align;
 } message;
 
 typedef struct module {
-  char cmd[BUFFER_SIZE];
-  int align;
-  int order;
-  char pre[BUFFER_SIZE];
-  char post[BUFFER_SIZE];
-  int timer;
-  int signal;
+	  char cmd[BUFFER_SIZE];
+	  int align;
+	  int order;
+	  char pre[BUFFER_SIZE];
+	  char post[BUFFER_SIZE];
+	  int timer;
+	  int signal;
 } module;
 
 /* MODIFY THIS TO ADD MODULES. MAKE SURE TO INCREMENT NUM_MODS */
 struct module modules[NUM_MODS] = {
-	  /*  COMMAND                       ALIGN    ORDER  PRE     POST    TIMER	SIGNAL   */
-	    { LEMON"/lemon-temp.sh",        RIGHT,   1,    "",     "",     3,	5  },
-	    { LEMON"/lemon-mem.sh",         RIGHT,   2,    "",     "",     2,	6  },
-	    { LEMON"/lemon-home.sh",        RIGHT,   3,    "",     "",     120,	6  },
-	    { LEMON"/lemon-root.sh",        RIGHT,   4,    "",     "",     120,	6  },
-	    { LEMON"/lemon-weather.sh",     RIGHT,   5,    "",     "",     900,	6  },
-	    { LEMON"/lemon-mpd.sh",	    CENTER,  1,	   "",	   "",	   1,	9  },
-	    { LEMON"/lemon-tasks.sh",	    LEFT,    1,	   "",	   "",     30,	10 },
+		  /*  COMMAND                       ALIGN    ORDER  PRE     POST    TIMER	SIGNAL   */
+		    { LEMON"/lemon-temp.sh",        RIGHT,   1,    "",     "",     3,	5  },
+		    { LEMON"/lemon-mem.sh",         RIGHT,   2,    "",     "",     2,	6  },
+		    { LEMON"/lemon-home.sh",        RIGHT,   3,    "",     "",     120,	6  },
+		    { LEMON"/lemon-root.sh",        RIGHT,   4,    "",     "",     120,	6  },
+		    { LEMON"/lemon-weather.sh",     RIGHT,   5,    "",     "",     900,	6  },
+		    { LEMON"/lemon-mpd.sh",	    CENTER,  1,	   "",	   "",	   1,	9  },
+		    { LEMON"/lemon-tasks.sh",	    LEFT,    1,	   "",	   "",     30,	10 },
 };
 
 /* Method Declaration - ignore me*/

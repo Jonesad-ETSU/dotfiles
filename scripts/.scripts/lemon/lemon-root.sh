@@ -1,2 +1,2 @@
-#!/bin/sh
+#!/bin/bash
 printf "%s" "$($SCRIPTS_FOLDER/lemon/get-symbol.sh root) $($SCRIPTS_FOLDER/root.sh)"

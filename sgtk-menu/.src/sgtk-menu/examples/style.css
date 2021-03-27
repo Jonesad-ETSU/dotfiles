@@ -1,0 +1,10 @@
+#separator {
+    margin: 10px;
+}
+
+#button:hover {
+    border-top: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #111;
+    border-bottom: 1px solid #111
+}

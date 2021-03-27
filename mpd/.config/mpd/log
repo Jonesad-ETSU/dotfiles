@@ -1566,3 +1566,596 @@ Mar 01 19:15 : update: removing Wagon Wheel.mp3
 Mar 01 19:15 : update: removing Sadness and Hate.mp3
 Mar 01 19:15 : update: removing You're Mines Still.mp3
 Mar 01 19:15 : update: removing Challengers.mp3
+Mar 09 14:05 : config: option 'device' on line 14 was not recognized
+Mar 09 22:14 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 09 23:04 : config: option 'device' on line 14 was not recognized
+Mar 09 23:07 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 09 23:07 : update: added /Midday Garden.mp3
+Mar 09 23:07 : update: added /Skelos Badlands.mp3
+Mar 09 23:07 : update: added /Galway Girl.mp3
+Mar 09 23:07 : update: added /Aquaria Towers.mp3
+Mar 09 23:07 : update: added /What You Know.mp3
+Mar 09 23:07 : update: added /Gerudo Valley.mp3
+Mar 09 23:07 : update: added /Gourmet Race.mp3
+Mar 09 23:07 : update: added /Go Crazy.mp3
+Mar 09 23:07 : update: added /Animals .mp3
+Mar 09 23:07 : update: added /Suicide Machine.mp3
+Mar 09 23:07 : update: added /The Great Escape.mp3
+Mar 09 23:07 : update: added /Starboy.mp3
+Mar 09 23:07 : update: added /Obey.mp3
+Mar 09 23:07 : update: added /Only Human.mp3
+Mar 09 23:07 : update: added /Battle Champion Cynthia Music.mp3
+Mar 09 23:07 : update: added /Emblem3 ..mp3
+Mar 09 23:07 : update: added /Gnarls Barkley - Crazy (Official Video).mp3
+Mar 09 23:07 : update: added /Gasoline.mp3
+Mar 09 23:07 : update: added /Bloody Valentine.mp3
+Mar 09 23:07 : update: added /The Jester Race.mp3
+Mar 09 23:07 : update: added /What You Know Bout Love.mp3
+Mar 09 23:07 : update: added /Morgan Wallen - Warning (The Dangerous Sessions).mp3
+Mar 09 23:07 : update: added /Wagon Wheel.mp3
+Mar 09 23:07 : update: added /You're Mines Still.mp3
+Mar 09 23:07 : update: added /Dark Hollow.mp3
+Mar 09 23:07 : update: added /Cloud Spires.mp3
+Mar 09 23:07 : update: added /Blackwater Park.mp3
+Mar 09 23:07 : update: added /Church Bells.mp3
+Mar 09 23:07 : update: added /The Philosopher.mp3
+Mar 09 23:07 : update: added /Vivir Mi Vida.mp3
+Mar 09 23:07 : update: added /Reverse Situation.mp3
+Mar 09 23:07 : update: added /Circles.mp3
+Mar 09 23:07 : update: added /Zephyr.mp3
+Mar 09 23:07 : update: added /rockstar ft. 21 Savage.mp3
+Mar 09 23:07 : update: added /God s Country.mp3
+Mar 09 23:07 : update: added /Sadness and Hate.mp3
+Mar 09 23:07 : update: added /Who's Gonna Stop Me.mp3
+Mar 09 23:07 : update: added /You're Gonna Go Far, Kid.mp3
+Mar 09 23:07 : update: added /Elvis Presley - Jailhouse Rock (Music Video).mp3
+Mar 09 23:07 : update: added /Bergentruckung.mp3
+Mar 09 23:07 : update: added /Killing In The Name.mp3
+Mar 09 23:07 : update: added /Pump It.mp3
+Mar 09 23:07 : update: added /Better Together.mp3
+Mar 09 23:07 : update: added /Damage.mp3
+Mar 09 23:07 : update: added /Fireworks Factory.mp3
+Mar 09 23:07 : update: added /Abeyance.mp3
+Mar 09 23:07 : update: added /Meek Mill - Otherside of America [Official Audio].mp3
+Mar 09 23:07 : update: added /Love.mp3
+Mar 09 23:07 : update: added /Mute City.mp3
+Mar 09 23:07 : update: added /Voice of the Soul.mp3
+Mar 09 23:07 : update: added /BANG.mp3
+Mar 09 23:07 : update: added /Battle Against A True Hero.mp3
+Mar 09 23:07 : update: added /Challengers.mp3
+Mar 09 23:07 : update: added /Monsters.mp3
+Mar 09 23:07 : update: added /Hurricos.mp3
+Mar 09 23:07 : update: added /Gym Leader Battle.mp3
+Mar 09 23:07 : update: added /Corneria.mp3
+Mar 09 23:07 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 09 23:09 : player: played "Mute City.mp3"
+Mar 09 23:10 : player: played "Love.mp3"
+Mar 09 23:14 : player: played "Animals .mp3"
+Mar 09 23:38 : player: played "Bloody Valentine.mp3"
+Mar 09 23:41 : player: played "Monsters.mp3"
+Mar 09 23:44 : player: played "Meek Mill - Otherside of America [Official Audio].mp3"
+Mar 09 23:48 : player: played "Battle Champion Cynthia Music.mp3"
+Mar 10 07:21 : config: option 'device' on line 14 was not recognized
+Mar 10 07:31 : player: played "Battle Champion Cynthia Music.mp3"
+Mar 10 07:31 : config: option 'device' on line 14 was not recognized
+Mar 10 09:38 : player: played "Battle Champion Cynthia Music.mp3"
+Mar 10 11:02 : player: played "Vivir Mi Vida.mp3"
+Mar 10 11:02 : config: option 'device' on line 14 was not recognized
+Mar 10 11:03 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 10 11:03 : player: played "Vivir Mi Vida.mp3"
+Mar 10 11:04 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 10 11:07 : player: played "What You Know Bout Love.mp3"
+Mar 10 11:11 : player: played "Dark Hollow.mp3"
+Mar 10 11:13 : player: played "Challengers.mp3"
+Mar 10 11:16 : player: played "BANG.mp3"
+Mar 10 11:21 : player: played "Blackwater Park.mp3"
+Mar 10 11:22 : config: option 'device' on line 14 was not recognized
+Mar 10 11:25 : player: played "Blackwater Park.mp3"
+Mar 10 11:26 : config: option 'device' on line 14 was not recognized
+Mar 10 11:27 : player: played "Blackwater Park.mp3"
+Mar 10 11:28 : config: option 'device' on line 14 was not recognized
+Mar 10 11:31 : player: played "Blackwater Park.mp3"
+Mar 10 11:32 : player: played "Fireworks Factory.mp3"
+Mar 10 11:32 : config: option 'device' on line 14 was not recognized
+Mar 10 11:37 : player: played "Fireworks Factory.mp3"
+Mar 10 11:39 : config: option 'device' on line 14 was not recognized
+Mar 10 11:39 : player: played "Fireworks Factory.mp3"
+Mar 10 11:40 : config: option 'device' on line 14 was not recognized
+Mar 10 12:29 : player: played "Fireworks Factory.mp3"
+Mar 10 12:29 : config: option 'device' on line 14 was not recognized
+Mar 10 12:30 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 10 12:33 : player: played "Monsters.mp3"
+Mar 10 12:36 : player: played "Voice of the Soul.mp3"
+Mar 10 12:39 : player: played "Skelos Badlands.mp3"
+Mar 10 12:41 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Mar 10 12:41 : config: option 'device' on line 14 was not recognized
+Mar 10 12:41 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Mar 10 12:41 : config: option 'device' on line 14 was not recognized
+Mar 10 12:42 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Mar 10 12:53 : player: played "Fireworks Factory.mp3"
+Mar 10 12:54 : config: option 'device' on line 14 was not recognized
+Mar 10 13:05 : player: played "Fireworks Factory.mp3"
+Mar 10 13:05 : config: option 'device' on line 14 was not recognized
+Mar 10 13:06 : player: played "Fireworks Factory.mp3"
+Mar 10 13:06 : config: option 'device' on line 14 was not recognized
+Mar 10 13:08 : player: played "Fireworks Factory.mp3"
+Mar 10 13:08 : config: option 'device' on line 14 was not recognized
+Mar 10 13:08 : player: played "Fireworks Factory.mp3"
+Mar 10 13:08 : config: option 'device' on line 14 was not recognized
+Mar 10 13:09 : player: played "Fireworks Factory.mp3"
+Mar 10 13:09 : config: option 'device' on line 14 was not recognized
+Mar 10 13:10 : player: played "Fireworks Factory.mp3"
+Mar 10 13:10 : config: option 'device' on line 14 was not recognized
+Mar 10 13:11 : player: played "Fireworks Factory.mp3"
+Mar 10 15:54 : config: option 'device' on line 14 was not recognized
+Mar 10 16:08 : player: played "Fireworks Factory.mp3"
+Mar 10 16:09 : config: option 'device' on line 14 was not recognized
+Mar 10 16:11 : player: played "Fireworks Factory.mp3"
+Mar 10 16:12 : config: option 'device' on line 14 was not recognized
+Mar 10 16:25 : player: played "Fireworks Factory.mp3"
+Mar 10 16:26 : config: option 'device' on line 14 was not recognized
+Mar 10 16:29 : player: played "Fireworks Factory.mp3"
+Mar 10 16:30 : config: option 'device' on line 14 was not recognized
+Mar 10 16:30 : player: played "Fireworks Factory.mp3"
+Mar 10 16:30 : config: option 'device' on line 14 was not recognized
+Mar 10 16:58 : player: played "Fireworks Factory.mp3"
+Mar 10 19:00 : config: option 'device' on line 14 was not recognized
+Mar 10 19:01 : player: played "Fireworks Factory.mp3"
+Mar 10 19:01 : config: option 'device' on line 14 was not recognized
+Mar 10 19:04 : player: played "Fireworks Factory.mp3"
+Mar 10 19:08 : config: option 'device' on line 14 was not recognized
+Mar 10 19:13 : player: played "Fireworks Factory.mp3"
+Mar 10 19:14 : config: option 'device' on line 14 was not recognized
+Mar 10 19:14 : player: played "Fireworks Factory.mp3"
+Mar 10 19:16 : config: option 'device' on line 14 was not recognized
+Mar 10 19:25 : player: played "Fireworks Factory.mp3"
+Mar 10 19:26 : config: option 'device' on line 14 was not recognized
+Mar 10 19:27 : player: played "Fireworks Factory.mp3"
+Mar 10 19:28 : config: option 'device' on line 14 was not recognized
+Mar 10 19:33 : player: played "Fireworks Factory.mp3"
+Mar 10 19:35 : config: option 'device' on line 14 was not recognized
+Mar 10 20:27 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 10 20:28 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 10 20:32 : player: played "Mute City.mp3"
+Mar 10 20:44 : player: played "Morgan Wallen - Warning (The Dangerous Sessions).mp3"
+Mar 10 20:49 : player: played "Wagon Wheel.mp3"
+Mar 10 20:53 : player: played "Dark Hollow.mp3"
+Mar 10 20:56 : player: played "Battle Champion Cynthia Music.mp3"
+Mar 10 21:52 : player: played "Gasoline.mp3"
+Mar 10 21:53 : config: option 'device' on line 14 was not recognized
+Mar 10 22:18 : player: played "Gasoline.mp3"
+Mar 10 22:54 : config: option 'device' on line 14 was not recognized
+Mar 10 22:57 : player: played "Gasoline.mp3"
+Mar 10 22:58 : config: option 'device' on line 14 was not recognized
+Mar 10 23:07 : player: played "Damage.mp3"
+Mar 10 23:10 : player: played "Challengers.mp3"
+Mar 10 23:13 : player: played "Gym Leader Battle.mp3"
+Mar 10 23:16 : player: played "Gnarls Barkley - Crazy (Official Video).mp3"
+Mar 10 23:19 : player: played "The Great Escape.mp3"
+Mar 10 23:23 : player: played "Pump It.mp3"
+Mar 10 23:23 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 10 23:27 : player: played "Animals .mp3"
+Mar 10 23:30 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Mar 10 23:33 : player: played "Bloody Valentine.mp3"
+Mar 10 23:38 : player: played "Corneria.mp3"
+Mar 10 23:54 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 10 23:59 : player: played "The Philosopher.mp3"
+Mar 11 08:35 : config: option 'device' on line 14 was not recognized
+Mar 11 08:37 : player: played "Dark Hollow.mp3"
+Mar 11 08:37 : exception: Not playing
+Mar 11 08:37 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 11 08:50 : update: added /Nickelback - If Today Was Your Last Day [OFFICIAL VIDEO].mp3
+Mar 11 08:50 : update: added /Nickelback - When We Stand Together.mp3
+Mar 11 08:50 : update: added /Red Hot Chili Peppers - Otherside [Official Music Video].mp3
+Mar 11 08:51 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 11 08:59 : player: played "Red Hot Chili Peppers - Otherside [Official Music Video].mp3"
+Mar 11 09:00 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 11 09:04 : player: played "Nickelback - If Today Was Your Last Day [OFFICIAL VIDEO].mp3"
+Mar 11 09:22 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Mar 11 09:22 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Mar 11 09:22 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Mar 11 09:22 : update: added /Travis Scott, HVME - Goosebumps (Remix - Official Audio).mp3
+Mar 11 09:22 : update: added /Post Malone - Die For Me (Audio) ft. Future, Halsey.mp3
+Mar 11 09:22 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Mar 11 09:22 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Mar 11 09:22 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Mar 11 09:22 : update: added /Iron Maiden - The Trooper(2).mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 178.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Mar 11 09:22 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Mar 11 09:22 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Mar 11 09:22 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1205.
+Mar 11 09:22 : update: added /CJ - WHOOPTY [Official Music Video].mp3
+Mar 11 09:22 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Mar 11 09:22 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Mar 11 09:22 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Mar 11 09:22 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 11 09:29 : player: played "Travis Scott, HVME - Goosebumps (Remix - Official Audio).mp3"
+Mar 11 09:33 : player: played "Zephyr.mp3"
+Mar 11 09:35 : player: played "What You Know Bout Love.mp3"
+Mar 11 09:39 : player: played "Cloud Spires.mp3"
+Mar 11 10:17 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Mar 11 10:17 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Mar 11 10:17 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Mar 11 10:17 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Mar 11 10:17 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Mar 11 10:17 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 178.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Mar 11 10:17 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Mar 11 10:17 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Mar 11 10:17 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1205.
+Mar 11 10:17 : update: added /Post Malone - On The Road (Audio) ft. Meek Mill, Lil Baby.mp3
+Mar 11 10:17 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Mar 11 10:17 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Mar 11 10:17 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Mar 11 10:18 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Mar 11 10:18 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Mar 11 10:18 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Mar 11 10:18 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Mar 11 10:18 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Mar 11 10:18 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 178.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Mar 11 10:18 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Mar 11 10:18 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Mar 11 10:18 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1205.
+Mar 11 10:18 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Mar 11 10:18 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Mar 11 10:18 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Mar 11 10:18 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 11 10:26 : player: played "Post Malone - On The Road (Audio) ft. Meek Mill, Lil Baby.mp3"
+Mar 11 14:00 : config: option 'device' on line 14 was not recognized
+Mar 11 14:15 : player: played "Post Malone - On The Road (Audio) ft. Meek Mill, Lil Baby.mp3"
+Mar 11 14:34 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Mar 11 14:34 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Mar 11 14:34 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Mar 11 14:34 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Mar 11 14:34 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Mar 11 14:34 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 178.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Mar 11 14:34 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Mar 11 14:34 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Mar 11 14:34 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1205.
+Mar 11 14:34 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Mar 11 14:34 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Mar 11 14:34 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Mar 11 14:34 : update: added /Neon Eyes.mp3
+Mar 11 14:34 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 11 14:39 : player: played "Monsters.mp3"
+Mar 11 14:43 : player: played "Voice of the Soul.mp3"
+Mar 11 14:46 : player: played "Circles.mp3"
+Mar 11 14:49 : player: played "Corneria.mp3"
+Mar 11 14:53 : player: played "Post Malone - Die For Me (Audio) ft. Future, Halsey.mp3"
+Mar 11 17:09 : player: played "Battle Against A True Hero.mp3"
+Mar 12 17:13 : config: option 'device' on line 14 was not recognized
+Mar 12 21:47 : player: played "Neon Eyes.mp3"
+Mar 12 21:50 : player: played "Challengers.mp3"
+Mar 12 21:54 : player: played "Animals .mp3"
+Mar 12 21:58 : player: played "Obey.mp3"
+Mar 12 22:04 : player: played "Gym Leader Battle.mp3"
+Mar 12 22:07 : player: played "Battle Champion Cynthia Music.mp3"
+Mar 13 00:20 : player: played "Bergentruckung.mp3"
+Mar 13 12:54 : config: option 'device' on line 14 was not recognized
+Mar 13 15:03 : player: played "Bergentruckung.mp3"
+Mar 14 10:51 : config: option 'device' on line 14 was not recognized
+Mar 14 20:06 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 14 23:21 : player: played "Bergentruckung.mp3"
+Mar 15 00:09 : config: option 'device' on line 14 was not recognized
+Mar 15 00:24 : player: played "Bergentruckung.mp3"
+Mar 15 12:44 : config: option 'device' on line 14 was not recognized
+Mar 15 12:45 : player: played "Bergentruckung.mp3"
+Mar 15 12:59 : config: option 'device' on line 14 was not recognized
+Mar 15 17:46 : player: played "Bergentruckung.mp3"
+Mar 15 17:49 : config: option 'device' on line 14 was not recognized
+Mar 15 18:00 : player: played "Bergentruckung.mp3"
+Mar 15 18:03 : config: option 'device' on line 14 was not recognized
+Mar 15 18:03 : player: played "Bergentruckung.mp3"
+Mar 15 18:15 : config: option 'device' on line 14 was not recognized
+Mar 15 19:03 : exception: Failed to play on "pulse audio" (pulse): suspended
+Mar 15 19:03 : exception: Failed to play on "pulse audio" (pulse): suspended
+Mar 15 19:04 : exception: Failed to set mixer for 'pulse audio': disconnected
+Mar 15 19:04 : exception: Failed to set mixer for 'pulse audio': disconnected
+Mar 15 19:04 : exception: Failed to set mixer for 'pulse audio': disconnected
+Mar 15 19:04 : exception: Failed to set mixer for 'pulse audio': disconnected
+Mar 15 19:04 : exception: Failed to set mixer for 'pulse audio': disconnected
+Mar 15 19:04 : exception: Failed to set mixer for 'pulse audio': disconnected
+Mar 15 19:04 : exception: Failed to set mixer for 'pulse audio': disconnected
+Mar 15 19:04 : exception: Failed to set mixer for 'pulse audio': disconnected
+Mar 15 19:04 : exception: Failed to set mixer for 'pulse audio': disconnected
+Mar 15 19:04 : exception: Failed to set mixer for 'pulse audio': disconnected
+Mar 15 19:04 : exception: Failed to set mixer for 'pulse audio': disconnected
+Mar 15 19:04 : exception: Failed to set mixer for 'pulse audio': disconnected
+Mar 15 19:05 : player: played "Better Together.mp3"
+Mar 15 19:05 : config: option 'device' on line 14 was not recognized
+Mar 15 19:08 : player: played "Battle Against A True Hero.mp3"
+Mar 16 00:37 : config: option 'device' on line 14 was not recognized
+Mar 16 00:47 : player: played "Battle Against A True Hero.mp3"
+Mar 16 00:49 : config: option 'device' on line 14 was not recognized
+Mar 16 00:53 : player: played "Emblem3 ..mp3"
+Mar 16 00:57 : player: played "Fireworks Factory.mp3"
+Mar 16 01:00 : player: played "Galway Girl.mp3"
+Mar 16 01:04 : player: played "Starboy.mp3"
+Mar 16 01:08 : player: played "Church Bells.mp3"
+Mar 16 01:09 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 16 01:13 : player: played "Iron Maiden - The Trooper(2).mp3"
+Mar 16 01:14 : player: played "Morgan Wallen - Warning (The Dangerous Sessions).mp3"
+Mar 16 01:18 : player: played "Nickelback - When We Stand Together.mp3"
+Mar 16 01:18 : player: played "Vivir Mi Vida.mp3"
+Mar 16 08:56 : config: option 'device' on line 14 was not recognized
+Mar 16 09:49 : player: played "Monsters.mp3"
+Mar 16 09:52 : player: played "Post Malone - On The Road (Audio) ft. Meek Mill, Lil Baby.mp3"
+Mar 16 10:00 : player: played "Red Hot Chili Peppers - Otherside [Official Music Video].mp3"
+Mar 16 10:04 : player: played "Dark Hollow.mp3"
+Mar 16 10:07 : player: played "Bloody Valentine.mp3"
+Mar 16 10:11 : player: played "Circles.mp3"
+Mar 16 10:14 : player: played "Emblem3 ..mp3"
+Mar 16 15:15 : config: option 'device' on line 14 was not recognized
+Mar 16 15:15 : player: played "Emblem3 ..mp3"
+Mar 16 15:19 : player: played "Neon Eyes.mp3"
+Mar 16 15:21 : player: played "What You Know Bout Love.mp3"
+Mar 16 15:25 : player: played "Fireworks Factory.mp3"
+Mar 16 15:29 : player: played "Voice of the Soul.mp3"
+Mar 16 15:32 : player: played "Gym Leader Battle.mp3"
+Mar 16 15:48 : player: played "Bergentruckung.mp3"
+Mar 16 17:52 : player: played "The Great Escape.mp3"
+Mar 16 23:56 : config: option 'device' on line 14 was not recognized
+Mar 16 23:56 : player: played "The Great Escape.mp3"
+Mar 17 04:47 : config: option 'device' on line 14 was not recognized
+Mar 17 11:52 : player: played "Post Malone - Die For Me (Audio) ft. Future, Halsey.mp3"
+Mar 17 11:58 : player: played "Gourmet Race.mp3"
+Mar 17 12:01 : player: played "BANG.mp3"
+Mar 17 12:03 : player: played "Gerudo Valley.mp3"
+Mar 17 12:14 : config: option 'device' on line 14 was not recognized
+Mar 17 16:57 : config: option 'device' on line 14 was not recognized
+Mar 17 17:00 : config: option 'device' on line 14 was not recognized
+Mar 18 10:25 : config: option 'device' on line 14 was not recognized
+Mar 18 06:06 : config: option 'device' on line 14 was not recognized
+Mar 18 06:07 : config: option 'device' on line 14 was not recognized
+Mar 18 13:20 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 18 13:24 : player: played "Meek Mill - Otherside of America [Official Audio].mp3"
+Mar 18 13:24 : exception: Not playing
+Mar 18 13:24 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 18 13:27 : player: played "Gnarls Barkley - Crazy (Official Video).mp3"
+Mar 18 13:33 : player: played "Gym Leader Battle.mp3"
+Mar 20 12:48 : config: option 'device' on line 14 was not recognized
+Mar 20 13:17 : player: played "CJ - WHOOPTY [Official Music Video].mp3"
+Mar 20 13:21 : player: played "Love.mp3"
+Mar 20 13:24 : player: played "Battle Champion Cynthia Music.mp3"
+Mar 20 13:29 : player: played "The Jester Race.mp3"
+Mar 20 23:25 : player: played "Battle Against A True Hero.mp3"
+Mar 20 23:25 : config: option 'device' on line 14 was not recognized
+Mar 20 23:26 : player: played "Battle Against A True Hero.mp3"
+Mar 20 23:26 : config: option 'device' on line 14 was not recognized
+Mar 20 23:33 : player: played "Post Malone - On The Road (Audio) ft. Meek Mill, Lil Baby.mp3"
+Mar 20 23:39 : player: played "Reverse Situation.mp3"
+Mar 20 23:39 : config: option 'device' on line 14 was not recognized
+Mar 20 23:45 : player: played "Reverse Situation.mp3"
+Mar 20 23:46 : config: option 'device' on line 14 was not recognized
+Mar 20 23:59 : player: played "Go Crazy.mp3"
+Mar 21 00:11 : player: played "Sadness and Hate.mp3"
+Mar 21 10:37 : config: option 'device' on line 14 was not recognized
+Mar 21 10:41 : player: played "Nickelback - When We Stand Together.mp3"
+Mar 21 10:47 : player: played "Damage.mp3"
+Mar 21 10:50 : player: played "BANG.mp3"
+Mar 21 10:50 : player: played "God s Country.mp3"
+Mar 21 10:50 : config: option 'device' on line 14 was not recognized
+Mar 21 10:51 : player: played "God s Country.mp3"
+Mar 21 10:51 : config: option 'device' on line 14 was not recognized
+Mar 21 10:54 : player: played "God s Country.mp3"
+Mar 21 10:58 : player: played "Iron Maiden - The Trooper(2).mp3"
+Mar 21 11:02 : player: played "Emblem3 ..mp3"
+Mar 21 11:04 : player: played "What You Know Bout Love.mp3"
+Mar 21 11:07 : player: played "Midday Garden.mp3"
+Mar 21 11:10 : player: played "Hurricos.mp3"
+Mar 21 11:10 : config: option 'device' on line 14 was not recognized
+Mar 21 11:11 : player: played "Hurricos.mp3"
+Mar 21 11:15 : player: played "Bergentruckung.mp3"
+Mar 21 11:15 : config: option 'device' on line 14 was not recognized
+Mar 21 11:25 : player: played "Red Hot Chili Peppers - Otherside [Official Music Video].mp3"
+Mar 21 11:28 : player: played "You're Gonna Go Far, Kid.mp3"
+Mar 21 11:31 : player: played "Pump It.mp3"
+Mar 21 11:34 : player: played "Aquaria Towers.mp3"
+Mar 21 11:38 : player: played "Circles.mp3"
+Mar 21 11:38 : player: played "The Philosopher.mp3"
+Mar 21 17:15 : config: option 'device' on line 14 was not recognized
+Mar 21 17:18 : player: played "The Philosopher.mp3"
+Mar 21 17:20 : player: played "Travis Scott, HVME - Goosebumps (Remix - Official Audio).mp3"
+Mar 21 17:21 : config: option 'device' on line 14 was not recognized
+Mar 21 17:21 : player: played "Travis Scott, HVME - Goosebumps (Remix - Official Audio).mp3"
+Mar 21 17:21 : player: played "Nickelback - If Today Was Your Last Day [OFFICIAL VIDEO].mp3"
+Mar 21 17:22 : config: option 'device' on line 14 was not recognized
+Mar 21 17:26 : player: played "Nickelback - If Today Was Your Last Day [OFFICIAL VIDEO].mp3"
+Mar 21 17:28 : player: played "Challengers.mp3"
+Mar 21 17:34 : player: played "Vivir Mi Vida.mp3"
+Mar 21 17:46 : player: played "Animals .mp3"
+Mar 21 17:49 : player: played "Cloud Spires.mp3"
+Mar 21 17:53 : player: played "Bloody Valentine.mp3"
+Mar 21 17:55 : player: played "Morgan Wallen - Warning (The Dangerous Sessions).mp3"
+Mar 21 18:07 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 21 18:11 : player: played "Red Hot Chili Peppers - Otherside [Official Music Video].mp3"
+Mar 21 23:53 : player: played "Post Malone - Die For Me (Audio) ft. Future, Halsey.mp3"
+Mar 21 23:57 : player: played "The Great Escape.mp3"
+Mar 22 00:01 : player: played "Neon Eyes.mp3"
+Mar 22 00:04 : player: played "BANG.mp3"
+Mar 22 00:07 : player: played "God s Country.mp3"
+Mar 22 00:10 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Mar 22 00:14 : player: played "Pump It.mp3"
+Mar 22 00:17 : player: played "Battle Champion Cynthia Music.mp3"
+Mar 22 00:20 : player: played "Nickelback - When We Stand Together.mp3"
+Mar 22 00:23 : player: played "Circles.mp3"
+Mar 22 00:26 : player: played "Morgan Wallen - Warning (The Dangerous Sessions).mp3"
+Mar 22 00:33 : player: played "Gnarls Barkley - Crazy (Official Video).mp3"
+Mar 22 00:33 : config: option 'device' on line 14 was not recognized
+Mar 22 00:35 : player: played "Gnarls Barkley - Crazy (Official Video).mp3"
+Mar 22 00:35 : config: option 'device' on line 14 was not recognized
+Mar 22 00:37 : player: played "Gnarls Barkley - Crazy (Official Video).mp3"
+Mar 22 00:37 : config: option 'device' on line 14 was not recognized
+Mar 22 00:37 : player: played "Gnarls Barkley - Crazy (Official Video).mp3"
+Mar 22 00:38 : player: played "Midday Garden.mp3"
+Mar 22 00:38 : config: option 'device' on line 14 was not recognized
+Mar 22 00:40 : player: played "Midday Garden.mp3"
+Mar 22 00:44 : player: played "Love.mp3"
+Mar 22 00:48 : player: played "Church Bells.mp3"
+Mar 22 00:56 : player: played "Abeyance.mp3"
+Mar 23 15:27 : config: option 'device' on line 14 was not recognized
+Mar 23 15:27 : player: played "Abeyance.mp3"
+Mar 23 15:31 : player: played "What You Know Bout Love.mp3"
+Mar 23 16:47 : player: played "Reverse Situation.mp3"
+Mar 24 21:38 : config: option 'device' on line 14 was not recognized
+Mar 24 23:15 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 24 23:15 : player: played "Blackwater Park.mp3"
+Mar 24 23:20 : player: played "Red Hot Chili Peppers - Otherside [Official Music Video].mp3"
+Mar 24 23:26 : player: played "Neon Eyes.mp3"
+Mar 24 23:29 : player: played "Gnarls Barkley - Crazy (Official Video).mp3"
+Mar 25 00:32 : player: played "Bergentruckung.mp3"
+Mar 25 01:27 : config: option 'device' on line 14 was not recognized
+Mar 25 01:49 : player: played "Bergentruckung.mp3"
+Mar 25 11:19 : config: option 'device' on line 14 was not recognized
+Mar 25 11:39 : player: played "You're Gonna Go Far, Kid.mp3"
+Mar 25 11:43 : player: played "Hurricos.mp3"
+Mar 25 11:46 : player: played "Church Bells.mp3"
+Mar 25 11:50 : player: played "rockstar ft. 21 Savage.mp3"
+Mar 25 11:52 : player: played "Gerudo Valley.mp3"
+Mar 25 11:55 : player: played "Aquaria Towers.mp3"
+Mar 25 11:57 : player: played "What You Know Bout Love.mp3"
+Mar 25 12:01 : player: played "Emblem3 ..mp3"
+Mar 25 12:04 : player: played "BANG.mp3"
+Mar 25 12:09 : player: played "Love.mp3"
+Mar 25 12:13 : player: played "Suicide Machine.mp3"
+Mar 25 12:29 : player: played "Gym Leader Battle.mp3"
+Mar 25 12:32 : player: played "God s Country.mp3"
+Mar 25 12:35 : player: played "Corneria.mp3"
+Mar 25 12:38 : player: played "Circles.mp3"
+Mar 25 12:42 : player: played "The Philosopher.mp3"
+Mar 25 12:45 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Mar 25 12:49 : player: played "Starboy.mp3"
+Mar 25 12:51 : player: played "Gourmet Race.mp3"
+Mar 25 12:57 : player: played "Monsters.mp3"
+Mar 25 13:00 : player: played "Voice of the Soul.mp3"
+Mar 25 13:05 : player: played "Wagon Wheel.mp3"
+Mar 25 13:12 : player: played "Sadness and Hate.mp3"
+Mar 25 13:12 : config: option 'device' on line 14 was not recognized
+Mar 25 13:16 : player: played "Sadness and Hate.mp3"
+Mar 25 13:27 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 25 13:30 : player: played "Nickelback - When We Stand Together.mp3"
+Mar 25 13:35 : player: played "Fireworks Factory.mp3"
+Mar 25 13:38 : player: played "Only Human.mp3"
+Mar 25 13:42 : player: played "Meek Mill - Otherside of America [Official Audio].mp3"
+Mar 25 13:50 : player: played "Abeyance.mp3"
+Mar 25 13:52 : player: played "Skelos Badlands.mp3"
+Mar 25 13:56 : player: played "Love.mp3"
+Mar 25 13:59 : player: played "You're Gonna Go Far, Kid.mp3"
+Mar 25 14:03 : player: played "rockstar ft. 21 Savage.mp3"
+Mar 25 14:06 : player: played "Galway Girl.mp3"
+Mar 25 14:10 : player: played "Better Together.mp3"
+Mar 25 14:13 : player: played "Gym Leader Battle.mp3"
+Mar 25 14:17 : player: played "Iron Maiden - The Trooper(2).mp3"
+Mar 25 15:23 : player: played "Post Malone - Die For Me (Audio) ft. Future, Halsey.mp3"
+Mar 25 15:24 : config: option 'device' on line 14 was not recognized
+Mar 25 15:27 : player: played "Post Malone - Die For Me (Audio) ft. Future, Halsey.mp3"
+Mar 25 15:27 : config: option 'device' on line 14 was not recognized
+Mar 25 15:32 : player: played "Post Malone - Die For Me (Audio) ft. Future, Halsey.mp3"
+Mar 25 15:34 : player: played "What You Know Bout Love.mp3"
+Mar 25 15:39 : player: played "Wagon Wheel.mp3"
+Mar 25 15:42 : player: played "Go Crazy.mp3"
+Mar 25 15:45 : player: played "Gasoline.mp3"
+Mar 25 15:48 : player: played "Circles.mp3"
+Mar 25 15:52 : player: played "God s Country.mp3"
+Mar 25 15:57 : player: played "Killing In The Name.mp3"
+Mar 25 16:01 : player: played "Post Malone - On The Road (Audio) ft. Meek Mill, Lil Baby.mp3"
+Mar 25 16:05 : player: played "Animals .mp3"
+Mar 25 16:06 : player: played "Gerudo Valley.mp3"
+Mar 25 16:10 : player: played "Zephyr.mp3"
+Mar 25 16:14 : player: played "Neon Eyes.mp3"
+Mar 25 16:18 : player: played "Red Hot Chili Peppers - Otherside [Official Music Video].mp3"
+Mar 25 16:22 : player: played "Starboy.mp3"
+Mar 25 16:25 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Mar 25 16:29 : player: played "Obey.mp3"
+Mar 25 16:31 : player: played "Challengers.mp3"
+Mar 25 16:35 : player: played "Church Bells.mp3"
+Mar 25 16:38 : player: played "Corneria.mp3"
+Mar 25 16:41 : player: played "Hurricos.mp3"
+Mar 25 16:44 : player: played "Battle Champion Cynthia Music.mp3"
+Mar 25 17:00 : player: played "Bergentruckung.mp3"
+Mar 25 17:02 : player: played "Gourmet Race.mp3"
+Mar 25 17:05 : player: played "Gnarls Barkley - Crazy (Official Video).mp3"
+Mar 25 17:07 : player: played "CJ - WHOOPTY [Official Music Video].mp3"
+Mar 25 17:10 : player: played "BANG.mp3"
+Mar 25 17:14 : player: played "Damage.mp3"
+Mar 25 17:17 : player: played "Aquaria Towers.mp3"
+Mar 25 17:21 : player: played "Dark Hollow.mp3"
+Mar 25 17:25 : player: played "Nickelback - If Today Was Your Last Day [OFFICIAL VIDEO].mp3"
+Mar 25 17:30 : player: played "Suicide Machine.mp3"
+Mar 25 17:35 : player: played "The Jester Race.mp3"
+Mar 25 17:49 : player: played "Reverse Situation.mp3"
+Mar 25 17:52 : player: played "What You Know.mp3"
+Mar 25 17:54 : player: played "The Great Escape.mp3"
+Mar 25 17:54 : config: option 'device' on line 14 was not recognized
+Mar 25 17:56 : player: played "The Great Escape.mp3"
+Mar 25 17:59 : player: played "Bloody Valentine.mp3"
+Mar 25 18:03 : player: played "Voice of the Soul.mp3"
+Mar 25 18:07 : player: played "The Philosopher.mp3"
+Mar 25 18:09 : player: played "Travis Scott, HVME - Goosebumps (Remix - Official Audio).mp3"
+Mar 25 18:20 : player: played "Sadness and Hate.mp3"
+Mar 25 18:22 : player: played "Mute City.mp3"
+Mar 25 19:08 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 25 19:09 : config: option 'device' on line 14 was not recognized
+Mar 25 19:10 : player: played "Challengers.mp3"
+Mar 25 19:10 : config: option 'device' on line 14 was not recognized
+Mar 25 19:10 : player: played "Challengers.mp3"
+Mar 25 19:10 : config: option 'device' on line 14 was not recognized
+Mar 25 19:12 : player: played "Challengers.mp3"
+Mar 25 19:14 : player: played "Mute City.mp3"
+Mar 25 19:17 : player: played "Midday Garden.mp3"
+Mar 25 19:21 : player: played "Gym Leader Battle.mp3"
+Mar 25 20:04 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 25 21:03 : player: played "Midday Garden.mp3"
+Mar 25 21:03 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 25 21:07 : player: played "Neon Eyes.mp3"
+Mar 25 21:20 : player: played "Iron Maiden - The Trooper(2).mp3"
+Mar 26 19:30 : config: option 'device' on line 14 was not recognized
+Mar 26 20:15 : config: option 'device' on line 14 was not recognized
+Mar 26 23:27 : player: played "Only Human.mp3"
+Mar 26 23:30 : player: played "Corneria.mp3"
+Mar 26 23:33 : player: played "Gym Leader Battle.mp3"
+Mar 26 23:35 : player: played "Mute City.mp3"
+Mar 26 23:38 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Mar 26 23:42 : player: played "Starboy.mp3"
+Mar 26 23:50 : player: played "Abeyance.mp3"
+Mar 27 00:00 : player: played "Sadness and Hate.mp3"
+Mar 27 00:03 : player: played "Battle Champion Cynthia Music.mp3"
+Mar 27 00:05 : player: played "CJ - WHOOPTY [Official Music Video].mp3"
+Mar 27 00:09 : player: played "God s Country.mp3"
+Mar 27 00:14 : player: played "Wagon Wheel.mp3"
+Mar 27 00:17 : player: played "Pump It.mp3"
+Mar 27 02:01 : player: played "Animals .mp3"
+Mar 27 15:05 : config: option 'device' on line 14 was not recognized
+Mar 27 15:05 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 27 15:21 : player: played "Animals .mp3"
+Mar 27 15:22 : config: option 'device' on line 14 was not recognized
+Mar 27 15:24 : player: played "Animals .mp3"
+Mar 27 15:29 : player: played "Who's Gonna Stop Me.mp3"
+Mar 27 15:41 : player: played "Blackwater Park.mp3"
+Mar 27 15:43 : player: played "Gerudo Valley.mp3"
+Mar 27 15:45 : player: played "Aquaria Towers.mp3"
+Mar 27 15:46 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Mar 27 15:46 : player: played "Battle Against A True Hero.mp3"
+Mar 27 15:52 : player: played "Damage.mp3"
+Mar 27 15:56 : player: played "You're Mines Still.mp3"
+Mar 27 15:59 : player: played "The Great Escape.mp3"
+Mar 27 16:11 : player: played "Blackwater Park.mp3"
+Mar 27 16:14 : player: played "BANG.mp3"
+Mar 27 16:17 : player: played "Gourmet Race.mp3"
+Mar 27 16:22 : player: played "The Jester Race.mp3"
+Mar 27 16:24 : player: played "Aquaria Towers.mp3"
+Mar 27 16:26 : player: played "Gerudo Valley.mp3"
+Mar 27 16:28 : player: played "Gasoline.mp3"
+Mar 27 16:31 : player: played "Battle Champion Cynthia Music.mp3"
+Mar 27 16:33 : player: played "Mute City.mp3"
+Mar 27 16:36 : player: played "Go Crazy.mp3"

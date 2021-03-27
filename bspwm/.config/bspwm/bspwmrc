@@ -3,6 +3,7 @@
 [ -z $VERT_PADDING ] && export VERT_PADDING=10
 
 #XINIT STUFF
+export USB="/run/media/$(whoami)"
 export WM=bspwm
 export EDITOR=vim
 export COMPOSITOR=picom
@@ -19,40 +20,43 @@ CRIPTS_FOLDER/lemon:$SCRIPTS_FOLDER/dmenu:$HOME/.local/bin:$PATH"
 [ -f $HOME/.config/x/Xresources ] && xrdb -merge $HOME/.config/x/Xresources
 [ -f /etc/X11/xinit/.Xmodmap ] && xmodmap /etc/X11/xinit/.Xmodmap
 
+#Needed for Java Apps like PyCharm
+wmname LG3D
+
 $SCRIPTS_FOLDER/alacritty-w-xresources.py $HOME/.config/alacritty/alacritty.yml &
 $SCRIPTS_FOLDER/xob.sh &
 $HOME/.fehbg &
 xbanish &
 dunst &
 mpd &
+picom &
 (sleep 1 && paplay $HOME/Sounds/startup.wav) &
 pactl set-sink-volume @DEFAULT_SINK@ 50%
-
+udiskie &
 sxhkd &
 
 killall -r "lemon*"
-$SCRIPTS_FOLDER/lemon/lemonbartop &
-[ $ONE_BAR = '0' ] && ($SCRIPTS_FOLDER/lemon/lemonbarbottom &) || plank & 
+#$SCRIPTS_FOLDER/lemon/lemonbarmain &
+polybar -r example &
+plank &
+#[ -f $SCRIPTS_FOLDER/lemon/lemonsecondaryc ] && ($SCRIPTS_FOLDER/lemon/lemonbarsecondary &) || plank & 
+
+conf () {
+	yq .$1 ~/conf.yml | sed 's/"//g'
+}
 
 xsetroot -cursor_name left_ptr &
-bspc monitor -d $(xgetres tag1) $(xgetres tag2) $(xgetres tag3) $(xgetres tag4) $(xgetres tag5)
 
-if [ $ONE_BAR = '0'  ]; then
-	bspc config top_padding 	$(($VERT_PADDING+$(xgetres lemon.width)))
-	bspc config bottom_padding 	$(($VERT_PADDING+$(xgetres lemon.width)))
-elif [ $(xgetres lemon.topbar) -eq 1 ]; then
-	bspc config top_padding		$(($VERT_PADDING+$(xgetres lemon.width)))
-	bspc config bottom_padding	$VERT_PADDING+52
-else
-	bspc config top_padding		$VERT_PADDING
-	bspc config bottom_padding	$(($VERT_PADDING+$(xgetres lemon.width)))
-fi
+bspc monitor -d $(conf 'wm.tags[]')
 
-bspc config left_padding	100
-bspc config right_padding	100
+bspc config top_padding		$(($VERT_PADDING+$(conf lemon.width)))
+bspc config bottom_padding	$VERT_PADDING+52
 
-bspc config active_border_color "$(xgetres lemon.bordercolor)"
-bspc config normal_border_color "$(xgetres background)"
+bspc config left_padding	40
+bspc config right_padding	40
+
+bspc config active_border_color "$(conf lemon.bordercolor)"
+bspc config normal_border_color "$(conf bg)"
 
 bspc config border_width         4
 bspc config window_gap          10
@@ -60,11 +64,11 @@ bspc config window_gap          10
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
-bspc config paddingless_monocle  true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
+bspc rule -a Plank layer=above manage=manageborder=off
 bspc rule -a Screenkey manage=off
 

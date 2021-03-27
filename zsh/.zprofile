@@ -1,3 +1,4 @@
+export USB="/run/media/$(whoami)"
 export EDITOR=vim
 export COMPOSITOR=picom
 export TERMINAL="alacritty"

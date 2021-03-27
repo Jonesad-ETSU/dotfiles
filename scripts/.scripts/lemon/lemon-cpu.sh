@@ -1,2 +1,2 @@
-#!/bin/sh
-printf "%s" "%{F$(xgetres color14)}$($SCRIPTS_FOLDER/cpu.sh)%{F-}"
+#!/bin/bash
+printf "%s" "%{F$($SCRIPTS_FOLDER/conf.sh color14)}$($SCRIPTS_FOLDER/cpu.sh)%{F-}"

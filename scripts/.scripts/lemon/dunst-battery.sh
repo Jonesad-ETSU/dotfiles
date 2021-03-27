@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
 bat=$(cat /sys/class/power_supply/BAT0/capacity)
 status=$(cat /sys/class/power_supply/BAT0/status)
 
 d() {
-  dunstify $1 $2 -u $3 -t $4
-}
+	  dunstify $1 $2 -u $3 -t $4
+  }
 
 
 if [ $status != 'Discharging' ]; then
@@ -23,4 +23,3 @@ else
 fi
 
 d "Battery" "${bat}%" $urgency $time 
-
