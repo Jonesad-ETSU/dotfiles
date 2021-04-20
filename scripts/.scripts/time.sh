@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%s" "$(date '+%A::%R')"
+printf "%s" "$(date '+%a::%R')"

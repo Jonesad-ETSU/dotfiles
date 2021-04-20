@@ -1,0 +1,44 @@
+#! /bin/bash
+
+[ -z $VERT_PADDING ] && export VERT_PADDING=10
+
+#XINIT STUFF
+export USB="/run/media/$(whoami)"
+export WM=bspwm
+export EDITOR=vim
+export COMPOSITOR=picom
+export TERMINAL="alacritty"
+export XDG_SESSION_TYPE=x11
+export LIBGL_DRI3_DISABLE=1
+export FILE_MANAGER="$TERMINAL -e ranger"
+export SCRIPTS_FOLDER="$HOME/.scripts"
+export DMENU=1
+export QT_QPA_PLATFORMTHEME=gtk2
+export PATH="$HOME/.cargo/bin:$HOME/.src/Discord:$SCRIPTS_FOLDER:$S
+CRIPTS_FOLDER/lemon:$SCRIPTS_FOLDER/dmenu:$HOME/.local/bin:$PATH"
+
+[ -f $HOME/.config/x/Xresources ] && xrdb -merge $HOME/.config/x/Xresources
+[ -f /etc/X11/xinit/.Xmodmap ] && xmodmap /etc/X11/xinit/.Xmodmap
+
+#Needed for Java Apps like PyCharm
+wmname LG3D
+
+#Reads and generates all coloring from conf.yml
+conf_to_script.sh ~/.scripts/templates/use-bar &
+sleep 1
+xob.sh &
+volumeicon &
+$HOME/.fehbg &
+xbanish &
+dunst &
+mpd &
+#picom &
+pactl set-sink-volume @DEFAULT_SINK@ 50%
+udiskie &
+sxhkd &
+
+#Makes sure the physical adapter for my laptop is on
+command -v iwctl && iwctl adapter phy0 set-property "Powered" on
+
+polybar -r example &
+

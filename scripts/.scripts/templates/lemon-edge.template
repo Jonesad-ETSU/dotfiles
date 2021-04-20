@@ -1,0 +1,3 @@
+/home/jonesad/.scripts/lemon/lemon-edge.sh
+#!/template
+printf "%s" "%{B^<lemon.bordercolor>}%{F^<lemon.borderfg>} $($1) %{F-}%{B-}"

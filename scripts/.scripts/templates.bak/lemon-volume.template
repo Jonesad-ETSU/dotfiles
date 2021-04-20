@@ -1,0 +1,3 @@
+$SCRIPTS_FOLDER/lemon/lemon-volume.sh
+#!/template
+printf "%s" "%{A:pavucontrol &:}@<volume> $($SCRIPTS_FOLDER/volume.sh)%{A}"

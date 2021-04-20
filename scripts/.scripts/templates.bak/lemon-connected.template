@@ -1,0 +1,3 @@
+$SCRIPTS_FOLDER/lemon/lemon-connected.sh
+#!/template
+printf "%s" "%{F^<color4>}%{A:$TERMINAL -e sudo iwctl && pkill -50 lemontopc&:}@<wifi> %{F-}$($SCRIPTS_FOLDER/connected.sh)%{A}"

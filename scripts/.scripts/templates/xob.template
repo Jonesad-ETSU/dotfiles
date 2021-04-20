@@ -1,0 +1,35 @@
+/home/jonesad/.config/xob/styles.cfg
+default = {
+    x         = {relative = .5; offset = 0;};
+    y         = {relative = .9; offset = 0;};
+    length    = {relative = .5; offset = 0;};
+    thickness = 80;
+    outline   = 3;
+    border    = 4;
+    padding   = 3;
+    orientation = "horizontal";
+
+    overflow = "proportional";
+    color = {
+        normal = {
+            fg     = "^<fg>";
+            bg     = "^<bg>";
+            border = "^<fg>";
+        };
+        alt = {
+            fg     = "^<fg>";
+            bg     = "^<bg>";
+            border = "^<fg>";
+        };
+        overflow = {
+            fg     = "^<fg>";
+            bg     = "^<bg>";
+            border = "^<fg>";
+        };
+        altoverflow = {
+            fg     = "^<fg>";
+            bg     = "^<bg>";
+            border = "^<fg>";
+        };
+    };
+};

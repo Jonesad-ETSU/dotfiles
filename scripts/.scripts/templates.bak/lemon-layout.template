@@ -1,0 +1,11 @@
+$SCRIPTS_FOLDER/lemon/lemon-layout.sh
+#!/template
+if [ $WM = 'bspwm' ]; then
+	layout=$($SCRIPTS_FOLDER/bspwm-get-layout.sh)
+	if [ $layout = 'tiled' ]; then logo=@<layout.tiled>
+	elif [ $layout = 'monocle' ]; then logo=@<layout.monocle>
+	elif [ $layout = 'floating' ]; then logo=@<layout.floating>
+	fi
+	
+	printf "%s" "%{A:bspc desktop --layout next && pkill -51 lemonmainc:}%{F^<color6>} $logo %{F-}%{A}"
+fi

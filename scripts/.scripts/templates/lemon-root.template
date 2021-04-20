@@ -1,0 +1,3 @@
+/home/jonesad/.scripts/lemon/lemon-root.sh
+#!/template
+printf "%s" "@<root> $(/home/jonesad/.scripts/root.sh)"

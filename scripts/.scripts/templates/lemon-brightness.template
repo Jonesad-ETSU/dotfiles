@@ -1,0 +1,3 @@
+/home/jonesad/.scripts/lemon/lemon-bright.sh
+#!/template
+printf "%s" "%{F^<color11>}%{A:/home/jonesad/.scripts/lemon/yad-bright.sh &:}@<brightness> %{F-}$(/home/jonesad/.scripts/brightness.sh)%{A}"

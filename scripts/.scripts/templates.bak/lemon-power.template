@@ -1,0 +1,3 @@
+$SCRIPTS_FOLER/lemon/lemon-power.sh
+#!/template
+printf "%s" "%{A:$SCRIPTS_FOLDER/lemon/yad-power.sh &:}@<power>%{A}"

@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%s" "%{B$($SCRIPTS_FOLDER/conf.sh color2)}%{F$($SCRIPTS_FOLDER/conf.sh bg)}%{A1:mpc toggle &:}%{A3:$TERMINAL -e ncmpcpp &:} $($SCRIPTS_FOLDER/lemon/get-symbol.sh mpd)%{T1} $($SCRIPTS_FOLDER/mpd.sh)%{T-}%{A}%{A}%{F-}%{B-}" 
+printf "%s" "%{B#8c9440}%{F#000000}%{A1:mpc toggle &:}%{A3:$TERMINAL -e ncmpcpp &:} %{T1}$(/home/jonesad/.scripts/mpd.sh)%{T-}%{A}%{A} %{F-}%{B-}" 

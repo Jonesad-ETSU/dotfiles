@@ -1,0 +1,3 @@
+/home/jonesad/.scripts/lemon/lemon-cpu.sh
+#!/template
+printf "%s" "%{F^<color14>}$(/home/jonesad/.scripts/cpu.sh)%{F-}"

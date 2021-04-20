@@ -1,0 +1,3 @@
+$SCRIPTS_FOLDER/lemon/lemon-volbar.sh
+#!/template
+printf "%s" "%{A:pavucontrol &:}$($SCRIPTS_FOLDER/volbar.sh)%{A}"

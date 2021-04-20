@@ -1,0 +1,3 @@
+/home/jonesad/.scripts/lemon/lemon-mem.sh
+#!/template
+printf "%s" "%{F^<color10>}%{A:$TERMINAL -e ytop &:}$(/home/jonesad/.scripts/mem.sh)%{A}%{F-}"

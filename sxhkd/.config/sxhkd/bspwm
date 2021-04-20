@@ -3,13 +3,10 @@
 # bspwm hotkeys
 #
 super + {Return,space}
-  $SCRIPTS_FOLDER/menu/launch-menu.sh
+  nwggrid -d "/usr/share/applications/:~/Desktop"
 
 super + Home
   $SCRIPTS_FOLDER/set-random-wallpaper.sh
-
-super + shift + Home
-  $SCRIPTS_FOLDER/change-colors.sh
 
 XF86Audio{Raise,Lower}Volume
   $SCRIPTS_FOLDER/vol{up,down}.sh
@@ -18,161 +15,198 @@ super + F1
   $SCRIPTS_FOLDER/mute.sh
 
 super + {F7,F8}
-   brightnessctl s {4%-,+4%} && pkill -44 lemontopc
-
-# Close window
-alt + F4
-	bspc node --close
-
-# Close window
-ctrl + q
-	bspc node --close
+   brightnessctl s {4%-,+4%} && dunstify "Brightness" "$(( $(brightnessctl g)*100/24000))%" -t 500 
 
 super + shift + q
-	bspc node --close
+	berryc window_close
 
-# Navigate layouts
-super + shift + space
-	bspc desktop --layout next
+super + {1-9}
+	berryc switch_workspace {1-9}
 
-# Rotate desktop
-super + {_,shift + }r
-	bspc node @/ --rotate {90,-90}
+super + shift + {1-9}
+	berryc send_to_workspace {1-9}
 
-# Circulate the leaves of the tree
-super + {_,shift + }c
-	bspc node @/ --circulate {backward,forward}
-
-# Make split ratios equal
-super + equal
-	bspc node @/ --equalize
-
-# Make split ratios balanced
-super + minus
-	bspc node @/ --balance
-
-# Toogle tiling of window
-super + d
-	bspc query --nodes -n focused.tiled && state=floating || state=tiled; \
-	bspc node --state \~$state
-
-# Toogle pseudo tiling of window
-super + p
-	bspc node --state \~pseudo_tiled
-
-# Toggle fullscreen of window
 super + f
-	bspc node --state \~fullscreen
+	berryc fullscreen
 
-# Focus last window/desktop
-{alt,super} + grave
-	bspc {node,desktop} --focus last.local
+super + shift + f
+	berryc window_monocle
 
-# Focus next/previous window
-alt + {_,shift} + Tab
-	bspc node --focus {prev,next}
+super + Up
+	berryc window_monocle
 
-# Focus next/previous desktop
-super + {_,shift} + Tab
-	bspc desktop --focus {prev,next}.occupied
+super + alt + f
+	berryc fullscreen_state
 
-# Navigate to older/newer window in history
-super + {o,n}
-	bspc wm --record-history off; \
-	bspc node --focus {older,newer}; \
-	bspc wm --record-history on
+super + shift + space
+	berryc cycle_focus
 
-# Focus/move window to the biggest space
-super + {_,shift + }m
-	bspc node --{focus,swap} biggest
+super + {j,k,h,l}
+	berryc cardinal_focus {3,1,2,0}
 
-# Focus/swap windows by direction
-super + {_,shift + }{h,j,k,l}
-	bspc node --{focus,swap} {west,south,north,east}
-
-# Swap window with last window
-super + apostrophe
-	bspc node --swap last
-
-# Move window to last split
-super + y
-	bspc query --nodes -n focused.automatic \
-	&& bspc node -n last.\!automatic \
-	|| bspc node last.leaf -n focused
-
-# Flip layout vertically/horizontally
-super + {_,shift + }s
-	bspc node @/ --flip {vertical,horizontal}
-
-# Focus parent/brother/first/second for preselection
-super + ctrl + {p,b,comma,period}
-	bspc node --focus @{parent,brother,first,second}
-
-# Preselect the splitting area for next window on leaf/parent
-super + ctrl + {h,j,k,l}
-	bspc node --presel-dir \~{west,south,north,east}
-
-# Define splitting ratio for next window on leaf/parent
-super + ctrl + {_,shift +}{1-9}
-	bspc node {_,@/} --presel-ratio 0.{1-9}
-
-# Cancel preselection
-super + ctrl + space
-	bspc node --presel-dir cancel
-
-# Expand tiled space
-super + alt + {h,j,k,l}
-	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
-
-# Contract tiled space
-super + alt + shift + {h,j,k,l}
-	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
-
-# Move window to selected desktop
-super + shift + {1-9,0}
-	bspc node --to-desktop ^{1-9,10} --focus
-
-super + shift + Return
-	$TERMINAL
-
-# Move window to left/right desktop
-super + shift + {Left,Right}
-	bspc node --to-desktop {prev,next} --focus
-
-# Move window to left/right desktop
-ctrl + alt + shift + {Left,Right}
-	bspc node --to-desktop {prev,next} --focus
-
-# Focus selected desktop
-super + {1-9,0}
-	bspc desktop --focus ^{1-9,10} ; pkill -47 lemontopc
-
-# Focus left/right occupied desktop
 super + {Left,Right}
-	bspc desktop --focus {prev,next}.occupied
-
-# Focus left/right occupied desktop
-ctrl + alt + {Left,Right}
-	bspc desktop --focus {prev,next}.occupied
+	berryc snap_{left,right}
 
 super + shift + {j,k}
-	bspc desktop --focus {prev,next}.occupied
+	berryc window_move 0 { 20, -20 }
 
-# Increase/decrease window gap on focused desktop
-super + bracket{left,right}
-	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 5 ))
+super + shift + {h,l}
+	berryc window_move { -20, 20 } 0
 
-# Focus when clicking
-~button1
-	bspc pointer --grab focus
-
-# Move/resize windows
-alt + button{1-3}
-	; bspc pointer --grab {move,resize_side,resize_corner}
-
-# Ungrab when releasing a mouse button
-alt + @button{1-3}
-	bspc pointer --ungrab
+## Close window
+#alt + F4
+#	bspc node --close ; \
+#	berryc window_close
+#
+## Close window
+#ctrl + q
+#	bspc node --close
+#
+#super + shift + q
+#	bspc node --close
+#
+## Navigate layouts
+#super + shift + space
+#	bspc desktop --layout next
+#
+## Rotate desktop
+#super + {_,shift + }r
+#	bspc node @/ --rotate {90,-90}
+#
+## Circulate the leaves of the tree
+#super + {_,shift + }c
+#	bspc node @/ --circulate {backward,forward}
+#
+## Make split ratios equal
+#super + equal
+#	bspc node @/ --equalize
+#
+## Make split ratios balanced
+#super + minus
+#	bspc node @/ --balance
+#
+## Toogle tiling of window
+#super + d
+#	bspc query --nodes -n focused.tiled && state=floating || state=tiled; \
+#	bspc node --state \~$state
+#
+## Toogle pseudo tiling of window
+#super + p
+#	bspc node --state \~pseudo_tiled
+#
+## Toggle fullscreen of window
+#super + f
+#	bspc node --state \~fullscreen
+#
+## Focus last window/desktop
+#{alt,super} + grave
+#	bspc {node,desktop} --focus last.local
+#
+## Focus next/previous window
+#alt + {_,shift} + Tab
+#	bspc node --focus {prev,next}
+#
+## Focus next/previous desktop
+#super + {_,shift} + Tab
+#	bspc desktop --focus {prev,next}.occupied
+#
+## Navigate to older/newer window in history
+#super + {o,n}
+#	bspc wm --record-history off; \
+#	bspc node --focus {older,newer}; \
+#	bspc wm --record-history on
+#
+## Focus/move window to the biggest space
+#super + {_,shift + }m
+#	bspc node --{focus,swap} biggest
+#
+## Focus/swap windows by direction
+#super + {_,shift + }{h,j,k,l}
+#	bspc node --{focus,swap} {west,south,north,east}
+#
+## Swap window with last window
+#super + apostrophe
+#	bspc node --swap last
+#
+## Move window to last split
+#super + y
+#	bspc query --nodes -n focused.automatic \
+#	&& bspc node -n last.\!automatic \
+#	|| bspc node last.leaf -n focused
+#
+## Flip layout vertically/horizontally
+#super + {_,shift + }s
+#	bspc node @/ --flip {vertical,horizontal}
+#
+## Focus parent/brother/first/second for preselection
+#super + ctrl + {p,b,comma,period}
+#	bspc node --focus @{parent,brother,first,second}
+#
+## Preselect the splitting area for next window on leaf/parent
+#super + ctrl + {h,j,k,l}
+#	bspc node --presel-dir \~{west,south,north,east}
+#
+## Define splitting ratio for next window on leaf/parent
+#super + ctrl + {_,shift +}{1-9}
+#	bspc node {_,@/} --presel-ratio 0.{1-9}
+#
+## Cancel preselection
+#super + ctrl + space
+#	bspc node --presel-dir cancel
+#
+## Expand tiled space
+#super + alt + {h,j,k,l}
+#	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+#
+## Contract tiled space
+#super + alt + shift + {h,j,k,l}
+#	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
+#
+## Move window to selected desktop
+#super + shift + {1-9,0}
+#	bspc node --to-desktop ^{1-9,10} --focus
+#
+super + shift + Return
+	$TERMINAL
+#
+## Move window to left/right desktop
+#super + shift + {Left,Right}
+#	bspc node --to-desktop {prev,next} --focus
+#
+## Move window to left/right desktop
+#ctrl + alt + shift + {Left,Right}
+#	bspc node --to-desktop {prev,next} --focus
+#
+## Focus selected desktop
+#super + {1-9,0}
+#	bspc desktop --focus ^{1-9,10} ; pkill -47 lemontopc
+#
+## Focus left/right occupied desktop
+#super + {Left,Right}
+#	bspc desktop --focus {prev,next}.occupied
+#
+## Focus left/right occupied desktop
+#ctrl + alt + {Left,Right}
+#	bspc desktop --focus {prev,next}.occupied
+#
+#super + shift + {j,k}
+#	bspc desktop --focus {prev,next}.occupied
+#
+## Increase/decrease window gap on focused desktop
+#super + bracket{left,right}
+#	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 5 ))
+#
+## Focus when clicking
+#~button1
+#	bspc pointer --grab focus
+#
+## Move/resize windows
+#alt + button{1-3}
+#	; bspc pointer --grab {move,resize_side,resize_corner}
+#
+## Ungrab when releasing a mouse button
+#alt + @button{1-3}
+#	bspc pointer --ungrab
 
 #
 # wm independent hotkeys
@@ -187,6 +221,9 @@ F12
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+super + shift + Escape
+	killall $WM	
 
 Print
   $SCRIPTS_FOLDER/lemon/dunst-picture.sh && scrot "$(date +%c).png" -e 'mv "$f" ~/Pictures/Screenshots/ '

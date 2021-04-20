@@ -1,0 +1,3 @@
+/home/jonesad/.scripts/lemon/lemon-time.sh
+#!/template
+printf "%s" "%{A:/home/jonesad/.scripts/lemon/yad-time.sh &:}@<time> $(/home/jonesad/.scripts/time.sh)%{A}"

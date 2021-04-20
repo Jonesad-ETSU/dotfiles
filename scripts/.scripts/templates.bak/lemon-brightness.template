@@ -1,0 +1,3 @@
+$SCRIPTS_FOLDER/lemon/lemon-bright.sh
+#!/template
+printf "%s" "%{F^<color11>}%{A:$SCRIPTS_FOLDER/lemon/yad-bright.sh &:}@<brightness> %{F-}$($SCRIPTS_FOLDER/brightness.sh)%{A}"

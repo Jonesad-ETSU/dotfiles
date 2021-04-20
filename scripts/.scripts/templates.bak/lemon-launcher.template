@@ -1,0 +1,3 @@
+$SCRIPTS_FOLDER/lemon/lemon-launcher.sh
+#!/template
+printf "%s" "%{A:nwggrid &:}@<launcher>%{A}"

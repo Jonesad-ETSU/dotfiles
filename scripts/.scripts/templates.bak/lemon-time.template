@@ -1,0 +1,3 @@
+$SCRIPTS_FOLDER/lemon/lemon-time.sh
+#!/template
+printf "%s" "%{B^<color2>}%{F^<bg>}%{A:$SCRIPTS_FOLDER/lemon/yad-time.sh &:} @<time> $($SCRIPTS_FOLDER/time.sh)%{A} %{B-}%{F-}"

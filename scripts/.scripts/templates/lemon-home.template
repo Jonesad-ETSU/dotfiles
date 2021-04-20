@@ -1,0 +1,3 @@
+/home/jonesad/.scripts/lemon/lemon-home.sh
+#!/template
+printf "%s" "%{F^<color6>}%{A:cd / && $TERMINAL -e ncdu &:}$(/home/jonesad/.scripts/home.sh)%{A}%{F-}"

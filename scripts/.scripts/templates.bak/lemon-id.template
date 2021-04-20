@@ -1,0 +1,3 @@
+$SCRIPTS_FOLDER/lemon/lemon-id.sh
+#!/template
+printf "%s" "%{B^<color5>}%{F^<bg>} $($SCRIPTS_FOLDER/id.sh) %{B-}%{F-}"

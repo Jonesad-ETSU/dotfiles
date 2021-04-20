@@ -1,0 +1,3 @@
+/home/jonesad/.scripts/lemon-kernel.sh
+#!/template
+printf "%s" "@<kernel> $(/home/jonesad/.scripts/kernel.sh)"

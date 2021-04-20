@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%s" "%{B$($SCRIPTS_FOLDER/conf.sh lemon.bordercolor)}%{F$($SCRIPTS_FOLDER/conf.sh lemon.borderfg)} $($1) %{F-}%{B-}"
+printf "%s" "%{B#707880}%{F#000000} $($1) %{F-}%{B-}"

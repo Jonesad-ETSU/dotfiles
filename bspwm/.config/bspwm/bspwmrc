@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 [ -z $VERT_PADDING ] && export VERT_PADDING=10
 
@@ -23,42 +23,44 @@ CRIPTS_FOLDER/lemon:$SCRIPTS_FOLDER/dmenu:$HOME/.local/bin:$PATH"
 #Needed for Java Apps like PyCharm
 wmname LG3D
 
-$SCRIPTS_FOLDER/alacritty-w-xresources.py $HOME/.config/alacritty/alacritty.yml &
-$SCRIPTS_FOLDER/xob.sh &
+#Reads and generates all coloring from conf.yml
+conf_to_script.sh &
+sleep 2
+xob.sh &
+volumeicon &
 $HOME/.fehbg &
 xbanish &
 dunst &
 mpd &
-picom &
+#picom &
 (sleep 1 && paplay $HOME/Sounds/startup.wav) &
 pactl set-sink-volume @DEFAULT_SINK@ 50%
 udiskie &
 sxhkd &
 
-killall -r "lemon*"
-#$SCRIPTS_FOLDER/lemon/lemonbarmain &
-polybar -r example &
-plank &
-#[ -f $SCRIPTS_FOLDER/lemon/lemonsecondaryc ] && ($SCRIPTS_FOLDER/lemon/lemonbarsecondary &) || plank & 
+#Makes sure the physical adapter for my laptop is on
+command -v iwctl && iwctl adapter phy0 set-property "Powered" on
+
+(sleep 1 && polybar -r example) &
 
 conf () {
-	yq .$1 ~/conf.yml | sed 's/"//g'
+	yq .$1 ~/conf.yml | tr -d "'"
 }
 
 xsetroot -cursor_name left_ptr &
 
 bspc monitor -d $(conf 'wm.tags[]')
 
-bspc config top_padding		$(($VERT_PADDING+$(conf lemon.width)))
-bspc config bottom_padding	$VERT_PADDING+52
+bspc config top_padding		$(conf lemon.width)
+bspc config bottom_padding	0
 
-bspc config left_padding	40
-bspc config right_padding	40
+bspc config left_padding	0
+bspc config right_padding	0
 
 bspc config active_border_color "$(conf lemon.bordercolor)"
 bspc config normal_border_color "$(conf bg)"
 
-bspc config border_width         4
+bspc config border_width         2
 bspc config window_gap          10
 
 bspc config split_ratio          0.52

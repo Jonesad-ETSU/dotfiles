@@ -1,20 +1,20 @@
 #!/bin/bash
-# FONT: Ubuntu Nerd Font
 pr=$(cat /sys/class/power_supply/BAT0/capacity)
 
-if [ $(xgetres lemon.textonly) != "0" ]; then
+if [ 0 != "0" ]; then
   printf "%d" $pr
   exit
 fi
 
-MAX=$(xgetres bat.num)
-BAT_FULL=$(xgetres bat.full)
-BAT_HALF=$(xgetres bat.half)
-BAT_EMPTY=$(xgetres bat.empty)
-USE_HALVES=$(xgetres bat.halves)
+COLOR="#b5bd68"
+COLOR_HALF="#8d9540"
+COLOR_EMPTY="#000000"
+
+MAX=5
+BAT=
 PR_FULL=$(( 100 / $MAX ))
 PR_HALF=$(( $PR_FULL / 2))
-battery=""
+battery="%{F$COLOR}"
 
 whole=0
 empty=0
@@ -34,20 +34,20 @@ do
 	continue 	
   elif [ $pr -ge 1 ]; then
   	pr=0 
-  	[ $USE_HALVES -eq 1 ] && cracked=1
+  	cracked=1
   fi
 done	
 
 let "empty=$MAX-counter"
 
 for (( i=0; i<whole; i++ )); do
-    battery="${battery} $BAT_FULL"
+    battery="${battery}$BAT"
 done
 
-[ $cracked -eq 1 ] && battery="${battery} $BAT_HALF"
+[ $cracked -eq 1 ] && battery="${battery}%{F$COLOR_HALF}$BAT"
 
 for (( i=0; i<empty; i++ )); do
-    battery="${battery} $BAT_EMPTY"
+    battery="${battery}%{F$COLOR_EMPTY}$BAT"
 done
 
-printf "%s" "$battery"
+printf "%s" "$battery%{F-}"

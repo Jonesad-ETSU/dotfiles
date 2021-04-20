@@ -1,0 +1,53 @@
+/home/jonesad/.scripts/battery.sh
+#!/template
+pr=$(cat /sys/class/power_supply/BAT0/capacity)
+
+if [ ^<lemon.textonly> != "0" ]; then
+  printf "%d" $pr
+  exit
+fi
+
+MAX=^<lemon.bat.num>
+BAT_FULL=^<lemon.bat.icon.full>
+BAT_HALF=^<lemon.bat.icon.half>
+BAT_EMPTY=^<lemon.bat.icon.empty>
+USE_HALVES=^<lemon.bat.halves>
+PR_FULL=$(( 100 / $MAX ))
+PR_HALF=$(( $PR_FULL / 2))
+battery=""
+
+whole=0
+empty=0
+cracked=0
+
+let counter=0
+
+for (( ; pr > 0; counter++ ))
+do
+  if [ $pr -ge $PR_FULL ]; then
+	let "pr-=$PR_FULL" 
+	let "whole+=1"
+	continue
+  elif [ $pr -ge $PR_HALF ]; then
+	pr=0
+	let "whole+=1"
+	continue 	
+  elif [ $pr -ge 1 ]; then
+  	pr=0 
+  	[ $USE_HALVES -eq 1 ] && cracked=1
+  fi
+done	
+
+let "empty=$MAX-counter"
+
+for (( i=0; i<whole; i++ )); do
+    battery="${battery} $BAT_FULL"
+done
+
+[ $cracked -eq 1 ] && battery="${battery} $BAT_HALF"
+
+for (( i=0; i<empty; i++ )); do
+    battery="${battery} $BAT_EMPTY"
+done
+
+printf "%s" "$battery"

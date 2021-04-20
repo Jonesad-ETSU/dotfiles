@@ -1,0 +1,27 @@
+/home/jonesad/.config/alacritty/alacritty.yml
+colors:
+  bright:
+    black: '^<black>'
+    blue: '^<darkblue>'
+    cyan: '^<darkcyan>'
+    green: '^<darkgreen>'
+    magenta: '^<darkmagenta>'
+    red: '^<darkred>'
+    white: '^<white>'
+    yellow: '^<darkyellow>'
+  normal:
+    black: '^<black>'
+    blue: '^<blue>'
+    cyan: '^<cyan>'
+    green: '^<green>'
+    magenta: '^<magenta>'
+    red: '^<red>'
+    white: '^<white>'
+    yellow: '^<yellow>'
+  primary:
+    background: '^<bg>'
+    foreground: '^<fg>'
+font:
+  normal:
+    family: scientifica
+  size: 10

@@ -1,0 +1,3 @@
+/home/jonesad/.scripts/lemon/lemon-mpd.sh
+#!/template
+printf "%s" "%{B^<color2>}%{F^<bg>}%{A1:mpc toggle &:}%{A3:$TERMINAL -e ncmpcpp &:} @<mpd>%{T1}$(/home/jonesad/.scripts/mpd.sh)%{T-}%{A}%{A} %{F-}%{B-}" 

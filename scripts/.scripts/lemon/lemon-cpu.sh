@@ -1,2 +1,2 @@
-#!/bin/bash
-printf "%s" "%{F$($SCRIPTS_FOLDER/conf.sh color14)}$($SCRIPTS_FOLDER/cpu.sh)%{F-}"
+#!/template
+printf "%s" "%{F$(^color14)}$($SCRIPTS_FOLDER/cpu.sh)%{F-}"
