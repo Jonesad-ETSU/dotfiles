@@ -1,5 +1,0 @@
-.template files are designed to be used with the conf_to_scripts.sh script to generate configuration for bar modules at launch so that it does not continually reload the values.
-
-Syntax:
-^ => read from ~/conf.yml
-@ => use conf.sh to determine whether it should use a symbol or text equiv.

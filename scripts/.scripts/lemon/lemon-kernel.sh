@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%s" "$($SCRIPTS_FOLDER/lemon/get-symbol.sh kernel) $($SCRIPTS_FOLDER/kernel.sh)"
+printf "%s" "$($SCRIPTS_FOLDER/get-symbol.sh kernel) $($SCRIPTS_FOLDER/kernel.sh)"

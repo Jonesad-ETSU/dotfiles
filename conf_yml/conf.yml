@@ -13,27 +13,28 @@ menutype: rofi
 # superseded by                  #
 #  $HOME/.config/color/x/current #
 ##################################
-gtk: &gtk Nordic
-name: &name nord
-rofi: &rofi android_notification
-black: &black '#3B4252'
-white: &white '#ECEFF4' 
-blue: &blue '#81A1C1'
-darkblue: &darkblue '#81A1C1'
-red: &red '#BF616A'
-darkred: &darkred '#BF616A' 
-green: &green '#A3BE8C'
-darkgreen: &darkgreen '#A3BE8C'
-yellow: &yellow '#EBCB8B'
-darkyellow: &darkyellow '#EBCB8B'
-magenta: &magenta '#B48EAD'
-darkmagenta: &darkmagenta '#B48EAD'
-cyan: &cyan '#8FBCBB'
-darkcyan: &darkcyan '#88C0D0'
-lightgray: &lightgray '#E5E9F0'
-darkgray: &darkgray '#4C566A'
-fg: &fg '#ECEFF4'
-bg: &bg '#3B4252'
+gtk: &gtk 'Qoqir-dark'
+name: &name 'terminal.sexy'
+rofi: &rofi 'android_notification'
+black: &black '#282a2e'
+white: &white '#c5c8c6' 
+blue: &blue '#81a2be'
+darkblue: &darkblue '#5f819d'
+red: &red '#cc6666'
+darkred: &darkred '#a54242' 
+green: &green '#b5bd68'
+darkgreen: &darkgreen '#8c9440'
+yellow: &yellow '#f0c674'
+darkyellow: &darkyellow '#de935f'
+magenta: &magenta '#b294bb'
+darkmagenta: &darkmagenta '#85678f'
+cyan: &cyan '#8abeb7'
+darkcyan: &darkcyan '#5e8d87'
+lightgray: &lightgray '#707880'
+darkgray: &darkgray '#373b41'
+fg: &fg '#c5c8c6'
+#bg: &bg '#1d1f21'
+bg: &bg '#000000'
 color0: *black
 color1: *darkred
 color2: *darkgreen
@@ -60,7 +61,7 @@ wm:
   active: *lightgray
   inactive: *bg
   urgent: *red
-  tags: ['1', '2', '3', '4', '5']  
+  tags: ['1', '2', '3', '4']  
 
 ####################
 # Taskbar Settings #
@@ -70,11 +71,11 @@ lemon:
   bg: *bg 
   top: 1
   width: 32
-  length: 1920
+  length: 1820
   borderpx: 2
   borderfg: *bg
   bordercolor: *lightgray
-  xoffset: '+0'
+  xoffset: '+50'
   yoffset: '+0'
   opacity: 'FF'
 
@@ -96,17 +97,20 @@ lemon:
 
   bat:
     icon:
-      empty: ⚪
-      full: ♥
-      half: ⚫
+      empty:  
+      full:  
+      half: 
     num: 5
     halves: 1
     color:
       charge: *green
       discharge: *red
   mem:
-    icon: 
+    icon: 
     text: MEM
+  cpu:
+    icon: 
+    text: CPU
   root:
     icon: 
     text: ROOT
@@ -126,16 +130,16 @@ lemon:
     icon: 
     text: BRI
   time:
-    icon: 愈
+    icon: 
     text: TIME
   power:
     icon: 
     text: POW
   launcher:
-    icon: 
+    icon: 
     text: RUN
   mpd:
-    icon: 
+    icon: 
     text: MUSIC
     play:
       icon: 

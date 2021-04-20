@@ -29,6 +29,6 @@ Along with that, there are various miscellaneous tools for printing things to ba
 #  Installation  #
 ##################
 
-To install this github repo, clone with 'git clone https://github.com/jonesad-etsu/dotfiles.git' inside of any shell or use other tool as desired. After cloning, navigate to the new folder and use the appropriate installation script depending on your version of linux. Currently supported versions are Void Linux and Arch Linux. From there, stow is installed which will create symbolic links from the dotfiles folder to the respective folders. GNU/Stow uses the parent directory of the current as its root and installs each folder you give it by first going into that folder and then creating a link from root.
+To install this github repo, clone with 'git clone --recursive https://github.com/jonesad-etsu/dotfiles.git' inside of any shell or use other tool as desired. After cloning, navigate to the new folder and use the appropriate installation script depending on your version of linux. Currently supported versions are Void Linux and Arch Linux. From there, stow is installed which will create symbolic links from the dotfiles folder to the respective folders. GNU/Stow uses the parent directory of the current as its root and installs each folder you give it by first going into that folder and then creating a link from root.
 
 Example of stow: folder 'stuff' contains the nested file '.config/stuff/stuff.conf'- stow will link the stuff.conf file to '../.config/stuff/stuff.conf'  

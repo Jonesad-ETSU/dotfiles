@@ -20,17 +20,17 @@ generate() {
 	sed -i "s/#!\/template/#!\/bin\/bash/g" $new_file
 	
 	for i in $(grep -oP "(?<=\^<).*?(?=>)" $new_file); do
-		sed -i "s/\^<$i>/$($SCRIPTS_FOLDER/conf.sh $i)/g" $new_file
+		( sed -i "s/\^<$i>/$($SCRIPTS_FOLDER/conf.sh $i)/g" $new_file ) &
 	done
 
 	for i in $(grep -oP "(?<=@<).*?(?=>)" $new_file); do
-		sed -i "s/@<$i>/$($SCRIPTS_FOLDER/lemon/get-symbol.sh $i)/g" $new_file
+		( sed -i "s/@<$i>/$($SCRIPTS_FOLDER/get-symbol.sh $i)/g" $new_file ) &
 	done
 
 	for i in $(grep -oP "(?<=\+<).*?(?=>)" $new_file); do
-		color=$($SCRIPTS_FOLDER/conf.sh $(echo $i | cut -d ':' -f1 ))
+		( color=$($SCRIPTS_FOLDER/conf.sh $(echo $i | cut -d ':' -f1 )) ;
 		shift=$(echo $i | cut -d ':' -f2)
-		sed -i "s/\+<$i>/$( $SCRIPTS_FOLDER/chbright-color.sh $color $shift )/g" $new_file
+		sed -i "s/\+<$i>/$( $SCRIPTS_FOLDER/chbright-color.sh $color $shift )/g" $new_file ) &
 	done
 
 	chmod a+x $new_file
