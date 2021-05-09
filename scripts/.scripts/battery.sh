@@ -6,9 +6,9 @@ if [ 0 != "0" ]; then
   exit
 fi
 
-COLOR="#b5bd68"
-COLOR_HALF="#8d9540"
-COLOR_EMPTY="#000000"
+COLOR="#b8bb26"
+COLOR_HALF="#909300"
+COLOR_EMPTY="#282828"
 
 MAX=5
 BAT=

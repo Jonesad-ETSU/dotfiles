@@ -20,32 +20,36 @@ generate() {
 	sed -i "s/#!\/template/#!\/bin\/bash/g" $new_file
 	
 	for i in $(grep -oP "(?<=\^<).*?(?=>)" $new_file); do
-		( sed -i "s/\^<$i>/$($SCRIPTS_FOLDER/conf.sh $i)/g" $new_file ) &
+		( sed -i "s/\^<$i>/$($SCRIPTS_FOLDER/conf.sh $i)/g" $new_file ) 
 	done
 
 	for i in $(grep -oP "(?<=@<).*?(?=>)" $new_file); do
-		( sed -i "s/@<$i>/$($SCRIPTS_FOLDER/get-symbol.sh $i)/g" $new_file ) &
+		( sed -i "s/@<$i>/$($SCRIPTS_FOLDER/get-symbol.sh $i)/g" $new_file ) 	
 	done
 
 	for i in $(grep -oP "(?<=\+<).*?(?=>)" $new_file); do
 		( color=$($SCRIPTS_FOLDER/conf.sh $(echo $i | cut -d ':' -f1 )) ;
 		shift=$(echo $i | cut -d ':' -f2)
-		sed -i "s/\+<$i>/$( $SCRIPTS_FOLDER/chbright-color.sh $color $shift )/g" $new_file ) &
-	done
+		sed -i "s/\+<$i>/$( $SCRIPTS_FOLDER/chbright-color.sh $color $shift )/g" $new_file )
+	done 
 
 	chmod a+x $new_file
 
 	#ln -s $new_file $link_file 
 }
+
+[ -d /tmp/conf/ ] && rm -rf /tmp/conf 
+
 if [ $# -lt 1 ]; then
 	for i in $(read); do
-		( find $i && ( generate $i ) &) \
+		 find $i && ( generate $i) \
 			|| echo "$i not found in modules folder" 1>&2
 	done
 else
 	for i in $(read $1); do
-		( find $i && ( generate $i ) &) \
+		find $i && ( generate $i) \
 			|| echo "$i not found in modules folder" 1>&2
 	done
 fi
+wait
 cd -

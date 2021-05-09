@@ -34,7 +34,7 @@ width = ^<lemon.length>
 height = ^<lemon.width>
 offset-x = ^<lemon.xoffset>
 offset-y = ^<lemon.yoffset>
-radius = 2.0
+radius = ^<lemon.radius>
 fixed-center = true
 
 background = ${colors.background}
@@ -43,25 +43,27 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 1
+border-size = ^<lemon.borderpx>
 border-color = ^<fg>
-padding-left = 0
+padding-left = 1
 padding-right = 0
 
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = scientifica:size=16:antialias=true;3
-font-1 = siji:pixelsize=20;2
+font-0 = ^<lemon.textfont.family>:size=^<lemon.textfont.size>:antialias=false;^<lemon.textfont.offset>
+font-1 = ^<lemon.iconfont.family>:pixelsize=^<lemon.iconfont.size>;^<lemon.iconfont.offset>
 
-modules-left = launcher music bspwm i3 ewmh 
-modules-center =
-modules-right = updates memory cpu wlan eth lemtime divider hearts divider
+modules-left = launcher bspwm i3 ewmh 
+modules-center = lemtime 
+modules-right = updates wlan eth divider hearts divider
 
 tray-position = right
 tray-padding = 0
 tray-scaling = 1
 tray-background = ^<bg>
+
+bottom = ^<lemon.top>
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -81,9 +83,9 @@ enable-ipc = true
 
 [module/ewmh]
 type = internal/xworkspaces
-pin-workspaces = true
+pin-workspaces = false
 enable-click = true
-enable-scroll = true
+enable-scroll = false
 
 format = <label-state>
 
@@ -201,7 +203,9 @@ label-urgent-padding = 2
 
 [module/mpd]
 type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+format-online = <label-song> <toggle>
+
+label-song = %title%
 
 icon-prev = 
 icon-stop = 
@@ -450,8 +454,8 @@ label = %output%
 
 [module/launcher]
 type = custom/script
-exec = ~/.scripts/lemon/lemon-edge.sh ~/.scripts/lemon/lemon-launcher.sh
-label = %output%
+exec = ~/.scripts/lemon/lemon-launcher.sh
+label = "%output% "
 
 [module/lemtime]
 type = custom/script

@@ -3,7 +3,7 @@
 # bspwm hotkeys
 #
 super + {Return,space}
-  nwggrid -d "/usr/share/applications/:~/Desktop"
+	rofi -show drun -theme ~/.config/rofi/theme.css -icon-theme "Papirus-Dark" -show-icons
 
 super + Home
   $SCRIPTS_FOLDER/set-random-wallpaper.sh
@@ -21,7 +21,13 @@ super + shift + q
 	berryc window_close
 
 super + {1-9}
-	berryc switch_workspace {1-9}
+	wmctrl -s $(({1-9}-1))
+
+super + shift + j
+	wmctrl -s $(wmctrl -d | awk '/\*/ { print $1 + 1 }')
+
+super + shift + k
+	wmctrl -s $(wmctrl -d | awk '/\*/ { print $1 - 1 }')
 
 super + shift + {1-9}
 	berryc send_to_workspace {1-9}
@@ -229,10 +235,10 @@ Print
   $SCRIPTS_FOLDER/lemon/dunst-picture.sh && scrot "$(date +%c).png" -e 'mv "$f" ~/Pictures/Screenshots/ '
 
 F3
-	mpc toggle
+	mpc toggle && notify-send "MPD Playing" "$(mpc | head -n1 | cut -d '-' -f2)" -t 1500
 
 F4
-	mpc next
+	mpc next && notify-send "MPD Playing" "$(mpc | head -n1 | cut -d '-' -f2)"
 
 F2	
-	mpc prev
+	mpc prev && notify-send "MPD Playing" "$(mpc | head -n1 | cut -d '-' -f2)"

@@ -4,7 +4,7 @@
 
 #XINIT STUFF
 export USB="/run/media/$(whoami)"
-export WM=bspwm
+export WM=openbox
 export EDITOR=vim
 export COMPOSITOR=picom
 export TERMINAL="alacritty"
@@ -14,6 +14,7 @@ export FILE_MANAGER="$TERMINAL -e ranger"
 export SCRIPTS_FOLDER="$HOME/.scripts"
 export DMENU=1
 export QT_QPA_PLATFORMTHEME=gtk2
+export QT_STYLE_OVERRIDE=adwaita-dark
 export PATH="$HOME/.cargo/bin:$HOME/.src/Discord:$SCRIPTS_FOLDER:$S
 CRIPTS_FOLDER/lemon:$SCRIPTS_FOLDER/dmenu:$HOME/.local/bin:$PATH"
 
@@ -25,14 +26,17 @@ wmname LG3D
 
 #Reads and generates all coloring from conf.yml
 conf_to_script.sh ~/.scripts/templates/use-bar &
-sleep 1
+conf_to_script.sh ~/.scripts/templates/use-alacritty &
+conf_to_script.sh ~/.scripts/templates/use &
+wait
+
 xob.sh &
 volumeicon &
 $HOME/.fehbg &
 xbanish &
 dunst &
 mpd &
-#picom &
+( [ $(cat /sys/class/power_supply/BAT0/status) != "Discharging" ] && picom) &
 pactl set-sink-volume @DEFAULT_SINK@ 50%
 udiskie &
 sxhkd &

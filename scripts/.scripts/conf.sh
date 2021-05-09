@@ -1,9 +1,5 @@
 #!/bin/bash
-CONFIG_OPT=$(yq .$1 ~/conf.yml)
-#if [[ "$CONFIG_OPT" == *"#"* ]]; then
-#	printf "%s\n" $CONFIG_OPT
-#	exit
-#else
-	echo $CONFIG_OPT | tr -d '"' 
-#	exit
-#fi
+[ ! -d /tmp/conf/ ] && mkdir -p /tmp/conf
+[ -f /tmp/conf/$1 ]\
+       	&& (cat /tmp/conf/$1) \
+	|| (yq .$1 ~/conf.yml | tr -d '"'| tee /tmp/conf/$1) 

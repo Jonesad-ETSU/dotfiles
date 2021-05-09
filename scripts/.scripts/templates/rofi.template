@@ -1,0 +1,82 @@
+/home/jonesad/.config/rofi/theme.css
+* {
+    background-color: ^<rofi.bg>;
+    font: "^<lemon.textfont.family> ^<lemon.textfont.size>";
+    border: ^<rofi.border>;
+    margin: ^<rofi.margin>;
+    padding: ^<rofi.padding>;
+    spacing: ^<rofi.spacing>;
+    text-color: ^<rofi.fg>;
+}
+#inputbar {
+    text-color: ^<rofi.fg>;
+    padding: 6px;
+    margin: 0px 0px 2px;
+    children: [ entry ];
+}
+#entry {
+    background-color: ^<blue>;
+    text-color: ^<rofi.fg>;
+    expand: true;
+    padding: 10px;
+}
+#message {
+    border: 0px 0px 1px;
+    border-color: ^<black>;
+    padding: 0px 0px 6px 7px;
+}
+#listview {
+    layout: vertical;
+    lines: ^<rofi.rows>;
+    columns: ^<rofi.columns>;
+    padding: 2px 0px 0px;
+    scrollbar: ^<rofi.scrollbar>;
+}
+#element {
+    padding: 0px 0px 0px 7px;
+    margin: 0px 0px 5px 0px;
+    text-color: ^<rofi.fg>;
+}
+
+#element-icon {
+	size: ^<rofi.iconsize>;
+}
+
+#element.normal.normal {
+    text-color: ^<rofi.fg>;
+}
+#element.normal.urgent {
+    text-color: ^<red>;
+}
+#element.normal.active {
+    text-color: ^<lightgray>;
+}
+#element.alternate.normal {
+    text-color: ^<rofi.fg>;
+}
+#element.alternate.urgent {
+    text-color: ^<red>;
+}
+#element.alternate.active {
+    text-color: ^<lightgray>;
+}
+#element.selected.normal {
+    background-color: ^<darkblue>;
+    text-color: ^<rofi.fg>;
+}
+#element.selected.urgent {
+    background-color: ^<darkred>;
+    text-color: ^<rofi.fg>;
+}
+#element.selected.active {
+    background-color: ^<darkgray>;
+    text-color: ^<rofi.fg>;
+}
+#scrollbar {
+    handle-color: ^<blue>;
+    handle-width: 0.50em;
+}
+#button.selected {
+    background-color: ^<blue>;
+    text-color: ^<rofi.fg>;
+}

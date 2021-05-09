@@ -1,0 +1,136 @@
+/home/jonesad/.themes/openbox-gen/openbox-3/themerc
+# Nord Openbox theme
+# Inspired by horst3180's Arc GTK theme & Nord color palette by Arctic Ice Studio
+# https://github.com/arcticicestudio/nord
+
+### WINDOW
+border.width: 2
+
+window.client.padding.width: 1
+window.client.padding.height: 1
+window.handle.width: 1
+
+padding.width: 9
+padding.height: 6 
+
+
+window.active.border.color: ^<lightgray>
+window.inactive.border.color: ^<bg>
+window.active.title.separator.color: ^<bg>
+window.inactive.title.separator.color: ^<bg>
+window.active.client.color: ^<bg>
+window.inactive.client.color: ^<bg>
+
+window.active.label.text.color: ^<fg> 
+window.inactive.label.text.color: ^<bg>
+
+# Iconify button
+window.active.button.iconify.unpressed.image.color: ^<darkyellow>
+window.active.button.iconify.hover.image.color: ^<yellow>
+
+# Max button
+window.active.button.max.unpressed.image.color: ^<darkgreen>
+window.active.button.max.hover.image.color: ^<green>
+window.active.button.max.toggled.unpressed.image.color: ^<green>
+window.active.button.max.toggled.hover.image.color: ^<darkgreen>
+
+# Desk button
+window.active.button.desk.unpressed.image.color: ^<darkblue>
+window.active.button.desk.hover.image.color: ^<blue>
+
+# Shade button colors
+window.active.button.shade.unpressed.image.color: ^<darkmagenta>
+window.active.button.shade.hover.image.color: ^<magenta>
+
+# Close button colors
+window.active.button.close.unpressed.image.color:^<darkred>
+window.active.button.close.hover.image.color:^<red>
+
+# Inactive button colors
+window.inactive.button.*.image.color: ^<darkgray>
+
+# All buttons
+window.active.button.*.pressed.image.color: #81b6c6
+window.active.button.*.disabled.image.color: #3b4252
+
+window.active.title.bg: flat solid
+window.active.title.bg.color: ^<bg>
+window.active.label.bg: flat solid
+window.active.label.bg.color: ^<bg>
+#window.active.handle.bg: texture
+#window.active.grip.bg: texture
+window.inactive.title.bg: flat solid
+window.inactive.title.bg.color: ^<bg>
+window.inactive.label.bg: flat solid
+window.inactive.label.bg.color: ^<bg>
+#window.inactive.handle.bg: texture
+#window.inactive.grip.bg: texture
+
+window.active.button.unpressed.bg: parentrelative
+window.active.button.pressed.bg: parentrelative
+window.active.button.hover.bg: parentrelative
+window.active.button.disabled.bg: parentrelative
+window.active.button.toggled.unpressed.bg: parentrelative
+window.active.button.toggled.pressed.bg: parentrelative
+window.active.button.toggled.hover.bg: parentrelative
+
+window.inactive.button.unpressed.bg: parentrelative
+window.inactive.button.pressed.bg: parentrelative
+window.inactive.button.hover.bg: parentrelative
+window.inactive.button.disabled.bg: parentrelative
+window.inactive.button.toggled.unpressed.bg: parentrelative
+window.inactive.button.toggled.pressed.bg: parentrelative
+window.inactive.button.toggled.hover.bg: parentrelative
+
+window.label.text.justify: center
+
+#window.active.label.text.font: text shadow
+#window.inactive.label.text.font: text shadow
+
+### MENU
+menu.border.width: 2
+menu.separator.width: 2
+menu.separator.padding.width: 10
+menu.separator.padding.height: 5
+
+menu.overlap.x: 0
+menu.overlap.y: 0
+
+menu.border.color: ^<darkgray>
+menu.separator.color: ^<fg>
+
+menu.title.text.color: ^<fg>
+menu.items.text.color: ^<fg>
+menu.items.disabled.text.color: ^<darkred>
+menu.items.active.text.color: ^<bg>
+menu.items.active.disabled.text.color:^<darkblue>
+
+menu.items.bg: flat solid
+menu.items.bg.color: ^<bg>
+menu.items.active.bg: flat solid
+menu.items.active.bg.color: ^<blue>
+menu.title.bg: flat solid
+menu.title.bg.color: ^<bg>
+
+menu.title.text.justify: center
+
+#menu.items.font: text shadow
+#menu.title.text.font: text shadow
+
+### OSD
+osd.border.width: 4
+
+osd.border.color: ^<bg>
+
+osd.label.text.color: ^<fg>
+
+osd.bg: flat solid
+osd.bg.color: ^<bg>
+osd.label.bg: flat solid
+osd.label.bg.color: ^<bg>
+osd.hilight.bg: flat solid
+osd.hilight.bg.color: ^<blue>
+osd.unhilight.bg: flat solid
+osd.unhilight.bg.color: ^<lightgray>
+
+#osd.label.text.font: text shadow

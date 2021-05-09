@@ -1,11 +1,11 @@
-sw_volume: 92
+sw_volume: 50
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
 state: pause
 current: 19
-time: 111.558000
-random: 0
-repeat: 0
+time: 109.456000
+random: 1
+repeat: 1
 single: 0
 consume: 0
 crossfade: 0
@@ -13,18 +13,18 @@ mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
 0:Midday Garden.mp3
-1:God s Country.mp3
+1:Blue Oyster Cult - (Don t Fear) The Reaper (Audio).mp3
 2:The Great Escape.mp3
-3:Obey.mp3
-4:Church Bells.mp3
-5:Go Crazy.mp3
-6:CJ - WHOOPTY [Official Music Video].mp3
-7:Dark Hollow.mp3
-8:The Philosopher.mp3
-9:Galway Girl.mp3
-10:Elvis Presley - Jailhouse Rock (Music Video).mp3
-11:Gasoline.mp3
-12:Gnarls Barkley - Crazy (Official Video).mp3
+3:Church Bells.mp3
+4:Go Crazy.mp3
+5:CJ - WHOOPTY [Official Music Video].mp3
+6:Dark Hollow.mp3
+7:The Philosopher.mp3
+8:Galway Girl.mp3
+9:Elvis Presley - Jailhouse Rock (Music Video).mp3
+10:Gasoline.mp3
+11:Gnarls Barkley - Crazy (Official Video).mp3
+12:Obey.mp3
 13:Gourmet Race.mp3
 14:Damage.mp3
 15:The Jester Race.mp3
@@ -46,27 +46,19 @@ playlist_begin
 31:Post Malone - Die For Me (Audio) ft. Future, Halsey.mp3
 32:Post Malone - On The Road (Audio) ft. Meek Mill, Lil Baby.mp3
 33:rockstar ft. 21 Savage.mp3
-34:Killing In The Name.mp3
-35:Red Hot Chili Peppers - Otherside [Official Music Video].mp3
-36:Aquaria Towers.mp3
-37:Hurricos.mp3
-38:Skelos Badlands.mp3
-39:Zephyr.mp3
-40:Cloud Spires.mp3
-41:Fireworks Factory.mp3
-42:Suicide Machine.mp3
-43:Emblem3 ..mp3
-44:You're Gonna Go Far, Kid.mp3
-45:Starboy.mp3
-46:What You Know.mp3
-47:Battle Against A True Hero.mp3
-48:Bergentruckung.mp3
-49:Corneria.mp3
-50:Gerudo Valley.mp3
-51:Voice of the Soul.mp3
-52:Wagon Wheel.mp3
-53:Sadness and Hate.mp3
-54:You're Mines Still.mp3
-55:Take It to the Limit (2013 Remaster).mp3
-56:Blue Oyster Cult - (Don t Fear) The Reaper (Audio).mp3
+34:Red Hot Chili Peppers - Otherside [Official Music Video].mp3
+35:Rise Against - Savior (Official Video).mp3
+36:Travis Scott, HVME - Goosebumps (Remix - Official Audio).mp3
+37:Killing In The Name.mp3
+38:Bergentruckung.mp3
+39:Corneria.mp3
+40:Gerudo Valley.mp3
+41:Voice of the Soul.mp3
+42:Wagon Wheel.mp3
+43:Sadness and Hate.mp3
+44:You're Mines Still.mp3
+45:Pop Evil - Breathe Again (Official Music Video).mp3
+46:Challengers.mp3
+47:Monsters.mp3
+48:Masked Wolf - Speed Racer.mp3
 playlist_end

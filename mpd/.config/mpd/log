@@ -2820,3 +2820,352 @@ Apr 20 12:04 : player: played "Bloody Valentine.mp3"
 Apr 20 12:04 : config: option 'device' on line 14 was not recognized
 Apr 20 12:04 : player: played "Bloody Valentine.mp3"
 Apr 20 12:04 : config: option 'device' on line 14 was not recognized
+Apr 20 14:18 : player: played "Damage.mp3"
+Apr 20 14:23 : player: played "The Jester Race.mp3"
+Apr 20 14:27 : player: played "Iron Maiden - The Trooper(2).mp3"
+Apr 20 14:32 : player: played "Bloody Valentine.mp3"
+Apr 20 14:38 : player: played "Vivir Mi Vida.mp3"
+Apr 20 14:41 : player: played "Meek Mill - Otherside of America [Official Audio].mp3"
+Apr 20 14:44 : player: played "Morgan Wallen - Warning (The Dangerous Sessions).mp3"
+Apr 20 14:58 : player: played "Reverse Situation.mp3"
+Apr 20 15:02 : player: played "Neon Eyes.mp3"
+Apr 20 15:06 : player: played "Nickelback - If Today Was Your Last Day [OFFICIAL VIDEO].mp3"
+Apr 20 15:09 : player: played "Nickelback - When We Stand Together.mp3"
+Apr 20 15:36 : player: played "Who's Gonna Stop Me.mp3"
+Apr 20 15:40 : player: played "Circles.mp3"
+Apr 20 15:44 : player: played "Post Malone - Die For Me (Audio) ft. Future, Halsey.mp3"
+Apr 20 15:47 : player: played "Post Malone - On The Road (Audio) ft. Meek Mill, Lil Baby.mp3"
+Apr 20 19:39 : player: played "rockstar ft. 21 Savage.mp3"
+Apr 20 19:39 : config: option 'device' on line 14 was not recognized
+Apr 20 19:48 : player: played "rockstar ft. 21 Savage.mp3"
+Apr 20 19:48 : config: option 'device' on line 14 was not recognized
+Apr 20 19:49 : player: played "rockstar ft. 21 Savage.mp3"
+Apr 20 19:49 : config: option 'device' on line 14 was not recognized
+Apr 20 20:42 : player: played "Emblem3 ..mp3"
+Apr 20 20:45 : player: played "You're Gonna Go Far, Kid.mp3"
+Apr 20 20:46 : player: played "Blue Oyster Cult - (Don t Fear) The Reaper (Audio).mp3"
+Apr 20 20:46 : exception: Not playing
+Apr 20 20:50 : player: played "Only Human.mp3"
+Apr 20 20:54 : player: played "Better Together.mp3"
+Apr 20 21:40 : player: played "Bloody Valentine.mp3"
+Apr 20 21:40 : config: option 'device' on line 14 was not recognized
+Apr 20 21:46 : player: played "Bloody Valentine.mp3"
+Apr 20 21:51 : player: played "Vivir Mi Vida.mp3"
+Apr 20 21:55 : player: played "Meek Mill - Otherside of America [Official Audio].mp3"
+Apr 21 09:02 : player: played "Morgan Wallen - Warning (The Dangerous Sessions).mp3"
+Apr 21 09:16 : player: played "Neon Eyes.mp3"
+Apr 21 09:20 : player: played "Nickelback - If Today Was Your Last Day [OFFICIAL VIDEO].mp3"
+Apr 21 09:23 : player: played "Nickelback - When We Stand Together.mp3"
+Apr 21 11:21 : player: played "Circles.mp3"
+Apr 21 11:25 : player: played "Post Malone - Die For Me (Audio) ft. Future, Halsey.mp3"
+Apr 21 11:29 : player: played "Post Malone - On The Road (Audio) ft. Meek Mill, Lil Baby.mp3"
+Apr 21 11:36 : player: played "Emblem3 ..mp3"
+Apr 21 11:51 : player: played "You're Gonna Go Far, Kid.mp3"
+Apr 21 11:54 : player: played "Starboy.mp3"
+Apr 21 11:58 : player: played "What You Know.mp3"
+Apr 21 12:02 : exception: Failed to play on "pulse audio" (pulse): suspended
+Apr 21 12:02 : player: played "Battle Against A True Hero.mp3"
+Apr 21 12:02 : config: option 'device' on line 14 was not recognized
+Apr 21 12:54 : player: played "Red Hot Chili Peppers - Otherside [Official Music Video].mp3"
+Apr 21 13:17 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Apr 21 13:22 : player: played "The Jester Race.mp3"
+Apr 21 18:37 : player: played "Bloody Valentine.mp3"
+Apr 21 18:43 : player: played "Vivir Mi Vida.mp3"
+Apr 21 18:47 : player: played "Battle Champion Cynthia Music.mp3"
+Apr 21 18:51 : player: played "Who's Gonna Stop Me.mp3"
+Apr 21 18:55 : player: played "Circles.mp3"
+Apr 21 18:59 : player: played "Post Malone - Die For Me (Audio) ft. Future, Halsey.mp3"
+Apr 21 19:03 : player: played "Post Malone - On The Road (Audio) ft. Meek Mill, Lil Baby.mp3"
+Apr 21 19:07 : player: played "rockstar ft. 21 Savage.mp3"
+Apr 21 19:12 : player: played "Killing In The Name.mp3"
+Apr 21 19:28 : player: played "Red Hot Chili Peppers - Otherside [Official Music Video].mp3"
+Apr 21 19:28 : config: option 'device' on line 14 was not recognized
+Apr 22 01:21 : player: played "Red Hot Chili Peppers - Otherside [Official Music Video].mp3"
+Apr 22 08:25 : config: option 'device' on line 14 was not recognized
+Apr 22 08:41 : player: played "Red Hot Chili Peppers - Otherside [Official Music Video].mp3"
+Apr 22 11:37 : config: option 'device' on line 14 was not recognized
+Apr 22 21:38 : player: played "Red Hot Chili Peppers - Otherside [Official Music Video].mp3"
+Apr 22 21:42 : config: option 'device' on line 14 was not recognized
+Apr 22 21:53 : player: played "Aquaria Towers.mp3"
+Apr 22 21:56 : player: played "Hurricos.mp3"
+Apr 22 21:59 : player: played "Skelos Badlands.mp3"
+Apr 22 22:02 : player: played "Zephyr.mp3"
+Apr 22 22:06 : player: played "Cloud Spires.mp3"
+Apr 22 22:10 : player: played "Fireworks Factory.mp3"
+Apr 22 22:14 : player: played "Emblem3 ..mp3"
+Apr 22 22:17 : player: played "You're Gonna Go Far, Kid.mp3"
+Apr 22 22:23 : player: played "Blue Oyster Cult - (Don t Fear) The Reaper (Audio).mp3"
+Apr 22 22:23 : exception: Not playing
+Apr 22 22:23 : exception: Not playing
+Apr 22 22:23 : exception: Not playing
+Apr 22 22:23 : exception: Not playing
+Apr 22 22:23 : exception: Not playing
+Apr 22 22:38 : player: played "Nickelback - If Today Was Your Last Day [OFFICIAL VIDEO].mp3"
+Apr 22 22:41 : player: played "Nickelback - When We Stand Together.mp3"
+Apr 22 22:54 : player: played "Blackwater Park.mp3"
+Apr 22 22:55 : exception: Failed to play on "pulse audio" (pulse): suspended
+Apr 22 22:57 : player: played "Battle Champion Cynthia Music.mp3"
+Apr 22 23:01 : player: played "Who's Gonna Stop Me.mp3"
+Apr 22 23:05 : player: played "Circles.mp3"
+Apr 22 23:09 : player: played "Post Malone - Die For Me (Audio) ft. Future, Halsey.mp3"
+Apr 22 23:12 : player: played "Post Malone - On The Road (Audio) ft. Meek Mill, Lil Baby.mp3"
+Apr 22 23:16 : player: played "rockstar ft. 21 Savage.mp3"
+Apr 22 23:22 : player: played "Killing In The Name.mp3"
+Apr 22 23:26 : player: played "Red Hot Chili Peppers - Otherside [Official Music Video].mp3"
+Apr 22 23:29 : player: played "Aquaria Towers.mp3"
+Apr 22 23:32 : player: played "Hurricos.mp3"
+Apr 22 23:34 : player: played "Skelos Badlands.mp3"
+Apr 22 23:38 : player: played "Zephyr.mp3"
+Apr 22 23:41 : player: played "Cloud Spires.mp3"
+Apr 22 23:46 : player: played "Fireworks Factory.mp3"
+Apr 23 00:50 : player: played "Emblem3 ..mp3"
+Apr 23 10:57 : config: option 'device' on line 14 was not recognized
+Apr 23 11:34 : player: played "Emblem3 ..mp3"
+Apr 23 11:38 : player: played "Suicide Machine.mp3"
+Apr 23 11:41 : player: played "You're Gonna Go Far, Kid.mp3"
+Apr 23 11:45 : player: played "Starboy.mp3"
+Apr 23 11:48 : player: played "What You Know.mp3"
+Apr 23 12:03 : player: played "Battle Against A True Hero.mp3"
+Apr 23 12:19 : player: played "Bergentruckung.mp3"
+Apr 23 12:22 : player: played "Corneria.mp3"
+Apr 23 12:23 : player: played "Gerudo Valley.mp3"
+Apr 23 12:27 : player: played "Voice of the Soul.mp3"
+Apr 23 12:32 : player: played "Wagon Wheel.mp3"
+Apr 23 12:42 : player: played "Sadness and Hate.mp3"
+Apr 23 12:46 : player: played "You're Mines Still.mp3"
+Apr 23 12:51 : player: played "Take It to the Limit (2013 Remaster).mp3"
+Apr 23 12:56 : player: played "Blue Oyster Cult - (Don t Fear) The Reaper (Audio).mp3"
+Apr 23 14:01 : player: played "Midday Garden.mp3"
+Apr 23 17:54 : player: played "Gnarls Barkley - Crazy (Official Video).mp3"
+Apr 24 10:31 : config: option 'device' on line 14 was not recognized
+Apr 24 12:02 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Apr 24 12:48 : player: played "Gasoline.mp3"
+Apr 24 20:17 : config: option 'device' on line 14 was not recognized
+Apr 25 11:50 : player: played "Gasoline.mp3"
+Apr 25 20:59 : config: option 'device' on line 14 was not recognized
+Apr 25 21:15 : player: played "Gasoline.mp3"
+Apr 25 21:16 : config: option 'device' on line 14 was not recognized
+Apr 26 00:51 : player: played "Gasoline.mp3"
+Apr 27 06:49 : config: option 'device' on line 14 was not recognized
+Apr 27 06:50 : player: played "Gasoline.mp3"
+Apr 27 06:50 : config: option 'device' on line 14 was not recognized
+Apr 27 14:38 : player: played "Gasoline.mp3"
+Apr 27 18:33 : config: option 'device' on line 14 was not recognized
+Apr 27 18:35 : player: played "Gasoline.mp3"
+Apr 27 18:35 : config: option 'device' on line 14 was not recognized
+Apr 27 19:04 : player: played "Damage.mp3"
+Apr 27 19:05 : player: played "The Jester Race.mp3"
+Apr 27 19:05 : config: option 'device' on line 14 was not recognized
+Apr 27 22:07 : player: played "The Jester Race.mp3"
+Apr 27 22:53 : player: played "CJ - WHOOPTY [Official Music Video].mp3"
+Apr 27 22:58 : player: played "Dark Hollow.mp3"
+Apr 27 23:01 : player: played "The Philosopher.mp3"
+Apr 27 23:05 : player: played "Galway Girl.mp3"
+Apr 27 23:07 : exception: Failed to play on "pulse audio" (pulse): suspended
+Apr 27 23:08 : player: played "Elvis Presley - Jailhouse Rock (Music Video).mp3"
+Apr 27 23:08 : exception: Failed to play on "pulse audio" (pulse): suspended
+Apr 27 23:10 : player: played "Gasoline.mp3"
+Apr 27 23:13 : player: played "Gnarls Barkley - Crazy (Official Video).mp3"
+Apr 27 23:15 : player: played "Gourmet Race.mp3"
+Apr 27 23:20 : player: played "Damage.mp3"
+Apr 27 23:25 : player: played "The Jester Race.mp3"
+Apr 27 23:29 : player: played "Voice of the Soul.mp3"
+Apr 27 23:34 : player: played "Wagon Wheel.mp3"
+Apr 27 23:36 : player: played "Sadness and Hate.mp3"
+Apr 27 23:36 : config: option 'device' on line 14 was not recognized
+Apr 27 23:39 : player: played "Sadness and Hate.mp3"
+Apr 28 07:33 : config: option 'device' on line 14 was not recognized
+Apr 28 07:38 : player: played "Sadness and Hate.mp3"
+Apr 28 07:42 : player: played "You're Mines Still.mp3"
+Apr 28 07:47 : player: played "Take It to the Limit (2013 Remaster).mp3"
+Apr 28 08:51 : player: played "Blue Oyster Cult - (Don t Fear) The Reaper (Audio).mp3"
+Apr 28 08:54 : config: option 'device' on line 14 was not recognized
+Apr 28 22:09 : player: played "Blue Oyster Cult - (Don t Fear) The Reaper (Audio).mp3"
+Apr 28 22:51 : config: option 'device' on line 14 was not recognized
+Apr 29 00:11 : player: played "Blue Oyster Cult - (Don t Fear) The Reaper (Audio).mp3"
+Apr 29 07:01 : config: option 'device' on line 14 was not recognized
+Apr 29 07:08 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 29 07:08 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Apr 29 07:08 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Apr 29 07:08 : update: added /Masked Wolf - Speed Racer.mp3
+Apr 29 07:08 : update: added /Rise Against - Prayer Of The Refugee (Official Music Video).mp3
+Apr 29 07:08 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 29 07:08 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Apr 29 07:08 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 178.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 29 07:08 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 29 07:08 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Apr 29 07:08 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1205.
+Apr 29 07:08 : update: added /Masked Wolf - Astronaut In The Ocean.mp3
+Apr 29 07:08 : update: added /Pop Evil - Waking Lions (Official Music Video).mp3
+Apr 29 07:08 : update: added /Rise Against - Savior (Official Video).mp3
+Apr 29 07:08 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 29 07:08 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Apr 29 07:08 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Apr 29 07:08 : update: added /Pop Evil - Breathe Again (Official Music Video).mp3
+Apr 29 07:09 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 29 07:09 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Apr 29 07:09 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Apr 29 07:09 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 29 07:09 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Apr 29 07:09 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 178.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 29 07:09 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 29 07:09 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Apr 29 07:09 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1205.
+Apr 29 07:09 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 29 07:09 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Apr 29 07:09 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Apr 29 07:09 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Apr 29 07:09 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 29 07:09 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Apr 29 07:09 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Apr 29 07:09 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 29 07:09 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Apr 29 07:09 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 178.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 29 07:09 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 29 07:09 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Apr 29 07:09 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1205.
+Apr 29 07:09 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 29 07:09 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Apr 29 07:09 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Apr 29 07:09 : player: played "Blue Oyster Cult - (Don t Fear) The Reaper (Audio).mp3"
+Apr 29 07:16 : player: played "Rise Against - Savior (Official Video).mp3"
+Apr 29 07:19 : player: played "Travis Scott, HVME - Goosebumps (Remix - Official Audio).mp3"
+Apr 29 07:21 : exception: Failed to play on "pulse audio" (pulse): disconnected
+Apr 29 07:21 : player: played "You're Mines Still.mp3"
+Apr 29 07:21 : config: option 'device' on line 14 was not recognized
+Apr 29 07:23 : player: played "You're Mines Still.mp3"
+Apr 29 07:25 : config: option 'device' on line 14 was not recognized
+Apr 29 07:31 : config: option 'device' on line 14 was not recognized
+Apr 29 07:51 : player: played "Pop Evil - Breathe Again (Official Music Video).mp3"
+Apr 29 07:55 : player: played "Pop Evil - Waking Lions (Official Music Video).mp3"
+Apr 29 07:58 : player: played "Rise Against - Prayer Of The Refugee (Official Music Video).mp3"
+Apr 29 10:04 : player: played "Rise Against - Savior (Official Video).mp3"
+Apr 29 13:39 : config: option 'device' on line 14 was not recognized
+Apr 29 13:41 : player: played "Rise Against - Savior (Official Video).mp3"
+Apr 29 13:41 : config: option 'device' on line 14 was not recognized
+Apr 29 13:52 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+Apr 29 13:52 : player: played "Rise Against - Savior (Official Video).mp3"
+Apr 29 13:53 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 29 13:53 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Apr 29 13:53 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Apr 29 13:53 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 29 13:53 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Apr 29 13:53 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 178.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 29 13:53 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 29 13:53 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Apr 29 13:53 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1205.
+Apr 29 13:53 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 29 13:53 : ffmpeg/mp3: Format mp3 detected only with low score of 1, misdetection possible!
+Apr 29 13:53 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Apr 29 13:57 : player: played "Pop Evil - Breathe Again (Official Music Video).mp3"
+Apr 29 14:01 : player: played "Dark Hollow.mp3"
+Apr 29 14:04 : player: played "Gourmet Race.mp3"
+Apr 29 14:08 : player: played "Post Malone - On The Road (Audio) ft. Meek Mill, Lil Baby.mp3"
+Apr 29 19:11 : config: option 'device' on line 14 was not recognized
+Apr 29 19:38 : player: played "Voice of the Soul.mp3"
+Apr 30 19:54 : config: option 'device' on line 14 was not recognized
+Apr 30 20:20 : config: option 'device' on line 14 was not recognized
+Apr 30 23:19 : player: played "Voice of the Soul.mp3"
+Apr 30 23:20 : config: option 'device' on line 14 was not recognized
+May 01 15:33 : player: played "Voice of the Soul.mp3"
+May 01 20:15 : config: option 'device' on line 14 was not recognized
+May 01 21:13 : player: played "Voice of the Soul.mp3"
+May 01 21:13 : config: option 'device' on line 14 was not recognized
+May 01 21:15 : player: played "Voice of the Soul.mp3"
+May 02 19:45 : config: option 'device' on line 14 was not recognized
+May 02 20:07 : player: played "Voice of the Soul.mp3"
+May 02 20:07 : config: option 'device' on line 14 was not recognized
+May 02 20:10 : player: played "Voice of the Soul.mp3"
+May 02 20:30 : config: option 'device' on line 14 was not recognized
+May 02 21:21 : player: played "Voice of the Soul.mp3"
+May 03 15:01 : config: option 'device' on line 14 was not recognized
+May 03 15:02 : player: played "Voice of the Soul.mp3"
+May 03 19:29 : config: option 'device' on line 14 was not recognized
+May 04 02:16 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+May 04 02:19 : player: played "Pop Evil - Breathe Again (Official Music Video).mp3"
+May 04 02:33 : player: played "Reverse Situation.mp3"
+May 04 02:37 : player: played "Neon Eyes.mp3"
+May 04 02:40 : player: played "Nickelback - When We Stand Together.mp3"
+May 04 02:43 : player: played "Go Crazy.mp3"
+May 04 02:47 : player: played "Only Human.mp3"
+May 04 02:51 : player: played "rockstar ft. 21 Savage.mp3"
+May 04 02:55 : player: played "Dark Hollow.mp3"
+May 04 02:58 : player: played "Corneria.mp3"
+May 04 03:01 : player: played "Meek Mill - Otherside of America [Official Audio].mp3"
+May 04 03:05 : player: played "You're Mines Still.mp3"
+May 04 03:09 : player: played "Circles.mp3"
+May 04 03:13 : player: played "The Jester Race.mp3"
+May 04 03:17 : player: played "Rise Against - Savior (Official Video).mp3"
+May 04 03:21 : player: played "The Great Escape.mp3"
+May 04 03:33 : player: played "Blackwater Park.mp3"
+May 04 03:37 : player: played "Red Hot Chili Peppers - Otherside [Official Music Video].mp3"
+May 04 03:40 : player: played "Battle Champion Cynthia Music.mp3"
+May 04 03:44 : player: played "Galway Girl.mp3"
+May 04 03:48 : player: played "Damage.mp3"
+May 04 03:52 : player: played "Post Malone - Die For Me (Audio) ft. Future, Halsey.mp3"
+May 04 03:55 : player: played "Gnarls Barkley - Crazy (Official Video).mp3"
+May 04 03:58 : player: played "Midday Garden.mp3"
+May 04 04:14 : player: played "Bergentruckung.mp3"
+May 04 04:18 : player: played "God s Country.mp3"
+May 04 04:28 : player: played "Sadness and Hate.mp3"
+May 04 04:33 : player: played "Wagon Wheel.mp3"
+May 04 04:35 : player: played "Gourmet Race.mp3"
+May 04 04:38 : player: played "Travis Scott, HVME - Goosebumps (Remix - Official Audio).mp3"
+May 04 04:42 : player: played "Church Bells.mp3"
+May 04 04:45 : player: played "Post Malone - On The Road (Audio) ft. Meek Mill, Lil Baby.mp3"
+May 04 04:49 : player: played "The Philosopher.mp3"
+May 04 04:50 : player: played "Gerudo Valley.mp3"
+May 04 04:56 : player: played "Blue Oyster Cult - (Don t Fear) The Reaper (Audio).mp3"
+May 04 05:00 : player: played "Iron Maiden - The Trooper(2).mp3"
+May 04 05:03 : player: played "Bloody Valentine.mp3"
+May 04 05:06 : player: played "Morgan Wallen - Warning (The Dangerous Sessions).mp3"
+May 04 05:11 : player: played "Killing In The Name.mp3"
+May 04 05:15 : player: played "Obey.mp3"
+May 04 08:06 : player: played "Masked Wolf - Speed Racer.mp3"
+May 04 08:09 : player: played "Voice of the Soul.mp3"
+May 04 08:12 : player: played "Monsters.mp3"
+May 04 08:14 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+May 04 08:14 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+May 04 08:14 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+May 04 08:14 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+May 04 08:14 : exception: Failed to open /home/jonesad/.config/mpd/playlists: No such file or directory
+May 04 08:17 : player: played "Wagon Wheel.mp3"
+May 04 08:23 : player: played "Galway Girl.mp3"
+May 04 09:03 : player: played "Rise Against - Savior (Official Video).mp3"
+May 04 09:20 : player: played "Who's Gonna Stop Me.mp3"
+May 04 11:52 : config: option 'device' on line 14 was not recognized
+May 04 12:20 : player: played "Who's Gonna Stop Me.mp3"
+May 04 14:33 : config: option 'device' on line 14 was not recognized
+May 04 15:03 : player: played "Travis Scott, HVME - Goosebumps (Remix - Official Audio).mp3"
+May 04 15:07 : player: played "Voice of the Soul.mp3"
+May 04 15:09 : player: played "CJ - WHOOPTY [Official Music Video].mp3"
+May 04 15:13 : player: played "Damage.mp3"
+May 04 15:17 : player: played "Better Together.mp3"
+May 04 17:31 : player: played "Bloody Valentine.mp3"
+May 04 19:14 : config: option 'device' on line 14 was not recognized
+May 04 19:36 : player: played "Bloody Valentine.mp3"
+May 04 20:35 : config: option 'device' on line 14 was not recognized
+May 05 10:39 : player: played "Bloody Valentine.mp3"
+May 05 10:40 : config: option 'device' on line 14 was not recognized
+May 05 12:47 : player: played "Bloody Valentine.mp3"
+May 05 13:25 : config: option 'device' on line 14 was not recognized
+May 05 13:26 : player: played "Bloody Valentine.mp3"
+May 06 17:36 : config: option 'device' on line 14 was not recognized
+May 06 23:46 : player: played "Bloody Valentine.mp3"
+May 07 21:26 : config: option 'device' on line 14 was not recognized
+May 07 22:00 : player: played "Bloody Valentine.mp3"
+May 08 17:51 : config: option 'device' on line 14 was not recognized
+May 08 18:35 : player: played "Bloody Valentine.mp3"
+May 09 08:44 : config: option 'device' on line 14 was not recognized

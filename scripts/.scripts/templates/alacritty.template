@@ -23,5 +23,5 @@ colors:
     foreground: '^<fg>'
 font:
   normal:
-    family: scientifica
+    family: ^<lemon.textfont.family>
   size: 10

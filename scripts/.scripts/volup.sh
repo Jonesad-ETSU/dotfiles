@@ -2,9 +2,9 @@
 #If volume below $MAX, increase by $STEP%.
 
 volOld=$(pamixer --get-volume)
-max=$(xgetres audio.max)
-step=$(xgetres audio.step)
-pipe=$(xgetres audio.pipe)
+max=$($SCRIPTS_FOLDER/conf.sh audio.max)
+step=$($SCRIPTS_FOLDER/conf.sh audio.step)
+pipe=$($SCRIPTS_FOLDER/conf.sh audio.pipe)
 
 [ $volOld -lt $max ] && \
 	pactl set-sink-volume @DEFAULT_SINK@ +$step%

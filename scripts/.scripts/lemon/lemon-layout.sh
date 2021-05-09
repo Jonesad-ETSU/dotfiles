@@ -6,5 +6,5 @@ if [ $WM = 'bspwm' ]; then
 	elif [ $layout = 'floating' ]; then logo=
 	fi
 	
-	printf "%s" "%{A:bspc desktop --layout next && pkill -51 lemonmainc:}%{F#5e8d87} $logo %{F-}%{A}"
+	printf "%s" "%{A:bspc desktop --layout next && pkill -51 lemonmainc:}%{F#689d6a} $logo %{F-}%{A}"
 fi

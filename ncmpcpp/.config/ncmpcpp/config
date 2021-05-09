@@ -7,9 +7,14 @@
  mpd_connection_timeout = "5"  
  mpd_crossfade_time = "5"  
 
+ startup_screen = "playlist"
+ startup_slave_screen = "visualizer"
+ locked_screen_width_part = "50"
+ ask_for_locked_screen_width_part = "no"
+
 # Playlist
  playlist_disable_highlight_delay = "0"  
- playlist_display_mode = "columns"  
+ playlist_display_mode = "classic"  
  playlist_show_remaining_time = "yes"
 
 browser_display_mode = "columns"  
